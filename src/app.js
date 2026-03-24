@@ -9,6 +9,7 @@ import { WeatherSection, initWeather } from "./components/WeatherSection.js";
 import { ShopsSection, initShops } from "./components/ShopsSection.js";
 import { RampsSection, initRamps } from "./components/RampsSection.js";
 import { AuthorsSection } from "./components/AuthorsSection.js";
+import { ContactSection } from "./components/ContactSection.js";
 import { initTheme } from "../assets/js/main.js";
 
 const app = document.getElementById('app');
@@ -27,6 +28,7 @@ const renderApp = () => {
             ${RampsSection()}
             ${RulesSection()}
             ${AuthorsSection()}
+            ${ContactSection()}
         </main>
         ${Footer()}
     `;

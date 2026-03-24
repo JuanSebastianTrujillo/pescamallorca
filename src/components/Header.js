@@ -32,6 +32,7 @@ export const Header = () => {
                 <li><a href="#rampas">Rampas</a></li>
                 <li><a href="#normativa">Normativa</a></li>
                 <li><a href="#autores">Autores</a></li>
+                <li><a href="#contacto">Contacto</a></li>
               </ul>
               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
