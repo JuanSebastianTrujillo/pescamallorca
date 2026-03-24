@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+export function initTheme() {
   "use strict";
 
   /**
@@ -15,6 +15,7 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
+    if (!selectHeader) return;
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
@@ -29,10 +30,14 @@
 
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    if(mobileNavToggleBtn) {
+       mobileNavToggleBtn.classList.toggle('bi-list');
+       mobileNavToggleBtn.classList.toggle('bi-x');
+    }
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  if(mobileNavToggleBtn) {
+      mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -63,9 +68,7 @@
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
       preloader.remove();
-    });
   }
 
   /**
@@ -78,13 +81,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+  if(scrollTop) {
+      scrollTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -93,14 +98,17 @@
    * Animation on scroll function and init
    */
   function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+      if(typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 600,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        });
+      }
   }
   window.addEventListener('load', aosInit);
+  aosInit(); // Call it manually for SPA
 
   /**
    * Auto generate the carousel indicators
@@ -118,9 +126,11 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if(typeof GLightbox !== 'undefined') {
+      const glightbox = GLightbox({
+        selector: '.glightbox'
+      });
+  }
 
   /**
    * Init swiper sliders
@@ -132,14 +142,15 @@
       );
 
       if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
+         // Custom function removed or implement here
       } else {
-        new Swiper(swiperElement, config);
+         if(typeof Swiper !== 'undefined') new Swiper(swiperElement, config);
       }
     });
   }
 
   window.addEventListener("load", initSwiper);
+  initSwiper();
 
   /**
    * Init isotope layout and filters
@@ -150,14 +161,16 @@
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
+    if(typeof imagesLoaded !== 'undefined') {
+        imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+          initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+            itemSelector: '.isotope-item',
+            layoutMode: layout,
+            filter: filter,
+            sortBy: sort
+          });
+        });
+    }
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() {
@@ -172,24 +185,6 @@
       }, false);
     });
 
-  });
-
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  window.addEventListener('load', function(e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
-    }
   });
 
   /**
@@ -213,5 +208,6 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+  navmenuScrollspy();
 
-})();
+}
