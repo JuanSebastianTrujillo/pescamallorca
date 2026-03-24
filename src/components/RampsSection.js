@@ -22,6 +22,18 @@ export const RampsSection = () => {
                                <option value="este">Este</option>
                                <option value="oeste">Oeste</option>
                            </select>
+                           <select id="ramps-type-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Tipo Firme">
+                               <option value="all" selected>Cualquier firme</option>
+                               <option value="hormigon">Hormigón</option>
+                               <option value="arena">Arena</option>
+                               <option value="roca">Roca natural</option>
+                           </select>
+                           <select id="ramps-price-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Gestión">
+                               <option value="all" selected>Cualquier gestión</option>
+                               <option value="Gratuita">Gratuita</option>
+                               <option value="De pago">De pago</option>
+                               <option value="Exclusiva">Exclusiva Socios</option>
+                           </select>
                            <button id="ramps-search-btn" class="btn btn-primary shadow-sm px-4 fw-bold"><i class="bi bi-search me-2"></i>Filtrar</button>
                        </div>
                    </div>
@@ -151,16 +163,27 @@ const rampsData = [
 export const initRamps = () => {
     const container = document.getElementById("ramps-container");
     const zoneFilter = document.getElementById("ramps-zone-filter");
+    const typeFilter = document.getElementById("ramps-type-filter");
+    const priceFilter = document.getElementById("ramps-price-filter");
     const searchBtn = document.getElementById("ramps-search-btn");
 
-    if (!container || !zoneFilter || !searchBtn) return;
+    if (!container || !zoneFilter || !typeFilter || !priceFilter || !searchBtn) return;
 
     // We store data in a global scope for modal reference
     window.currentRampsData = rampsData;
 
     const renderRamps = () => {
         const zoneVal = zoneFilter.value;
-        const filtered = rampsData.filter(r => zoneVal === 'all' || r.zone === zoneVal);
+        const typeVal = typeFilter.value;
+        const priceVal = priceFilter.value;
+
+        const filtered = rampsData.filter(r => {
+            let pass = true;
+            if (zoneVal !== 'all' && r.zone !== zoneVal) pass = false;
+            if (typeVal !== 'all' && r.type !== typeVal) pass = false;
+            if (priceVal !== 'all' && !r.priceTag.includes(priceVal)) pass = false;
+            return pass;
+        });
 
         if (filtered.length === 0) {
             container.innerHTML = `

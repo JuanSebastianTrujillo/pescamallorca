@@ -16,8 +16,7 @@ export const ContactSection = () => {
                 </div>
                 <h3 class="fw-bold mb-3">Envíanos tu mensaje</h3>
                 <p class="text-muted mb-5 lead">
-                  Queremos escuchar tus propuestas, resolver tus dudas y mantener la plataforma actualizada con la colaboración ciudadana. 
-                  Para ello, utilizamos un sistema ágil mediante formularios web.
+                  Queremos escuchar tus propuestas, resolver tus dudas y mantener la plataforma actualizada con la colaboración ciudadana.
                 </p>
                 
                 <div class="d-flex flex-column align-items-center">

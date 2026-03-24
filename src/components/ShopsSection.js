@@ -3,124 +3,380 @@ export const ShopsSection = () => {
       <!-- Shops Section -->
       <section id="tiendas" class="section light-background">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Directorio de Tiendas</h2>
-          <p>Encuentra tu proveedor de aparejos, cebo vivo y repuestos náuticos más cercano.</p>
+          <h2>Módulo de Tiendas y Proveedores</h2>
+          <p>Directorio comercial experto. Encuentra el mejor material, cebo fresco y servicios de reparación naval en Mallorca.</p>
         </div>
+        
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-           <!-- Filter Component -->
-           <div class="row justify-content-center mb-5">
-              <div class="col-lg-6 col-md-8">
-                 <select id="shops-filter-select" class="form-select form-select-lg shadow-sm border-0 text-primary fw-bold cursor-pointer text-center" aria-label="Filtrar por especialidad">
-                    <option value="all">Todas las especialidades</option>
-                    <option value="cebo-vivo">Cebo Vivo</option>
-                    <option value="jigging-vertical">Jigging/Vertical</option>
-                    <option value="spinning-rockfishing">Spinning/Rockfishing</option>
-                    <option value="pesca-submarina">Pesca Submarina</option>
-                    <option value="nautica-electronica">Náutica y Electrónica</option>
-                 </select>
-              </div>
-           </div>
+            <!-- Functional Filters -->
+            <div class="row mb-5 justify-content-center">
+               <div class="col-lg-10">
+                   <div class="card bg-white border-0 shadow-sm p-4">
+                       <h5 class="mb-3 text-secondary" style="font-size: 0.95rem; text-transform: uppercase;"><strong><i class="bi bi-funnel-fill me-2 text-primary"></i>Filtros de Búsqueda Comercial</strong></h5>
+                       <div class="d-flex flex-wrap gap-3 align-items-center">
+                           <select id="shops-zone-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Zona">
+                               <option value="all" selected>Cualquier zona</option>
+                               <option value="palma">Zonas de Palma</option>
+                               <option value="norte">Zona Norte (Alcúdia, Pollença)</option>
+                               <option value="sur">Zona Sur / Levante</option>
+                           </select>
+                           <select id="shops-service-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Servicio">
+                               <option value="all" selected>Todos los servicios</option>
+                               <option value="cebo">Vende Cebo Vivo</option>
+                               <option value="taller">Taller de Reparación</option>
+                               <option value="submarina">Pesca Submarina</option>
+                               <option value="licencias">Gestión de Licencias</option>
+                           </select>
+                           <button id="shops-search-btn" class="btn btn-primary shadow-sm px-4 fw-bold"><i class="bi bi-search me-2"></i>Filtrar</button>
+                       </div>
+                   </div>
+               </div>
+            </div>
 
-           <!-- Shops Container -->
-           <div class="row gy-4" id="shops-container">
-              <!-- Shops will be populated here dynamically -->
-           </div>
+            <!-- Shops Grid Container -->
+            <div class="row gy-4" id="shops-container">
+               <!-- Tarjetas inyectadas dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Shop Detail Modal -->
+        <div class="modal fade" id="shopModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0 shadow-lg">
+              
+              <div class="modal-header bg-primary text-white border-0">
+                <h5 class="modal-title fw-bold" id="shopModalLabel"><i class="bi bi-shop me-2"></i>Detalle de la Tienda</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              
+              <div class="modal-body p-0">
+                <!-- Se inyecta dinámicamente desde JS -->
+                <div id="shopModalBodyContent"></div>
+              </div>
+              
+              <div class="modal-footer bg-light border-top-0">
+                <button type="button" class="btn btn-secondary px-4 fw-bold rounded-pill shadow-sm" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </section>
     `;
 };
 
-const storeTags = {
-    'cebo-vivo': 'Cebo vivo',
-    'jigging-vertical': 'Jigging/Vertical',
-    'spinning-rockfishing': 'Spinning/Rockfishing',
-    'pesca-submarina': 'Pesca Submarina',
-    'nautica-electronica': 'Náutica y Electrónica'
-};
-
-const stores = [
+// --- MOCK DATA FOR SHOPS ---
+const storesData = [
   {
-    name: "Ca'n Sion Palma",
-    address: "Carrer del Banc de l'Oli, Palma",
-    category: ["cebo-vivo"]
+    id: 0,
+    name: "Pesca Palma Pro",
+    geoZone: "palma",
+    keyServices: ["cebo", "taller", "licencias"],
+    location: "Palma - Passeig Marítim",
+    address: "Carrer de la Mar, 10, 07014 Palma",
+    rating: "4.8",
+    image: "assets/img/hero-carousel/hero-carousel-1.jpg",
+    gallery: [
+      "assets/img/hero-carousel/hero-carousel-1.jpg",
+      "assets/img/hero-carousel/hero-carousel-2.jpg",
+      "assets/img/hero-carousel/hero-carousel-3.jpg"
+    ],
+    contact: {
+      phone: "+34971000111",
+      phoneStr: "971 000 111",
+      email: "info@pescapalmapro.es",
+      web: "https://pescapalmapro.es"
+    },
+    googleMapsLink: "https://maps.google.com/?q=Palma",
+    hours: [
+      { condition: "Lunes a Viernes", time: "09:00h - 20:00h (Ininterrumpido)" },
+      { condition: "Sábados", time: "09:00h - 14:00h" },
+      { condition: "Domingos / Festivos", time: "Cerrado" }
+    ],
+    badges: [
+      { text: "Cebo Vivo", color: "success", icon: "bi-bug" },
+      { text: "Taller Reparación", color: "info", icon: "bi-tools" }
+    ],
+    services: {
+      bait: "Coreano, Americano, Tita de palangre, Norte, Rosca, y Llombriu vivo por encargo semanal.",
+      workshop: "Anillado oficial Fuji, revisión y engrase de carretes Shimano/Daiwa, reparación de punteras de carbono.",
+      licenses: "Tramitación Exprés de la Licencia de Pesca Marítima Recreativa del Govern Balear.",
+      misc: "Máquina expendedora de cebo 24h y venta de hielo en escamas/bloque."
+    },
+    specialty: "Altamente especializados en Spinning desde costa, Jigging y curricán de altura. Amplio stock en señuelos artesanales."
   },
   {
-    name: "Casa Calicó Portixol",
-    address: "Passeig Bartomeu Barceló, Palma",
-    category: ["jigging-vertical", "spinning-rockfishing"]
+    id: 1,
+    name: "Sub Náutica Alcúdia",
+    geoZone: "norte",
+    keyServices: ["submarina", "alquiler"],
+    location: "Alcúdia - Puerto",
+    address: "Passeig Marítim, 45, 07400 Alcúdia",
+    rating: "4.5",
+    image: "assets/img/hero-carousel/hero-carousel-3.jpg",
+    gallery: [
+      "assets/img/hero-carousel/hero-carousel-3.jpg"
+    ],
+    contact: {
+      phone: "+34971222333",
+      phoneStr: "971 222 333",
+      email: "contacto@subalcudia.com",
+      web: "https://instagram.com"
+    },
+    googleMapsLink: "https://maps.google.com/?q=Alcudia",
+    hours: [
+      { condition: "Horario de Verano (Mayo-Oct)", time: "08:00h - 21:00h" },
+      { condition: "Horario de Invierno", time: "09:00h - 13:30h, 16:30h - 19:00h" }
+    ],
+    badges: [
+      { text: "Pesca Submarina", color: "primary", icon: "bi-water" },
+      { text: "Alquiler Material", color: "warning", icon: "bi-cart-check" }
+    ],
+    services: {
+      bait: "Cebo empaquetado y congelado (sardina, calamar). No disponen de cebo vivo habitualmente.",
+      workshop: "Carga de fusiles de aire comprimido, cambio de gomas y aletas a medida.",
+      licenses: "Solo licencias de pesca submarina (requiere certificado médico).",
+      misc: "Alquiler de botellas de buceo, lastre, y boyas de señalización."
+    },
+    specialty: "La tienda pionera en todo el Norte de Mallorca orientada al 100% a la Pesca Submarina y apnea."
   },
   {
-    name: "Esports de Mar",
-    address: "Carrer de la Mar, Alcúdia",
-    category: ["nautica-electronica", "pesca-submarina"]
-  },
-  {
-    name: "Armería y Pesca Perelló",
-    address: "Avinguda Gabriel Roca, Andratx",
-    category: ["spinning-rockfishing", "cebo-vivo"]
-  },
-  {
-    name: "Diving Center Llevant",
-    address: "Passeig Marítim, Manacor",
-    category: ["pesca-submarina"]
+    id: 2,
+    name: "Ca'n Sion",
+    geoZone: "palma",
+    keyServices: ["cebo"],
+    location: "Palma - Centro Historico",
+    address: "Carrer del Sindicat, Palma",
+    rating: "4.9",
+    image: "assets/img/hero-carousel/hero-carousel-2.jpg",
+    gallery: [
+      "assets/img/hero-carousel/hero-carousel-2.jpg"
+    ],
+    contact: {
+      phone: "+34971333444",
+      phoneStr: "971 333 444",
+      email: "sion@cansion.es",
+      web: "https://cansion.es"
+    },
+    googleMapsLink: "https://maps.google.com/?q=Palma",
+    hours: [
+      { condition: "Lunes a Viernes", time: "09:30h - 13:30h, 17:00h - 20:00h" },
+      { condition: "Sábados", time: "09:30h - 13:30h" }
+    ],
+    badges: [
+      { text: "Tradicional", color: "secondary", icon: "bi-star" },
+      { text: "Surtido Cebo Vivo", color: "success", icon: "bi-bug" }
+    ],
+    services: {
+      bait: "Disponibilidad garantizada del mejor coreano y tita de la isla. Lombriz autóctona de arena bajo reserva.",
+      workshop: "Pequeñas reparaciones de punteras tradicionales y montajes de bajos de línea directos de competición.",
+      licenses: "Asesoramiento sobre normativas de tallas mínimas locales.",
+      misc: "Venta de plomos artesanales fundidos en tienda."
+    },
+    specialty: "La tienda de barrio icónica para el pescador tradicional de Surfcasting y pesca a boya. Trato familiar y cercano."
   }
 ];
 
 export const initShops = () => {
-    const filterSelect = document.getElementById("shops-filter-select");
     const container = document.getElementById("shops-container");
+    const zoneFilter = document.getElementById("shops-zone-filter");
+    const serviceFilter = document.getElementById("shops-service-filter");
+    const searchBtn = document.getElementById("shops-search-btn");
     
-    if(!filterSelect || !container) return;
+    if (!container || !zoneFilter || !serviceFilter || !searchBtn) return;
 
-    const renderShops = (filterCategory) => {
-        const filteredStores = filterCategory === 'all' 
-            ? stores 
-            : stores.filter(store => store.category.includes(filterCategory));
+    window.currentShopsData = storesData;
 
-        if (filteredStores.length === 0) {
+    const renderShops = () => {
+        const zoneVal = zoneFilter.value;
+        const svcVal = serviceFilter.value;
+
+        const filtered = storesData.filter(s => {
+            let pass = true;
+            if (zoneVal !== 'all' && s.geoZone !== zoneVal) pass = false;
+            if (svcVal !== 'all' && !s.keyServices.includes(svcVal)) pass = false;
+            return pass;
+        });
+
+        if (filtered.length === 0) {
             container.innerHTML = `
-              <div class="col-12 text-center py-5">
-                 <i class="bi bi-search fs-1 text-muted mb-3 d-block"></i>
-                 <h5 class="text-secondary">No se han encontrado tiendas con esta especialidad en esta zona</h5>
-              </div>
+                <div class="col-12 text-center py-5">
+                    <i class="bi bi-shop fs-1 text-muted mb-3 d-block"></i>
+                    <h5 class="text-secondary">No se han encontrado tiendas con estos criterios.</h5>
+                </div>
             `;
             return;
         }
 
         let html = '';
-        filteredStores.forEach(store => {
-            const badgesHtml = store.category.map(cat => 
-                `<span class="badge bg-success me-1 my-1">${storeTags[cat] || cat}</span>`
-            ).join('');
+        filtered.forEach(store => {
+
+            let badgesHtml = '';
+            store.badges.forEach(b => {
+                badgesHtml += `<span class="badge bg-${b.color} me-1 shadow-sm"><i class="bi ${b.icon} me-1"></i>${b.text}</span>`;
+            });
 
             html += `
-              <div class="col-md-6">
-                 <div class="card p-3 border-0 shadow d-flex flex-row align-items-center h-100">
-                   <div class="bg-primary text-white p-3 rounded-circle me-3 flex-shrink-0"><i class="bi bi-shop fs-3"></i></div>
-                   <div class="flex-grow-1">
-                       <div class="d-flex justify-content-between align-items-start">
-                           <div>
-                               <h5 class="mb-1 text-primary fw-bold">${store.name}</h5>
-                               <p class="mb-2 text-muted small"><i class="bi bi-geo-fill text-danger"></i> ${store.address}</p>
-                           </div>
-                           <a href="#mapa" class="btn btn-outline-primary btn-sm rounded-pill ms-2 shadow-sm text-nowrap"><i class="bi bi-map me-1"></i>Mapa</a>
-                       </div>
-                       <div class="d-flex flex-wrap">
-                          ${badgesHtml}
-                       </div>
-                   </div>
-                 </div>
-              </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+               <div class="card w-100 shadow-sm border-0 shop-card cursor-pointer" onclick="openShopModal(${store.id})" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                  <div class="position-relative">
+                     <img src="${store.image}" class="card-img-top object-fit-cover" alt="Tienda ${store.name}" style="height:220px" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                     <div class="position-absolute bottom-0 start-0 m-3">
+                         <span class="badge bg-dark align-items-center shadow-lg"><i class="bi bi-star-fill text-warning me-1"></i> ${store.rating} / 5</span>
+                     </div>
+                  </div>
+                  
+                  <div class="card-body d-flex flex-column bg-white">
+                      <h4 class="card-title fw-bold text-primary mb-1">${store.name}</h4>
+                      <p class="card-text text-muted small mb-3"><i class="bi bi-geo-alt-fill text-danger me-1"></i>${store.location}</p>
+                      <div class="mb-3">
+                         ${badgesHtml}
+                      </div>
+                      <div class="mt-auto border-top pt-3">
+                         <button class="btn btn-outline-primary w-100 fw-bold rounded-pill"><i class="bi bi-shop-window me-2"></i>Ver Tienda</button>
+                      </div>
+                  </div>
+               </div>
+            </div>
             `;
         });
-
         container.innerHTML = html;
     };
 
-    filterSelect.addEventListener("change", (e) => {
-        renderShops(e.target.value);
+    searchBtn.addEventListener("click", renderShops);
+    renderShops();
+};
+
+window.openShopModal = (storeId) => {
+    const store = window.currentShopsData.find(s => s.id === storeId);
+    if (!store) return;
+
+    // Carousel Setup for Gallery
+    let carouselIndicators = '';
+    let carouselItems = '';
+    store.gallery.forEach((img, index) => {
+        const activeClass = index === 0 ? 'active' : '';
+        carouselIndicators += `<button type="button" data-bs-target="#shopGalleryCarousel" data-bs-slide-to="${index}" class="${activeClass}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Slide ${index + 1}"></button>`;
+        carouselItems += `
+            <div class="carousel-item ${activeClass}">
+                <img src="${img}" class="d-block w-100 object-fit-cover rounded shadow-sm" style="height: 350px;" alt="Galería ${store.name}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+            </div>
+        `;
     });
 
-    // Initial render
-    renderShops('all');
+    // Hours UI table
+    let hoursHtml = '<table class="table table-sm table-borderless small mb-0">';
+    store.hours.forEach(h => {
+        hoursHtml += `<tr><td class="fw-bold text-dark w-50">${h.condition}</td><td class="text-muted text-end">${h.time}</td></tr>`;
+    });
+    hoursHtml += '</table>';
+
+    // Detailed Body HTML
+    const modalHtml = `
+      <div class="p-4 bg-light d-flex flex-column flex-md-row justify-content-between align-items-center border-bottom shadow-sm">
+         <div class="text-center text-md-start mb-3 mb-md-0">
+             <h2 class="fw-bold text-primary mb-1">${store.name}</h2>
+             <span class="text-muted"><i class="bi bi-map-fill text-danger me-1"></i>${store.address}</span>
+         </div>
+         <div class="d-flex gap-2">
+             <a href="tel:${store.contact.phone}" class="btn btn-primary rounded-pill fw-bold shadow-sm px-4"><i class="bi bi-telephone-fill me-2"></i>Llamar</a>
+             <a href="${store.googleMapsLink}" target="_blank" class="btn btn-success rounded-pill fw-bold shadow-sm px-4"><i class="bi bi-cursor-fill me-2"></i>Ruta GPS</a>
+         </div>
+      </div>
+
+      <div class="p-0 border-bottom">
+         <!-- Bootstrap Carousel -->
+         <div id="shopGalleryCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">${carouselIndicators}</div>
+            <div class="carousel-inner">${carouselItems}</div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#shopGalleryCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon shadow-lg bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#shopGalleryCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon shadow-lg bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+         </div>
+      </div>
+
+      <div class="p-4 p-md-5 bg-white">
+          <div class="row align-items-start gy-4">
+              
+              <!-- Left Column: Specialty & Contacts & Hours -->
+              <div class="col-lg-5">
+                  <div class="mb-4">
+                      <h5 class="fw-bold text-dark mb-3"><i class="bi bi-star-fill text-warning me-2"></i>Especialidad de la Casa</h5>
+                      <p class="text-muted" style="text-align: justify; line-height: 1.6;">${store.specialty}</p>
+                  </div>
+
+                  <div class="card border-0 shadow-sm border-start border-info border-5 mb-4 bg-light">
+                      <div class="card-body">
+                          <h6 class="fw-bold text-info text-uppercase mb-3"><i class="bi bi-clock-history me-2"></i>Horarios y Apertura</h6>
+                          ${hoursHtml}
+                      </div>
+                  </div>
+
+                  <div class="card border-0 shadow-sm border-start border-secondary border-5 bg-light">
+                     <div class="card-body">
+                          <h6 class="fw-bold text-secondary text-uppercase mb-3"><i class="bi bi-info-circle-fill me-2"></i>Contacto Digital</h6>
+                          <ul class="list-unstyled mb-0 small">
+                             <li class="mb-2"><a href="tel:${store.contact.phone}" class="text-decoration-none text-dark"><i class="bi bi-telephone me-2 text-primary"></i>${store.contact.phoneStr}</a></li>
+                             <li class="mb-2"><a href="mailto:${store.contact.email}" class="text-decoration-none text-dark"><i class="bi bi-envelope me-2 text-primary"></i>${store.contact.email}</a></li>
+                             <li><a href="${store.contact.web}" target="_blank" class="text-decoration-none text-dark"><i class="bi bi-globe me-2 text-primary"></i>Visitar Web/Redes</a></li>
+                          </ul>
+                     </div>
+                  </div>
+              </div>
+
+              <!-- Right Column: Services Catalog -->
+              <div class="col-lg-7 ps-lg-5">
+                  <h4 class="fw-bold text-dark mb-4 border-bottom pb-3"><i class="bi bi-ui-checks-grid text-primary me-2"></i>Catálogo de Servicios</h4>
+                  
+                  <div class="d-flex align-items-start mb-4">
+                      <div class="bg-success bg-opacity-10 text-success rounded px-3 py-2 me-3 shadow-sm"><i class="bi bi-bug-fill fs-3"></i></div>
+                      <div>
+                          <h6 class="fw-bold text-success text-uppercase mb-1">Cebo Vivo y Carnada</h6>
+                          <p class="text-muted small mb-0">${store.services.bait}</p>
+                      </div>
+                  </div>
+
+                  <div class="d-flex align-items-start mb-4">
+                      <div class="bg-primary bg-opacity-10 text-primary rounded px-3 py-2 me-3 shadow-sm"><i class="bi bi-tools fs-3"></i></div>
+                      <div>
+                          <h6 class="fw-bold text-primary text-uppercase mb-1">Taller y Reparaciones</h6>
+                          <p class="text-muted small mb-0">${store.services.workshop}</p>
+                      </div>
+                  </div>
+
+                  <div class="d-flex align-items-start mb-4">
+                      <div class="bg-warning bg-opacity-10 text-warning rounded px-3 py-2 me-3 shadow-sm"><i class="bi bi-card-heading fs-3"></i></div>
+                      <div>
+                          <h6 class="fw-bold text-dark text-uppercase mb-1">Gestión de Licencias</h6>
+                          <p class="text-muted small mb-0">${store.services.licenses}</p>
+                      </div>
+                  </div>
+
+                  <div class="d-flex align-items-start">
+                      <div class="bg-info bg-opacity-10 text-info rounded px-3 py-2 me-3 shadow-sm"><i class="bi bi-snow fs-3"></i></div>
+                      <div>
+                          <h6 class="fw-bold text-info text-uppercase mb-1">Hielo y Alquileres</h6>
+                          <p class="text-muted small mb-0">${store.services.misc}</p>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+    `;
+
+    document.getElementById('shopModalBodyContent').innerHTML = modalHtml;
+
+    // Trigger standard Bootstrap modal logic
+    const modalEl = document.getElementById('shopModal');
+    let modal = bootstrap.Modal.getInstance(modalEl);
+    if (!modal) {
+        modal = new bootstrap.Modal(modalEl);
+    }
+    modal.show();
 };
