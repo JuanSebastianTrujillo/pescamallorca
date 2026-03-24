@@ -45,33 +45,40 @@ document.addEventListener("DOMContentLoaded", () => {
     initTheme();
 });
 
+// ==========================================
+// SECCIÓN DE ZONAS DE PESCA
+// ==========================================
+
+// Variable global para las zonas
+let currentSpotsList = [];
+
 async function loadSpotsData() {
     const spotsContainer = document.getElementById('spots-container');
     if (!spotsContainer) return;
 
     try {
-        const response = await fetch('/assets/data/pesca_data.json');
+        const response = await fetch('/assets/data/zonas.json');
         const schema = await response.json();
 
-        // Filtrar objetos Place (Zonas y Rampas) que no sean reservas (solo por ejemplo)
-        const spots = schema['@graph'].filter(
-            item => item['@type'] === 'Place' && item['@id'].includes('/zonas/')
-        );
+        // Extraer los spots del nuevo json exclusivo
+        const spots = schema['@graph'];
+        
+        // Guardamos los spots filtrados en la variable global
+        currentSpotsList = spots;
 
         let htmlCards = '';
-        spots.forEach(spot => {
+        spots.forEach((spot, index) => {
             const imgSrc = Array.isArray(spot.image) ? spot.image[0] : spot.image;
             htmlCards += `
               <div class="col-lg-4 col-md-6">
-                <!-- Tarjeta del spot como un componente en linea -->
-                <div class="card h-100 shadow-sm border-0 cursor-pointer spot-card">
+                <div class="card h-100 shadow-sm border-0 spot-card" onclick="openSpotModal(${index})" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                   <img src="${imgSrc}" class="card-img-top object-fit-cover" alt="${spot.name}" style="height:200px">
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-primary fw-bold">${spot.name}</h5>
-                    <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address.addressLocality}</p>
+                    <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
                     <p class="card-text text-truncate">${spot.description}</p>
                     <div class="mt-auto">
-                        ${spot.keywords.split(',').map(tag => `<span class="badge bg-light text-dark border me-1 my-1">${tag.trim()}</span>`).join('')}
+                        ${spot.keywords ? spot.keywords.split(',').map(tag => `<span class="badge bg-light text-dark border me-1 my-1">${tag.trim()}</span>`).join('') : ''}
                     </div>
                   </div>
                 </div>
@@ -89,6 +96,68 @@ async function loadSpotsData() {
         spotsContainer.innerHTML = '<div class="alert alert-danger">Error cargando información de Spots. Asegúrate de estar usando un servidor local y no abrir file:///</div>';
     }
 }
+
+window.openSpotModal = (index) => {
+    const spot = currentSpotsList[index];
+    if (!spot) return;
+
+    // 1. Textos principales
+    document.getElementById('spotModalLabel').innerText = spot.name;
+    document.getElementById('spotModalLocality').innerHTML = `<i class="bi bi-geo-alt text-danger"></i> ${spot.address?.addressLocality || 'Ubicación no especificada'}`;
+    document.getElementById('spotModalDescription').innerText = spot.description || '';
+
+    // 2. Galería de imágenes
+    const galleryContainer = document.getElementById('spotModalGallery');
+    // Aseguramos que sea un array aunque solo venga una imagen
+    const images = Array.isArray(spot.image) ? spot.image : [spot.image];
+    
+    // Si hay más de una imagen creamos un grid, si no, una grande
+    let galleryHtml = '';
+    images.forEach(img => {
+        galleryHtml += `
+            <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
+                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Imagen de la zona" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+            </div>
+        `;
+    });
+    galleryContainer.innerHTML = galleryHtml;
+
+    // 3. Extracción de propiedades adicionales
+    const getPropValue = (propName) => {
+        const prop = spot.additionalProperty?.find(p => p.name === propName);
+        return prop ? prop.value : '<span class="text-muted fst-italic">Información no disponible</span>';
+    };
+
+    document.getElementById('spotModalAccess').innerHTML = getPropValue('Acceso');
+    document.getElementById('spotModalSeabed').innerHTML = getPropValue('Fondo Marino');
+    document.getElementById('spotModalTechniques').innerHTML = getPropValue('Técnicas Recomendadas');
+
+    // Procesar las especies para mostrarlas como badges
+    const speciesRaw = getPropValue('Especies Frecuentes');
+    if (speciesRaw.includes('Información no')) {
+        document.getElementById('spotModalSpecies').innerHTML = speciesRaw;
+    } else {
+        const badges = speciesRaw.split(',').map(s => `<span class="badge bg-success me-1 mb-1 fs-6">${s.trim()}</span>`).join('');
+        document.getElementById('spotModalSpecies').innerHTML = badges;
+    }
+
+    // 4. Mostrar el Modal
+    const modalEl = document.getElementById('spotModal');
+    let modal = bootstrap.Modal.getInstance(modalEl);
+    if (!modal) {
+        modal = new bootstrap.Modal(modalEl);
+    }
+    modal.show();
+};
+
+
+// ==========================================
+// SECCIÓN DE ESPECIES (ICTIOLOGÍA)
+// ==========================================
+
+// Variables globales para la gestion dinámica del swiper y modal de especies
+let speciesSwiperInstance = null;
+let currentSpeciesList = [];
 
 async function loadSpeciesData() {
     const speciesContainer = document.getElementById('species-container');
@@ -150,10 +219,6 @@ async function loadSpeciesData() {
         speciesContainer.innerHTML = '<div class="alert alert-danger w-100">Error cargando información de Especies.</div>';
     }
 }
-
-// Variables globales para la gestion dinámica del swiper y modal
-let speciesSwiperInstance = null;
-let currentSpeciesList = [];
 
 function renderSpeciesSwiper(speciesArray) {
     const container = document.getElementById('species-container');

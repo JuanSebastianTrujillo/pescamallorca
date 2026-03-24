@@ -1,0 +1,134 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@id": "https://pescamallorca.online/zonas/cala-figuera-formentor",
+        "@type": "Place",
+        "name": "Cala Figuera",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pollença",
+          "addressRegion": "Illes Balears"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 39.9536,
+          "longitude": 3.1714
+        },
+        "image": [
+          "https://pescamallorca.online/assets/spots/cala-figuera-1.webp",
+          "https://pescamallorca.online/assets/spots/cala-figuera-2.webp"
+        ],
+        "keywords": "Zona de pesca, Acceso difícil, Fondo rocoso, Pesca profunda, Acantilado",
+        "description": "Impresionante caleta virgen rodeada de acantilados en el extremo norte de la isla, ideal para buscar especies de roca de gran tamaño.",
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Acceso",
+            "value": "Llegar requiere descender a pie por un sendero de cabras durante 20 minutos desde la carretera de Formentor, con un aparcamiento muy limitado y siendo obligatorio el uso de calzado técnico."
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Fondo Marino",
+            "value": "Destaca por su roca escarpada con caídas abruptas que superan los 20 metros a poca distancia de la orilla."
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Especies Frecuentes",
+            "value": "Mero, Dentón, Escórpora"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Técnicas Recomendadas",
+            "value": "Rockfishing pesado, Shore Jigging, Pesca a fondo con cebo vivo"
+          }
+        ]
+      },
+      {
+        "@id": "https://pescamallorca.online/zonas/playa-de-muro-es-comu",
+        "@type": "Place",
+        "name": "Playa de Muro",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Muro",
+          "addressRegion": "Illes Balears"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 39.7891,
+          "longitude": 3.1235
+        },
+        "image": [
+          "https://pescamallorca.online/assets/spots/playa-muro-1.webp",
+          "https://pescamallorca.online/assets/spots/playa-muro-2.webp"
+        ],
+        "keywords": "Zona de pesca, Acceso fácil, Fondo arenoso, Pesca nocturna, Surfcasting",
+        "description": "Extensa playa de arena blanca y aguas someras en la Bahía de Alcúdia, perfecta para la pesca nocturna de espáridos.",
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Acceso",
+            "value": "Es muy fácil llegar a pie desde los aparcamientos cercanos a la zona natural protegida, con un terreno llano ideal para transportar equipo pesado y carros de pesca."
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Fondo Marino",
+            "value": "Predomina la arena fina y clara con una batimetría muy suave, por lo que hay que lanzar lejos para ganar profundidad, encontrando pequeñas manchas de Posidonia a más de 100 metros."
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Especies Frecuentes",
+            "value": "Dorada, Herrera, Mabro, Raor"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Técnicas Recomendadas",
+            "value": "Surfcasting clásico (preferiblemente de noche o en meses de invierno para evitar la afluencia de bañistas)"
+          }
+        ]
+      },
+      {
+        "@id": "https://pescamallorca.online/zonas/cap-de-ses-salines",
+        "@type": "Place",
+        "name": "Cap de ses Salines",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santanyí",
+          "addressRegion": "Illes Balears"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 39.2646,
+          "longitude": 3.0545
+        },
+        "image": [
+          "https://pescamallorca.online/assets/spots/salines-1.webp",
+          "https://pescamallorca.online/assets/spots/salines-2.webp"
+        ],
+        "keywords": "Zona de pesca, Acceso medio, Corrientes fuertes, Fondo mixto, Espuma",
+        "description": "El punto más meridional de Mallorca, famoso por sus fuertes corrientes que atraen a numerosos depredadores costeros.",
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Acceso",
+            "value": "Se recomienda llegar muy pronto para aparcar junto al faro y caminar con precaución por la afilada costa rocosa buscando el mejor puesto."
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Fondo Marino",
+            "value": "Presenta una plataforma rocosa superficial que da paso a un fondo mixto de grandes bloques de piedra y extensas praderas de Posidonia."
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Especies Frecuentes",
+            "value": "Sargo, Dorada, Lubina, Espetón"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Técnicas Recomendadas",
+            "value": "Spinning ligero/medio, Pesca a boya"
+          }
+        ]
+      }
+    ]
+  }
