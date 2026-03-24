@@ -19,12 +19,12 @@ const renderApp = () => {
         <main class="main" id="main-content">
             ${HeroSection()}
             ${SpotsSection()}
-            ${MapSection()}
             ${SpeciesSection()}
-            ${RulesSection()}
+            ${MapSection()}
             ${WeatherSection()}
             ${ShopsSection()}
             ${RampsSection()}
+            ${RulesSection()}
         </main>
         ${Footer()}
     `;

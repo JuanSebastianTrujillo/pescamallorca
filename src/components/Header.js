@@ -25,12 +25,12 @@ export const Header = () => {
               <ul>
                 <li><a href="#hero" class="active">Inicio</a></li>
                 <li><a href="#zonas">Spots</a></li>
-                <li><a href="#mapa">Mapa</a></li>
                 <li><a href="#especies">Especies</a></li>
-                <li><a href="#normativa">Normativa</a></li>
+                <li><a href="#mapa">Mapa</a></li>
                 <li><a href="#meteo">Météo</a></li>
                 <li><a href="#tiendas">Tiendas</a></li>
                 <li><a href="#rampas">Rampas</a></li>
+                <li><a href="#normativa">Normativa</a></li>
               </ul>
               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
