@@ -23,15 +23,14 @@ export const Header = () => {
             
             <nav id="navmenu" class="navmenu">
               <ul>
-                <li><a href="/" data-link class="active">Inicio</a></li>
-                <li><a href="/zonas" data-link>Spots</a></li>
-                <li><a href="/mapa" data-link>Mapa</a></li>
-                <li><a href="/especies" data-link>Especies</a></li>
-                <li><a href="/normativa" data-link>Normativa</a></li>
-                <li><a href="/meteo" data-link>Météo</a></li>
-                <li><a href="/tiendas" data-link>Tiendas</a></li>
-                <li><a href="/rampas" data-link>Rampas</a></li>
-                <li><a href="/quiz" data-link>Quiz</a></li>
+                <li><a href="#hero" class="active">Inicio</a></li>
+                <li><a href="#zonas">Spots</a></li>
+                <li><a href="#mapa">Mapa</a></li>
+                <li><a href="#especies">Especies</a></li>
+                <li><a href="#normativa">Normativa</a></li>
+                <li><a href="#meteo">Météo</a></li>
+                <li><a href="#tiendas">Tiendas</a></li>
+                <li><a href="#rampas">Rampas</a></li>
               </ul>
               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

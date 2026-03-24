@@ -1,34 +1,47 @@
 import { Header } from "./components/Header.js";
 import { Footer } from "./components/Footer.js";
-import { router, pushToRoute } from "./router.js";
+import { HeroSection } from "./components/HeroSection.js";
+import { SpotsSection } from "./components/SpotsSection.js";
+import { MapSection } from "./components/MapSection.js";
+import { SpeciesSection } from "./components/SpeciesSection.js";
+import { RulesSection } from "./components/RulesSection.js";
+import { WeatherSection } from "./components/WeatherSection.js";
+import { ShopsSection } from "./components/ShopsSection.js";
+import { RampsSection } from "./components/RampsSection.js";
 import { initTheme } from "../assets/js/main.js";
 
 const app = document.getElementById('app');
 
-// Inicializar la estructura general
+// Inicializar la estructura general renderizando todas las secciones de golpe
 const renderApp = () => {
     app.innerHTML = `
         ${Header()}
         <main class="main" id="main-content">
-            <!-- Router Outlet: las vistas se insertarán aquí dinámicamente -->
+            ${HeroSection()}
+            ${SpotsSection()}
+            ${MapSection()}
+            ${SpeciesSection()}
+            ${RulesSection()}
+            ${WeatherSection()}
+            ${ShopsSection()}
+            ${RampsSection()}
         </main>
         ${Footer()}
     `;
 };
 
-// Añadir Listeners al DOM para navegación estilo SPA
-window.addEventListener("popstate", router);
-
+// Se ejecuta cuando el HTML index ha cargado la base
 document.addEventListener("DOMContentLoaded", () => {
     renderApp();
-    initTheme(); // Inicializar JS de Bootstrap y theme
-    // Interceptar navegaciones a /zonas, /etc en vez de petición al servidor
-    document.body.addEventListener("click", pushToRoute);
-    router();
+    
+    // Al ser todo una misma página, inicializamos los datos de los spots de inmediato
+    loadSpotsData();
+
+    // Inicializar JS de Bootstrap y theme (scroll spy, headers pegadizos...)
+    initTheme(); 
 });
 
-// Evento especial para cargar datos cuando estamos en Zonas
-document.addEventListener('spotsViewLoaded', async () => {
+async function loadSpotsData() {
     const spotsContainer = document.getElementById('spots-container');
     if (!spotsContainer) return;
 
@@ -64,8 +77,11 @@ document.addEventListener('spotsViewLoaded', async () => {
         
         spotsContainer.innerHTML = htmlCards;
 
+        // Reinicializar animaciones tras inyectar DOM nuevo
+        if(typeof AOS !== 'undefined') AOS.init();
+
     } catch (e) {
         console.error("Error al cargar JSON de la zona:", e);
-        spotsContainer.innerHTML = '<div class="alert alert-danger">Error cargando información de Spots.</div>';
+        spotsContainer.innerHTML = '<div class="alert alert-danger">Error cargando información de Spots. Asegúrate de estar usando un servidor local y no abrir file:///</div>';
     }
-});
+}
