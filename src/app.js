@@ -5,9 +5,9 @@ import { SpotsSection } from "./components/SpotsSection.js";
 import { MapSection } from "./components/MapSection.js";
 import { SpeciesSection } from "./components/SpeciesSection.js";
 import { RulesSection } from "./components/RulesSection.js";
-import { WeatherSection } from "./components/WeatherSection.js";
-import { ShopsSection } from "./components/ShopsSection.js";
-import { RampsSection } from "./components/RampsSection.js";
+import { WeatherSection, initWeather } from "./components/WeatherSection.js";
+import { ShopsSection, initShops } from "./components/ShopsSection.js";
+import { RampsSection, initRamps } from "./components/RampsSection.js";
 import { initTheme } from "../assets/js/main.js";
 
 const app = document.getElementById('app');
@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Al ser todo una misma página, inicializamos los datos de inmediato
     loadSpotsData();
     loadSpeciesData();
+    initWeather();
+    initShops();
+    initRamps();
 
     // Inicializar JS de Bootstrap y theme (scroll spy, headers pegadizos...)
     initTheme();
