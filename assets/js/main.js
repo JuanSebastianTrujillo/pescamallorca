@@ -198,3 +198,8 @@ export function initTheme() {
   navmenuScrollspy();
 
 }
+
+window.changeLang = function(lang) {
+    localStorage.setItem('lang', lang);
+    location.reload();
+};
