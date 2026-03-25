@@ -3,26 +3,26 @@ export const Header = () => {
     <header id="header" class="header sticky-top">
       
       <div class="topbar d-none d-md-flex align-items-center accent-background">
-        <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="container d-flex justify-content-center justify-content-md-between align-items-center">
           
           <div class="contact-info d-flex align-items-center">
-            <a href="mailto:info@pescamallorca.online" class="d-flex align-items-center text-decoration-none" style="color: inherit;">
-              <i class="bi bi-envelope me-2"></i>info@pescamallorca.online
+            <a href="mailto:info@pescamallorca.online" class="d-flex align-items-center text-white text-decoration-none text-nowrap">
+              <i class="bi bi-envelope me-1 me-lg-2"></i><span style="font-size: 0.9rem;">info@pescamallorca.online</span>
             </a>
-            <a href="tel:+34971000000" class="d-flex align-items-center ms-4 text-decoration-none" style="color: inherit;">
-              <i class="bi bi-phone me-2"></i>+34 971 00 00 00
+            <a href="tel:+34971000000" class="d-flex align-items-center ms-2 ms-lg-4 text-white text-decoration-none text-nowrap">
+              <i class="bi bi-phone me-1"></i><span style="font-size: 0.9rem;">+34 971 00 00 00</span>
             </a>
             
-            <div class="social-links d-flex align-items-center ms-4 gap-2">
-              <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <div class="social-links d-flex align-items-center ms-2 ms-lg-4 gap-2">
+              <a href="#" class="twitter text-white"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="facebook text-white"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram text-white"><i class="bi bi-instagram"></i></a>
             </div>
           </div>
 
-          <div class="auth-links d-flex align-items-center gap-3">
+          <div class="auth-links d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0 ms-2">
             <div class="dropdown">
-              <a class="text-light text-decoration-none dropdown-toggle" href="#" role="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.9rem;">
+              <a class="text-white text-decoration-none dropdown-toggle d-flex align-items-center text-nowrap" href="#" role="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.9rem;">
                 <i class="bi bi-globe me-1"></i> ES
               </a>
               <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="languageDropdownDesktop" style="min-width: 120px;">
@@ -33,7 +33,7 @@ export const Header = () => {
               </ul>
             </div>
 
-            <a href="#login" class="btn btn-sm btn-light rounded-pill d-flex align-items-center px-3" style="font-weight: 500;">
+            <a href="#login" class="btn btn-sm btn-light rounded-pill d-flex align-items-center px-3 text-nowrap" style="font-weight: 500;">
               <i class="bi bi-person-circle fs-6 me-2"></i> Iniciar sesión
             </a>
           </div>
@@ -76,11 +76,11 @@ export const Header = () => {
                 </a>
                 
                 <div class="d-flex justify-content-center">
-                  <div class="dropdown">
-                    <button class="btn btn-outline-secondary rounded-pill dropdown-toggle px-4" type="button" id="languageDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="dropdown w-100">
+                    <button class="btn btn-outline-secondary rounded-pill dropdown-toggle w-100" type="button" id="languageDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 10px;">
                       <i class="bi bi-globe me-2"></i> Español
                     </button>
-                    <ul class="dropdown-menu shadow text-center border-0" aria-labelledby="languageDropdownMobile">
+                    <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="languageDropdownMobile">
                       <li><a class="dropdown-item active" href="#">Español</a></li>
                       <li><a class="dropdown-item" href="#">Català</a></li>
                       <li><a class="dropdown-item" href="#">English</a></li>
