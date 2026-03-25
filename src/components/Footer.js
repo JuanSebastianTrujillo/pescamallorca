@@ -5,7 +5,7 @@ export const Footer = () => {
           <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
               <a href="/" data-link class="logo d-flex align-items-center">
-                <span class="sitename">PescaMallorca</span>
+                <span class="sitename">Pesca Mallorca</span>
               </a>
               <p>Tu plataforma líder para descubrir los mejores spots de pesca, conocer la normativa actualizada y aprender más sobre el entorno marino en Mallorca.</p>
               <div class="social-links d-flex mt-4">
@@ -29,7 +29,7 @@ export const Footer = () => {
         </div>
         
         <div class="container copyright text-center mt-4">
-          <p>© <span>Copyright</span> <strong class="px-1 sitename">PescaMallorca</strong> <span>Todos los Derechos Reservados</span></p>
+          <p>© <span>Copyright</span> <strong class="px-1 sitename">Pesca Mallorca</strong> <span>Todos los Derechos Reservados</span></p>
           <div class="credits">
             Diseñado en Mallorca
           </div>

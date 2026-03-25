@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Al ser todo una misma página, inicializamos los datos de inmediato
     loadSpotsData();
     loadSpeciesData();
+    loadMonthSpecies();
     initWeather();
     initShops();
     initRamps();
@@ -48,6 +49,107 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializar JS de Bootstrap y theme (scroll spy, headers pegadizos...)
     initTheme();
 });
+
+window.submitContactForm = function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('contact-name').value.trim();
+    const lastname = document.getElementById('contact-lastname').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+
+    if (!name || !lastname || !email || !subject || !message) {
+        alert('Por favor, rellena todos los campos antes de enviar.');
+        return;
+    }
+
+    const responseEl = document.getElementById('contact-response');
+    responseEl.innerText = '¡Mensaje enviado correctamente! Gracias por contactar con nosotros.';
+    responseEl.style.display = 'inline-block';
+
+    document.getElementById('contact-form').reset();
+
+    setTimeout(() => {
+        responseEl.style.display = 'none';
+    }, 5000);
+};
+
+async function loadMonthSpecies() {
+    const currentMonth = new Date().getMonth() + 1; // 1-12
+    
+    try {
+        const response = await fetch('/assets/data/especies.json');
+        const schema = await response.json();
+        const allSpecies = schema['@graph'] || [];
+        
+        // Filtrar especies disponibles en el mes actual
+        const monthSpecies = allSpecies.filter(species => {
+            const monthStart = species.additionalProperty?.find(p => p.name === 'Mes inicio temporada');
+            const monthEnd = species.additionalProperty?.find(p => p.name === 'Mes fin temporada');
+            
+            if (!monthStart || !monthEnd) return false;
+            
+            const startMonth = parseInt(monthStart.value);
+            const endMonth = parseInt(monthEnd.value);
+            
+            // Si el rango cruza el año (ej: noviembre-mayo)
+            if (endMonth < startMonth) {
+                return currentMonth >= startMonth || currentMonth <= endMonth;
+            } else {
+                // Rango normal dentro del mismo año
+                return currentMonth >= startMonth && currentMonth <= endMonth;
+            }
+        });
+                
+        if (monthSpecies.length === 0) {
+            return; // Sin peces este mes
+        }
+        
+        const monthSpeciesContainer = document.getElementById('month-species-container');
+        const indicatorsContainer = document.getElementById('hero-carousel-indicators');
+        const carouselInner = document.getElementById('hero-carousel-inner');
+        
+        if (!monthSpeciesContainer || !indicatorsContainer || !carouselInner) {
+            return;
+        }
+        
+        // Crear una diapositiva por cada pez del mes
+        monthSpecies.forEach((sp, index) => {                const slide = document.createElement('div');
+            slide.className = 'carousel-item';
+            slide.setAttribute('data-species-name', sp.name);
+            slide.innerHTML = `
+                <img src="${sp.image}" alt="${sp.name}" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
+                <div class="carousel-container">
+                    <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Peces del Mes</h2>
+                    <h3 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.5rem, 4vw, 2.5rem); margin-top: clamp(3rem, 15vw, 10rem);">${sp.name}</h3>
+                </div>
+            `;
+            
+            monthSpeciesContainer.appendChild(slide);
+        });
+        
+        // Regenerar indicadores para todas las diapositivas
+        const totalSlides = carouselInner.querySelectorAll('.carousel-item').length;
+        indicatorsContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalSlides; i++) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.setAttribute('data-bs-target', '#hero-carousel');
+            btn.setAttribute('data-bs-slide-to', i.toString());
+            if (i === 0) {
+                btn.classList.add('active');
+                btn.setAttribute('aria-current', 'true');
+            }
+            btn.setAttribute('aria-label', `Slide ${i + 1}`);
+            indicatorsContainer.appendChild(btn);
+        }
+        
+    } catch (e) {
+        console.error("Error al cargar peces del mes:", e);
+    }
+}
 
 // ==========================================
 // SECCIÓN DE ZONAS DE PESCA

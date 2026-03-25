@@ -5,7 +5,7 @@ export const HomeView = () => {
           <div class="carousel-item active">
             <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="">
             <div class="carousel-container">
-              <h2>Bienvenido a PescaMallorca</h2>
+              <h2>Bienvenido a Pesca Mallorca</h2>
               <p>Tu guía completa para conocer los mejores rincones de la costa Balear, su normativa y las especies reinas de nuestras aguas.</p>
               <a href="/zonas" data-link class="btn-get-started">Descubrir Spots</a>
             </div>

@@ -28,13 +28,12 @@ export const AuthorsSection = () => {
               <div class="card h-100 w-100 shadow-sm border-0 author-card text-center p-4 border-top border-primary border-4" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                 <div class="card-body d-flex flex-column align-items-center">
                   <div class="mb-4">
-                    <img src="assets/img/team/autor1.jpg" class="rounded-circle shadow-sm" alt="Desarrollador" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;" onerror="this.src='https://ui-avatars.com/api/?name=Jane+Doe&background=0d6efd&color=fff&size=120'">
+                    <img src="assets/img/team/team-1.webp" class="rounded-circle shadow-sm" alt="Aaron Satyar Daghigh-Nia Tudor" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;" onerror="this.src='https://ui-avatars.com/api/?name=Aaron+Satyar+Daghigh-Nia+Tudor&background=0d6efd&color=fff&size=120'">
                   </div>
-                  <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Jane Doe</h4>
+                  <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Aaron Satyar Daghigh-Nia Tudor</h4>
                   <span class="text-muted d-block mb-3 fw-semibold small"><i class="bi bi-code-slash me-1"></i> Frontend</span>
                   <div class="d-flex justify-content-center gap-3 mt-auto">
-                    <a href="https://linkedin.com" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-primary fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/AaronTudor-tester" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
                   </div>
                 </div>
               </div>
@@ -45,13 +44,12 @@ export const AuthorsSection = () => {
               <div class="card h-100 w-100 shadow-sm border-0 author-card text-center p-4 border-top border-success border-4" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                 <div class="card-body d-flex flex-column align-items-center">
                   <div class="mb-4">
-                    <img src="assets/img/team/autor2.jpg" class="rounded-circle shadow-sm" alt="Ingeniero de Datos" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;" onerror="this.src='https://ui-avatars.com/api/?name=John+Smith&background=198754&color=fff&size=120'">
+                    <img src="assets/img/team/team-2.webp" class="rounded-circle shadow-sm" alt="Jaume Juan Huguet" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;" onerror="this.src='https://ui-avatars.com/api/?name=Jaume+Juan+Huguet&background=0d6efd&color=fff&size=120'">
                   </div>
-                  <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">John Smith</h4>
+                  <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Jaume Juan Huguet</h4>
                   <span class="text-muted d-block mb-3 fw-semibold small"><i class="bi bi-database me-1"></i> Data Engineer</span>
                   <div class="d-flex justify-content-center gap-3 mt-auto">
-                    <a href="https://linkedin.com" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-primary fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/TheStargate" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
                   </div>
                 </div>
               </div>
@@ -62,13 +60,12 @@ export const AuthorsSection = () => {
               <div class="card h-100 w-100 shadow-sm border-0 author-card text-center p-4 border-top border-warning border-4" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                 <div class="card-body d-flex flex-column align-items-center">
                   <div class="mb-4">
-                    <img src="assets/img/team/autor3.jpg" class="rounded-circle shadow-sm" alt="Especialista UX/UI" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;" onerror="this.src='https://ui-avatars.com/api/?name=Alice+Brown&background=ffc107&color=000&size=120'">
+                    <img src="assets/img/team/team-3.webp" class="rounded-circle shadow-sm" alt="Juan Sebastián Trujillo Gil" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;" onerror="this.src='https://ui-avatars.com/api/?name=Juan+Sebasti%C3%A1n+Trujillo+Gil&background=0d6efd&color=fff&size=120'">
                   </div>
-                  <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Alice Brown</h4>
+                  <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Juan Sebastián Trujillo Gil</h4>
                   <span class="text-muted d-block mb-3 fw-semibold small"><i class="bi bi-palette me-1"></i> Especialista UI/UX</span>
                   <div class="d-flex justify-content-center gap-3 mt-auto">
-                    <a href="https://linkedin.com" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-primary fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/JuanSebastianTrujillo" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
                   </div>
                 </div>
               </div>
@@ -79,13 +76,12 @@ export const AuthorsSection = () => {
               <div class="card h-100 w-100 shadow-sm border-0 author-card text-center p-4 border-top border-danger border-4" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                 <div class="card-body d-flex flex-column align-items-center">
                   <div class="mb-4">
-                    <img src="assets/img/team/autor4.jpg" class="rounded-circle shadow-sm" alt="Backend" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;" onerror="this.src='https://ui-avatars.com/api/?name=Bob+Johnson&background=dc3545&color=fff&size=120'">
+                    <img src="assets/img/team/team-4.webp" class="rounded-circle shadow-sm" alt="Miquel Sansó Febrer" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;" onerror="this.src='https://ui-avatars.com/api/?name=Miquel+Sans%C3%B3+Febrer&background=0d6efd&color=fff&size=120'">
                   </div>
-                  <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Bob Johnson</h4>
+                  <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Miquel Sansó Febrer</h4>
                   <span class="text-muted d-block mb-3 fw-semibold small"><i class="bi bi-server me-1"></i> Desarrollador Backend</span>
                   <div class="d-flex justify-content-center gap-3 mt-auto">
-                    <a href="https://linkedin.com" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-primary fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/miquelsf" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
                   </div>
                 </div>
               </div>

@@ -26,7 +26,7 @@ export const Header = () => {
       <div class="branding d-flex align-items-center">
         <div class="container position-relative d-flex align-items-center justify-content-between">
           <a href="/" data-link class="logo d-flex align-items-center">
-            <h1 class="sitename">PescaMallorca</h1>
+            <h1 class="sitename">Pesca Mallorca</h1>
           </a>
           
           <nav id="navmenu" class="navmenu">

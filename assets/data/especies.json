@@ -3,12 +3,12 @@
     "@graph": [
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/dorada",
+            "@id": "https://pescamallorca.online/peces/dorada",
             "name": "Dorada",
             "alternateName": "Sparus aurata",
-            "image": "https://tudominio.com/assets/img/peces/dorada-min.webp",
+            "image": "/assets/img/peces/dorada-min.webp",
             "description": "Pez de la familia de los espáridos, muy común en las Islas Baleares. Destaca por la franja dorada entre sus ojos y su potente mandíbula adaptada para triturar conchas.",
-            "url": "https://tudominio.com/peces/dorada",
+            "url": "https://pescamallorca.online/peces/dorada",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -90,12 +90,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/llampuga",
+            "@id": "https://pescamallorca.online/peces/llampuga",
             "name": "Llampuga",
             "alternateName": "Coryphaena hippurus",
-            "image": "https://tudominio.com/assets/img/peces/llampuga-min.webp",
+            "image": "/assets/img/peces/llampuga-min.webp",
             "description": "Pez pelágico muy rápido y voraz, reconocible por su colorido verde azulado y amarillo brillante que pierde al morir.",
-            "url": "https://tudominio.com/peces/llampuga",
+            "url": "https://pescamallorca.online/peces/llampuga",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -177,12 +177,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/mero",
+            "@id": "https://pescamallorca.online/peces/mero",
             "name": "Mero",
             "alternateName": "Epinephelus marginatus",
-            "image": "https://tudominio.com/assets/img/peces/mero-min.webp",
+            "image": "/assets/img/peces/mero-min.webp",
             "description": "Serránido de gran tamaño, emblemático de los fondos rocosos baleares. Es una especie territorial y hermafrodita proterogínica con un crecimiento muy lento.",
-            "url": "https://tudominio.com/peces/mero",
+            "url": "https://pescamallorca.online/peces/mero",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -263,12 +263,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/cap-roig",
+            "@id": "https://pescamallorca.online/peces/cap-roig",
             "name": "Cap-roig (Escórpora)",
             "alternateName": "Scorpaena scrofa",
-            "image": "https://tudominio.com/assets/img/peces/cap-roig-min.webp",
+            "image": "/assets/img/peces/cap-roig-min.webp",
             "description": "Pez de color rojizo con espinas venenosas en las aletas dorsales. Se camufla perfectamente con el fondo marino esperando a sus presas.",
-            "url": "https://tudominio.com/peces/cap-roig",
+            "url": "https://pescamallorca.online/peces/cap-roig",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -344,12 +344,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/sargo",
+            "@id": "https://pescamallorca.online/peces/sargo",
             "name": "Sargo (Sarg)",
             "alternateName": "Diplodus sargus",
-            "image": "https://tudominio.com/assets/img/peces/sargo-min.webp",
+            "image": "/assets/img/peces/sargo-min.webp",
             "description": "Pez plateado con bandas verticales oscuras. Muy buscado por los pescadores de costa, especialmente en días de mala mar o 'mar de fondo'.",
-            "url": "https://tudominio.com/peces/sargo",
+            "url": "https://pescamallorca.online/peces/sargo",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -425,12 +425,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/serrano",
+            "@id": "https://pescamallorca.online/peces/serrano",
             "name": "Serrano (Pintarroja)",
             "alternateName": "Serranus scriba",
-            "image": "https://tudominio.com/assets/img/peces/serrano-min.webp",
+            "image": "/assets/img/peces/serrano-min.webp",
             "description": "Pequeño serránido de vivos colores azulados y rayas verticales. Habita fondos rocosos someros y es muy combativo para su tamaño.",
-            "url": "https://tudominio.com/peces/serrano",
+            "url": "https://pescamallorca.online/peces/serrano",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -511,12 +511,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/denton",
+            "@id": "https://pescamallorca.online/peces/denton",
             "name": "Dentón",
             "alternateName": "Dentex dentex",
-            "image": "https://tudominio.com/assets/img/peces/denton-min.webp",
+            "image": "/assets/img/peces/denton-min.webp",
             "description": "Espárido de gran tamaño, muy apreciado por su calidad gastronómica y su pelea. Habita fondos rocosos y praderas de posidonia.",
-            "url": "https://tudominio.com/peces/denton",
+            "url": "https://pescamallorca.online/peces/denton",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -597,12 +597,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/oblada",
+            "@id": "https://pescamallorca.online/peces/oblada",
             "name": "Oblada",
             "alternateName": "Oblada melanura",
-            "image": "https://tudominio.com/assets/img/peces/oblada-min.webp",
+            "image": "/assets/img/peces/oblada-min.webp",
             "description": "Pez plateado con una característica mancha negra en el pedúnculo caudal. Muy común en aguas someras y formando grandes bancos.",
-            "url": "https://tudominio.com/peces/oblada",
+            "url": "https://pescamallorca.online/peces/oblada",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -683,12 +683,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/salpa",
+            "@id": "https://pescamallorca.online/peces/salpa",
             "name": "Salpa",
             "alternateName": "Sarpa salpa",
-            "image": "https://tudominio.com/assets/img/peces/salpa-min.webp",
+            "image": "/assets/img/peces/salpa-min.webp",
             "description": "Pez herbívoro con rayas amarillas horizontales. Se alimenta de algas y forma grandes cardúmenes en praderas de posidonia.",
-            "url": "https://tudominio.com/peces/salpa",
+            "url": "https://pescamallorca.online/peces/salpa",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -769,12 +769,12 @@
         },
         {
             "@type": "Taxon",
-            "@id": "https://tudominio.com/peces/bonito",
+            "@id": "https://pescamallorca.online/peces/bonito",
             "name": "Bonito",
             "alternateName": "Sarda sarda",
-            "image": "https://tudominio.com/assets/img/peces/bonito-min.webp",
+            "image": "/assets/img/peces/bonito-min.webp",
             "description": "Pelágico migrador de la familia de los escómbridos. Muy apreciado por su velocidad y su carne, típico de las costas baleares en verano.",
-            "url": "https://tudominio.com/peces/bonito",
+            "url": "https://pescamallorca.online/peces/bonito",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
