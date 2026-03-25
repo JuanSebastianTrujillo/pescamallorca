@@ -44,10 +44,10 @@ const fetchWeatherData = (zoneId) => {
         setTimeout(() => {
             // Mock data based on zone
             const mocks = {
-                norte: { wind: "20 nudos (N)", statusIcon: "bi-cloud-rain", statusDesc: "Lluvia débil", rainProb: "75%" },
-                sur: { wind: "15 nudos (NE)", statusIcon: "bi-sun", statusDesc: "Despejado", rainProb: "10%" },
-                este: { wind: "12 nudos (E)", statusIcon: "bi-cloud-sun", statusDesc: "Parcialmente nublado", rainProb: "25%" },
-                oeste: { wind: "18 nudos (W)", statusIcon: "bi-clouds", statusDesc: "Nublado", rainProb: "40%" }
+                norte: { wind: "20 nudos (N)", statusIcon: "bi-cloud-rain", statusDesc: "Lluvia débil", seaState: "Fuerte Marejada", waves: "1.5m - 2.5m", rainProb: "75%" },
+                sur: { wind: "15 nudos (NE)", statusIcon: "bi-sun", statusDesc: "Despejado", seaState: "Marejadilla", waves: "0.2m - 0.5m", rainProb: "10%" },
+                este: { wind: "12 nudos (E)", statusIcon: "bi-cloud-sun", statusDesc: "Parc. Nublado", seaState: "Marejadilla", waves: "0.4m - 0.8m", rainProb: "25%" },
+                oeste: { wind: "18 nudos (W)", statusIcon: "bi-clouds", statusDesc: "Nublado", seaState: "Marejada", waves: "0.8m - 1.2m", rainProb: "40%" }
             };
             resolve(mocks[zoneId]);
         }, 800);
@@ -97,21 +97,39 @@ export const initWeather = () => {
 
         card.innerHTML = `
           <h4 class="mb-4">${zoneInfo.name} - <span class="text-primary">Previsión Actual</span></h4>
-          <div class="d-flex justify-content-center gap-4 gap-md-5 fs-5 flex-wrap">
-             <div class="text-center px-2">
-                 <i class="bi bi-wind fs-1 text-info d-block mb-1"></i>
-                 <strong class="d-block text-secondary small text-uppercase mb-1">Velocidad del Viento</strong>
-                 <span>${data.wind}</span>
+          
+          <div class="row row-cols-2 row-cols-md-4 g-3 mt-3 px-2">
+             <div class="col text-center">
+                 <div class="p-3 bg-white rounded shadow-sm h-100 border">
+                     <i class="bi bi-wind fs-2 text-info d-block mb-2"></i>
+                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">Viento</span>
+                     <span class="fs-6">${data.wind}</span>
+                 </div>
              </div>
-             <div class="text-center px-2">
-                 <i class="bi ${data.statusIcon} fs-1 text-primary d-block mb-1"></i>
-                 <strong class="d-block text-secondary small text-uppercase mb-1">Estado del Cielo</strong>
-                 <span>${data.statusDesc}</span>
+             
+             <div class="col text-center">
+                 <div class="p-3 bg-primary text-white rounded shadow-sm h-100">
+                     <i class="bi bi-water fs-2 d-block mb-2"></i>
+                     <span class="d-block text-white-50 small text-uppercase mb-1 fw-bold">Mar y Oleaje</span>
+                     <span class="fs-6 d-block">${data.seaState}</span>
+                     <small class="text-white-50">${data.waves}</small>
+                 </div>
              </div>
-             <div class="text-center px-2">
-                 <i class="bi bi-cloud-drizzle fs-1 text-secondary d-block mb-1"></i>
-                 <strong class="d-block text-secondary small text-uppercase mb-1">Probabilidad de Lluvia (3h)</strong>
-                 <span>${data.rainProb}</span>
+
+             <div class="col text-center">
+                 <div class="p-3 bg-white rounded shadow-sm h-100 border">
+                     <i class="bi ${data.statusIcon} fs-2 text-warning d-block mb-2"></i>
+                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">Cielo</span>
+                     <span class="fs-6">${data.statusDesc}</span>
+                 </div>
+             </div>
+
+             <div class="col text-center">
+                 <div class="p-3 bg-white rounded shadow-sm h-100 border">
+                     <i class="bi bi-cloud-drizzle fs-2 text-secondary d-block mb-2"></i>
+                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">Lluvias</span>
+                     <span class="fs-6">${data.rainProb}</span>
+                 </div>
              </div>
           </div>
         `;

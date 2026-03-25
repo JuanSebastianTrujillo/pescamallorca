@@ -11,7 +11,7 @@ import { RampsSection, initRamps } from "./components/RampsSection.js";
 import { AuthorsSection } from "./components/AuthorsSection.js";
 import { ContactSection } from "./components/ContactSection.js";
 import { QuizSection } from "./components/QuizSection.js";
-import { PokedexSection } from "./components/PokedexSection.js";
+import { PecedexSection } from "./components/PecedexSection.js";
 import { initTheme } from "../assets/js/main.js";
 
 const app = document.getElementById('app');
@@ -24,7 +24,7 @@ const renderApp = () => {
             ${HeroSection()}
             ${SpotsSection()}
             ${SpeciesSection()}
-            ${PokedexSection()}
+            ${PecedexSection()}
             ${MapSection()}
             ${QuizSection()}
             ${WeatherSection()}
@@ -52,6 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Inicializar JS de Bootstrap y theme (scroll spy, headers pegadizos...)
     initTheme();
+
+    // Listeners globales para apagar multimedia al cerrar modales
+    const fishModal = document.getElementById('speciesModal');
+    if (fishModal) {
+        fishModal.addEventListener('hidden.bs.modal', () => {
+            if (window.currentFishAudio) {
+                window.currentFishAudio.pause();
+                window.currentFishAudio = null;
+            }
+            const vidPlaceholder = document.getElementById('videoPlaceholder');
+            if (vidPlaceholder) {
+                const iframe = vidPlaceholder.querySelector('iframe');
+                if (iframe) iframe.src = iframe.src; // Recargar iframe corta el video
+                const videoTag = vidPlaceholder.querySelector('video');
+                if (videoTag) videoTag.pause();
+            }
+        });
+    }
 });
 
 window.submitContactForm = function (event) {
@@ -91,8 +109,8 @@ async function loadMonthSpecies() {
 
         // Filtrar especies disponibles en el mes actual
         const monthSpecies = allSpecies.filter(species => {
-            const monthStart = species.additionalProperty?.find(p => p.name === 'Mes inicio temporada');
-            const monthEnd = species.additionalProperty?.find(p => p.name === 'Mes fin temporada');
+            const monthStart = species.additionalProperty?.find(p => p.name === 'Inicio temporada');
+            const monthEnd = species.additionalProperty?.find(p => p.name === 'Fin temporada');
 
             if (!monthStart || !monthEnd) return false;
 
@@ -128,8 +146,13 @@ async function loadMonthSpecies() {
             slide.innerHTML = `
                 <img src="${sp.image}" alt="${sp.name}" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
                 <div class="carousel-container">
-                    <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Peces del mes - ${formattedMonth}</h2>
+                    <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Peces del Mes - ${formattedMonth}</h2>
                     <h3 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.5rem, 4vw, 2.5rem); margin-top: clamp(3rem, 15vw, 10rem);">${sp.name}</h3>
+                    <div style="margin-top: 1.5rem;">
+                        <button class="btn btn-primary rounded-pill px-4 py-2 shadow-sm border-0 text-white" onclick="openSpeciesModalByName('${sp.name}')" style="pointer-events: auto; position: relative; z-index: 50; font-weight: 600;">
+                            <i class="bi bi-info-circle me-1"></i> Ver Ficha Técnica
+                        </button>
+                    </div>
                 </div>
             `;
 
@@ -245,14 +268,23 @@ window.openSpotModal = (index) => {
     document.getElementById('spotModalSeabed').innerHTML = getPropValue('Fondo Marino');
     document.getElementById('spotModalTechniques').innerHTML = getPropValue('Técnicas Recomendadas');
 
-    // Procesar las especies para mostrarlas como badges
+    // Procesar las especies para mostrarlas como badges interactivos
     const speciesRaw = getPropValue('Especies Frecuentes');
     if (speciesRaw.includes('Información no')) {
         document.getElementById('spotModalSpecies').innerHTML = speciesRaw;
     } else {
-        const badges = speciesRaw.split(',').map(s => `<span class="badge bg-success me-1 mb-1 fs-6">${s.trim()}</span>`).join('');
+        const badges = speciesRaw.split(',').map(s => {
+            const fishName = s.trim();
+            return `<span class="badge bg-success me-1 mb-1 fs-6 px-3 py-2 shadow-sm" style="cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.classList.replace('bg-success', 'bg-primary')" onmouseout="this.style.transform='scale(1)'; this.classList.replace('bg-primary', 'bg-success')" onclick="bootstrap.Modal.getInstance(document.getElementById('spotModal'))?.hide(); setTimeout(() => openSpeciesModalByName('${fishName}'), 400);"><i class="bi bi-link-45deg me-1"></i>${fishName}</span>`;
+        }).join('');
         document.getElementById('spotModalSpecies').innerHTML = badges;
     }
+
+    // Comentarios y reportes comunitarios de la zona
+    window.currentSpotIndex = index;
+    setTimeout(() => {
+        window.renderSpotComments(spot.name);
+    }, 100);
 
     // 4. Mostrar el Modal
     const modalEl = document.getElementById('spotModal');
@@ -261,6 +293,44 @@ window.openSpotModal = (index) => {
         modal = new bootstrap.Modal(modalEl);
     }
     modal.show();
+};
+
+window.renderSpotComments = (spotName) => {
+    const container = document.getElementById('spotModalCommentsContainer');
+    if (!container) return;
+    const safeKey = `pm_spot_comments_${spotName.replace(/\s+/g, '_')}`;
+    const comments = JSON.parse(localStorage.getItem(safeKey)) || [];
+    if (comments.length === 0) {
+        container.innerHTML = '<p class="text-muted small fst-italic"><i class="bi bi-info-circle me-1"></i>No hay reportes recientes. ¡Sé el primero en compartir qué tipo de capturas entraron hoy!</p>';
+        return;
+    }
+    let html = '';
+    comments.forEach(c => {
+        html += `
+        <div class="mb-3 p-3 bg-white border border-light rounded shadow-sm border-start border-primary border-4">
+            <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-person-fill text-secondary fs-5 me-2"></i>
+                <strong class="text-dark">Pescador Local</strong>
+                <span class="ms-auto small text-muted"><i class="bi bi-clock me-1"></i>${c.date}</span>
+            </div>
+            <p class="mb-0 text-secondary" style="white-space: pre-wrap; font-size: 0.95rem;">${c.text}</p>
+        </div>`;
+    });
+    container.innerHTML = html;
+};
+
+window.submitSpotComment = () => {
+    if (window.currentSpotIndex === undefined) return;
+    const input = document.getElementById('spotCommentInput');
+    const text = input ? input.value.trim() : '';
+    if (!text) return;
+    const spotName = currentSpotsList[window.currentSpotIndex].name;
+    const safeKey = `pm_spot_comments_${spotName.replace(/\s+/g, '_')}`;
+    const comments = JSON.parse(localStorage.getItem(safeKey)) || [];
+    comments.unshift({ text, date: new Date().toLocaleDateString('es-ES') });
+    localStorage.setItem(safeKey, JSON.stringify(comments));
+    input.value = '';
+    window.renderSpotComments(spotName);
 };
 
 
@@ -284,7 +354,7 @@ async function loadSpeciesData() {
         let allSpecies = schema['@graph'] || [];
         globalSpeciesList = allSpecies;
         renderSpeciesSwiper(allSpecies);
-        initPokedex(allSpecies);
+        initPecedex(allSpecies);
 
         // Configuración avanzada de búsqueda
         const applyFilters = () => {
@@ -395,27 +465,130 @@ window.openSpeciesModalGlobal = (index) => {
     fillAndShowSpeciesModal(species);
 };
 
+window.openSpeciesModalByName = (name) => {
+    const species = globalSpeciesList.find(s => s.name === name);
+    if (!species) return;
+    fillAndShowSpeciesModal(species);
+};
+
 function fillAndShowSpeciesModal(species) {
     document.getElementById('speciesModalLabel').innerText = species.name;
     document.getElementById('speciesModalScientific').innerText = species.alternateName || '';
     document.getElementById('speciesModalDescription').innerText = species.description || '';
-
     const imgEl = document.getElementById('speciesModalImage');
     imgEl.src = species.image;
     imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1.jpg'; };
 
+    // 1. AUDIO (Dinámico)
+    const audioContainer = document.getElementById('speciesModalAudioContainer');
+    if (audioContainer) {
+        if (species.audio) {
+            const audioPath = species.audio.includes('/') ? species.audio : `/assets/audio/${species.audio}`;
+            audioContainer.innerHTML = `
+               <button class="btn btn-outline-primary btn-sm rounded-pill ms-3 shadow-sm px-3 fw-bold" onclick="if(window.currentFishAudio) window.currentFishAudio.pause(); window.currentFishAudio = new Audio('${audioPath}'); window.currentFishAudio.play();"><i class="bi bi-volume-up me-2"></i> Escuchar Sonido</button>
+            `;
+        } else {
+            audioContainer.innerHTML = ``;
+        }
+    }
+
+    // 2. LOCATIONS (Cross-linking)
+    const locContainer = document.getElementById('speciesModalLocations');
+    if (locContainer) {
+        let locationsHtml = '';
+        if (typeof currentSpotsList !== 'undefined' && currentSpotsList.length > 0) {
+            const frequentSpots = currentSpotsList.filter(spot => {
+                const p = spot.additionalProperty?.find(ap => ap.name === 'Especies Frecuentes');
+                return p && p.value && p.value.toLowerCase().includes(species.name.toLowerCase());
+            });
+
+            if (frequentSpots.length > 0) {
+                locationsHtml = '<h5 class="fw-bold mb-3 text-primary mt-4" style="letter-spacing: -0.5px;"><i class="bi bi-geo-alt-fill me-2"></i> Zonas de Pesca Frecuentes</h5><div class="d-flex flex-wrap gap-2 mb-4">';
+                frequentSpots.forEach((spot) => {
+                    const realIndex = currentSpotsList.findIndex(s => s.name === spot.name);
+                    locationsHtml += `<span class="badge bg-primary text-white fs-6 px-3 py-2 shadow-sm" style="cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.classList.replace('bg-primary', 'bg-info')" onmouseout="this.style.transform='scale(1)'; this.classList.replace('bg-info', 'bg-primary')" onclick="bootstrap.Modal.getInstance(document.getElementById('speciesModal'))?.hide(); setTimeout(() => openSpotModal(${realIndex}), 400);"><i class="bi bi-link-45deg me-1"></i>${spot.name}</span>`;
+                });
+                locationsHtml += '</div>';
+            } else {
+                locationsHtml = '<h5 class="fw-bold mb-3 text-primary mt-4" style="letter-spacing: -0.5px;"><i class="bi bi-geo-alt-fill me-2"></i> Zonas de Pesca Frecuentes</h5><p class="text-muted small mb-4">No se han registrado ubicaciones predominantes fijas o se desconoce con exactitud.</p>';
+            }
+        }
+        locContainer.innerHTML = locationsHtml;
+    }
+
+    // 3. VIDEO (Dinámico)
+    const vidContainer = document.getElementById('speciesModalVideo');
+    if (vidContainer) {
+        if (species.video) {
+            let videoCode = '';
+            if (species.video.includes('youtube.com') || species.video.includes('youtu.be')) {
+                const isEmbed = species.video.includes('embed');
+                const isWatch = species.video.includes('watch?v=');
+                const videoId = isEmbed ? species.video.split('embed/')[1].substring(0, 11) : isWatch ? species.video.split('watch?v=')[1].substring(0, 11) : species.video.split('.be/')[1]?.substring(0, 11);
+                
+                videoCode = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-100 h-100"></iframe>`;
+            } else {
+                const videoPath = species.video.includes('/') ? species.video : `/assets/video/${species.video}`;
+                videoCode = `<video controls autoplay class="w-100 h-100"><source src="${videoPath}" type="video/mp4">Tu navegador no soporta el video.</video>`;
+            }
+
+            vidContainer.innerHTML = `
+               <div class="mt-4 pt-3 border-top border-secondary-subtle">
+                  <h5 class="fw-bold mb-3 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-play-btn-fill me-2"></i> Documental y Comportamiento</h5>
+                  <div class="ratio ratio-16x9 bg-dark rounded overflow-hidden shadow-sm" style="border-radius: 1rem !important;">
+                     <div id="videoPlaceholder" class="d-flex w-100 h-100 flex-column justify-content-center align-items-center bg-light border border-secondary-subtle">
+                        <i id="btnPlayVideo" class="bi bi-play-circle-fill text-primary mb-2" style="font-size: 3rem; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"></i>
+                        <span class="small fw-bold text-dark text-uppercase" style="letter-spacing: 1px;">Reproducir Vídeo de la Especie</span>
+                     </div>
+                  </div>
+               </div>
+            `;
+            
+            const btnPlay = document.getElementById('btnPlayVideo');
+            if (btnPlay) {
+                btnPlay.onclick = () => {
+                    document.getElementById('videoPlaceholder').innerHTML = videoCode;
+                };
+            }
+        } else {
+            vidContainer.innerHTML = ``;
+        }
+    }
+
     const propsContainer = document.getElementById('speciesModalProperties');
-    let propsHtml = '';
+
+    // Función para asignar colores e iconos por tipo de atributo
+    const getPropIcon = (name) => {
+        const n = name.toLowerCase();
+        if (n.includes('talla') || n.includes('cupo')) return { icon: 'bi-rulers', color: 'text-danger', bg: 'bg-danger', bgSubtle: 'bg-opacity-10' };
+        if (n.includes('veda')) return { icon: 'bi-calendar-x', color: 'text-danger', bg: 'bg-danger', bgSubtle: 'bg-opacity-10' };
+        if (n.includes('dificultad')) return { icon: 'bi-speedometer2', color: 'text-warning', bg: 'bg-warning', bgSubtle: 'bg-opacity-10' };
+        if (n.includes('gastron')) return { icon: 'bi-star-fill', color: 'text-warning', bg: 'bg-warning', bgSubtle: 'bg-opacity-10' };
+        if (n.includes('modalidad') || n.includes('pesca') || n.includes('cebo')) return { icon: 'bi-crosshair', color: 'text-success', bg: 'bg-success', bgSubtle: 'bg-opacity-10' };
+        if (n.includes('hábita') || n.includes('fondo') || n.includes('profundi')) return { icon: 'bi-water', color: 'text-info', bg: 'bg-info', bgSubtle: 'bg-opacity-10' };
+        return { icon: 'bi-info-circle', color: 'text-primary', bg: 'bg-primary', bgSubtle: 'bg-opacity-10' };
+    };
+
+    let propsHtml = '<div class="row g-2">';
     if (species.additionalProperty) {
         species.additionalProperty.forEach(prop => {
+            const { icon, color, bg, bgSubtle } = getPropIcon(prop.name);
             propsHtml += `
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                   <strong class="text-dark">${prop.name}:</strong> 
-                   <span class="text-muted text-end ms-2">${prop.value} ${prop.unitText || ''}</span>
-                </li>
+                <div class="col-12 col-sm-6 mb-2">
+                   <div class="d-flex align-items-center p-2 rounded shadow-sm border border-light bg-white h-100">
+                      <div class="${bg} ${bgSubtle} rounded p-2 me-3 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;">
+                         <i class="bi ${icon} ${color} fs-5"></i>
+                      </div>
+                      <div class="text-start">
+                         <span class="d-block fw-bold text-dark" style="font-size: 0.70rem; text-transform: uppercase; letter-spacing: 0.5px;">${prop.name}</span>
+                         <span class="text-muted d-block lh-sm" style="font-size: 0.85rem;">${prop.value} ${prop.unitText || ''}</span>
+                      </div>
+                   </div>
+                </div>
             `;
         });
     }
+    propsHtml += '</div>';
     propsContainer.innerHTML = propsHtml;
 
     // Actualizar botón de captura en el header
@@ -440,15 +613,15 @@ function fillAndShowSpeciesModal(species) {
 
 
 // ==========================================
-// SECCIÓN POKÉDEX
+// SECCIÓN PECEDEX
 // ==========================================
 
 let caughtSpecies = JSON.parse(localStorage.getItem('caughtSpecies')) || [];
 
-window.initPokedex = (speciesArray) => {
-    const grid = document.getElementById('pokedex-grid');
-    const progressEl = document.getElementById('pokedex-progress');
-    const totalEl = document.getElementById('pokedex-total');
+window.initPecedex = (speciesArray) => {
+    const grid = document.getElementById('pecedex-grid');
+    const progressEl = document.getElementById('pecedex-progress');
+    const totalEl = document.getElementById('pecedex-total');
     if (!grid) return;
 
     if (totalEl) totalEl.textContent = speciesArray.length;
@@ -459,7 +632,7 @@ window.initPokedex = (speciesArray) => {
         const isCaught = caughtSpecies.includes(species.name);
         // Efectos: La silueta se oscurece al 20% y en blanco y negro (0.2 y grayscale)
         const imgStyle = isCaught ? 'filter: brightness(1) drop-shadow(0 4px 6px rgba(0,0,0,0.1));' : 'filter: brightness(0.1) grayscale(1); opacity: 0.6;';
-        
+
         // Si está capturado abre la ficha. Si no, no hace nada
         const action = isCaught ? `openSpeciesModalGlobal(${index})` : ``;
         const pointerStyle = isCaught ? `cursor: pointer; transition: transform 0.2s;` : `cursor: default; opacity: 0.8;`;
@@ -494,12 +667,12 @@ window.toggleCatchSpecies = (event, name) => {
         caughtSpecies.push(name);
     }
     localStorage.setItem('caughtSpecies', JSON.stringify(caughtSpecies));
-    
-    // Auto-update Pokedex Grid en fondo
+
+    // Auto-update Pecedex Grid en fondo
     if (globalSpeciesList && globalSpeciesList.length > 0) {
-        initPokedex(globalSpeciesList);
+        initPecedex(globalSpeciesList);
     }
-    
+
     // Cambiar estado visual del botón del modal instantáneamente
     const actionContainer = document.getElementById('speciesModalCatchAction');
     if (actionContainer) {
@@ -512,10 +685,10 @@ window.toggleCatchSpecies = (event, name) => {
     }
 };
 
-window.resetPokedex = () => {
-    if(confirm('¿Seguro que quieres borrar todo tu registro de capturas de la Pokedex?')) {
+window.resetPecedex = () => {
+    if (confirm('¿Seguro que quieres borrar todo tu registro de capturas de la Pecedex?')) {
         caughtSpecies = [];
         localStorage.removeItem('caughtSpecies');
-        if (currentSpeciesList) initPokedex(currentSpeciesList);
+        if (currentSpeciesList) initPecedex(currentSpeciesList);
     }
 };

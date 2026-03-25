@@ -21,14 +21,23 @@ export const Header = () => {
           </div>
 
           <div class="auth-links d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0 ms-2">
-            <button id="tts-toggle-desktop" class="btn btn-sm btn-outline-light rounded-pill d-flex align-items-center px-3 text-nowrap" title="Activar/Desactivar lectura por voz">
-              <i class="bi bi-volume-up-fill fs-6 me-2"></i> Audio
-            </button>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-outline-light rounded-pill d-flex align-items-center px-3 text-nowrap dropdown-toggle" type="button" id="accessibilityDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones de Accesibilidad">
+                <i class="bi bi-person-wheelchair fs-6 me-1"></i> Accesibilidad
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="accessibilityDropdownDesktop" style="min-width: 200px;">
+                <li><h6 class="dropdown-header">Herramientas</h6></li>
+                <li><button class="dropdown-item d-flex align-items-center" id="tts-toggle-desktop"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
+                <li><button class="dropdown-item d-flex align-items-center"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
+                <li><button class="dropdown-item d-flex align-items-center"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
+                <li><button class="dropdown-item d-flex align-items-center"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
+              </ul>
+            </div>
 
             <div class="dropdown">
-              <a class="text-white text-decoration-none dropdown-toggle d-flex align-items-center text-nowrap" href="#" role="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.9rem;">
+              <button class="btn btn-sm btn-outline-light rounded-pill d-flex align-items-center px-3 text-nowrap dropdown-toggle" type="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" title="Seleccionar Idioma">
                 <i class="bi bi-globe me-1"></i> ES
-              </a>
+              </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="languageDropdownDesktop" style="min-width: 120px;">
                 <li><a class="dropdown-item active" href="#">Español</a></li>
                 <li><a class="dropdown-item" href="#">Català</a></li>
@@ -55,7 +64,7 @@ export const Header = () => {
               <li><a href="#hero" class="active">Inicio</a></li>
               <li><a href="#zonas">Spots</a></li>
               <li><a href="#especies">Especies</a></li>
-              <li><a href="#pokedex">Pokédex</a></li>
+              <li><a href="#pecedex">Pecédex</a></li>
               <li><a href="#mapa">Mapa</a></li>
               <li><a href="#quiz">Quiz</a></li>
               <li><a href="#meteo">Tiempo</a></li>
@@ -77,9 +86,17 @@ export const Header = () => {
               </li>
 
               <li class="d-md-none px-3 pb-2">
-                <button id="tts-toggle-mobile" class="btn btn-outline-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="padding: 10px;" title="Activar/Desactivar lectura por voz">
-                  <i class="bi bi-volume-up-fill fs-5 me-2"></i> Activar Audio
-                </button>
+                <div class="dropdown w-100 mb-3">
+                  <button class="btn btn-outline-primary rounded-pill dropdown-toggle w-100 d-flex justify-content-center align-items-center" type="button" id="accessibilityDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 10px;" title="Opciones de Accesibilidad">
+                    <i class="bi bi-person-wheelchair fs-5 me-2"></i> Accesibilidad
+                  </button>
+                  <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="accessibilityDropdownMobile">
+                    <li><button class="dropdown-item" id="tts-toggle-mobile"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
+                    <li><button class="dropdown-item"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
+                    <li><button class="dropdown-item"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
+                    <li><button class="dropdown-item"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
+                  </ul>
+                </div>
 
                 <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;">
                   <i class="bi bi-person-circle fs-5 me-2"></i> Iniciar sesión

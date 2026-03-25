@@ -205,7 +205,7 @@ export const initRamps = () => {
 
             html += `
             <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 w-100 ramp-card" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="card shadow-sm border-0 w-100 ramp-card" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onclick="openRampModal(${rampa.id})">
                     <div class="position-relative">
                         <img src="${rampa.image}" class="card-img-top object-fit-cover" alt="${rampa.name}" style="height:220px;" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                         <span class="badge bg-${rampa.priceColor} position-absolute top-0 end-0 m-3 fs-6 shadow-sm">${rampa.priceTag}</span>

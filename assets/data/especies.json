@@ -7,6 +7,8 @@
             "name": "Dorada",
             "alternateName": "Sparus aurata",
             "image": "/assets/img/peces/dorada-min.webp",
+            "audio": "dorada.mp3",
+            "video": "dorada.mp4",
             "description": "Pez de la familia de los espáridos, muy común en las Islas Baleares. Destaca por la franja dorada entre sus ojos y su potente mandíbula adaptada para triturar conchas.",
             "url": "https://pescamallorca.online/peces/dorada",
             "additionalProperty": [
@@ -76,13 +78,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "9",
                     "unitText": "septiembre"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "12",
                     "unitText": "diciembre"
                 }
@@ -94,6 +96,8 @@
             "name": "Llampuga",
             "alternateName": "Coryphaena hippurus",
             "image": "/assets/img/peces/llampuga-min.webp",
+            "audio": "llampuga.mp3",
+            "video": "llampuga.mp4",
             "description": "Pez pelágico muy rápido y voraz, reconocible por su colorido verde azulado y amarillo brillante que pierde al morir.",
             "url": "https://pescamallorca.online/peces/llampuga",
             "additionalProperty": [
@@ -163,13 +167,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "8",
                     "unitText": "agosto"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "11",
                     "unitText": "noviembre"
                 }
@@ -181,6 +185,8 @@
             "name": "Mero",
             "alternateName": "Epinephelus marginatus",
             "image": "/assets/img/peces/mero-min.webp",
+            "audio": "mero.mp3",
+            "video": "mero.mp4",
             "description": "Serránido de gran tamaño, emblemático de los fondos rocosos baleares. Es una especie territorial y hermafrodita proterogínica con un crecimiento muy lento.",
             "url": "https://pescamallorca.online/peces/mero",
             "additionalProperty": [
@@ -249,13 +255,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "1",
                     "unitText": "enero"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "12",
                     "unitText": "diciembre"
                 }
@@ -267,6 +273,8 @@
             "name": "Cap-roig (Escórpora)",
             "alternateName": "Scorpaena scrofa",
             "image": "/assets/img/peces/cap-roig-min.webp",
+            "audio": "cap-roig.mp3",
+            "video": "cap-roig.mp4",
             "description": "Pez de color rojizo con espinas venenosas en las aletas dorsales. Se camufla perfectamente con el fondo marino esperando a sus presas.",
             "url": "https://pescamallorca.online/peces/cap-roig",
             "additionalProperty": [
@@ -330,13 +338,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "3",
                     "unitText": "marzo"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "6",
                     "unitText": "junio"
                 }
@@ -348,6 +356,8 @@
             "name": "Sargo (Sarg)",
             "alternateName": "Diplodus sargus",
             "image": "/assets/img/peces/sargo-min.webp",
+            "audio": "sargo.mp3",
+            "video": "sargo.mp4",
             "description": "Pez plateado con bandas verticales oscuras. Muy buscado por los pescadores de costa, especialmente en días de mala mar o 'mar de fondo'.",
             "url": "https://pescamallorca.online/peces/sargo",
             "additionalProperty": [
@@ -411,13 +421,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "11",
                     "unitText": "noviembre"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "5",
                     "unitText": "mayo"
                 }
@@ -429,6 +439,8 @@
             "name": "Serrano (Pintarroja)",
             "alternateName": "Serranus scriba",
             "image": "/assets/img/peces/serrano-min.webp",
+            "audio": "serrano.mp3",
+            "video": "serrano.mp4",
             "description": "Pequeño serránido de vivos colores azulados y rayas verticales. Habita fondos rocosos someros y es muy combativo para su tamaño.",
             "url": "https://pescamallorca.online/peces/serrano",
             "additionalProperty": [
@@ -497,13 +509,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "1",
                     "unitText": "enero"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "12",
                     "unitText": "diciembre"
                 }
@@ -515,6 +527,8 @@
             "name": "Dentón",
             "alternateName": "Dentex dentex",
             "image": "/assets/img/peces/denton-min.webp",
+            "audio": "denton.mp3",
+            "video": "denton.mp4",
             "description": "Espárido de gran tamaño, muy apreciado por su calidad gastronómica y su pelea. Habita fondos rocosos y praderas de posidonia.",
             "url": "https://pescamallorca.online/peces/denton",
             "additionalProperty": [
@@ -583,13 +597,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "5",
                     "unitText": "mayo"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "9",
                     "unitText": "septiembre"
                 }
@@ -601,6 +615,8 @@
             "name": "Oblada",
             "alternateName": "Oblada melanura",
             "image": "/assets/img/peces/oblada-min.webp",
+            "audio": "oblada.mp3",
+            "video": "oblada.mp4",
             "description": "Pez plateado con una característica mancha negra en el pedúnculo caudal. Muy común en aguas someras y formando grandes bancos.",
             "url": "https://pescamallorca.online/peces/oblada",
             "additionalProperty": [
@@ -669,13 +685,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "6",
                     "unitText": "junio"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "10",
                     "unitText": "octubre"
                 }
@@ -687,6 +703,8 @@
             "name": "Salpa",
             "alternateName": "Sarpa salpa",
             "image": "/assets/img/peces/salpa-min.webp",
+            "audio": "salpa.mp3",
+            "video": "salpa.mp4",
             "description": "Pez herbívoro con rayas amarillas horizontales. Se alimenta de algas y forma grandes cardúmenes en praderas de posidonia.",
             "url": "https://pescamallorca.online/peces/salpa",
             "additionalProperty": [
@@ -755,13 +773,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "1",
                     "unitText": "enero"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "12",
                     "unitText": "diciembre"
                 }
@@ -773,6 +791,8 @@
             "name": "Bonito",
             "alternateName": "Sarda sarda",
             "image": "/assets/img/peces/bonito-min.webp",
+            "audio": "bonito.mp3",
+            "video": "bonito.mp4",
             "description": "Pelágico migrador de la familia de los escómbridos. Muy apreciado por su velocidad y su carne, típico de las costas baleares en verano.",
             "url": "https://pescamallorca.online/peces/bonito",
             "additionalProperty": [
@@ -841,13 +861,13 @@
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes inicio temporada",
+                    "name": "Inicio temporada",
                     "value": "6",
                     "unitText": "junio"
                 },
                 {
                     "@type": "PropertyValue",
-                    "name": "Mes fin temporada",
+                    "name": "Fin temporada",
                     "value": "10",
                     "unitText": "octubre"
                 }

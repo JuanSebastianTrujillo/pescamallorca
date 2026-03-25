@@ -58,7 +58,7 @@ export const SpotsSection = () => {
                       </div>
                   </div>
                   
-                  <div class="col-md-12">
+                  <div class="col-md-12 mb-4">
                       <div class="card border-0 shadow-sm border-start border-success border-4">
                           <div class="card-body">
                               <h6 class="fw-bold text-success"><i class="bi bi-fish"></i> Especies Frecuentes</h6>
@@ -66,6 +66,25 @@ export const SpotsSection = () => {
                               <small class="text-muted d-block mt-2">
                                   * Busca estas especies en la sección de Ictiología para más detalles.
                               </small>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- REVIEWS/COMMENTS SECTION (ZONAS) -->
+                  <div class="col-md-12 pt-4 border-top">
+                      <h4 class="fw-bold text-dark mb-4"><i class="bi bi-chat-left-text-fill text-primary me-2"></i>Reportes de Capturas</h4>
+                      <div id="spotModalCommentsContainer" class="mb-4">
+                          <!-- JS inyecta comentarios aquí -->
+                      </div>
+                      <div class="card border-0 bg-light shadow-sm">
+                          <div class="card-body p-4">
+                              <h6 class="fw-bold mb-3 border-bottom pb-2"><i class="bi bi-pencil-square text-primary me-2"></i>Añadir Nuevo Reporte</h6>
+                              <form onsubmit="event.preventDefault(); window.submitSpotComment();">
+                                  <div class="mb-3">
+                                      <textarea id="spotCommentInput" class="form-control border-0 shadow-sm" rows="3" placeholder="Ej: Hoy a las 6AM han entrado de sobra los verderones tirando con pan. ¿Qué tal ha ido la jornada de hoy?" required></textarea>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary fw-bold px-4 shadow-sm"><i class="bi bi-send-fill me-2"></i>Publicar Reporte de Comunidad</button>
+                              </form>
                           </div>
                       </div>
                   </div>
