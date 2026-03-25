@@ -21,6 +21,10 @@ export const Header = () => {
           </div>
 
           <div class="auth-links d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0 ms-2">
+            <button id="tts-toggle-desktop" class="btn btn-sm btn-outline-light rounded-pill d-flex align-items-center px-3 text-nowrap" title="Activar/Desactivar lectura por voz">
+              <i class="bi bi-volume-up-fill fs-6 me-2"></i> Audio
+            </button>
+
             <div class="dropdown">
               <a class="text-white text-decoration-none dropdown-toggle d-flex align-items-center text-nowrap" href="#" role="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.9rem;">
                 <i class="bi bi-globe me-1"></i> ES
@@ -51,7 +55,9 @@ export const Header = () => {
               <li><a href="#hero" class="active">Inicio</a></li>
               <li><a href="#zonas">Spots</a></li>
               <li><a href="#especies">Especies</a></li>
+              <li><a href="#pokedex">Pokédex</a></li>
               <li><a href="#mapa">Mapa</a></li>
+              <li><a href="#quiz">Quiz</a></li>
               <li><a href="#meteo">Météo</a></li>
               <li><a href="#tiendas">Tiendas</a></li>
               <li><a href="#rampas">Rampas</a></li>
@@ -71,6 +77,10 @@ export const Header = () => {
               </li>
 
               <li class="d-md-none px-3 pb-2">
+                <button id="tts-toggle-mobile" class="btn btn-outline-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="padding: 10px;" title="Activar/Desactivar lectura por voz">
+                  <i class="bi bi-volume-up-fill fs-5 me-2"></i> Activar Audio
+                </button>
+
                 <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;">
                   <i class="bi bi-person-circle fs-5 me-2"></i> Iniciar sesión
                 </a>
