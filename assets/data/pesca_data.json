@@ -3,33 +3,33 @@
   "@graph": [
     {
       "@type": "Taxon",
-      "@id": "https://pescamallorca.online/peces/xyrichtys-novacula",
+      "@id": "https://www.pescamallorca.online/peces/xyrichtys-novacula",
       "name": "Xyrichtys novacula",
       "alternateName": ["Galán", "Lorito", "Raor"],
-      "image": "https://pescamallorca.online/assets/peces/raor.webp",
+      "image": "https://www.pescamallorca.online/assets/peces/raor.webp",
       "description": "Especie bentónica que habita característicamente en fondos de arena fina y clara, a menudo en las proximidades de praderas de Posidonia oceánica, a profundidades de entre 5 y 30 metros. Posee una dieta carnívora especializada, alimentándose principalmente de pequeños invertebrados, crustáceos y moluscos que desentierra del sustrato.",
       "disambiguatingDescription": "La pesca recreativa de esta especie es óptima entre los meses de septiembre y marzo, utilizando habitualmente cebos como gamba pelada, trocitos de calamar o gusano. A nivel legal, no se exige una talla mínima de captura, pero existe una cuota máxima de 50 ejemplares por licencia y día, con un límite de 300 por embarcación. Cabe destacar que rige una veda estricta desde el 1 de abril hasta el 31 de agosto, y es totalmente obligatorio el uso de anzuelos con un seno superior a 5,7 mm para garantizar la protección de los alevines."
     },
     {
-      "@id": "https://pescamallorca.online/peces/epinephelus-marginatus",
+      "@id": "https://www.pescamallorca.online/peces/epinephelus-marginatus",
       "@type": "Taxon",
       "name": "Epinephelus marginatus",
       "alternateName": ["Mero", "Anfós"],
-      "image": "https://pescamallorca.online/assets/peces/mero.webp",
+      "image": "https://www.pescamallorca.online/assets/peces/mero.webp",
       "description": "Habita en fondos rocosos con cuevas, grietas y acantilados submarinos, desde los 10 hasta más de 200 metros de profundidad. Es un depredador voraz que se alimenta principalmente de pulpos, calamares, crustáceos y otros peces.",
       "disambiguatingDescription": "Su pesca es óptima durante los meses de mayo a octubre, empleando cebos como calamar entero, sepia, jigs de profundidad o grandes vinilos plomados. Legalmente, la talla mínima es de 45 cm y la cuota máxima es de 1 ejemplar por día y pescador al ser una especie altamente protegida. Está prohibida su pesca en casi todas las reservas marinas de Baleares y no se permite usar pez vivo como cebo."
     },
     {
-      "@id": "https://pescamallorca.online/peces/sparus-aurata",
+      "@id": "https://www.pescamallorca.online/peces/sparus-aurata",
       "@type": "Taxon",
       "name": "Sparus aurata",
       "alternateName": ["Dorada", "Orada", "Daurada"],
-      "image": "https://pescamallorca.online/assets/peces/dorada.webp",
+      "image": "https://www.pescamallorca.online/assets/peces/dorada.webp",
       "description": "Frecuenta zonas costeras mixtas de arena, roca y Posidonia, así como desembocaduras, puertos y playas someras. Su dieta se basa en crustáceos, moluscos bivalvos y gusanos marinos, utilizando sus fuertes mandíbulas para romper conchas.",
       "disambiguatingDescription": "Se pesca habitualmente desde abril hasta noviembre con cebos como tita, cangrejo vivo, lombriz de arena, coreano o ermitaño. La talla mínima legal es de 20 cm, y se aplica el límite general de pesca recreativa en Baleares de 5 kg más 1 pieza por licencia y día. Su captura está permitida todo el año respetando dicha talla mínima."
     },
     {
-      "@id": "https://pescamallorca.online/zonas/cala-figuera-formentor",
+      "@id": "https://www.pescamallorca.online/zonas/cala-figuera-formentor",
       "@type": "Place",
       "name": "Cala Figuera",
       "address": {
@@ -43,15 +43,15 @@
         "longitude": 3.1714
       },
       "image": [
-        "https://pescamallorca.online/assets/spots/cala-figuera-1.webp",
-        "https://pescamallorca.online/assets/spots/cala-figuera-2.webp"
+        "https://www.pescamallorca.online/spots/cala-figuera-1.webp",
+        "https://www.pescamallorca.online/spots/cala-figuera-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso difícil, Fondo rocoso, Pesca profunda, Acantilado",
       "description": "Impresionante caleta virgen rodeada de acantilados en el extremo norte de la isla, ideal para buscar especies de roca de gran tamaño.",
       "disambiguatingDescription": "ACCESO: Llegar requiere descender a pie por un sendero de cabras durante 20 minutos desde la carretera de Formentor, con un aparcamiento muy limitado y siendo obligatorio el uso de calzado técnico. FONDO MARINO: Destaca por su roca escarpada con caídas abruptas que superan los 20 metros a poca distancia de la orilla. ESPECIES FRECUENTES: Se pueden encontrar ejemplares de Mero (Epinephelus marginatus), Dentón y Escórpora. TÉCNICAS RECOMENDADAS: Es una zona ideal para practicar Rockfishing pesado, Shore Jigging y pesca a fondo con cebo vivo."
     },
     {
-      "@id": "https://pescamallorca.online/zonas/playa-de-muro-es-comu",
+      "@id": "https://www.pescamallorca.online/zonas/playa-de-muro-es-comu",
       "@type": "Place",
       "name": "Playa de Muro",
       "address": {
@@ -65,15 +65,15 @@
         "longitude": 3.1235
       },
       "image": [
-        "https://pescamallorca.online/assets/spots/playa-muro-1.webp",
-        "https://pescamallorca.online/assets/spots/playa-muro-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso fácil, Fondo arenoso, Pesca nocturna, Surfcasting",
       "description": "Extensa playa de arena blanca y aguas someras en la Bahía de Alcúdia, perfecta para la pesca nocturna de espáridos.",
       "disambiguatingDescription": "ACCESO: Es muy fácil llegar a pie desde los aparcamientos cercanos a la zona natural protegida, con un terreno llano ideal para transportar equipo pesado y carros de pesca. FONDO MARINO: Predomina la arena fina y clara con una batimetría muy suave, por lo que hay que lanzar lejos para ganar profundidad, encontrando pequeñas manchas de Posidonia a más de 100 metros. ESPECIES FRECUENTES: En lances profundos abunda la Dorada (Sparus aurata), Herrera, Mabro y Raor (Xyrichtys novacula). TÉCNICAS RECOMENDADAS: Destaca el Surfcasting clásico, preferiblemente de noche o en meses de invierno para evitar la afluencia de bañistas."
     },
     {
-      "@id": "https://pescamallorca.online/zonas/cap-de-ses-salines",
+      "@id": "https://www.pescamallorca.online/zonas/cap-de-ses-salines",
       "@type": "Place",
       "name": "Cap de ses Salines",
       "address": {
@@ -87,18 +87,18 @@
         "longitude": 3.0545
       },
       "image": [
-        "https://pescamallorca.online/assets/spots/salines-1.webp",
-        "https://pescamallorca.online/assets/spots/salines-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso medio, Corrientes fuertes, Fondo mixto, Espuma",
       "description": "El punto más meridional de Mallorca, famoso por sus fuertes corrientes que atraen a numerosos depredadores costeros.",
       "disambiguatingDescription": "ACCESO: Se recomienda llegar muy pronto para aparcar junto al faro y caminar con precaución por la afilada costa rocosa buscando el mejor puesto. FONDO MARINO: Presenta una plataforma rocosa superficial que da paso a un fondo mixto de grandes bloques de piedra y extensas praderas de Posidonia. ESPECIES FRECUENTES: Es zona de paso para el Sargo, la Dorada (Sparus aurata), la Lubina y el Espetón. TÉCNICAS RECOMENDADAS: Da muy buenos resultados el Spinning ligero o medio para buscar depredadores al amanecer, así como la pesca a boya aprovechando la espuma que rompen las olas en las rocas."
     },
     {
-      "@id": "https://pescamallorca.online/legal/reserva-marina-bahia-palma",
+      "@id": "https://www.pescamallorca.online/legal/reserva-marina-bahia-palma",
       "@type": "Place",
       "name": "Reserva Marina de la Bahía de Palma",
-      "image": "https://pescamallorca.online/assets/maps/mapa-reserva-palma.webp",
+      "image": "https://www.pescamallorca.online/assets/maps/mapa-reserva-palma.webp",
       "hasMap": "https://ideib.caib.es/visor/",
       "geo": {
         "@type": "GeoCoordinates",
@@ -110,14 +110,14 @@
       "disambiguatingDescription": "ZONIFICACIÓN Y LÍMITES LEGALES: En la Zona de Reserva Integral está totalmente prohibida cualquier tipo de extracción marina, pesca recreativa o fondeo. Por otro lado, en la Zona de Amortiguación la pesca recreativa está permitida únicamente con autorización especial y restringida a días específicos como martes, viernes, sábados, domingos y festivos. RESTRICCIONES ESPECÍFICAS DE LA RESERVA: Está estrictamente prohibida la pesca submarina en toda su extensión y las cuotas de captura suelen ser más restrictivas que en la normativa general."
     },
     {
-      "@id": "https://pescamallorca.online/legal/licencia-pesca-recreativa",
+      "@id": "https://www.pescamallorca.online/legal/licencia-pesca-recreativa",
       "@type": "Permit",
       "name": "Licencia de Pesca Marítima de Recreo (Individual)",
       "description": "Documento administrativo personal e intransferible, de carácter obligatorio, que autoriza la práctica de la pesca marítima de recreo desde tierra o embarcación en las Islas Baleares.",
       "disambiguatingDescription": "REQUISITOS PARA SU OBTENCIÓN: Es necesario ser mayor de 14 años o contar con autorización del tutor legal, además del abono de las tasas correspondientes que oscilan entre 15 y 25 euros dependiendo de la vigencia. OBLIGACIONES DEL PESCADOR: Se exige llevar siempre el documento físico o digital junto al DNI durante la acción de pesca, respetando escrupulosamente las tallas mínimas y cuotas establecidas por la normativa. PROHIBICIONES: Queda totalmente prohibida la venta o comercialización de cualquier captura obtenida con esta licencia."
     },
     {
-      "@id": "https://pescamallorca.online/legal/normativa-general-aparejos",
+      "@id": "https://www.pescamallorca.online/legal/normativa-general-aparejos",
       "@type": "Legislation",
       "name": "Normativa General: Aparejos, Obligaciones y Prohibiciones (Decreto 34/2014)",
       "description": "Regulación principal de la pesca marítima de recreo en las aguas interiores de las Islas Baleares, que establece los límites de captura globales, los aparejos permitidos y las prohibiciones de carácter general.",
@@ -128,8 +128,8 @@
       "@type": "SportingGoodsStore",
       "name": "Ca'n Sion Palma",
       "image": [
-        "https://pescamallorca.online/assets/tiendas/cansion-fachada.webp",
-        "https://pescamallorca.online/assets/tiendas/cansion-interior.webp"
+        "https://www.pescamallorca.online/assets/tiendas/cansion-fachada.webp",
+        "https://www.pescamallorca.online/assets/tiendas/cansion-interior.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -176,8 +176,8 @@
       "@type": "SportingGoodsStore",
       "name": "Casa Calicó Portixol",
       "image": [
-        "https://pescamallorca.online/assets/tiendas/calico-fachada.webp",
-        "https://pescamallorca.online/assets/tiendas/calico-pasillos.webp"
+        "https://www.pescamallorca.online/assets/tiendas/calico-fachada.webp",
+        "https://www.pescamallorca.online/assets/tiendas/calico-pasillos.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -219,13 +219,13 @@
       "disambiguatingDescription": "CATÁLOGO DE SERVICIOS: Proveen diferentes tipos de cebo vivo como titón, coreano, americano, rosca y lombriz de arena, contando también con un taller dedicado al anillado de cañas y la reparación de punteras. ESPECIALIDADES: Es un comercio muy fuerte en modalidades como la pesca a boya, el jigging y el surfcasting, ofreciendo siempre asesoramiento de primera mano sobre qué se está pescando en la bahía en cada temporada."
     },
     {
-      "@id": "https://pescamallorca.online/rampas/cn-portocristo",
+      "@id": "https://www.pescamallorca.online/rampas/cn-portocristo",
       "@type": "Place",
       "name": "Rampa Club Náutico Portocristo",
       "image": [
-        "https://pescamallorca.online/assets/rampas/portocristo-1.webp",
-        "https://pescamallorca.online/assets/rampas/portocristo-firme.webp",
-        "https://pescamallorca.online/assets/rampas/portocristo-parking.webp"
+        "https://www.pescamallorca.online/assets/rampas/portocristo-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-firme.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-parking.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -243,12 +243,12 @@
       "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Ofrece una profundidad excelente al final de la rampa superando el metro y medio sin riesgo para las colas de motores grandes, destacando por ser muy ancha, con pendiente moderada y un firme de hormigón rayado que no requiere vehículo 4x4. LOGÍSTICA DE APARCAMIENTO: Existe una zona habilitada para estacionar coche y remolque dentro del recinto portuario sujeta a disponibilidad. TARIFAS Y BUROCRACIA: Tiene un coste aproximado de 15 a 20 euros por maniobra de botadura que se paga directamente en la oficina de marinería. SERVICIOS ANEXOS: Dispone de manguera de agua dulce a pie de rampa para endulzar motores, un surtidor de combustible a escasos metros y acceso a baños. AVISOS Y PELIGROS LOCALES: Es una rampa muy concurrida en los meses de verano por lo que se recomienda ir a primera hora teniendo siempre cuidado con el tráfico interno del puerto."
     },
     {
-      "@id": "https://pescamallorca.online/rampas/port-pollenca-publica",
+      "@id": "https://www.pescamallorca.online/rampas/port-pollenca-publica",
       "@type": "Place",
       "name": "Rampa Pública Port de Pollença",
       "image": [
-        "https://pescamallorca.online/assets/rampas/pollenca-1.webp",
-        "https://pescamallorca.online/assets/rampas/pollenca-inclinacion.webp"
+        "https://www.pescamallorca.online/assets/rampas/pollenca-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/pollenca-inclinacion.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -266,12 +266,12 @@
       "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Tiene un calado medio o bajo que obliga a meter bastante el remolque en el agua para embarcaciones pesadas, tratándose de una rampa de hormigón estándar con pendiente suave cuya parte sumergida puede acumular verdín. LOGÍSTICA DE APARCAMIENTO: El aparcamiento es crítico ya que no hay zona específica para remolques, siendo fácil aparcar en invierno pero casi imposible en verano, con alto riesgo de multa si el remolque invade la calzada. TARIFAS Y BUROCRACIA: Es totalmente gratuita al ser de uso público. SERVICIOS ANEXOS: No cuenta con servicios directos ni manguera de agua dulce disponible para endulzar. AVISOS Y PELIGROS LOCALES: Resulta muy resbaladiza en invierno por la acumulación de algas, recomendando tracción 4x4 si el barco pesa mucho, y es peligrosa con temporales fuertes de componente Norte o Este."
     },
     {
-      "@id": "https://pescamallorca.online/rampas/son-serra-marina",
+      "@id": "https://www.pescamallorca.online/rampas/son-serra-marina",
       "@type": "Place",
       "name": "Acceso Natural Son Serra de Marina",
       "image": [
-        "https://pescamallorca.online/assets/rampas/sonserra-1.webp",
-        "https://pescamallorca.online/assets/rampas/sonserra-rocas.webp"
+        "https://www.pescamallorca.online/assets/rampas/sonserra-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/sonserra-rocas.webp"
       ],
       "address": {
         "@type": "PostalAddress",

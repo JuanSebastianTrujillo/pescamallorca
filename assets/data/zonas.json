@@ -2,7 +2,7 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@id": "https://pescamallorca.online/zonas/cala-figuera-formentor",
+      "@id": "https://www.pescamallorca.online/zonas/cala-figuera-formentor",
       "@type": "Place",
       "name": "Cala Figuera",
       "address": {
@@ -16,8 +16,8 @@
         "longitude": 3.1714
       },
       "image": [
-        "https://pescamallorca.online/assets/spots/cala-figuera-1.webp",
-        "https://pescamallorca.online/assets/spots/cala-figuera-2.wepb"
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso difícil, Fondo rocoso, Pesca profunda, Acantilado",
       "description": "Impresionante caleta virgen rodeada de acantilados en el extremo norte de la isla, ideal para buscar especies de roca de gran tamaño.",
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "@id": "https://pescamallorca.online/zonas/playa-de-muro-es-comu",
+      "@id": "https://www.pescamallorca.online/zonas/playa-de-muro-es-comu",
       "@type": "Place",
       "name": "Playa de Muro",
       "address": {
@@ -64,8 +64,8 @@
         "longitude": 3.1235
       },
       "image": [
-        "https://pescamallorca.online/assets/spots/playa-muro-1.webp",
-        "https://pescamallorca.online/assets/spots/playa-muro-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso fácil, Fondo arenoso, Pesca nocturna, Surfcasting",
       "description": "Extensa playa de arena blanca y aguas someras en la Bahía de Alcúdia, perfecta para la pesca nocturna de espáridos.",
@@ -98,7 +98,7 @@
       ]
     },
     {
-      "@id": "https://pescamallorca.online/zonas/cap-de-ses-salines",
+      "@id": "https://www.pescamallorca.online/zonas/cap-de-ses-salines",
       "@type": "Place",
       "name": "Cap de ses Salines",
       "address": {
@@ -112,8 +112,8 @@
         "longitude": 3.0545
       },
       "image": [
-        "https://pescamallorca.online/assets/spots/salines-1.webp",
-        "https://pescamallorca.online/assets/spots/salines-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso medio, Corrientes fuertes, Fondo mixto, Espuma",
       "description": "El punto más meridional de Mallorca, famoso por sus fuertes corrientes que atraen a numerosos depredadores costeros.",
