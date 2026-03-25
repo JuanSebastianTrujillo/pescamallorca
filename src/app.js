@@ -181,11 +181,6 @@ async function loadMonthSpecies() {
     }
 }
 
-// ==========================================
-// SECCIÓN DE ZONAS DE PESCA
-// ==========================================
-
-// Variable global para las zonas
 let currentSpotsList = [];
 
 async function loadSpotsData() {
@@ -196,58 +191,129 @@ async function loadSpotsData() {
         const response = await fetch('/assets/data/zonas.json');
         const schema = await response.json();
 
-        // Extraer los spots del nuevo json exclusivo
-        const spots = schema['@graph'];
+        // Extraer los spots
+        const spots = schema['@graph'].filter(item => item['@type'] === 'Place' && !item.name.includes('Reserva'));
 
         // Guardamos los spots filtrados en la variable global
         currentSpotsList = spots;
 
-        let htmlCards = '';
-        spots.forEach((spot, index) => {
-            const imgSrc = Array.isArray(spot.image) ? spot.image[0] : spot.image;
-            htmlCards += `
-              <div class="col-lg-4 col-md-6">
-                <div class="card h-100 shadow-sm border-0 spot-card" onclick="openSpotModal(${index})" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-                  <img src="${imgSrc}" class="card-img-top object-fit-cover" alt="${spot.name}" style="height:200px">
-                  <div class="card-body d-flex flex-column">
-                    <h5 class="card-title text-primary fw-bold">${spot.name}</h5>
-                    <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
-                    <p class="card-text text-truncate">${spot.description}</p>
-                    <div class="mt-auto">
-                        ${spot.keywords ? spot.keywords.split(',').map(tag => `<span class="badge bg-light text-dark border me-1 my-1">${tag.trim()}</span>`).join('') : ''}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            `;
-        });
-
-        spotsContainer.innerHTML = htmlCards;
-
-        // Reinicializar animaciones tras inyectar DOM nuevo
-        if (typeof AOS !== 'undefined') AOS.init();
+        // Pintamos todas las zonas por primera vez
+        renderSpotsCards(currentSpotsList);
 
     } catch (e) {
         console.error("Error al cargar JSON de la zona:", e);
-        spotsContainer.innerHTML = '<div class="alert alert-danger">Error cargando información de Spots. Asegúrate de estar usando un servidor local y no abrir file:///</div>';
+        spotsContainer.innerHTML = '<div class="alert alert-danger">Error cargando información de Spots. Asegúrate de estar usando un servidor local.</div>';
     }
 }
 
+// Nueva función exclusiva para pintar tarjetas
+function renderSpotsCards(spotsArray) {
+    const spotsContainer = document.getElementById('spots-container');
+    if (!spotsContainer) return;
+
+    if (spotsArray.length === 0) {
+        spotsContainer.innerHTML = `
+            <div class="col-12 text-center text-muted py-5">
+                <i class="bi bi-emoji-frown fs-1"></i>
+                <h4 class="mt-3">No hay zonas que coincidan con tu búsqueda</h4>
+                <p>Prueba a quitar algún filtro o buscar otra especie.</p>
+            </div>`;
+        return;
+    }
+
+    let htmlCards = '';
+    spotsArray.forEach((spot) => {
+        const originalIndex = currentSpotsList.indexOf(spot); // Indice para abrir el modal correcto
+        const imgSrc = Array.isArray(spot.image) ? spot.image[0] : spot.image;
+        htmlCards += `
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm border-0 spot-card" onclick="openSpotModal(${originalIndex})" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+              <img src="${imgSrc}" class="card-img-top object-fit-cover" alt="${spot.name}" style="height:200px">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-primary fw-bold">${spot.name}</h5>
+                <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
+                <p class="card-text text-truncate">${spot.description}</p>
+                <div class="mt-auto">
+                    ${spot.keywords ? spot.keywords.split(',').slice(0,2).map(tag => `<span class="badge bg-light text-dark border me-1 my-1">${tag.trim()}</span>`).join('') : ''}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+    });
+
+    spotsContainer.innerHTML = htmlCards;
+
+    if (typeof AOS !== 'undefined') AOS.init();
+}
+
+// LÓGICA DEL RECOMENDADOR
+window.applyRecommender = () => {
+    const filtroZona = document.getElementById('rec-zona').value.toLowerCase();
+    const filtroTiempo = document.getElementById('rec-tiempo').value.toLowerCase(); // ¡Añadido nuevo filtro!
+    const filtroTecnica = document.getElementById('rec-tipo').value.toLowerCase();
+    const filtroPez = document.getElementById('rec-pez').value.toLowerCase();
+
+    const zonasRecomendadas = currentSpotsList.filter(spot => {
+        let esValida = true;
+
+        const leerPropiedad = (nombreProp) => {
+            if (!spot.additionalProperty) return "";
+            const prop = spot.additionalProperty.find(p => p.name === nombreProp);
+            // Quitamos tildes
+            return prop ? prop.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
+        };
+
+        const localidad = spot.address?.addressLocality?.toLowerCase() || "";
+        const tiempoDisponibles = leerPropiedad('Momento del Día');
+        const tecnicasDisponibles = leerPropiedad('Técnicas Recomendadas');
+        const especiesDisponibles = leerPropiedad('Especies Frecuentes');
+
+        // 1. Filtrar Zona
+        if (filtroZona !== "" && !localidad.includes(filtroZona)) esValida = false;
+
+        // 2. Filtrar Tiempo
+        if (filtroTiempo !== "" && esValida) {
+            if (!tiempoDisponibles.includes(filtroTiempo)) esValida = false;
+        }
+
+        // 3. Filtrar Técnica
+        if (filtroTecnica !== "" && esValida) {
+            if (!tecnicasDisponibles.includes(filtroTecnica)) esValida = false;
+        }
+
+        // 4. Filtrar Pez
+        if (filtroPez !== "" && esValida) {
+            const pezLimpio = filtroPez.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            if (!especiesDisponibles.includes(pezLimpio)) esValida = false;
+        }
+
+        return esValida;
+    });
+
+    renderSpotsCards(zonasRecomendadas);
+};
+
+window.resetRecommender = () => {
+    document.getElementById('rec-zona').value = "";
+    document.getElementById('rec-tiempo').value = "";
+    document.getElementById('rec-tipo').value = "";
+    document.getElementById('rec-pez').value = "";
+    renderSpotsCards(currentSpotsList);
+};
+
+// MODAL DE ZONAS
 window.openSpotModal = (index) => {
     const spot = currentSpotsList[index];
     if (!spot) return;
 
-    // 1. Textos principales
     document.getElementById('spotModalLabel').innerText = spot.name;
     document.getElementById('spotModalLocality').innerHTML = `<i class="bi bi-geo-alt text-danger"></i> ${spot.address?.addressLocality || 'Ubicación no especificada'}`;
     document.getElementById('spotModalDescription').innerText = spot.description || '';
 
-    // 2. Galería de imágenes
     const galleryContainer = document.getElementById('spotModalGallery');
-    // Aseguramos que sea un array aunque solo venga una imagen
     const images = Array.isArray(spot.image) ? spot.image : [spot.image];
 
-    // Si hay más de una imagen creamos un grid, si no, una grande
     let galleryHtml = '';
     images.forEach(img => {
         galleryHtml += `
@@ -258,7 +324,6 @@ window.openSpotModal = (index) => {
     });
     galleryContainer.innerHTML = galleryHtml;
 
-    // 3. Extracción de propiedades adicionales
     const getPropValue = (propName) => {
         const prop = spot.additionalProperty?.find(p => p.name === propName);
         return prop ? prop.value : '<span class="text-muted fst-italic">Información no disponible</span>';
@@ -267,8 +332,9 @@ window.openSpotModal = (index) => {
     document.getElementById('spotModalAccess').innerHTML = getPropValue('Acceso');
     document.getElementById('spotModalSeabed').innerHTML = getPropValue('Fondo Marino');
     document.getElementById('spotModalTechniques').innerHTML = getPropValue('Técnicas Recomendadas');
+    // Pintamos el nuevo atributo en el modal
+    document.getElementById('spotModalTime').innerHTML = getPropValue('Momento del Día');
 
-    // Procesar las especies para mostrarlas como badges interactivos
     const speciesRaw = getPropValue('Especies Frecuentes');
     if (speciesRaw.includes('Información no')) {
         document.getElementById('spotModalSpecies').innerHTML = speciesRaw;
@@ -286,7 +352,6 @@ window.openSpotModal = (index) => {
         window.renderSpotComments(spot.name);
     }, 100);
 
-    // 4. Mostrar el Modal
     const modalEl = document.getElementById('spotModal');
     let modal = bootstrap.Modal.getInstance(modalEl);
     if (!modal) {
@@ -296,9 +361,10 @@ window.openSpotModal = (index) => {
 };
 
 window.renderSpotComments = (spotName) => {
+    // Código inalterado de tus comentarios...
     const container = document.getElementById('spotModalCommentsContainer');
     if (!container) return;
-    const safeKey = `pm_spot_comments_${spotName.replace(/\s+/g, '_')}`;
+    const safeKey = `pm_spot_comments_${spotName.replace(/\\s+/g, '_')}`;
     const comments = JSON.parse(localStorage.getItem(safeKey)) || [];
     if (comments.length === 0) {
         container.innerHTML = '<p class="text-muted small fst-italic"><i class="bi bi-info-circle me-1"></i>No hay reportes recientes. ¡Sé el primero en compartir qué tipo de capturas entraron hoy!</p>';
@@ -320,19 +386,19 @@ window.renderSpotComments = (spotName) => {
 };
 
 window.submitSpotComment = () => {
+    // Código inalterado de tus comentarios...
     if (window.currentSpotIndex === undefined) return;
     const input = document.getElementById('spotCommentInput');
     const text = input ? input.value.trim() : '';
     if (!text) return;
     const spotName = currentSpotsList[window.currentSpotIndex].name;
-    const safeKey = `pm_spot_comments_${spotName.replace(/\s+/g, '_')}`;
+    const safeKey = `pm_spot_comments_${spotName.replace(/\\s+/g, '_')}`;
     const comments = JSON.parse(localStorage.getItem(safeKey)) || [];
     comments.unshift({ text, date: new Date().toLocaleDateString('es-ES') });
     localStorage.setItem(safeKey, JSON.stringify(comments));
     input.value = '';
     window.renderSpotComments(spotName);
 };
-
 
 // ==========================================
 // SECCIÓN DE ESPECIES (ICTIOLOGÍA)
