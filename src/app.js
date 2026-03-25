@@ -10,6 +10,8 @@ import { ShopsSection, initShops } from "./components/ShopsSection.js";
 import { RampsSection, initRamps } from "./components/RampsSection.js";
 import { AuthorsSection } from "./components/AuthorsSection.js";
 import { ContactSection } from "./components/ContactSection.js";
+import { QuizSection } from "./components/QuizSection.js";
+import { PokedexSection } from "./components/PokedexSection.js";
 import { initTheme } from "../assets/js/main.js";
 
 const app = document.getElementById('app');
@@ -22,7 +24,9 @@ const renderApp = () => {
             ${HeroSection()}
             ${SpotsSection()}
             ${SpeciesSection()}
+            ${PokedexSection()}
             ${MapSection()}
+            ${QuizSection()}
             ${WeatherSection()}
             ${ShopsSection()}
             ${RampsSection()}
@@ -50,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initTheme();
 });
 
-window.submitContactForm = function(event) {
+window.submitContactForm = function (event) {
     event.preventDefault();
 
     const name = document.getElementById('contact-name').value.trim();
@@ -77,22 +81,24 @@ window.submitContactForm = function(event) {
 
 async function loadMonthSpecies() {
     const currentMonth = new Date().getMonth() + 1; // 1-12
-    
+    const currentMonthName = new Date().toLocaleString('es-ES', { month: 'long' });
+    const formattedMonth = currentMonthName.charAt(0).toUpperCase() + currentMonthName.slice(1);
+
     try {
         const response = await fetch('/assets/data/especies.json');
         const schema = await response.json();
         const allSpecies = schema['@graph'] || [];
-        
+
         // Filtrar especies disponibles en el mes actual
         const monthSpecies = allSpecies.filter(species => {
             const monthStart = species.additionalProperty?.find(p => p.name === 'Mes inicio temporada');
             const monthEnd = species.additionalProperty?.find(p => p.name === 'Mes fin temporada');
-            
+
             if (!monthStart || !monthEnd) return false;
-            
+
             const startMonth = parseInt(monthStart.value);
             const endMonth = parseInt(monthEnd.value);
-            
+
             // Si el rango cruza el año (ej: noviembre-mayo)
             if (endMonth < startMonth) {
                 return currentMonth >= startMonth || currentMonth <= endMonth;
@@ -101,38 +107,39 @@ async function loadMonthSpecies() {
                 return currentMonth >= startMonth && currentMonth <= endMonth;
             }
         });
-                
+
         if (monthSpecies.length === 0) {
             return; // Sin peces este mes
         }
-        
+
         const monthSpeciesContainer = document.getElementById('month-species-container');
         const indicatorsContainer = document.getElementById('hero-carousel-indicators');
         const carouselInner = document.getElementById('hero-carousel-inner');
-        
+
         if (!monthSpeciesContainer || !indicatorsContainer || !carouselInner) {
             return;
         }
-        
+
         // Crear una diapositiva por cada pez del mes
-        monthSpecies.forEach((sp, index) => {                const slide = document.createElement('div');
+        monthSpecies.forEach((sp, index) => {
+            const slide = document.createElement('div');
             slide.className = 'carousel-item';
             slide.setAttribute('data-species-name', sp.name);
             slide.innerHTML = `
                 <img src="${sp.image}" alt="${sp.name}" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
                 <div class="carousel-container">
-                    <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Peces del Mes</h2>
+                    <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Peces del mes - ${formattedMonth}</h2>
                     <h3 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.5rem, 4vw, 2.5rem); margin-top: clamp(3rem, 15vw, 10rem);">${sp.name}</h3>
                 </div>
             `;
-            
+
             monthSpeciesContainer.appendChild(slide);
         });
-        
+
         // Regenerar indicadores para todas las diapositivas
         const totalSlides = carouselInner.querySelectorAll('.carousel-item').length;
         indicatorsContainer.innerHTML = '';
-        
+
         for (let i = 0; i < totalSlides; i++) {
             const btn = document.createElement('button');
             btn.type = 'button';
@@ -145,7 +152,7 @@ async function loadMonthSpecies() {
             btn.setAttribute('aria-label', `Slide ${i + 1}`);
             indicatorsContainer.appendChild(btn);
         }
-        
+
     } catch (e) {
         console.error("Error al cargar peces del mes:", e);
     }
@@ -168,7 +175,7 @@ async function loadSpotsData() {
 
         // Extraer los spots del nuevo json exclusivo
         const spots = schema['@graph'];
-        
+
         // Guardamos los spots filtrados en la variable global
         currentSpotsList = spots;
 
@@ -216,7 +223,7 @@ window.openSpotModal = (index) => {
     const galleryContainer = document.getElementById('spotModalGallery');
     // Aseguramos que sea un array aunque solo venga una imagen
     const images = Array.isArray(spot.image) ? spot.image : [spot.image];
-    
+
     // Si hay más de una imagen creamos un grid, si no, una grande
     let galleryHtml = '';
     images.forEach(img => {
@@ -264,6 +271,7 @@ window.openSpotModal = (index) => {
 // Variables globales para la gestion dinámica del swiper y modal de especies
 let speciesSwiperInstance = null;
 let currentSpeciesList = [];
+let globalSpeciesList = [];
 
 async function loadSpeciesData() {
     const speciesContainer = document.getElementById('species-container');
@@ -274,7 +282,9 @@ async function loadSpeciesData() {
         const schema = await response.json();
 
         let allSpecies = schema['@graph'] || [];
+        globalSpeciesList = allSpecies;
         renderSpeciesSwiper(allSpecies);
+        initPokedex(allSpecies);
 
         // Configuración avanzada de búsqueda
         const applyFilters = () => {
@@ -284,34 +294,34 @@ async function loadSpeciesData() {
 
             const filtered = allSpecies.filter(sp => {
                 let pass = true;
-                
+
                 // Filtro Dificultad
-                if(dif !== 'todo') {
+                if (dif !== 'todo') {
                     const prop = sp.additionalProperty?.find(p => p.name === 'Dificultad');
-                    if(!prop || prop.value.toLowerCase() !== dif) pass = false;
+                    if (!prop || prop.value.toLowerCase() !== dif) pass = false;
                 }
-                
+
                 // Filtro Calidad Culinaria
-                if(cal !== 'todo' && pass) {
+                if (cal !== 'todo' && pass) {
                     const prop = sp.additionalProperty?.find(p => p.name === 'Calidad culinaria');
-                    if(!prop) { pass = false; }
+                    if (!prop) { pass = false; }
                     else {
-                       let val = prop.value.toLowerCase();
-                       if (cal === 'moderada' && !val.includes('baja') && !val.includes('moderada')) pass = false;
-                       else if (cal !== 'moderada' && !val.includes(cal)) pass = false;
+                        let val = prop.value.toLowerCase();
+                        if (cal === 'moderada' && !val.includes('baja') && !val.includes('moderada')) pass = false;
+                        else if (cal !== 'moderada' && !val.includes(cal)) pass = false;
                     }
                 }
-                
+
                 // Filtro Texto Libre (Nombre, metodos, descripcion)
-                if(txt.length > 0 && pass) {
+                if (txt.length > 0 && pass) {
                     const jsonString = JSON.stringify(sp).toLowerCase();
-                    if(!jsonString.includes(txt)) pass = false;
+                    if (!jsonString.includes(txt)) pass = false;
                 }
 
                 return pass;
             });
-            
-            renderSpeciesSwiper(filtered.length ? filtered : []); 
+
+            renderSpeciesSwiper(filtered.length ? filtered : []);
         };
 
         const filterElements = document.querySelectorAll('.species-filter');
@@ -329,8 +339,8 @@ async function loadSpeciesData() {
 function renderSpeciesSwiper(speciesArray) {
     const container = document.getElementById('species-container');
     currentSpeciesList = speciesArray;
-    
-    if(speciesSwiperInstance) {
+
+    if (speciesSwiperInstance) {
         speciesSwiperInstance.destroy(true, true);
         speciesSwiperInstance = null;
     }
@@ -376,7 +386,16 @@ function renderSpeciesSwiper(speciesArray) {
 window.openSpeciesModal = (index) => {
     const species = currentSpeciesList[index];
     if (!species) return;
+    fillAndShowSpeciesModal(species);
+};
 
+window.openSpeciesModalGlobal = (index) => {
+    const species = globalSpeciesList[index];
+    if (!species) return;
+    fillAndShowSpeciesModal(species);
+};
+
+function fillAndShowSpeciesModal(species) {
     document.getElementById('speciesModalLabel').innerText = species.name;
     document.getElementById('speciesModalScientific').innerText = species.alternateName || '';
     document.getElementById('speciesModalDescription').innerText = species.description || '';
@@ -399,6 +418,17 @@ window.openSpeciesModal = (index) => {
     }
     propsContainer.innerHTML = propsHtml;
 
+    // Actualizar botón de captura en el header
+    const actionContainer = document.getElementById('speciesModalCatchAction');
+    if (actionContainer) {
+        const isCaught = caughtSpecies.includes(species.name);
+        if (isCaught) {
+            actionContainer.innerHTML = `<button class="btn btn-success btn-sm rounded-pill py-1 px-3 shadow-sm" onclick="toggleCatchSpecies(event, '${species.name}')"><i class="bi bi-check-circle-fill me-1"></i> Capturado</button>`;
+        } else {
+            actionContainer.innerHTML = `<button class="btn btn-primary btn-sm rounded-pill py-1 px-3 shadow-sm text-white" onclick="toggleCatchSpecies(event, '${species.name}')"><i class="bi bi-plus-circle me-1"></i> Marcar como capturado</button>`;
+        }
+    }
+
     // Verificar si el modal ya está inicializado. Si no, lo inicializa Bootstrap.
     const modalEl = document.getElementById('speciesModal');
     let modal = bootstrap.Modal.getInstance(modalEl);
@@ -406,4 +436,86 @@ window.openSpeciesModal = (index) => {
         modal = new bootstrap.Modal(modalEl);
     }
     modal.show();
+}
+
+
+// ==========================================
+// SECCIÓN POKÉDEX
+// ==========================================
+
+let caughtSpecies = JSON.parse(localStorage.getItem('caughtSpecies')) || [];
+
+window.initPokedex = (speciesArray) => {
+    const grid = document.getElementById('pokedex-grid');
+    const progressEl = document.getElementById('pokedex-progress');
+    const totalEl = document.getElementById('pokedex-total');
+    if (!grid) return;
+
+    if (totalEl) totalEl.textContent = speciesArray.length;
+    if (progressEl) progressEl.textContent = caughtSpecies.length;
+
+    let html = '';
+    speciesArray.forEach((species, index) => {
+        const isCaught = caughtSpecies.includes(species.name);
+        // Efectos: La silueta se oscurece al 20% y en blanco y negro (0.2 y grayscale)
+        const imgStyle = isCaught ? 'filter: brightness(1) drop-shadow(0 4px 6px rgba(0,0,0,0.1));' : 'filter: brightness(0.1) grayscale(1); opacity: 0.6;';
+        
+        // Si está capturado abre la ficha. Si no, no hace nada
+        const action = isCaught ? `openSpeciesModalGlobal(${index})` : ``;
+        const pointerStyle = isCaught ? `cursor: pointer; transition: transform 0.2s;` : `cursor: default; opacity: 0.8;`;
+        const hoverAnim = isCaught ? `onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"` : '';
+
+        html += `
+          <div class="col-4 col-sm-3 col-md-3 col-lg-2">
+             <div class="card h-100 border-0 bg-transparent text-center" style="${pointerStyle}" ${hoverAnim} onclick="${action}" title="${isCaught ? 'Ver ficha técnica de la especie' : 'Ve a la lista de Especies para registrar esta captura'}">
+               <div class="position-relative mx-auto rounded-circle d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background-color: ${isCaught ? '#eef2ff' : '#f8f9fa'}; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);">
+                 <img src="${species.image}" alt="${species.name}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                 ${isCaught ? '<i class="bi bi-check-circle-fill text-success position-absolute" style="bottom: 0px; right: 0px; font-size: 1.2rem; background: white; border-radius: 50%;"></i>' : ''}
+               </div>
+               <div class="card-body p-2">
+                 <small class="card-title fw-bold ${isCaught ? 'text-primary' : 'text-muted'} d-block text-truncate" style="font-size: 0.8rem;">${isCaught ? species.name : '???'}</small>
+               </div>
+             </div>
+          </div>
+        `;
+    });
+
+    grid.innerHTML = html;
+};
+
+window.toggleCatchSpecies = (event, name) => {
+    if (event) event.stopPropagation();
+
+    if (caughtSpecies.includes(name)) {
+        // Desmarcar
+        caughtSpecies = caughtSpecies.filter(s => s !== name);
+    } else {
+        // Marcar
+        caughtSpecies.push(name);
+    }
+    localStorage.setItem('caughtSpecies', JSON.stringify(caughtSpecies));
+    
+    // Auto-update Pokedex Grid en fondo
+    if (globalSpeciesList && globalSpeciesList.length > 0) {
+        initPokedex(globalSpeciesList);
+    }
+    
+    // Cambiar estado visual del botón del modal instantáneamente
+    const actionContainer = document.getElementById('speciesModalCatchAction');
+    if (actionContainer) {
+        const isCaught = caughtSpecies.includes(name);
+        if (isCaught) {
+            actionContainer.innerHTML = `<button class="btn btn-success btn-sm rounded-pill py-1 px-3 shadow-sm" onclick="toggleCatchSpecies(event, '${name}')"><i class="bi bi-check-circle-fill me-1"></i> Capturado</button>`;
+        } else {
+            actionContainer.innerHTML = `<button class="btn btn-primary btn-sm rounded-pill py-1 px-3 shadow-sm text-white" onclick="toggleCatchSpecies(event, '${name}')"><i class="bi bi-plus-circle me-1"></i> Marcar como capturado</button>`;
+        }
+    }
+};
+
+window.resetPokedex = () => {
+    if(confirm('¿Seguro que quieres borrar todo tu registro de capturas de la Pokedex?')) {
+        caughtSpecies = [];
+        localStorage.removeItem('caughtSpecies');
+        if (currentSpeciesList) initPokedex(currentSpeciesList);
+    }
 };
