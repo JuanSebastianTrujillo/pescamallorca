@@ -59,8 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
         fishModal.addEventListener('hidden.bs.modal', () => {
             if (window.currentFishAudio) {
                 window.currentFishAudio.pause();
+                window.currentFishAudio.currentTime = 0;
                 window.currentFishAudio = null;
             }
+
+            // Restaurar cualquier botón de audio a estado por defecto
+            document.querySelectorAll('[id^="btnAudioToggle_"]').forEach(btn => {
+                btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
+                btn.classList.remove('btn-primary', 'text-white');
+                btn.classList.add('btn-outline-primary');
+            });
+
             const vidPlaceholder = document.getElementById('videoPlaceholder');
             if (vidPlaceholder) {
                 const iframe = vidPlaceholder.querySelector('iframe');
@@ -400,6 +409,60 @@ window.submitSpotComment = () => {
     window.renderSpotComments(spotName);
 };
 
+window.toggleFishAudio = (btn, audioPath) => {
+    if (!btn || !audioPath) return;
+
+    // Si ya suena algo y es el mismo audio, detenlo
+    if (window.currentFishAudio && !window.currentFishAudio.paused) {
+        window.currentFishAudio.pause();
+        window.currentFishAudio.currentTime = 0;
+        window.currentFishAudio = null;
+
+        btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
+        btn.classList.replace('btn-primary', 'btn-outline-primary');
+        btn.classList.remove('text-white');
+        return;
+    }
+
+    // Parar audio existente si hay uno (otra especie)
+    if (window.currentFishAudio) {
+        window.currentFishAudio.pause();
+        window.currentFishAudio.currentTime = 0;
+        window.currentFishAudio = null;
+    }
+
+    // Crear y reproducir lejos de blocos de sincronización extra
+    try {
+        const audio = new Audio(audioPath);
+        audio.preload = 'auto';
+        window.currentFishAudio = audio;
+
+        audio.play().then(() => {
+            btn.innerHTML = '<i class="bi bi-stop-circle-fill me-2"></i> Detener Sonido';
+            btn.classList.replace('btn-outline-primary', 'btn-primary');
+            btn.classList.add('text-white');
+        }).catch((err) => {
+            console.error('Error al reproducir audio:', err);
+            btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
+            btn.classList.replace('btn-primary', 'btn-outline-primary');
+            btn.classList.remove('text-white');
+            window.currentFishAudio = null;
+        });
+
+        audio.onended = () => {
+            btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
+            btn.classList.replace('btn-primary', 'btn-outline-primary');
+            btn.classList.remove('text-white');
+            window.currentFishAudio = null;
+        };
+    } catch (error) {
+        console.error('toggleFishAudio error:', error);
+        btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
+        btn.classList.replace('btn-primary', 'btn-outline-primary');
+        btn.classList.remove('text-white');
+    }
+};
+
 // ==========================================
 // SECCIÓN DE ESPECIES (ICTIOLOGÍA)
 // ==========================================
@@ -541,9 +604,74 @@ function fillAndShowSpeciesModal(species) {
     document.getElementById('speciesModalLabel').innerText = species.name;
     document.getElementById('speciesModalScientific').innerText = species.alternateName || '';
     document.getElementById('speciesModalDescription').innerText = species.description || '';
+
     const imgEl = document.getElementById('speciesModalImage');
-    imgEl.src = species.image;
-    imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1.jpg'; };
+    if (!imgEl) return;
+    imgEl.style.transition = 'opacity 0.35s ease-in-out';
+
+    const galleryImages = (Array.isArray(species.images) && species.images.length ? species.images : [species.image]).filter(Boolean);
+    let currentImagePosition = 0;
+
+    const dotsContainer = document.getElementById('speciesCarouselDots');
+    const prevBtn = document.getElementById('speciesCarouselPrev');
+    const nextBtn = document.getElementById('speciesCarouselNext');
+
+    const renderDots = () => {
+        if (!dotsContainer) return;
+
+        if (galleryImages.length <= 1) {
+            dotsContainer.style.display = 'none';
+            dotsContainer.innerHTML = '';
+            return;
+        }
+
+        dotsContainer.style.display = 'flex';
+        dotsContainer.innerHTML = galleryImages.map((_, i) => {
+            const isActive = i === currentImagePosition;
+            return `
+                <button type="button" class="btn ${isActive ? 'bg-white' : 'bg-light'}" style="width: 32px; height: 4px; min-width: 32px; border-radius: 2px; border: none; opacity: ${isActive ? '1' : '0.65'};" aria-label="Ir a imagen ${i + 1}" data-index="${i}"></button>
+            `;
+        }).join('');
+
+        dotsContainer.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (event) => {
+                const index = Number(event.currentTarget.dataset.index);
+                updateCarouselImage(index);
+            });
+        });
+    };
+
+    const updateNavVisibility = () => {
+        if (galleryImages.length > 1) {
+            if (prevBtn) prevBtn.style.display = 'block';
+            if (nextBtn) nextBtn.style.display = 'block';
+        } else {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+        }
+    };
+
+    const updateCarouselImage = (pos) => {
+        if (!galleryImages.length || !imgEl) return;
+        currentImagePosition = ((pos % galleryImages.length) + galleryImages.length) % galleryImages.length;
+        const selected = galleryImages[currentImagePosition];
+
+        imgEl.style.opacity = '0';
+        setTimeout(() => {
+            imgEl.src = selected.includes('/') ? selected : `/assets/img/peces/${selected}`;
+            imgEl.alt = `${species.name} imagen ${currentImagePosition + 1}`;
+            imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1.jpg'; };
+            imgEl.style.opacity = '1';
+        }, 150);
+
+        renderDots();
+        updateNavVisibility();
+    };
+
+    if (prevBtn) prevBtn.onclick = () => updateCarouselImage(currentImagePosition - 1);
+    if (nextBtn) nextBtn.onclick = () => updateCarouselImage(currentImagePosition + 1);
+
+    updateCarouselImage(0);
 
     // 1. AUDIO (Dinámico)
     const audioContainer = document.getElementById('speciesModalAudioContainer');
@@ -551,7 +679,7 @@ function fillAndShowSpeciesModal(species) {
         if (species.audio) {
             const audioPath = species.audio.includes('/') ? species.audio : `/assets/audio/${species.audio}`;
             audioContainer.innerHTML = `
-               <button class="btn btn-outline-primary btn-sm rounded-pill ms-3 shadow-sm px-3 fw-bold" onclick="if(window.currentFishAudio) window.currentFishAudio.pause(); window.currentFishAudio = new Audio('${audioPath}'); window.currentFishAudio.play();"><i class="bi bi-volume-up me-2"></i> Escuchar Sonido</button>
+               <button id="btnAudioToggle_${species.name.replace(/\s+/g, '')}" class="btn btn-outline-primary btn-sm rounded-pill ms-3 shadow-sm px-3 fw-bold" onclick="window.toggleFishAudio(this, '${audioPath}')"><i class="bi bi-volume-up me-2"></i> Escuchar Sonido</button>
             `;
         } else {
             audioContainer.innerHTML = ``;
@@ -586,34 +714,39 @@ function fillAndShowSpeciesModal(species) {
     const vidContainer = document.getElementById('speciesModalVideo');
     if (vidContainer) {
         if (species.video) {
+            const videoThumbnail = species.videoThumbnail || galleryImages[0] || species.image || 'assets/img/hero-carousel/hero-carousel-1.jpg';
             let videoCode = '';
+
             if (species.video.includes('youtube.com') || species.video.includes('youtu.be')) {
                 const isEmbed = species.video.includes('embed');
                 const isWatch = species.video.includes('watch?v=');
-                const videoId = isEmbed ? species.video.split('embed/')[1].substring(0, 11) : isWatch ? species.video.split('watch?v=')[1].substring(0, 11) : species.video.split('.be/')[1]?.substring(0, 11);
-                
-                videoCode = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-100 h-100"></iframe>`;
+                const videoId = isEmbed ? species.video.split('embed/')[1]?.substring(0, 11) : isWatch ? species.video.split('watch?v=')[1]?.substring(0, 11) : species.video.split('.be/')[1]?.substring(0, 11);
+                videoCode = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; height:100%; border:0; background:#000; display:block;"></iframe>`;
             } else {
                 const videoPath = species.video.includes('/') ? species.video : `/assets/video/${species.video}`;
-                videoCode = `<video controls autoplay class="w-100 h-100"><source src="${videoPath}" type="video/mp4">Tu navegador no soporta el video.</video>`;
+                videoCode = `<video controls autoplay style="width:100%; height:100%; object-fit: contain; background:#000; display:block;"><source src="${videoPath}" type="video/mp4">Tu navegador no soporta el video.</video>`;
             }
 
             vidContainer.innerHTML = `
                <div class="mt-4 pt-3 border-top border-secondary-subtle">
                   <h5 class="fw-bold mb-3 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-play-btn-fill me-2"></i> Documental y Comportamiento</h5>
-                  <div class="ratio ratio-16x9 bg-dark rounded overflow-hidden shadow-sm" style="border-radius: 1rem !important;">
-                     <div id="videoPlaceholder" class="d-flex w-100 h-100 flex-column justify-content-center align-items-center bg-light border border-secondary-subtle">
-                        <i id="btnPlayVideo" class="bi bi-play-circle-fill text-primary mb-2" style="font-size: 3rem; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"></i>
-                        <span class="small fw-bold text-dark text-uppercase" style="letter-spacing: 1px;">Reproducir Vídeo de la Especie</span>
+                  <div class="position-relative w-100 rounded overflow-hidden shadow-sm" style="aspect-ratio: 16 / 9; background-color: #000; border-radius: 1rem !important;">
+                     <div id="videoPlaceholder" class="position-relative w-100 h-100 d-flex justify-content-center align-items-center" style="background-color: #000;">
+                        <img id="videoThumbnailImg" src="${videoThumbnail}" alt="Miniatura del vídeo" style="width: 100%; height: 100%; object-fit: contain; background-color: #000;" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'" />
+                        <div class="position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: rgba(0,0,0,0.45);">
+                           <button id="btnPlayVideo" class="btn btn-outline-light rounded-circle" style="width: 64px; height: 64px;"><i class="bi bi-play-fill fs-2"></i></button>
+                           <span class="small fw-bold text-white text-uppercase mt-2" style="letter-spacing: 1px;">Reproducir Vídeo de la Especie</span>
+                        </div>
                      </div>
                   </div>
                </div>
             `;
-            
+
             const btnPlay = document.getElementById('btnPlayVideo');
             if (btnPlay) {
                 btnPlay.onclick = () => {
-                    document.getElementById('videoPlaceholder').innerHTML = videoCode;
+                    const placeholder = document.getElementById('videoPlaceholder');
+                    if (placeholder) placeholder.innerHTML = videoCode;
                 };
             }
         } else {

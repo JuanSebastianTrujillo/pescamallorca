@@ -58,12 +58,17 @@ export const SpeciesSection = () => {
               <div class="modal-body p-0">
                  
                  <div class="row g-0">
-                    <!-- Columna Imagen -->
+                    <!-- Columna Imagen (carrusel de imágenes) -->
                     <div class="col-12 col-md-5 position-relative bg-dark d-flex align-items-center" style="min-height: 400px;">
-                       <img src="" id="speciesModalImage" class="w-100 h-100 object-fit-cover" alt="" style="opacity: 0.85; position: absolute; top:0; left:0;">
-                       <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);">
+                       <div id="speciesMediaCarousel" class="w-100 h-100 position-relative">
+                       <img src="" id="speciesModalImage" class="w-100 h-100 object-fit-cover" alt="" style="opacity: 0.85; position: absolute; top:0; left:0; transition: opacity 0.35s ease-in-out;">
+                       <button type="button" id="speciesCarouselPrev" class="btn btn-sm btn-outline-light position-absolute top-50 start-0 translate-middle-y m-2" style="z-index: 2;"><i class="bi bi-chevron-left"></i></button>
+                       <button type="button" id="speciesCarouselNext" class="btn btn-sm btn-outline-light position-absolute top-50 end-0 translate-middle-y m-2" style="z-index: 2;"><i class="bi bi-chevron-right"></i></button>
+                       <div id="speciesCarouselDots" class="position-absolute top-0 start-50 translate-middle-x mt-2 d-flex gap-1" style="z-index: 2; display: none;"></div>
+                       <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); z-index: 2;">
                           <h5 class="text-white fst-italic mb-0 fw-light" id="speciesModalScientific"><i class="bi bi-tag-fill me-2 text-info"></i>Nombre Cientifico</h5>
                        </div>
+                    </div>
                     </div>
                     
                     <!-- Columna Datos -->
@@ -86,6 +91,9 @@ export const SpeciesSection = () => {
                     </div>
                  </div>
 
+              </div>
+              <div class="modal-footer bg-light border-top-0 justify-content-end">
+                <button type="button" class="btn btn-secondary px-4 fw-bold rounded-pill shadow-sm" data-bs-dismiss="modal">Cerrar</button>
               </div>
             </div>
           </div>

@@ -11,6 +11,8 @@
             "video": "dorada.mp4",
             "description": "Pez de la familia de los espáridos, muy común en las Islas Baleares. Destaca por la franja dorada entre sus ojos y su potente mandíbula adaptada para triturar conchas.",
             "url": "https://pescamallorca.online/peces/dorada",
+            "images": ["/assets/img/peces/dorada-min.webp", "/assets/img/peces/dorada2-min.webp", "/assets/img/peces/dorada3-min.webp"],
+            "videoThumbnail": "/assets/img/peces/dorada-min.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
