@@ -20,7 +20,19 @@ export const Header = () => {
             </div>
           </div>
 
-          <div class="auth-links d-flex align-items-center">
+          <div class="auth-links d-flex align-items-center gap-3">
+            <div class="dropdown">
+              <a class="text-light text-decoration-none dropdown-toggle" href="#" role="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.9rem;">
+                <i class="bi bi-globe me-1"></i> ES
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="languageDropdownDesktop" style="min-width: 120px;">
+                <li><a class="dropdown-item active" href="#">Español</a></li>
+                <li><a class="dropdown-item" href="#">Català</a></li>
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Deutsch</a></li>
+              </ul>
+            </div>
+
             <a href="#login" class="btn btn-sm btn-light rounded-pill d-flex align-items-center px-3" style="font-weight: 500;">
               <i class="bi bi-person-circle fs-6 me-2"></i> Iniciar sesión
             </a>
@@ -59,9 +71,23 @@ export const Header = () => {
               </li>
 
               <li class="d-md-none px-3 pb-2">
-                <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100" style="color: white; padding: 10px;">
+                <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;">
                   <i class="bi bi-person-circle fs-5 me-2"></i> Iniciar sesión
                 </a>
+                
+                <div class="d-flex justify-content-center">
+                  <div class="dropdown">
+                    <button class="btn btn-outline-secondary rounded-pill dropdown-toggle px-4" type="button" id="languageDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-globe me-2"></i> Español
+                    </button>
+                    <ul class="dropdown-menu shadow text-center border-0" aria-labelledby="languageDropdownMobile">
+                      <li><a class="dropdown-item active" href="#">Español</a></li>
+                      <li><a class="dropdown-item" href="#">Català</a></li>
+                      <li><a class="dropdown-item" href="#">English</a></li>
+                      <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                    </ul>
+                  </div>
+                </div>
               </li>
 
               <li class="d-md-none text-center pb-3">
