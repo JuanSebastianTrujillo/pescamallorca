@@ -25,9 +25,9 @@ const renderApp = () => {
             ${SpotsSection()}
             ${SpeciesSection()}
             ${PecedexSection()}
-            ${MapSection()}
-            ${QuizSection()}
+            ${MapSection()}           
             ${WeatherSection()}
+            ${QuizSection()}
             ${ShopsSection()}
             ${RampsSection()}
             ${RulesSection()}

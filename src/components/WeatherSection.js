@@ -1,7 +1,7 @@
 export const WeatherSection = () => {
     return `
       <!-- Weather Section -->
-      <section id="meteo" class="section">
+      <section id="meteo" class="section light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2>Parte Meteorológico</h2>
           <p>Estado del mar, vientos y mareas para planificar tu próxima salida de pesca.</p>
