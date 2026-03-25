@@ -58,7 +58,7 @@ export const Header = () => {
               <li><a href="#pokedex">Pokédex</a></li>
               <li><a href="#mapa">Mapa</a></li>
               <li><a href="#quiz">Quiz</a></li>
-              <li><a href="#meteo">Météo</a></li>
+              <li><a href="#meteo">Tiempo</a></li>
               <li><a href="#tiendas">Tiendas</a></li>
               <li><a href="#rampas">Rampas</a></li>
               <li><a href="#normativa">Normativa</a></li>
