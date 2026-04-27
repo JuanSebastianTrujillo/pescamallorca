@@ -393,6 +393,7 @@ function renderSpotsCards(spotsArray) {
                  alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}"
                  style="height:200px" 
                  loading="lazy"
+                 decoding="async"
                  onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title text-primary fw-bold fs-5">${spot.name}</h3>

@@ -222,7 +222,7 @@ export const initShops = () => {
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                <div class="card w-100 shadow-sm border-0 shop-card cursor-pointer" role="button" tabindex="0" aria-label="Ver detalles de ${store.name}" onclick="openShopModal(${store.id})" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                   <div class="position-relative">
-                     <img src="${store.image}" class="card-img-top object-fit-cover" alt="Fotografía detallada de la tienda de pesca ${store.name}, especializada en artículos de pesca en Mallorca" style="height:220px" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                     <img src="${store.image}" class="card-img-top object-fit-cover" alt="Fotografía detallada de la tienda de pesca ${store.name}, especializada en artículos de pesca en Mallorca" style="height:220px" loading="lazy" decoding="async" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                      <div class="position-absolute bottom-0 start-0 m-3">
                          <span class="badge bg-dark align-items-center shadow-lg"><i class="bi bi-star-fill text-warning me-1"></i> ${store.rating} / 5</span>
                      </div>
