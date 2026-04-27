@@ -1,3 +1,5 @@
+import { fetchRealWeatherData } from "../services/WeatherService.js";
+
 export const WeatherSection = () => {
     return `
       <!-- Weather Section -->
@@ -38,22 +40,6 @@ const weatherZones = {
     oeste: { name: "Oeste (Andratx)", lat: 39.55, lon: 2.35 }
 };
 
-// Mock function to simulate an API call
-const fetchWeatherData = (zoneId) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            // Mock data based on zone
-            const mocks = {
-                norte: { wind: "20 nudos (N)", statusIcon: "bi-cloud-rain", statusDesc: "Lluvia débil", seaState: "Fuerte Marejada", waves: "1.5m - 2.5m", rainProb: "75%" },
-                sur: { wind: "15 nudos (NE)", statusIcon: "bi-sun", statusDesc: "Despejado", seaState: "Marejadilla", waves: "0.2m - 0.5m", rainProb: "10%" },
-                este: { wind: "12 nudos (E)", statusIcon: "bi-cloud-sun", statusDesc: "Parc. Nublado", seaState: "Marejadilla", waves: "0.4m - 0.8m", rainProb: "25%" },
-                oeste: { wind: "18 nudos (W)", statusIcon: "bi-clouds", statusDesc: "Nublado", seaState: "Marejada", waves: "0.8m - 1.2m", rainProb: "40%" }
-            };
-            resolve(mocks[zoneId]);
-        }, 800);
-    });
-};
-
 export const initWeather = () => {
     const select = document.getElementById("weather-zone-select");
     if (!select) return;
@@ -87,18 +73,27 @@ export const initWeather = () => {
           </div>
         `;
 
-        // We prepare the coordinates to be used later in the actual API call
-        const lat = zoneInfo.lat;
-        const lon = zoneInfo.lon;
-        
-        console.log(`Future API Call to: lat: ${lat}, lon: ${lon}`);
+        // Llamada REAL a la API de Open-Meteo
+        const data = await fetchRealWeatherData(zoneInfo.lat, zoneInfo.lon);
 
-        const data = await fetchWeatherData(zoneId);
+        // Verificar si hubo error en la API
+        const errorBanner = data.error
+            ? `<div class="alert alert-warning border-0 shadow-sm mb-3 small"><i class="bi bi-wifi-off me-2"></i>No se pudo conectar con la API meteorológica. Los datos podrían no ser actuales.</div>`
+            : '';
 
         card.innerHTML = `
+          ${errorBanner}
           <h4 class="mb-4">${zoneInfo.name} - <span class="text-primary">Previsión Actual</span></h4>
           
-          <div class="row row-cols-2 row-cols-md-4 g-3 mt-3 px-2">
+          <div class="row row-cols-2 row-cols-md-5 g-3 mt-3 px-2">
+             <div class="col text-center">
+                 <div class="p-3 bg-white rounded shadow-sm h-100 border">
+                     <i class="bi bi-thermometer-half fs-2 text-danger d-block mb-2"></i>
+                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">Temperatura</span>
+                     <span class="fs-6">${data.temp}</span>
+                 </div>
+             </div>
+
              <div class="col text-center">
                  <div class="p-3 bg-white rounded shadow-sm h-100 border">
                      <i class="bi bi-wind fs-2 text-info d-block mb-2"></i>

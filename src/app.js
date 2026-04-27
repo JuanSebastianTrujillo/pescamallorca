@@ -2,7 +2,7 @@ import { Header } from "./components/Header.js";
 import { Footer } from "./components/Footer.js";
 import { HeroSection } from "./components/HeroSection.js";
 import { SpotsSection } from "./components/SpotsSection.js";
-import { MapSection } from "./components/MapSection.js";
+import { MapSection, initMapSection } from "./components/MapSection.js";
 import { SpeciesSection } from "./components/SpeciesSection.js";
 import { RulesSection } from "./components/RulesSection.js";
 import { WeatherSection, initWeather } from "./components/WeatherSection.js";
@@ -10,9 +10,10 @@ import { ShopsSection, initShops } from "./components/ShopsSection.js";
 import { RampsSection, initRamps } from "./components/RampsSection.js";
 import { AuthorsSection } from "./components/AuthorsSection.js";
 import { ContactSection } from "./components/ContactSection.js";
-import { QuizSection } from "./components/QuizSection.js";
+import { QuizSection, initQuiz } from "./components/QuizSection.js";
 import { PecedexSection } from "./components/PecedexSection.js";
 import { initTheme } from "../assets/js/main.js";
+import { initAccessibility } from "./services/AccessibilityService.js";
 
 const app = document.getElementById('app');
 
@@ -39,6 +40,9 @@ const renderApp = () => {
 };
 
 // Se ejecuta cuando el HTML index ha cargado la base
+// Datos globales compartidos entre módulos (mapa, quiz)
+let globalZonesData = [];
+
 document.addEventListener("DOMContentLoaded", () => {
     renderApp();
 
@@ -50,7 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
     initShops();
     initRamps();
 
-    // Inicializar JS de Bootstrap y theme (scroll spy, headers pegadizos...)
+    // Inicializar accesibilidad (TTS, contraste, zoom)
+    initAccessibility();
+
+    // Inicializar JS de Bootstrap y theme (scroll spy, headers pegadizos...);
     initTheme();
 
     // Listeners globales para apagar multimedia al cerrar modales
@@ -205,9 +212,19 @@ async function loadSpotsData() {
 
         // Guardamos los spots filtrados en la variable global
         currentSpotsList = spots;
+        globalZonesData = spots;
 
         // Pintamos todas las zonas por primera vez
         renderSpotsCards(currentSpotsList);
+
+        // Inicializar mapa interactivo con los spots cargados
+        // (Las rampas se pasan desde su data mock directamente)
+        try {
+            const rampsForMap = window.currentRampsData || [];
+            initMapSection(spots, rampsForMap);
+        } catch (mapErr) {
+            console.warn('MapSection init deferred or failed:', mapErr);
+        }
 
     } catch (e) {
         console.error("Error al cargar JSON de la zona:", e);
@@ -484,6 +501,13 @@ async function loadSpeciesData() {
         globalSpeciesList = allSpecies;
         renderSpeciesSwiper(allSpecies);
         initPecedex(allSpecies);
+
+        // Inicializar el quiz con los datos cargados
+        try {
+            initQuiz(allSpecies, globalZonesData);
+        } catch (quizErr) {
+            console.warn('QuizSection init error:', quizErr);
+        }
 
         // Configuración avanzada de búsqueda
         const applyFilters = () => {
