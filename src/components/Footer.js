@@ -9,14 +9,14 @@ export const Footer = () => {
               </a>
               <p>Tu plataforma líder para descubrir los mejores spots de pesca, conocer la normativa actualizada y aprender más sobre el entorno marino en Mallorca.</p>
               <div class="social-links d-flex mt-4">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
               </div>
             </div>
             
             <div class="col-lg-2 col-6 footer-links">
-              <h4>Enlaces Útiles</h4>
+              <h2 class="fs-5 fw-bold">Enlaces Útiles</h2>
               <ul>
                 <li><a href="/" data-link>Inicio</a></li>
                 <li><a href="/zonas" data-link>Zonas de Pesca</a></li>

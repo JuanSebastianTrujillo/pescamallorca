@@ -17,7 +17,7 @@ export const QuizSection = () => {
                    <div class="mb-4">
                       <i class="bi bi-controller text-primary" style="font-size: 4.5rem;"></i>
                    </div>
-                   <h4 class="fw-bold text-dark mb-4">Elige tu desafío</h4>
+                   <h3 class="fw-bold text-dark mb-4 fs-5">Elige tu desafío</h3>
                    
                    <div class="mb-4 text-start">
                      <label for="quiz-selector" class="form-label text-muted small fw-bold text-uppercase">Temática del cuestionario</label>
@@ -42,9 +42,9 @@ export const QuizSection = () => {
             <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
               <div class="modal-header bg-primary text-white p-3">
                 <div class="d-flex w-100 justify-content-between align-items-center">
-                   <h5 class="modal-title fw-bold m-0 fs-4" id="quizModalLabel">
+                   <h3 class="modal-title fw-bold m-0 fs-4" id="quizModalLabel">
                      <i class="bi bi-patch-question-fill me-2 text-warning"></i> Pregunta <span id="quiz-current-question">1</span>/<span id="quiz-total-questions">10</span>
-                   </h5>
+                   </h3>
                    <div class="badge bg-white text-primary fs-6 px-3 py-2 rounded-pill shadow-sm">
                      Puntuación: <span id="quiz-score" class="fw-bold">0</span>
                    </div>
@@ -55,7 +55,7 @@ export const QuizSection = () => {
               <div class="modal-body p-4 p-md-5 text-center bg-light">
                  
                  <!-- Pregunta -->
-                 <h4 class="mb-4 fw-bold text-dark lh-base" id="quiz-question-text">
+                 <h4 class="mb-4 fw-bold text-dark lh-base fs-4" id="quiz-question-text">
                     Cargando pregunta...
                  </h4>
                  
@@ -307,7 +307,7 @@ export const initQuiz = (speciesData, zonesData) => {
                 modalBody.innerHTML = `
                     <div class="text-center py-5">
                         <i class="bi bi-emoji-frown fs-1 text-muted"></i>
-                        <h4 class="mt-3 text-dark">No se pudieron generar preguntas</h4>
+                        <h3 class="mt-3 text-dark fs-5">No se pudieron generar preguntas</h3>
                         <p class="text-muted">No hay suficientes datos para esta categoría. Prueba con otra temática.</p>
                     </div>
                 `;

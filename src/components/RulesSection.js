@@ -29,7 +29,7 @@ export const RulesSection = () => {
             <div class="tab-pane fade show active" id="licencias" role="tabpanel" tabindex="0">
                 <div class="row align-items-center">
                     <div class="col-md-7">
-                        <h4 class="fw-bold text-primary mb-3">Licencias Oficiales (GOIB)</h4>
+                        <h3 class="fw-bold text-primary mb-3 fs-4">Licencias Oficiales (GOIB)</h3>
                         <p class="text-muted" style="text-align: justify;">Para practicar la pesca marítima de recreo en las Islas Baleares, es <strong>obligatorio estar en posesión de una licencia válida</strong> expedida por la Dirección General de Pesca o una administración autonómica convalidada.</p>
                         <ul class="list-unstyled mt-3 text-muted">
                             <li class="mb-2"><i class="bi bi-person-badge text-primary me-2"></i><strong>Individual (Desde costa/Submarina):</strong> Mayores de 14 años (o menores autorizados). Vigencia de 3 años.</li>
@@ -50,10 +50,10 @@ export const RulesSection = () => {
             <div class="tab-pane fade" id="tallas-cupos" role="tabpanel" tabindex="0">
                 <div class="row align-items-center">
                     <div class="col-md-7">
-                        <h4 class="fw-bold text-primary mb-3">Regulación Extensa de Especies</h4>
+                        <h3 class="fw-bold text-primary mb-3 fs-4">Regulación Extensa de Especies</h3>
                         <p class="text-muted" style="text-align: justify;">Las Islas Baleares cuentan con una estricta normativa de tallas mínimas para garantizar la supervivencia de los alevines y el equilibrio del ecosistema. <strong>Retener inmaduros supone multas severas y decomiso inmediato.</strong></p>
                         <div class="alert alert-info border-0 shadow-sm mt-3">
-                            <h6 class="fw-bold mb-1"><i class="bi bi-info-circle-fill me-2"></i>Límites diarios vigentes:</h6>
+                            <h4 class="fw-bold mb-1 fs-6"><i class="bi bi-info-circle-fill me-2"></i>Límites diarios vigentes:</h4>
                             <p class="small mb-0 text-dark">El tope legal de extracción es de <strong>5 kg más una pieza</strong> por licencia y día. Hay especies con límite de unidades diario (ej. 50 Raors por navegante en temporada abierta, máx. 300 por barco).</p>
                         </div>
                         <p class="small text-muted mt-3 mb-0">* Puedes consultar las dimensiones legales de cada pez dentro del <strong>Directorio de Ictiología (Especies)</strong>, abriendo la ficha técnica de la página individual de cada pez.</p>
@@ -68,7 +68,7 @@ export const RulesSection = () => {
             <div class="tab-pane fade" id="reservas" role="tabpanel" tabindex="0">
                 <div class="row align-items-center">
                     <div class="col-md-7">
-                        <h4 class="fw-bold text-primary mb-3">Zonas Protegidas y Reservas</h4>
+                        <h3 class="fw-bold text-primary mb-3 fs-4">Zonas Protegidas y Reservas</h3>
                         <p class="text-muted" style="text-align: justify;">Una red de áreas marinas altamente protegidas garantiza la recuperación biológica. Pescar dentro del polígono de reserva sin superar los trámites obligatorios (como la <strong>declaración responsable semanal y autorización del barco</strong>) es un delito grave.</p>
                         <ul class="list-unstyled mt-3 text-muted">
                             <li class="mb-2"><i class="bi bi-geo-alt-fill text-warning me-2"></i><strong>Llevant de Mallorca:</strong> De Cala Mata hasta de n'Amer.</li>

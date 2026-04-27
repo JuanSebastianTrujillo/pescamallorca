@@ -11,7 +11,8 @@ export const WeatherSection = () => {
         <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
            <div class="row justify-content-center mb-4">
               <div class="col-lg-6">
-                <select id="weather-zone-select" class="form-select form-select-lg shadow-sm border-0 mb-3 text-center text-primary fw-bold cursor-pointer" aria-label="Selecciona una zona">
+                <label for="weather-zone-select" class="visually-hidden">Selecciona una zona</label>
+                <select id="weather-zone-select" class="form-select form-select-lg shadow-sm border-0 mb-3 text-center text-primary fw-bold cursor-pointer">
                   <option value="norte">Norte (Tramuntana/Alcudia)</option>
                   <option value="sur" selected>Sur (Palma/Llucmajor)</option>
                   <option value="este">Este (Llevant)</option>
@@ -50,10 +51,10 @@ export const initWeather = () => {
         
         // Render Skeleton Loading state
         card.innerHTML = `
-          <h4 class="mb-4 d-flex justify-content-center align-items-center flex-column gap-2 text-primary">
+          <h3 class="mb-4 d-flex justify-content-center align-items-center flex-column gap-2 text-primary fs-4">
             ${zoneInfo.name}
             <span class="placeholder-glow w-50 mt-2"><span class="placeholder col-12 rounded"></span></span>
-          </h4>
+          </h3>
           <div class="d-flex justify-content-center gap-4 gap-md-5 fs-5 flex-wrap">
              <div class="placeholder-glow text-center mx-3" style="width: 120px;">
                  <div class="placeholder rounded-circle mb-2 bg-secondary" style="width: 45px; height: 45px;"></div><br>
@@ -83,7 +84,7 @@ export const initWeather = () => {
 
         card.innerHTML = `
           ${errorBanner}
-          <h4 class="mb-4">${zoneInfo.name} - <span class="text-primary">Previsión Actual</span></h4>
+          <h3 class="mb-4 fs-4">${zoneInfo.name} - <span class="text-primary">Previsión Actual</span></h3>
           
           <div class="row row-cols-2 row-cols-md-5 g-3 mt-3 px-2">
              <div class="col text-center">

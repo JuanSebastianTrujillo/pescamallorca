@@ -13,22 +13,25 @@ export const RampsSection = () => {
             <div class="row mb-5 justify-content-center">
                <div class="col-lg-10">
                    <div class="card bg-white border-0 shadow-sm p-4">
-                       <h5 class="mb-3 text-secondary" style="font-size: 0.95rem; text-transform: uppercase;"><strong><i class="bi bi-funnel-fill me-2 text-primary"></i>Filtros Técnicos Rápidos</strong></h5>
+                       <h3 class="mb-3 text-secondary fs-6" style="text-transform: uppercase;"><strong><i class="bi bi-funnel-fill me-2 text-primary"></i>Filtros Técnicos Rápidos</strong></h3>
                        <div class="d-flex flex-wrap gap-3 align-items-center">
-                           <select id="ramps-zone-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Zona">
+                           <label for="ramps-zone-filter" class="visually-hidden">Filtrar por zona</label>
+                           <select id="ramps-zone-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;">
                                <option value="all" selected>Cualquier zona</option>
                                <option value="norte">Norte</option>
                                <option value="sur">Sur</option>
                                <option value="este">Este</option>
                                <option value="oeste">Oeste</option>
                            </select>
-                           <select id="ramps-type-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Tipo Firme">
+                           <label for="ramps-type-filter" class="visually-hidden">Filtrar por tipo de firme</label>
+                           <select id="ramps-type-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;">
                                <option value="all" selected>Cualquier firme</option>
                                <option value="hormigon">Hormigón</option>
                                <option value="arena">Arena</option>
                                <option value="roca">Roca natural</option>
                            </select>
-                           <select id="ramps-price-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Gestión">
+                           <label for="ramps-price-filter" class="visually-hidden">Filtrar por gestión/precio</label>
+                           <select id="ramps-price-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;">
                                <option value="all" selected>Cualquier gestión</option>
                                <option value="Gratuita">Gratuita</option>
                                <option value="De pago">De pago</option>
@@ -205,13 +208,13 @@ export const initRamps = () => {
 
             html += `
             <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 w-100 ramp-card" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onclick="openRampModal(${rampa.id})">
+                <div class="card shadow-sm border-0 w-100 ramp-card" role="button" tabindex="0" aria-label="Ver detalles técnicos de ${rampa.name}" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onclick="openRampModal(${rampa.id})">
                     <div class="position-relative">
                         <img src="${rampa.image}" class="card-img-top object-fit-cover" alt="Fotografía detallada de la rampa de varada ${rampa.name}, ubicada en ${rampa.location}" style="height:220px;" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                         <span class="badge bg-${rampa.priceColor} position-absolute top-0 end-0 m-3 fs-6 shadow-sm">${rampa.priceTag}</span>
                     </div>
                     <div class="card-body d-flex flex-column">
-                        <h4 class="card-title fw-bold text-primary mb-1">${rampa.name}</h4>
+                        <h3 class="card-title fw-bold text-primary mb-1 fs-5">${rampa.name}</h3>
                         <p class="text-muted small mb-3"><i class="bi bi-geo-alt-fill text-danger me-1"></i>${rampa.location}</p>
                         
                         <div class="mb-3 d-flex flex-wrap gap-2">
@@ -261,14 +264,14 @@ window.openRampModal = (rampId) => {
 
     const modalBodyHTML = `
        <div class="p-4 bg-light text-center border-bottom">
-           <h3 class="fw-bold mb-2">${rampa.name}</h3>
+           <h2 class="fw-bold mb-2 fs-3">${rampa.name}</h2>
            <p class="text-muted mb-3"><i class="bi bi-pin-map-fill text-danger"></i> ${rampa.location} | <i class="bi ${iconType} text-primary"></i> ${rampa.typeLabel}</p>
            <a href="${rampa.mapsLink}" target="_blank" class="btn btn-success rounded-pill fw-bold shadow-sm px-4"><i class="bi bi-cursor-fill me-2"></i>Navegar con GPS</a>
        </div>
 
        <div class="p-4">
            <!-- Sección: Galería Técnica -->
-           <h5 class="fw-bold text-primary border-bottom pb-2 mb-3"><i class="bi bi-images me-2"></i>Galería Técnica</h5>
+           <h3 class="fw-bold text-primary border-bottom pb-2 mb-3 fs-5"><i class="bi bi-images me-2"></i>Galería Técnica</h3>
            <div class="row mb-4">
                ${galleryHtml}
            </div>
@@ -278,7 +281,7 @@ window.openRampModal = (rampId) => {
                <div class="col-lg-6 mb-4">
                    <div class="card h-100 border-0 shadow-sm border-start border-info border-4 bg-white">
                        <div class="card-body">
-                           <h6 class="fw-bold text-dark text-uppercase mb-3"><i class="bi bi-water text-info fs-5 me-2"></i> Características Físicas y Batimetría</h6>
+                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-water text-info fs-5 me-2"></i> Características Físicas y Batimetría</h4>
                            <ul class="list-unstyled mb-0">
                                <li class="mb-2"><strong>Calado Operativo:</strong> <span class="text-muted">${rampa.draft}</span></li>
                                <li class="mb-2"><strong>Anchura Útil:</strong> <span class="text-muted">${rampa.width}</span></li>
@@ -292,7 +295,7 @@ window.openRampModal = (rampId) => {
                <div class="col-lg-6 mb-4">
                    <div class="card h-100 border-0 shadow-sm border-start border-secondary border-4 bg-white">
                        <div class="card-body">
-                           <h6 class="fw-bold text-dark text-uppercase mb-3"><i class="bi bi-p-square text-secondary fs-5 me-2"></i> Logística de Aparcamiento</h6>
+                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-p-square text-secondary fs-5 me-2"></i> Logística de Aparcamiento</h4>
                            <p class="small text-muted mb-0" style="text-align: justify;">${rampa.parkingLogistics}</p>
                        </div>
                    </div>
@@ -302,7 +305,7 @@ window.openRampModal = (rampId) => {
                <div class="col-lg-6 mb-4">
                    <div class="card h-100 border-0 shadow-sm border-start border-warning border-4 bg-white">
                        <div class="card-body">
-                           <h6 class="fw-bold text-dark text-uppercase mb-3"><i class="bi bi-cash-coin text-warning fs-5 me-2"></i> Tarifas y Burocracia</h6>
+                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-cash-coin text-warning fs-5 me-2"></i> Tarifas y Burocracia</h4>
                            <p class="small text-muted mb-0">${rampa.tariffs}</p>
                        </div>
                    </div>
@@ -312,7 +315,7 @@ window.openRampModal = (rampId) => {
                <div class="col-lg-6 mb-4">
                    <div class="card h-100 border-0 shadow-sm border-start border-primary border-4 bg-white">
                        <div class="card-body">
-                           <h6 class="fw-bold text-dark text-uppercase mb-3"><i class="bi bi-wrench-adjustable text-primary fs-5 me-2"></i> Servicios Anexos</h6>
+                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-wrench-adjustable text-primary fs-5 me-2"></i> Servicios Anexos</h4>
                            <p class="small text-muted mb-0">${rampa.services}</p>
                        </div>
                    </div>
@@ -326,7 +329,7 @@ window.openRampModal = (rampId) => {
                                <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 2.5rem;"></i>
                            </div>
                            <div>
-                               <h6 class="fw-bold text-danger text-uppercase mb-1">Avisos y Peligros Locales</h6>
+                               <h4 class="fw-bold text-danger text-uppercase mb-1 fs-6">Avisos y Peligros Locales</h4>
                                <p class="small text-danger mb-0"><strong>Crítico:</strong> ${rampa.warnings}</p>
                            </div>
                        </div>

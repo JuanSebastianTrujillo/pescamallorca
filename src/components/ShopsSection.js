@@ -12,15 +12,17 @@ export const ShopsSection = () => {
             <div class="row mb-5 justify-content-center">
                <div class="col-lg-10">
                    <div class="card bg-white border-0 shadow-sm p-4">
-                       <h5 class="mb-3 text-secondary" style="font-size: 0.95rem; text-transform: uppercase;"><strong><i class="bi bi-funnel-fill me-2 text-primary"></i>Filtros de Búsqueda Comercial</strong></h5>
+                       <h3 class="mb-3 text-secondary fs-6" style="text-transform: uppercase;"><strong><i class="bi bi-funnel-fill me-2 text-primary"></i>Filtros de Búsqueda Comercial</strong></h3>
                        <div class="d-flex flex-wrap gap-3 align-items-center">
-                           <select id="shops-zone-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Zona">
+                           <label for="shops-zone-filter" class="visually-hidden">Filtrar por zona</label>
+                           <select id="shops-zone-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;">
                                <option value="all" selected>Cualquier zona</option>
                                <option value="palma">Zonas de Palma</option>
                                <option value="norte">Zona Norte (Alcúdia, Pollença)</option>
                                <option value="sur">Zona Sur / Levante</option>
                            </select>
-                           <select id="shops-service-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;" aria-label="Servicio">
+                           <label for="shops-service-filter" class="visually-hidden">Filtrar por servicio</label>
+                           <select id="shops-service-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;">
                                <option value="all" selected>Todos los servicios</option>
                                <option value="cebo">Vende Cebo Vivo</option>
                                <option value="taller">Taller de Reparación</option>
@@ -45,7 +47,7 @@ export const ShopsSection = () => {
             <div class="modal-content border-0 shadow-lg">
               
               <div class="modal-header bg-primary text-white border-0">
-                <h5 class="modal-title fw-bold" id="shopModalLabel"><i class="bi bi-shop me-2"></i>Detalle de la Tienda</h5>
+                <h3 class="modal-title fw-bold fs-5" id="shopModalLabel"><i class="bi bi-shop me-2"></i>Detalle de la Tienda</h3>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               
@@ -218,7 +220,7 @@ export const initShops = () => {
 
       html += `
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-               <div class="card w-100 shadow-sm border-0 shop-card cursor-pointer" onclick="openShopModal(${store.id})" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+               <div class="card w-100 shadow-sm border-0 shop-card cursor-pointer" role="button" tabindex="0" aria-label="Ver detalles de ${store.name}" onclick="openShopModal(${store.id})" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                   <div class="position-relative">
                      <img src="${store.image}" class="card-img-top object-fit-cover" alt="Fotografía detallada de la tienda de pesca ${store.name}, especializada en artículos de pesca en Mallorca" style="height:220px" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                      <div class="position-absolute bottom-0 start-0 m-3">
@@ -227,7 +229,7 @@ export const initShops = () => {
                   </div>
                   
                   <div class="card-body d-flex flex-column bg-white">
-                      <h4 class="card-title fw-bold text-primary mb-1">${store.name}</h4>
+                      <h3 class="card-title fw-bold text-primary mb-1 fs-5">${store.name}</h3>
                       <p class="card-text text-muted small mb-3"><i class="bi bi-geo-alt-fill text-danger me-1"></i>${store.location}</p>
                       <div class="mb-3">
                          ${badgesHtml}
@@ -385,11 +387,11 @@ window.openShopModal = (storeId) => {
                                <label class="form-label small fw-bold text-dark">Puntuación General</label>
                                <div id="starRatingContainer_${store.id}" class="d-flex align-items-center mb-1" style="cursor: pointer;" onmouseleave="window.resetStarUI(${store.id})">
                                    <!-- 5 estrellas interactivas -->
-                                   <i class="bi bi-star-fill text-warning fs-4 me-1" data-index="1" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
-                                   <i class="bi bi-star-fill text-warning fs-4 me-1" data-index="2" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
-                                   <i class="bi bi-star-fill text-warning fs-4 me-1" data-index="3" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
-                                   <i class="bi bi-star-fill text-warning fs-4 me-1" data-index="4" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
-                                   <i class="bi bi-star-fill text-warning fs-4 me-1" data-index="5" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
+                                   <i class="bi bi-star-fill text-warning fs-4 me-1" role="button" tabindex="0" aria-label="Calificar con 1 estrella" data-index="1" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
+                                   <i class="bi bi-star-fill text-warning fs-4 me-1" role="button" tabindex="0" aria-label="Calificar con 2 estrellas" data-index="2" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
+                                   <i class="bi bi-star-fill text-warning fs-4 me-1" role="button" tabindex="0" aria-label="Calificar con 3 estrellas" data-index="3" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
+                                   <i class="bi bi-star-fill text-warning fs-4 me-1" role="button" tabindex="0" aria-label="Calificar con 4 estrellas" data-index="4" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
+                                   <i class="bi bi-star-fill text-warning fs-4 me-1" role="button" tabindex="0" aria-label="Calificar con 5 estrellas" data-index="5" onmousemove="window.handleStarHover(event, this, ${store.id})" onclick="window.setStarRating(event, this, ${store.id})"></i>
                                </div>
                                <input type="hidden" id="reviewRatingInput_${store.id}" value="5">
                                <span id="starRatingText_${store.id}" class="small text-muted fw-bold">Excelente (5/5)</span>

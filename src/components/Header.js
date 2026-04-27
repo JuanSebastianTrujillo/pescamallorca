@@ -14,9 +14,9 @@ export const Header = () => {
             </a>
             
             <div class="social-links d-flex align-items-center ms-2 ms-lg-4 gap-2">
-              <a href="#" class="twitter text-white"><i class="bi bi-twitter-x"></i></a>
-              <a href="#" class="facebook text-white"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram text-white"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="twitter text-white" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="facebook text-white" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram text-white" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             </div>
           </div>
 
@@ -87,7 +87,7 @@ export const Header = () => {
 
               <li class="d-md-none px-3 pb-2">
                 <div class="dropdown w-100 mb-3">
-                  <button class="btn btn-outline-primary rounded-pill dropdown-toggle w-100 d-flex justify-content-center align-items-center" type="button" id="accessibilityDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 10px;" title="Opciones de Accesibilidad">
+                  <button class="btn btn-outline-primary rounded-pill dropdown-toggle w-100 d-flex justify-content-center align-items-center" type="button" id="accessibilityDropdownMobile" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style="padding: 10px;" title="Opciones de Accesibilidad">
                     <i class="bi bi-person-wheelchair fs-5 me-2"></i> Accesibilidad
                   </button>
                   <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="accessibilityDropdownMobile">
@@ -104,7 +104,7 @@ export const Header = () => {
                 
                 <div class="d-flex justify-content-center">
                   <div class="dropdown w-100">
-                    <button class="btn btn-outline-secondary rounded-pill dropdown-toggle w-100" type="button" id="languageDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 10px;">
+                    <button class="btn btn-outline-secondary rounded-pill dropdown-toggle w-100" type="button" id="languageDropdownMobile" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style="padding: 10px;">
                       <i class="bi bi-globe me-2"></i> Español
                     </button>
                     <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="languageDropdownMobile">
@@ -119,13 +119,13 @@ export const Header = () => {
 
               <li class="d-md-none text-center pb-3">
                 <div class="social-links d-flex justify-content-center gap-4 mt-2">
-                  <a href="#" class="twitter text-secondary"><i class="bi bi-twitter-x fs-4"></i></a>
-                  <a href="#" class="facebook text-secondary"><i class="bi bi-facebook fs-4"></i></a>
-                  <a href="#" class="instagram text-secondary"><i class="bi bi-instagram fs-4"></i></a>
+                  <a href="#" class="twitter text-secondary" aria-label="X (Twitter)"><i class="bi bi-twitter-x fs-4"></i></a>
+                  <a href="#" class="facebook text-secondary" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+                  <a href="#" class="instagram text-secondary" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
                 </div>
               </li>
             </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Abrir menú de navegación" role="button" tabindex="0"></i>
           </nav>
         </div>
       </div>

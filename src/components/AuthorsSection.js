@@ -1,5 +1,5 @@
 export const AuthorsSection = () => {
-    return `
+  return `
       <section id="autores" class="section team">
         <div class="container section-title" data-aos="fade-up">
           <h2>Transparencia y Autores</h2>
@@ -33,7 +33,7 @@ export const AuthorsSection = () => {
                   <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Aaron Satyar Daghigh-Nia Tudor</h4>
                   <span class="text-muted d-block mb-3 fw-semibold small"><i class="bi bi-code-slash me-1"></i> Frontend</span>
                   <div class="d-flex justify-content-center gap-3 mt-auto">
-                    <a href="https://github.com/AaronTudor-tester" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/AaronTudor-tester" target="_blank" class="text-secondary fs-5 text-decoration-none" aria-label="GitHub de Aaron Tudor" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
                   </div>
                 </div>
               </div>
@@ -49,7 +49,7 @@ export const AuthorsSection = () => {
                   <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Jaume Juan Huguet</h4>
                   <span class="text-muted d-block mb-3 fw-semibold small"><i class="bi bi-database me-1"></i> Data Engineer</span>
                   <div class="d-flex justify-content-center gap-3 mt-auto">
-                    <a href="https://github.com/TheStargate" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/TheStargate" target="_blank" class="text-secondary fs-5 text-decoration-none" aria-label="GitHub de Jaume Juan" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
                   </div>
                 </div>
               </div>
@@ -65,7 +65,7 @@ export const AuthorsSection = () => {
                   <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Juan Sebastián Trujillo Gil</h4>
                   <span class="text-muted d-block mb-3 fw-semibold small"><i class="bi bi-palette me-1"></i> Especialista UI/UX</span>
                   <div class="d-flex justify-content-center gap-3 mt-auto">
-                    <a href="https://github.com/JuanSebastianTrujillo" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/JuanSebastianTrujillo" target="_blank" class="text-secondary fs-5 text-decoration-none" aria-label="GitHub de Juan Sebastián" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
                   </div>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export const AuthorsSection = () => {
                   <h4 class="fw-bold text-primary mb-1" style="font-size: 1.2rem;">Miquel Sansó Febrer</h4>
                   <span class="text-muted d-block mb-3 fw-semibold small"><i class="bi bi-server me-1"></i> Desarrollador Backend</span>
                   <div class="d-flex justify-content-center gap-3 mt-auto">
-                    <a href="https://github.com/miquelsf" target="_blank" class="text-secondary fs-5 text-decoration-none" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/miquelsf" target="_blank" class="text-secondary fs-5 text-decoration-none" aria-label="GitHub de Miquel Sansó" onmouseover="this.className='text-dark fs-5 text-decoration-none'" onmouseout="this.className='text-secondary fs-5 text-decoration-none'"><i class="bi bi-github"></i></a>
                   </div>
                 </div>
               </div>

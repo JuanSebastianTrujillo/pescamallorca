@@ -1,7 +1,7 @@
 import { trapFocusInModal } from "../services/AccessibilityService.js";
 
 export const PecedexSection = () => {
-   return `
+  return `
       <!-- Pecedex Section -->
       <section id="pecedex" class="section bg-light">
         <div class="container section-title" data-aos="fade-up">
@@ -11,7 +11,7 @@ export const PecedexSection = () => {
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
            <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
-              <h5 class="text-primary fw-bold mb-0">Progreso: <span id="pecedex-progress" aria-live="polite">0</span> / <span id="pecedex-total">0</span></h5>
+              <h3 class="text-primary fw-bold mb-0 fs-5">Progreso: <span id="pecedex-progress" aria-live="polite">0</span> / <span id="pecedex-total">0</span></h3>
               <button class="btn btn-outline-danger btn-sm" onclick="showResetPecedexModal()">
                  <i class="bi bi-trash"></i> Reiniciar
               </button>
@@ -32,10 +32,10 @@ export const PecedexSection = () => {
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-danger" id="resetPecedexModalLabel">
+              <h3 class="modal-title text-danger fs-5" id="resetPecedexModalLabel">
                 <i class="bi bi-exclamation-triangle-fill me-2"></i>
                 Confirmar Reinicio
-              </h5>
+              </h3>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">

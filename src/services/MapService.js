@@ -40,8 +40,8 @@ function createIcon(color, icon) {
 }
 
 const ICONS = {
-    spot:    () => createIcon('#0d6efd', 'bi-geo-alt-fill'),
-    ramp:    () => createIcon('#198754', 'bi-signpost-fill'),
+    spot: () => createIcon('#0d6efd', 'bi-geo-alt-fill'),
+    ramp: () => createIcon('#198754', 'bi-signpost-fill'),
     reserve: () => createIcon('#fd7e14', 'bi-shield-fill-exclamation')
 };
 
@@ -74,7 +74,7 @@ export function initMap(containerId) {
         zoomControl: true,
         scrollWheelZoom: true,
         maxBounds: balearesBounds,
-        maxBoundsViscosity: 1.0 
+        maxBoundsViscosity: 1.0
     });
 
     // Tiles de OpenStreetMap (gratuito, sin API key)
@@ -84,8 +84,8 @@ export function initMap(containerId) {
     }).addTo(mapInstance);
 
     // Inicializar capas de marcadores
-    markerLayers.spots    = L.layerGroup().addTo(mapInstance);
-    markerLayers.ramps    = L.layerGroup().addTo(mapInstance);
+    markerLayers.spots = L.layerGroup().addTo(mapInstance);
+    markerLayers.ramps = L.layerGroup().addTo(mapInstance);
     markerLayers.reserves = L.layerGroup().addTo(mapInstance);
 
     return mapInstance;
@@ -110,7 +110,7 @@ export function addSpotMarkers(spots) {
 
         const popupContent = `
             <div style="min-width: 200px; font-family: 'Poppins', sans-serif;">
-                <h6 style="margin: 0 0 5px 0; color: #0d6efd; font-weight: 700;">${spot.name}</h6>
+                <h3 style="margin: 0 0 5px 0; color: #0d6efd; font-weight: 700; font-size: 1rem;">${spot.name}</h3>
                 <p style="margin: 0 0 5px 0; font-size: 12px; color: #6c757d;">
                     <i class="bi bi-geo-alt text-danger"></i> ${spot.address?.addressLocality || ''}
                 </p>
@@ -124,7 +124,11 @@ export function addSpotMarkers(spots) {
             </div>
         `;
 
-        L.marker([lat, lon], { icon: ICONS.spot() })
+        L.marker([lat, lon], {
+            icon: ICONS.spot(),
+            title: spot.name,
+            alt: `Zona de pesca: ${spot.name}`
+        })
             .bindPopup(popupContent, { maxWidth: 280 })
             .addTo(markerLayers.spots);
     });
@@ -148,9 +152,9 @@ export function addRampMarkers(ramps) {
 
         const popupContent = `
             <div style="min-width: 200px; font-family: 'Poppins', sans-serif;">
-                <h6 style="margin: 0 0 5px 0; color: #198754; font-weight: 700;">
+                <h3 style="margin: 0 0 5px 0; color: #198754; font-weight: 700; font-size: 1rem;">
                     <i class="bi bi-signpost-fill me-1"></i>${ramp.name}
-                </h6>
+                </h3>
                 <p style="margin: 0 0 5px 0; font-size: 12px; color: #6c757d;">
                     <i class="bi bi-geo-alt text-danger"></i> ${ramp.location}
                 </p>
@@ -166,7 +170,11 @@ export function addRampMarkers(ramps) {
             </div>
         `;
 
-        L.marker([lat, lon], { icon: ICONS.ramp() })
+        L.marker([lat, lon], {
+            icon: ICONS.ramp(),
+            title: ramp.name,
+            alt: `Rampa de botadura: ${ramp.name}`
+        })
             .bindPopup(popupContent, { maxWidth: 280 })
             .addTo(markerLayers.ramps);
     });
@@ -224,14 +232,18 @@ export function addReserveMarkers() {
         // Marcador central
         const popupContent = `
             <div style="min-width: 200px; font-family: 'Poppins', sans-serif;">
-                <h6 style="margin: 0 0 5px 0; color: #fd7e14; font-weight: 700;">
+                <h3 style="margin: 0 0 5px 0; color: #fd7e14; font-weight: 700; font-size: 1rem;">
                     <i class="bi bi-shield-fill-exclamation me-1"></i>${reserve.name}
-                </h6>
+                </h3>
                 <p style="margin: 0; font-size: 12px; color: #495057;">${reserve.description}</p>
             </div>
         `;
 
-        L.marker(reserve.center, { icon: ICONS.reserve() })
+        L.marker(reserve.center, {
+            icon: ICONS.reserve(),
+            title: reserve.name,
+            alt: `Reserva Marina: ${reserve.name}`
+        })
             .bindPopup(popupContent, { maxWidth: 280 })
             .addTo(markerLayers.reserves);
     });

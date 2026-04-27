@@ -184,6 +184,7 @@ async function loadMonthSpecies() {
             btn.type = 'button';
             btn.setAttribute('data-bs-target', '#hero-carousel');
             btn.setAttribute('data-bs-slide-to', i.toString());
+            btn.setAttribute('aria-label', `Ver diapositiva ${i + 1}`);
             if (i === 0) {
                 btn.classList.add('active');
                 btn.setAttribute('aria-current', 'true');
@@ -251,27 +252,22 @@ function renderSpotsCards(spotsArray) {
     spotsArray.forEach((spot) => {
         const originalIndex = currentSpotsList.indexOf(spot); // Indice para abrir el modal correcto
         const imgSrc = Array.isArray(spot.image) ? spot.image[0] : spot.image;
-        const rutaLimpia = imgSrc.substring(0, imgSrc.lastIndexOf('.'));
         htmlCards += `
           <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm border-0 spot-card" onclick="openSpotModal(${originalIndex})" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <div class="card h-100 shadow-sm border-0 spot-card" role="button" tabindex="0" aria-label="Ver detalles de ${spot.name}" onclick="openSpotModal(${originalIndex})" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
               <img 
-                 src="${rutaLimpia}-800.webp" 
-                 srcset="
-                    ${rutaLimpia}-400.webp 400w, 
-                    ${rutaLimpia}-800.webp 800w"
-                 sizes="(max-width: 768px) 100vw, 33vw"
+                 src="${imgSrc}" 
                  class="card-img-top object-fit-cover" 
                  alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}"
                  style="height:200px" 
                  loading="lazy"
-                 onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.webp'">
+                 onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
               <div class="card-body d-flex flex-column">
-                <h5 class="card-title text-primary fw-bold">${spot.name}</h5>
+                <h3 class="card-title text-primary fw-bold fs-5">${spot.name}</h3>
                 <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
                 <p class="card-text text-truncate">${spot.description}</p>
                 <div class="mt-auto">
-                    ${spot.keywords ? spot.keywords.split(',').slice(0,2).map(tag => `<span class="badge bg-light text-dark border me-1 my-1">${tag.trim()}</span>`).join('') : ''}
+                    ${spot.keywords ? spot.keywords.split(',').slice(0, 2).map(tag => `<span class="badge bg-light text-dark border me-1 my-1">${tag.trim()}</span>`).join('') : ''}
                 </div>
               </div>
             </div>
@@ -355,7 +351,7 @@ window.openSpotModal = (index) => {
     images.forEach(img => {
         galleryHtml += `
             <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
-                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'" loading="lazy">
             </div>
         `;
     });
@@ -378,7 +374,7 @@ window.openSpotModal = (index) => {
     } else {
         const badges = speciesRaw.split(',').map(s => {
             const fishName = s.trim();
-            return `<span class="badge bg-success me-1 mb-1 fs-6 px-3 py-2 shadow-sm" style="cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.classList.replace('bg-success', 'bg-primary')" onmouseout="this.style.transform='scale(1)'; this.classList.replace('bg-primary', 'bg-success')" onclick="bootstrap.Modal.getInstance(document.getElementById('spotModal'))?.hide(); setTimeout(() => openSpeciesModalByName('${fishName}'), 400);"><i class="bi bi-link-45deg me-1"></i>${fishName}</span>`;
+            return `<span class="badge bg-success me-1 mb-1 fs-6 px-3 py-2 shadow-sm" role="button" tabindex="0" aria-label="Ver detalles de ${fishName}" style="cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.classList.replace('bg-success', 'bg-primary')" onmouseout="this.style.transform='scale(1)'; this.classList.replace('bg-primary', 'bg-success')" onclick="bootstrap.Modal.getInstance(document.getElementById('spotModal'))?.hide(); setTimeout(() => openSpeciesModalByName('${fishName}'), 400);"><i class="bi bi-link-45deg me-1"></i>${fishName}</span>`;
         }).join('');
         document.getElementById('spotModalSpecies').innerHTML = badges;
     }
@@ -586,23 +582,18 @@ function renderSpeciesSwiper(speciesArray) {
 
     let htmlCards = '';
     speciesArray.forEach((species, index) => {
-        const rutaLimpia = species.image.substring(0, species.image.lastIndexOf('.'));
         htmlCards += `
           <div class="swiper-slide py-3">
-             <div class="card h-100 shadow border-0 cursor-pointer species-card" onclick="openSpeciesModal(${index})" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+             <div class="card h-100 shadow border-0 cursor-pointer species-card" role="button" tabindex="0" aria-label="Ver detalles de ${species.name}" onclick="openSpeciesModal(${index})" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                <img 
-                 src="${rutaLimpia}-800.webp" 
-                 srcset="
-                    ${rutaLimpia}-400.webp 400w, 
-                    ${rutaLimpia}-800.webp 800w"
-                 sizes="(max-width: 768px) 100vw, 33vw"
+                 src="${species.image}" 
                  class="card-img-top object-fit-cover" 
                  alt="Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca" 
                  style="height:250px" 
                  loading="lazy"
-                 onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.webp'">
+                 onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                <div class="card-body text-center bg-white rounded-bottom">
-                 <h5 class="card-title text-primary fw-bold mb-1">${species.name}</h5>
+                 <h3 class="card-title text-primary fw-bold mb-1 fs-5">${species.name}</h3>
                </div>
              </div>
           </div>
@@ -743,14 +734,14 @@ function fillAndShowSpeciesModal(species) {
             });
 
             if (frequentSpots.length > 0) {
-                locationsHtml = '<h5 class="fw-bold mb-3 text-primary mt-4" style="letter-spacing: -0.5px;"><i class="bi bi-geo-alt-fill me-2"></i> Zonas de Pesca Frecuentes</h5><div class="d-flex flex-wrap gap-2 mb-4">';
+                locationsHtml = '<h4 class="fw-bold mb-3 text-primary mt-4" style="letter-spacing: -0.5px;"><i class="bi bi-geo-alt-fill me-2"></i> Zonas de Pesca Frecuentes</h4><div class="d-flex flex-wrap gap-2 mb-4">';
                 frequentSpots.forEach((spot) => {
                     const realIndex = currentSpotsList.findIndex(s => s.name === spot.name);
-                    locationsHtml += `<span class="badge bg-primary text-white fs-6 px-3 py-2 shadow-sm" style="cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.classList.replace('bg-primary', 'bg-info')" onmouseout="this.style.transform='scale(1)'; this.classList.replace('bg-info', 'bg-primary')" onclick="bootstrap.Modal.getInstance(document.getElementById('speciesModal'))?.hide(); setTimeout(() => openSpotModal(${realIndex}), 400);"><i class="bi bi-link-45deg me-1"></i>${spot.name}</span>`;
+                    locationsHtml += `<span class="badge bg-primary text-white fs-6 px-3 py-2 shadow-sm" role="button" tabindex="0" aria-label="Ver detalles de ${spot.name}" style="cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.classList.replace('bg-primary', 'bg-info')" onmouseout="this.style.transform='scale(1)'; this.classList.replace('bg-info', 'bg-primary')" onclick="bootstrap.Modal.getInstance(document.getElementById('speciesModal'))?.hide(); setTimeout(() => openSpotModal(${realIndex}), 400);"><i class="bi bi-link-45deg me-1"></i>${spot.name}</span>`;
                 });
                 locationsHtml += '</div>';
             } else {
-                locationsHtml = '<h5 class="fw-bold mb-3 text-primary mt-4" style="letter-spacing: -0.5px;"><i class="bi bi-geo-alt-fill me-2"></i> Zonas de Pesca Frecuentes</h5><p class="text-muted small mb-4">No se han registrado ubicaciones predominantes fijas o se desconoce con exactitud.</p>';
+                locationsHtml = '<h4 class="fw-bold mb-3 text-primary mt-4" style="letter-spacing: -0.5px;"><i class="bi bi-geo-alt-fill me-2"></i> Zonas de Pesca Frecuentes</h4><p class="text-muted small mb-4">No se han registrado ubicaciones predominantes fijas o se desconoce con exactitud.</p>';
             }
         }
         locContainer.innerHTML = locationsHtml;
@@ -775,7 +766,7 @@ function fillAndShowSpeciesModal(species) {
 
             vidContainer.innerHTML = `
                <div class="mt-4 pt-3 border-top border-secondary-subtle">
-                  <h5 class="fw-bold mb-3 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-play-btn-fill me-2"></i> Documental y Comportamiento</h5>
+                  <h4 class="fw-bold mb-3 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-play-btn-fill me-2"></i> Documental y Comportamiento</h4>
                   <div class="position-relative w-100 rounded overflow-hidden shadow-sm" style="aspect-ratio: 16 / 9; background-color: #000; border-radius: 1rem !important;">
                      <div id="videoPlaceholder" class="position-relative w-100 h-100 d-flex justify-content-center align-items-center" style="background-color: #000;">
                         <img id="videoThumbnailImg" src="${videoThumbnail}" alt="Miniatura de vídeo de la especie" style="width: 100%; height: 100%; object-fit: contain; background-color: #000;" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'" />
@@ -898,7 +889,7 @@ window.initPecedex = (speciesArray) => {
 
         html += `
           <div class="col-4 col-sm-3 col-md-3 col-lg-2">
-             <div class="card h-100 border-0 bg-transparent text-center" style="${pointerStyle}" ${hoverAnim} onclick="${action}" title="${isCaught ? 'Ver ficha técnica de la especie' : 'Ve a la lista de Especies para registrar esta captura'}">
+             <div class="card h-100 border-0 bg-transparent text-center" role="button" tabindex="0" aria-label="${isCaught ? `Ver detalles de ${species.name}` : 'Especie no capturada'}" style="${pointerStyle}" ${hoverAnim} onclick="${action}" title="${isCaught ? 'Ver ficha técnica de la especie' : 'Ve a la lista de Especies para registrar esta captura'}">
                <div class="position-relative mx-auto rounded-circle d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background-color: ${isCaught ? '#eef2ff' : '#f8f9fa'}; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);">
                  <img src="${species.image}" alt="${isCaught ? `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca` : 'Foto de una especie marina no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                  ${isCaught ? '<i class="bi bi-check-circle-fill text-success position-absolute" style="bottom: 0px; right: 0px; font-size: 1.2rem; background: white; border-radius: 50%;"></i>' : ''}
