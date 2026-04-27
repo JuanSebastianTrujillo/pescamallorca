@@ -14,6 +14,9 @@ import { QuizSection, initQuiz } from "./components/QuizSection.js";
 import { PecedexSection } from "./components/PecedexSection.js";
 import { initTheme } from "../assets/js/main.js";
 import { initAccessibility, updateJsonLd, trapFocusInModal } from "./services/AccessibilityService.js";
+import { voiceController, processCommand, speak, stopSpeaking, hasSTT, playAudio, stopAudio } from "./services/VoiceService.js";
+
+import { VoiceHelpModal } from "./components/VoiceHelpModal.js";
 
 const app = document.getElementById('app');
 
@@ -36,12 +39,13 @@ const renderApp = () => {
             ${ContactSection()}
         </main>
         ${Footer()}
+        ${VoiceHelpModal()}
     `;
 };
 
 // Se ejecuta cuando el HTML index ha cargado la base
 // Datos globales compartidos entre módulos (mapa, quiz)
-let globalZonesData = [];
+window.globalZonesData = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     renderApp();
@@ -60,10 +64,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializar JS de Bootstrap y theme (scroll spy, headers pegadizos...);
     initTheme();
 
+    // Inicializar Control de Voz
+    initVoiceControl();
+
     // Listeners globales para apagar multimedia al cerrar modales
     const fishModal = document.getElementById('speciesModal');
     if (fishModal) {
         fishModal.addEventListener('hidden.bs.modal', () => {
+            stopSpeaking(); // Detener TTS al cerrar
+            
+            // Resetear botón de "Leer ficha"
+            const readBtn = fishModal.querySelector('button[onclick*="speakModalDescription"]');
+            if (readBtn) {
+                readBtn.innerHTML = '<i class="bi bi-volume-up-fill me-1"></i> Leer ficha';
+                readBtn.classList.replace('btn-danger', 'btn-outline-light');
+            }
+
             if (window.currentFishAudio) {
                 window.currentFishAudio.pause();
                 window.currentFishAudio.currentTime = 0;
@@ -86,7 +102,123 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    const spotModal = document.getElementById('spotModal');
+    if (spotModal) {
+        spotModal.addEventListener('hidden.bs.modal', () => {
+            stopSpeaking();
+            
+            // Resetear botón de "Leer"
+            const readBtn = spotModal.querySelector('button[onclick*="speakModalDescription"]');
+            if (readBtn) {
+                readBtn.innerHTML = '<i class="bi bi-volume-up-fill me-1"></i> Leer';
+                readBtn.classList.replace('btn-danger', 'btn-outline-light');
+            }
+        });
+    }
 });
+
+// ─── CONTROL DE VOZ ─────────────────────────────────────────
+
+function initVoiceControl() {
+    if (!hasSTT || !voiceController) {
+        console.warn("Reconocimiento de voz no soportado en este navegador.");
+        return;
+    }
+
+    const statusContainer = document.getElementById('voice-status-container');
+    const statusText = document.getElementById('voice-status-text');
+
+    voiceController.onStatusChange = (status) => {
+        if (status === 'listening') {
+            statusContainer.classList.remove('d-none');
+            statusText.innerText = "Escuchando...";
+        } else if (status === 'idle') {
+            if (!voiceController._active) {
+                statusContainer.classList.add('d-none');
+            }
+        } else if (status === 'error') {
+            statusText.innerText = "Error de voz";
+            setTimeout(() => { if (!voiceController._active) statusContainer.classList.add('d-none'); }, 3000);
+        }
+    };
+
+    voiceController.onResultCallback = (result) => {
+        statusText.innerText = result.accumulated || result.interim || "Escuchando...";
+    };
+
+    voiceController.onCommandTimeout = (finalTranscript) => {
+        statusText.innerText = "Procesando...";
+        const feedback = processCommand(finalTranscript);
+        if (feedback) {
+            statusText.innerText = feedback;
+            // Después de procesar, si sigue activo, volver a "Escuchando" tras un momento
+            setTimeout(() => { 
+                if (voiceController._active) statusText.innerText = "Escuchando..."; 
+            }, 2000);
+        }
+    };
+
+    // Listeners para botones de la UI
+    const voiceBtns = ['voice-command-toggle-desktop', 'voice-command-toggle-mobile'];
+    voiceBtns.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+            btn.addEventListener('click', () => {
+                voiceController.start();
+            });
+        }
+    });
+
+    window.stopVoiceRecognition = () => voiceController.stop();
+}
+
+window.speakText = (elementId) => {
+    const el = document.getElementById(elementId);
+    if (el) {
+        speak(el.innerText);
+    }
+};
+
+window.speakModalDescription = (type, btn) => {
+    if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        if (btn) {
+            btn.innerHTML = `<i class="bi bi-volume-up-fill me-1"></i> ${type === 'species' ? 'Leer ficha' : 'Leer'}`;
+            btn.classList.replace('btn-danger', 'btn-outline-light');
+        }
+        return;
+    }
+
+    let text = "";
+    let btnLabel = "";
+    if (type === 'species') {
+        const name = document.getElementById('speciesModalLabel').innerText;
+        const desc = document.getElementById('speciesModalDescription').innerText;
+        text = `${name}. ${desc}`;
+        btnLabel = "Leer ficha";
+    } else if (type === 'spot') {
+        const name = document.getElementById('spotModalLabel').innerText;
+        const desc = document.getElementById('spotModalDescription').innerText;
+        text = `${name}. ${desc}`;
+        btnLabel = "Leer";
+    }
+
+    if (btn) {
+        btn.innerHTML = '<i class="bi bi-stop-circle-fill me-1"></i> Detener';
+        btn.classList.replace('btn-outline-light', 'btn-danger');
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'es-ES';
+    utterance.onend = () => {
+        if (btn) {
+            btn.innerHTML = `<i class="bi bi-volume-up-fill me-1"></i> ${btnLabel}`;
+            btn.classList.replace('btn-danger', 'btn-outline-light');
+        }
+    };
+    window.speechSynthesis.speak(utterance);
+};
 
 window.submitContactForm = function (event) {
     event.preventDefault();
@@ -393,6 +525,40 @@ window.openSpotModal = (index) => {
     modal.show();
 };
 
+window.openSpotModalByName = (name) => {
+    if (!name) return;
+    const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    const spot = currentSpotsList.find(s => {
+        const sName = s.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return sName.includes(cleanQuery) || cleanQuery.includes(sName);
+    });
+    if (!spot) return;
+    const index = currentSpotsList.indexOf(spot);
+    window.openSpotModal(index);
+};
+
+window.openShopModalByName = (name) => {
+    if (!name || !window.currentShopsData) return;
+    const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    const shop = window.currentShopsData.find(s => {
+        const sName = s.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return sName.includes(cleanQuery) || cleanQuery.includes(sName);
+    });
+    if (!shop) return;
+    window.openShopModal(shop.id);
+};
+
+window.openRampModalByName = (name) => {
+    if (!name || !window.currentRampsData) return;
+    const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    const ramp = window.currentRampsData.find(r => {
+        const rName = r.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return rName.includes(cleanQuery) || cleanQuery.includes(rName);
+    });
+    if (!ramp) return;
+    window.openRampModal(ramp.id);
+};
+
 window.renderSpotComments = (spotName) => {
     // Código inalterado de tus comentarios...
     const container = document.getElementById('spotModalCommentsContainer');
@@ -436,54 +602,41 @@ window.submitSpotComment = () => {
 window.toggleFishAudio = (btn, audioPath) => {
     if (!btn || !audioPath) return;
 
-    // Si ya suena algo y es el mismo audio, detenlo
-    if (window.currentFishAudio && !window.currentFishAudio.paused) {
-        window.currentFishAudio.pause();
-        window.currentFishAudio.currentTime = 0;
-        window.currentFishAudio = null;
+    // Limpiar ruta: quitar / inicial si existe para que sea relativa
+    const cleanPath = audioPath.startsWith('/') ? audioPath.substring(1) : audioPath;
 
-        btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
-        btn.classList.replace('btn-primary', 'btn-outline-primary');
-        btn.classList.remove('text-white');
+    // Usar el controlador centralizado de VoiceService
+    const currentAudio = window.getVoiceAudio();
+
+    if (currentAudio && !currentAudio.paused && currentAudio.src.includes(cleanPath)) {
+        stopAudio();
         return;
     }
 
-    // Parar audio existente si hay uno (otra especie)
-    if (window.currentFishAudio) {
-        window.currentFishAudio.pause();
-        window.currentFishAudio.currentTime = 0;
-        window.currentFishAudio = null;
-    }
+    // Parar lo que sea que esté sonando
+    stopAudio();
 
-    // Crear y reproducir lejos de blocos de sincronización extra
-    try {
-        const audio = new Audio(audioPath);
-        audio.preload = 'auto';
-        window.currentFishAudio = audio;
-
-        audio.play().then(() => {
+    // Reproducir usando el servicio central
+    playAudio(cleanPath);
+    
+    // El servicio de voz no gestiona el estado del botón, así que lo hacemos aquí
+    const audio = window.getVoiceAudio();
+    if (audio) {
+        audio.onplay = () => {
             btn.innerHTML = '<i class="bi bi-stop-circle-fill me-2"></i> Detener Sonido';
             btn.classList.replace('btn-outline-primary', 'btn-primary');
             btn.classList.add('text-white');
-        }).catch((err) => {
-            console.error('Error al reproducir audio:', err);
-            btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
-            btn.classList.replace('btn-primary', 'btn-outline-primary');
-            btn.classList.remove('text-white');
-            window.currentFishAudio = null;
-        });
-
+        };
         audio.onended = () => {
             btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
             btn.classList.replace('btn-primary', 'btn-outline-primary');
             btn.classList.remove('text-white');
-            window.currentFishAudio = null;
         };
-    } catch (error) {
-        console.error('toggleFishAudio error:', error);
-        btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
-        btn.classList.replace('btn-primary', 'btn-outline-primary');
-        btn.classList.remove('text-white');
+        audio.onpause = () => {
+            btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
+            btn.classList.replace('btn-primary', 'btn-outline-primary');
+            btn.classList.remove('text-white');
+        };
     }
 };
 
@@ -506,6 +659,7 @@ async function loadSpeciesData() {
 
         let allSpecies = schema['@graph'] || [];
         globalSpeciesList = allSpecies;
+        window.globalSpeciesList = allSpecies;
         renderSpeciesSwiper(allSpecies);
         initPecedex(allSpecies);
 
@@ -632,7 +786,13 @@ window.openSpeciesModalGlobal = (index) => {
 };
 
 window.openSpeciesModalByName = (name) => {
-    const species = globalSpeciesList.find(s => s.name === name);
+    if (!name) return;
+    const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    const species = globalSpeciesList.find(s => {
+        const sName = s.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const sAlt = (s.alternateName || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return sName.includes(cleanQuery) || cleanQuery.includes(sName) || sAlt.includes(cleanQuery);
+    });
     if (!species) return;
     fillAndShowSpeciesModal(species);
 };

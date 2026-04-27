@@ -78,9 +78,12 @@ export const SpotsSection = () => {
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content border-0 shadow">
             
-            <div class="modal-header bg-primary text-white">
+            <div class="modal-header bg-primary text-white d-flex align-items-center">
               <h3 class="modal-title fw-bold fs-5" id="spotModalLabel">Nombre de la Zona</h3>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button class="btn btn-sm btn-outline-light rounded-pill ms-auto me-3 px-3 fw-bold" onclick="window.speakModalDescription('spot', this)">
+                <i class="bi bi-volume-up-fill me-1"></i> Leer
+              </button>
+              <button type="button" class="btn-close btn-close-white ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <div class="modal-body p-4 bg-white">

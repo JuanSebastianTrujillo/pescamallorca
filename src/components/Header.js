@@ -28,7 +28,7 @@ export const Header = () => {
               <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="accessibilityDropdownDesktop" style="min-width: 200px;">
                 <li><h6 class="dropdown-header">Herramientas</h6></li>
                 <li><button class="dropdown-item d-flex align-items-center" id="tts-toggle-desktop"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
-                <li><button class="dropdown-item d-flex align-items-center"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
+                <li><button class="dropdown-item d-flex align-items-center" id="voice-command-toggle-desktop"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
                 <li><button class="dropdown-item d-flex align-items-center" id="zoom-toggle-desktop"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
                 <li><button class="dropdown-item d-flex align-items-center" id="contrast-toggle-desktop"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
               </ul>
@@ -92,7 +92,7 @@ export const Header = () => {
                   </button>
                   <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="accessibilityDropdownMobile">
                     <li><button class="dropdown-item" id="tts-toggle-mobile"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
-                    <li><button class="dropdown-item"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
+                    <li><button class="dropdown-item" id="voice-command-toggle-mobile"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
                     <li><button class="dropdown-item" id="zoom-toggle-mobile"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
                     <li><button class="dropdown-item" id="contrast-toggle-mobile"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
                   </ul>
@@ -125,10 +125,27 @@ export const Header = () => {
                 </div>
               </li>
             </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Abrir menú de navegación" role="button" tabindex="0"></i>
+            <button class="mobile-nav-toggle d-xl-none btn btn-link p-0 border-0" aria-label="Abrir menú de navegación" type="button">
+              <i class="bi bi-list"></i>
+            </button>
           </nav>
         </div>
       </div>
     </header>
+    
+    <!-- Status de Voz -->
+    <div id="voice-status-container" class="position-fixed bottom-0 start-50 translate-middle-x mb-4 d-none" style="z-index: 10000;">
+       <div class="badge bg-primary p-3 rounded-pill shadow-lg d-flex align-items-center">
+          <div class="voice-indicator me-3">
+             <div class="dot"></div>
+             <div class="dot"></div>
+             <div class="dot"></div>
+          </div>
+          <span id="voice-status-text" class="fw-bold">Escuchando...</span>
+          <button class="btn btn-sm btn-light rounded-circle ms-3" onclick="window.stopVoiceRecognition()" aria-label="Detener escucha">
+            <i class="bi bi-x"></i>
+          </button>
+       </div>
+    </div>
   `;
 };

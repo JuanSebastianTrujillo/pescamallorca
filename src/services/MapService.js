@@ -124,12 +124,18 @@ export function addSpotMarkers(spots) {
             </div>
         `;
 
-        L.marker([lat, lon], {
+        const marker = L.marker([lat, lon], {
             icon: ICONS.spot(),
             title: spot.name,
             alt: `Zona de pesca: ${spot.name}`
-        })
-            .bindPopup(popupContent, { maxWidth: 280 })
+        });
+
+        marker.on('add', (e) => {
+            const el = e.target.getElement();
+            if (el) el.setAttribute('aria-label', `Zona de pesca: ${spot.name}`);
+        });
+
+        marker.bindPopup(popupContent, { maxWidth: 280 })
             .addTo(markerLayers.spots);
     });
 }
@@ -170,12 +176,18 @@ export function addRampMarkers(ramps) {
             </div>
         `;
 
-        L.marker([lat, lon], {
+        const marker = L.marker([lat, lon], {
             icon: ICONS.ramp(),
             title: ramp.name,
             alt: `Rampa de botadura: ${ramp.name}`
-        })
-            .bindPopup(popupContent, { maxWidth: 280 })
+        });
+
+        marker.on('add', (e) => {
+            const el = e.target.getElement();
+            if (el) el.setAttribute('aria-label', `Rampa de botadura: ${ramp.name}`);
+        });
+
+        marker.bindPopup(popupContent, { maxWidth: 280 })
             .addTo(markerLayers.ramps);
     });
 }
@@ -239,12 +251,18 @@ export function addReserveMarkers() {
             </div>
         `;
 
-        L.marker(reserve.center, {
+        const marker = L.marker(reserve.center, {
             icon: ICONS.reserve(),
             title: reserve.name,
             alt: `Reserva Marina: ${reserve.name}`
-        })
-            .bindPopup(popupContent, { maxWidth: 280 })
+        });
+
+        marker.on('add', (e) => {
+            const el = e.target.getElement();
+            if (el) el.setAttribute('aria-label', `Reserva Marina: ${reserve.name}`);
+        });
+
+        marker.bindPopup(popupContent, { maxWidth: 280 })
             .addTo(markerLayers.reserves);
     });
 }

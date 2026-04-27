@@ -278,9 +278,9 @@ function toggleHighContrast() {
                     font-weight: 700 !important;
                 }
 
-                /* Mantener blanco el nombre científico sobre fondo oscuro */
+                /* Ocultar nombre científico en alto contraste por petición del usuario */
                 body[data-high-contrast="true"] #speciesModalScientific {
-                    color: #ffffff !important;
+                    visibility: hidden !important;
                 }
 
                 body[data-high-contrast="true"] p,
@@ -377,7 +377,11 @@ function cycleTextZoom() {
 
 // ─── Notificación toast rápida ──────────────────────────────
 
-function showNotification(message) {
+/**
+ * Muestra una notificación tipo toast y la lee si el TTS está activo.
+ * @param {string} message - Mensaje a mostrar
+ */
+export function showNotification(message) {
     // Reutilizar o crear un toast simple
     let toast = document.getElementById('a11y-toast');
     if (!toast) {

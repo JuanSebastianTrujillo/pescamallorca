@@ -55,7 +55,10 @@ export const SpeciesSection = () => {
             <div class="modal-content border-0 shadow-lg overflow-hidden" style="border-radius: 1rem;">
               <div class="modal-header align-items-center py-3 px-4" style="background: linear-gradient(135deg, var(--bs-primary) 0%, #1A365D 100%);">
                 <h3 class="modal-title fw-bold text-white mb-0 fs-4" id="speciesModalLabel">Nombre</h3>
-                <div id="speciesModalCatchAction" class="ms-auto me-3"></div>
+                <button class="btn btn-sm btn-outline-light rounded-pill ms-auto me-3 px-3 fw-bold" onclick="window.speakModalDescription('species', this)">
+                  <i class="bi bi-volume-up-fill me-1"></i> Leer ficha
+                </button>
+                <div id="speciesModalCatchAction" class="me-3"></div>
                 <button type="button" class="btn-close btn-close-white ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body p-0">
