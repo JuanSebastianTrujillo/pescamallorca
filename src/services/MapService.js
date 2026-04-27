@@ -66,11 +66,15 @@ export function initMap(containerId) {
     }
 
     // Centro de Mallorca
+    // Restringir el mapa a las Islas Baleares para evitar salir de la zona
+    const balearesBounds = L.latLngBounds([[38.6, 0.2], [40.6, 5.2]]);
     mapInstance = L.map(containerId, {
         center: [39.62, 2.95],
         zoom: 9,
         zoomControl: true,
-        scrollWheelZoom: true
+        scrollWheelZoom: true,
+        maxBounds: balearesBounds,
+        maxBoundsViscosity: 1.0 
     });
 
     // Tiles de OpenStreetMap (gratuito, sin API key)

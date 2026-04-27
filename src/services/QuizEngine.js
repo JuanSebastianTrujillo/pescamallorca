@@ -60,7 +60,7 @@ function generateSpeciesQuestions(speciesData) {
             return {
                 text: `¿Qué especie de pez se muestra en la imagen?`,
                 image: target.image,
-                imageAlt: `Foto de una especie marina de las aguas de Mallorca`,
+                imageAlt: `Fotografía detallada de ${target.name}, una especie marina de las aguas de Mallorca`,
                 options,
                 explanation: `Es un/a ${target.name} (${target.alternateName || ''}).`
             };

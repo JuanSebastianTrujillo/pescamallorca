@@ -1,3 +1,5 @@
+import { trapFocusInModal } from "../services/AccessibilityService.js";
+
 export const PecedexSection = () => {
    return `
       <!-- Pecedex Section -->
@@ -9,7 +11,7 @@ export const PecedexSection = () => {
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
            <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
-              <h5 class="text-primary fw-bold mb-0">Progreso: <span id="pecedex-progress">0</span> / <span id="pecedex-total">0</span></h5>
+              <h5 class="text-primary fw-bold mb-0">Progreso: <span id="pecedex-progress" aria-live="polite">0</span> / <span id="pecedex-total">0</span></h5>
               <button class="btn btn-outline-danger btn-sm" onclick="showResetPecedexModal()">
                  <i class="bi bi-trash"></i> Reiniciar
               </button>

@@ -1,4 +1,5 @@
 import { QuizEngine } from "../services/QuizEngine.js";
+import { trapFocusInModal } from "../services/AccessibilityService.js";
 
 export const QuizSection = () => {
     return `
@@ -59,7 +60,7 @@ export const QuizSection = () => {
                  </h4>
                  
                  <!-- Imagen opcional para la pregunta -->
-                 <img src="" id="quiz-question-img" class="img-fluid rounded-3 shadow-sm mb-4 d-none object-fit-cover w-100" style="max-height: 250px;" alt="Imagen de soporte a la pregunta">
+                 <img src="" id="quiz-question-img" class="img-fluid rounded-3 shadow-sm mb-4 d-none object-fit-cover w-100" style="max-height: 250px;" alt="Imagen ilustrativa de la especie marina para la pregunta del quiz de pesca en Mallorca">
 
                  <!-- Opciones -->
                  <div class="d-grid gap-3" id="quiz-options-container">
@@ -263,7 +264,7 @@ export const initQuiz = (speciesData, zonesData) => {
         else if (results.percentage >= 50) barColor = 'bg-warning';
 
         modalBody.innerHTML = `
-            <div class="text-center py-4">
+            <div class="text-center py-4" aria-live="polite" aria-atomic="true">
                 <div class="mb-4" style="font-size: 5rem;">${results.percentage >= 70 ? '🏆' : results.percentage >= 50 ? '🎣' : '🌊'}</div>
                 <h3 class="fw-bold text-dark mb-2">${results.grade}</h3>
                 <p class="text-muted fs-5 mb-4">Has acertado <strong class="text-primary">${results.score}</strong> de <strong>${results.total}</strong> preguntas</p>
@@ -319,7 +320,7 @@ export const initQuiz = (speciesData, zonesData) => {
         const modalBody = document.querySelector('#quizModal .modal-body');
         modalBody.innerHTML = `
             <h4 class="mb-4 fw-bold text-dark lh-base" id="quiz-question-text">Cargando...</h4>
-            <img src="" id="quiz-question-img" class="img-fluid rounded-3 shadow-sm mb-4 d-none object-fit-cover w-100" style="max-height: 250px;" alt="Imagen de soporte">
+            <img src="" id="quiz-question-img" class="img-fluid rounded-3 shadow-sm mb-4 d-none object-fit-cover w-100" style="max-height: 250px;" alt="Imagen ilustrativa de la especie marina para la pregunta del quiz de pesca en Mallorca">
             <div class="d-grid gap-3" id="quiz-options-container"></div>
             <div id="quiz-explanation" class="alert alert-info border-0 shadow-sm mt-4 text-start d-none">
                 <i class="bi bi-lightbulb-fill me-2"></i><span id="quiz-explanation-text"></span>
@@ -346,6 +347,9 @@ export const initQuiz = (speciesData, zonesData) => {
         let modal = bootstrap.Modal.getInstance(modalEl);
         if (!modal) modal = new bootstrap.Modal(modalEl);
         modal.show();
+        
+        // Gestión de foco para accesibilidad
+        trapFocusInModal(modalEl, startBtn);
     });
 
     nextBtn.addEventListener('click', () => {

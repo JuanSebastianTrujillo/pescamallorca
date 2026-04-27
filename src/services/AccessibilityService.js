@@ -147,7 +147,109 @@ function updateTextZoomButtons() {
     });
 }
 
-// ─── Alto Contraste ─────────────────────────────────────────
+// ─── Gestión de Foco en Modales ───────────────────────────
+
+/**
+ * Atrapa el foco dentro de un contenedor modal y maneja navegación por teclado.
+ * @param {HTMLElement} modal - El elemento modal
+ * @param {HTMLElement} triggerElement - Elemento que abrió el modal (para devolver foco)
+ */
+export function trapFocusInModal(modal, triggerElement) {
+    if (!modal) return;
+
+    const focusableElements = modal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    // Enfocar primer elemento cuando se abre el modal
+    if (firstElement) {
+        setTimeout(() => firstElement.focus(), 100); // Pequeño delay para asegurar que el modal esté visible
+    }
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Tab') {
+            if (e.shiftKey) {
+                // Shift + Tab: ir al último elemento si estamos en el primero
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                // Tab: ir al primero si estamos en el último
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        }
+        if (e.key === 'Escape') {
+            // Cerrar modal con Escape
+            const closeBtn = modal.querySelector('[data-bs-dismiss="modal"]');
+            if (closeBtn) closeBtn.click();
+        }
+    };
+
+    modal.addEventListener('keydown', handleKeyDown);
+
+    // Limpiar event listeners cuando se cierre el modal
+    const modalInstance = bootstrap.Modal.getInstance(modal) || new bootstrap.Modal(modal);
+    modal.addEventListener('hidden.bs.modal', () => {
+        modal.removeEventListener('keydown', handleKeyDown);
+        // Devolver foco al elemento que abrió el modal
+        if (triggerElement) {
+            triggerElement.focus();
+        }
+    });
+}
+
+/**
+ * Hace que un elemento sea focalizable si no lo es.
+ * @param {HTMLElement} element - Elemento a hacer focalizable
+ */
+export function makeFocusable(element) {
+    if (!element) return;
+    if (!element.hasAttribute('tabindex') && !['button', 'input', 'select', 'textarea', 'a'].includes(element.tagName.toLowerCase())) {
+        element.setAttribute('tabindex', '0');
+    }
+}
+
+// ─── Indicadores de Foco Visibles ───────────────────────────
+
+function ensureFocusIndicators() {
+    if (!document.getElementById('focus-indicator-styles')) {
+        const style = document.createElement('style');
+        style.id = 'focus-indicator-styles';
+        style.textContent = `
+            /* Indicadores de foco mejorados para accesibilidad */
+            *:focus {
+                outline: 3px solid #4281A4 !important;
+                outline-offset: 2px !important;
+                box-shadow: 0 0 0 1px #ffffff !important;
+            }
+            
+            /* Para alto contraste */
+            body[data-high-contrast="true"] *:focus {
+                outline: 3px solid #ffff00 !important;
+                outline-offset: 2px !important;
+                box-shadow: 0 0 0 2px #000000 !important;
+            }
+            
+            /* Evitar outline en elementos que no deben tenerlo */
+            button:focus,
+            a:focus,
+            input:focus,
+            select:focus,
+            textarea:focus {
+                /* Mantener el outline definido arriba */
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// ─── Alto Contraste Mejorado ───────────────────────────────
 
 function toggleHighContrast() {
     highContrastActive = !highContrastActive;
@@ -155,19 +257,100 @@ function toggleHighContrast() {
 
     if (highContrastActive) {
         body.setAttribute('data-high-contrast', 'true');
-        // Inyectar estilos de alto contraste si no existen
+        // Inyectar estilos de alto contraste mejorados si no existen
         if (!document.getElementById('high-contrast-styles')) {
             const style = document.createElement('style');
             style.id = 'high-contrast-styles';
             style.textContent = `
+                /* Alto contraste mejorado: más sutil pero efectivo */
                 body[data-high-contrast="true"] {
-                    filter: contrast(1.4) !important;
+                    background-color: #ffffff !important;
                 }
+
+                /* Mejorar contraste en texto específicamente */
+                body[data-high-contrast="true"] h1,
+                body[data-high-contrast="true"] h2,
+                body[data-high-contrast="true"] h3,
+                body[data-high-contrast="true"] h4,
+                body[data-high-contrast="true"] h5,
+                body[data-high-contrast="true"] h6 {
+                    color: #000000 !important;
+                    font-weight: 700 !important;
+                }
+
+                /* Mantener blanco el nombre científico sobre fondo oscuro */
+                body[data-high-contrast="true"] #speciesModalScientific {
+                    color: #ffffff !important;
+                }
+
+                body[data-high-contrast="true"] p,
+                body[data-high-contrast="true"] span,
+                body[data-high-contrast="true"] div {
+                    color: #1a1a1a !important;
+                }
+
+                /* Botones con mejor contraste */
+                body[data-high-contrast="true"] .btn-primary {
+                    background-color: #0066cc !important;
+                    color: #ffffff !important;
+                    border: 2px solid #004499 !important;
+                }
+
+                body[data-high-contrast="true"] .btn-outline-light {
+                    background-color: #ffffff !important;
+                    color: #000000 !important;
+                    border: 2px solid #000000 !important;
+                }
+
+                /* Fondos de tarjetas */
+                body[data-high-contrast="true"] .card {
+                    background-color: #f8f8f8 !important;
+                    border: 2px solid #cccccc !important;
+                }
+
+                /* Modales */
+                body[data-high-contrast="true"] .modal-content {
+                    background-color: #ffffff !important;
+                    border: 3px solid #000000 !important;
+                }
+
+                body[data-high-contrast="true"] .modal-header {
+                    background-color: #e0e0e0 !important;
+                    border-bottom: 2px solid #000000 !important;
+                }
+
+                /* Asegurar que el fondo del modal sea opaco y con buen contraste */
+                body[data-high-contrast="true"] .modal-backdrop {
+                    background-color: rgba(0, 0, 0, 0.9) !important;
+                    opacity: 1 !important;
+                }
+
+
+                /* Formularios */
+                body[data-high-contrast="true"] .form-control {
+                    background-color: #ffffff !important;
+                    color: #000000 !important;
+                    border: 2px solid #666666 !important;
+                }
+
+                body[data-high-contrast="true"] .form-control:focus {
+                    border-color: #0066cc !important;
+                    box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25) !important;
+                }
+
+                /* Navegación */
+                body[data-high-contrast="true"] .navbar {
+                    background-color: #ffffff !important;
+                    border-bottom: 2px solid #000000 !important;
+                }
+
+                /* Imágenes con ajuste sutil */
                 body[data-high-contrast="true"] img {
-                    filter: contrast(0.8) !important;
+                    filter: contrast(1.1) brightness(1.05) !important;
                 }
             `;
             document.head.appendChild(style);
+
         }
         showNotification('Alto contraste activado.');
     } else {
@@ -262,6 +445,9 @@ function showNotification(message) {
  * Se llama una vez después del renderizado del DOM.
  */
 export function initAccessibility() {
+    // Asegurar indicadores de foco visibles
+    ensureFocusIndicators();
+
     // TTS buttons (desktop + mobile)
     const ttsDesktop = document.getElementById('tts-toggle-desktop');
     const ttsMobile  = document.getElementById('tts-toggle-mobile');

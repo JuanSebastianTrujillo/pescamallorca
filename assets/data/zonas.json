@@ -16,8 +16,8 @@
         "longitude": 3.1714
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp",
-        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+        "assets/img/spots/cala-figuera-1.webp",
+        "assets/img/spots/cala-figuera-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso difícil, Fondo rocoso, Pesca profunda, Acantilado",
       "description": "Impresionante caleta virgen rodeada de acantilados en el extremo norte de la isla, ideal para buscar especies de roca de gran tamaño.",
@@ -64,8 +64,8 @@
         "longitude": 3.1235
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/playa-muro-1.webp",
-        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+        "assets/img/spots/playa-muro-1.webp",
+        "assets/img/spots/playa-muro-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso fácil, Fondo arenoso, Pesca nocturna, Surfcasting",
       "description": "Extensa playa de arena blanca y aguas someras en la Bahía de Alcúdia, perfecta para la pesca nocturna de espáridos.",
@@ -112,8 +112,8 @@
         "longitude": 3.0545
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
-        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp"
+        "assets/img/spots/salines-1.webp",
+        "assets/img/spots/salines-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso medio, Corrientes fuertes, Fondo mixto, Espuma",
       "description": "El punto más meridional de Mallorca, famoso por sus fuertes corrientes que atraen a numerosos depredadores costeros.",
