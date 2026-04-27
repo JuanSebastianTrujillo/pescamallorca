@@ -15,7 +15,7 @@ export const RulesSection = () => {
               <button class="nav-link active rounded-pill shadow-sm border-0 bg-white text-dark fw-bold" id="licencias-tab" data-bs-toggle="tab" data-bs-target="#licencias" type="button" role="tab">📜 Licencias y Permisos</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link rounded-pill shadow-sm border-0 bg-white text-dark fw-bold" id="especies-tab" data-bs-toggle="tab" data-bs-target="#especies" type="button" role="tab">⚖️ Tallas y Cupos</button>
+              <button class="nav-link rounded-pill shadow-sm border-0 bg-white text-dark fw-bold" id="tallas-cupos-tab" data-bs-toggle="tab" data-bs-target="#tallas-cupos" type="button" role="tab">⚖️ Tallas y Cupos</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link rounded-pill shadow-sm border-0 bg-white text-dark fw-bold" id="reservas-tab" data-bs-toggle="tab" data-bs-target="#reservas" type="button" role="tab">🐠 Reservas Marinas</button>
@@ -47,7 +47,7 @@ export const RulesSection = () => {
             </div>
 
             <!-- TALLAS Y CUPOS -->
-            <div class="tab-pane fade" id="especies" role="tabpanel" tabindex="0">
+            <div class="tab-pane fade" id="tallas-cupos" role="tabpanel" tabindex="0">
                 <div class="row align-items-center">
                     <div class="col-md-7">
                         <h4 class="fw-bold text-primary mb-3">Regulación Extensa de Especies</h4>

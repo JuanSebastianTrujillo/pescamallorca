@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://www.pescamallorca.online/rampas/cn-portocristo",
+      "@type": "Place",
+      "name": "Rampa Club Náutico Portocristo",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/portocristo-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-firme.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-parking.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Porto Cristo (Manacor)",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5413,
+        "longitude": 3.3328
+      },
+      "hasMap": "https://maps.google.com/?cid=15319691598248867444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ0",
+      "keywords": "Rampa de hormigón, De pago, Apta para remolques, Agua dulce",
+      "description": "Moderna rampa de hormigón situada dentro de las instalaciones del Club Náutico, ideal para botaduras seguras y cómodas de embarcaciones a motor medias y grandes.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Ofrece una profundidad excelente al final de la rampa superando el metro y medio sin riesgo para las colas de motores grandes, destacando por ser muy ancha, con pendiente moderada y un firme de hormigón rayado que no requiere vehículo 4x4. LOGÍSTICA DE APARCAMIENTO: Existe una zona habilitada para estacionar coche y remolque dentro del recinto portuario sujeta a disponibilidad. TARIFAS Y BUROCRACIA: Tiene un coste aproximado de 15 a 20 euros por maniobra de botadura que se paga directamente en la oficina de marinería. SERVICIOS ANEXOS: Dispone de manguera de agua dulce a pie de rampa para endulzar motores, un surtidor de combustible a escasos metros y acceso a baños. AVISOS Y PELIGROS LOCALES: Es una rampa muy concurrida en los meses de verano por lo que se recomienda ir a primera hora teniendo siempre cuidado con el tráfico interno del puerto."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-pollenca-publica",
+      "@type": "Place",
+      "name": "Rampa Pública Port de Pollença",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/pollenca-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/pollenca-inclinacion.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Port de Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.9042,
+        "longitude": 3.0841
+      },
+      "hasMap": "http://googleusercontent.com/maps.google.com/9",
+      "keywords": "Rampa de hormigón, Gratuita, Apta para remolques, Parking difícil",
+      "description": "Rampa pública y gratuita gestionada por Ports IB, muy utilizada por pescadores de la zona norte de la isla para acceder a las bahías de Pollença y Alcúdia.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Tiene un calado medio o bajo que obliga a meter bastante el remolque en el agua para embarcaciones pesadas, tratándose de una rampa de hormigón estándar con pendiente suave cuya parte sumergida puede acumular verdín. LOGÍSTICA DE APARCAMIENTO: El aparcamiento es crítico ya que no hay zona específica para remolques, siendo fácil aparcar en invierno pero casi imposible en verano, con alto riesgo de multa si el remolque invade la calzada. TARIFAS Y BUROCRACIA: Es totalmente gratuita al ser de uso público. SERVICIOS ANEXOS: No cuenta con servicios directos ni manguera de agua dulce disponible para endulzar. AVISOS Y PELIGROS LOCALES: Resulta muy resbaladiza en invierno por la acumulación de algas, recomendando tracción 4x4 si el barco pesa mucho, y es peligrosa con temporales fuertes de componente Norte o Este."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/son-serra-marina",
+      "@type": "Place",
+      "name": "Acceso Natural Son Serra de Marina",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/sonserra-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/sonserra-rocas.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Margalida",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7365,
+        "longitude": 3.2289
+      },
+      "hasMap": "https://maps.google.com/?cid=15319691598248867444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ0",
+      "keywords": "Acceso natural de roca, Gratuita, Solo Kayaks y Neumáticas pequeñas",
+      "description": "Botadura natural en costa abierta, ideal para kayakistas y pescadores submarinos que buscan un acceso rápido a la bahía de Alcúdia lejos de los puertos.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Presenta un calado nulo donde se entra directamente caminando al mar desde la roca o la arena, con un acceso por terreno irregular totalmente inviable para remolques de embarcaciones rígidas. LOGÍSTICA DE APARCAMIENTO: Permite descargar el kayak o la neumática cerca del mar, pero el coche debe aparcarse obligatoriamente en las calles residenciales traseras. TARIFAS Y BUROCRACIA: El acceso es totalmente libre y gratuito. SERVICIOS ANEXOS: No dispone de ningún servicio al ser una zona virgen y residencial sin instalaciones náuticas. AVISOS Y PELIGROS LOCALES: Es una zona muy expuesta en la que hay que extremar la precaución con el viento de Tramuntana o el mar de fondo ya que las olas rompen directamente en la zona de botadura, requiriendo también máximo cuidado con los bañistas durante los meses de julio y agosto."
+    }
+  ]
+}
