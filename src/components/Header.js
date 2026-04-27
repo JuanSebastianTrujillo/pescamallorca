@@ -29,8 +29,8 @@ export const Header = () => {
                 <li><h6 class="dropdown-header">Herramientas</h6></li>
                 <li><button class="dropdown-item d-flex align-items-center" id="tts-toggle-desktop"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
                 <li><button class="dropdown-item d-flex align-items-center"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
-                <li><button class="dropdown-item d-flex align-items-center"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
-                <li><button class="dropdown-item d-flex align-items-center"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
+                <li><button class="dropdown-item d-flex align-items-center" id="zoom-toggle-desktop"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
+                <li><button class="dropdown-item d-flex align-items-center" id="contrast-toggle-desktop"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
               </ul>
             </div>
 
@@ -55,11 +55,11 @@ export const Header = () => {
       
       <div class="branding d-flex align-items-center">
         <div class="container position-relative d-flex align-items-center justify-content-between">
-          <a href="/" data-link class="logo d-flex align-items-center">
+          <a href="/" data-link class="logo d-flex align-items-center" aria-label="Ir a la página de inicio">
             <h1 class="sitename">Pesca Mallorca</h1>
           </a>
           
-          <nav id="navmenu" class="navmenu">
+          <nav id="navmenu" class="navmenu" aria-label="Menú principal de navegación">
             <ul>
               <li><a href="#hero" class="active">Inicio</a></li>
               <li><a href="#zonas">Spots</a></li>
@@ -93,8 +93,8 @@ export const Header = () => {
                   <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="accessibilityDropdownMobile">
                     <li><button class="dropdown-item" id="tts-toggle-mobile"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
                     <li><button class="dropdown-item"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
-                    <li><button class="dropdown-item"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
-                    <li><button class="dropdown-item"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
+                    <li><button class="dropdown-item" id="zoom-toggle-mobile"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
+                    <li><button class="dropdown-item" id="contrast-toggle-mobile"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
                   </ul>
                 </div>
 

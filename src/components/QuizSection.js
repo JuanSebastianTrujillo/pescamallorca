@@ -74,6 +74,7 @@ export const QuizSection = () => {
               </div>
               <div class="modal-footer bg-white border-top p-3 justify-content-between align-items-center">
                  <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Abandonar partida</button>
+                 <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm d-none" id="quiz-confirm-btn">Confirmar</button>
                  <button type="button" class="btn btn-primary rounded-pill px-5 fw-bold shadow-sm d-none" id="quiz-next-btn">Siguiente <i class="bi bi-arrow-right ms-2"></i></button>
               </div>
             </div>
@@ -100,6 +101,8 @@ export const initQuiz = (speciesData, zonesData) => {
     const nextBtn    = document.getElementById('quiz-next-btn');
     const selectorEl = document.getElementById('quiz-selector');
 
+    let selectedOptionIndex = null;
+
     if (!startBtn) return;
 
     quizEngine = new QuizEngine();
@@ -117,7 +120,8 @@ export const initQuiz = (speciesData, zonesData) => {
             currentQEl:     document.getElementById('quiz-current-question'),
             totalQEl:       document.getElementById('quiz-total-questions'),
             explanationEl:  document.getElementById('quiz-explanation'),
-            explanationTxt: document.getElementById('quiz-explanation-text')
+            explanationTxt: document.getElementById('quiz-explanation-text'),
+            confirmBtn:     document.getElementById('quiz-confirm-btn')
         };
     }
 
@@ -141,21 +145,28 @@ export const initQuiz = (speciesData, zonesData) => {
         // Imagen
         if (question.image && els.questionImg) {
             els.questionImg.src = question.image;
+            els.questionImg.alt = question.imageAlt || `Imagen relacionada con la pregunta: ${question.text}`;
             els.questionImg.classList.remove('d-none');
             els.questionImg.onerror = () => { els.questionImg.classList.add('d-none'); };
         } else if (els.questionImg) {
             els.questionImg.classList.add('d-none');
         }
 
-        // Ocultar explicación y botón siguiente
+        // Ocultar explicación y botones de control
         if (els.explanationEl) els.explanationEl.classList.add('d-none');
+        if (els.confirmBtn) {
+            els.confirmBtn.classList.add('d-none');
+            els.confirmBtn.disabled = false;
+        }
         nextBtn.classList.add('d-none');
+        selectedOptionIndex = null;
 
         // Generar opciones
         const labels = ['A', 'B', 'C', 'D'];
         els.optionsContainer.innerHTML = question.options.map((opt, i) => `
-            <button class="btn btn-outline-primary btn-lg text-start px-4 py-3 rounded-3 position-relative quiz-option-btn" 
+            <button type="button" class="btn btn-outline-primary btn-lg text-start px-4 py-3 rounded-3 position-relative quiz-option-btn" 
                 data-index="${i}" 
+                aria-pressed="false"
                 style="transition: all 0.2s ease;">
                 <span class="fw-bold me-2">${labels[i]})</span> <span>${opt.text}</span>
             </button>
@@ -163,11 +174,33 @@ export const initQuiz = (speciesData, zonesData) => {
 
         // Conectar handlers de opciones
         els.optionsContainer.querySelectorAll('.quiz-option-btn').forEach(btn => {
-            btn.addEventListener('click', () => handleAnswer(parseInt(btn.dataset.index)));
+            btn.addEventListener('click', () => selectOption(parseInt(btn.dataset.index), btn));
         });
     }
 
     // ─── Manejar respuesta ──────────────────────────────────
+
+    function selectOption(optionIndex, button) {
+        if (quizEngine.getState() !== 'PLAYING') return;
+
+        const buttons = document.querySelectorAll('.quiz-option-btn');
+        buttons.forEach((btn, i) => {
+            btn.classList.remove('btn-primary', 'text-white');
+            btn.classList.add('btn-outline-primary');
+            btn.setAttribute('aria-pressed', 'false');
+        });
+
+        selectedOptionIndex = optionIndex;
+        button.classList.remove('btn-outline-primary');
+        button.classList.add('btn-primary', 'text-white');
+        button.setAttribute('aria-pressed', 'true');
+
+        const els = getQuizElements();
+        if (els.confirmBtn) {
+            els.confirmBtn.classList.remove('d-none');
+            els.confirmBtn.disabled = false;
+        }
+    }
 
     function handleAnswer(optionIndex) {
         if (quizEngine.getState() !== 'PLAYING') return;
@@ -195,6 +228,10 @@ export const initQuiz = (speciesData, zonesData) => {
                 btn.classList.add('opacity-50');
             }
         });
+
+        if (els.confirmBtn) {
+            els.confirmBtn.classList.add('d-none');
+        }
 
         // Actualizar puntuación
         if (els.scoreEl) els.scoreEl.textContent = quizEngine.score;
@@ -294,6 +331,14 @@ export const initQuiz = (speciesData, zonesData) => {
     }
 
     // ─── Event Listeners ────────────────────────────────────
+
+    const confirmBtn = document.getElementById('quiz-confirm-btn');
+    if (confirmBtn) {
+        confirmBtn.addEventListener('click', () => {
+            if (selectedOptionIndex === null) return;
+            handleAnswer(selectedOptionIndex);
+        });
+    }
 
     startBtn.addEventListener('click', () => {
         startNewGame();

@@ -10,7 +10,7 @@ export const PecedexSection = () => {
         <div class="container" data-aos="fade-up" data-aos-delay="100">
            <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
               <h5 class="text-primary fw-bold mb-0">Progreso: <span id="pecedex-progress">0</span> / <span id="pecedex-total">0</span></h5>
-              <button class="btn btn-outline-danger btn-sm" onclick="resetPecedex()">
+              <button class="btn btn-outline-danger btn-sm" onclick="showResetPecedexModal()">
                  <i class="bi bi-trash"></i> Reiniciar
               </button>
            </div>
@@ -24,5 +24,29 @@ export const PecedexSection = () => {
            </div>
         </div>
       </section>
+
+      <!-- Modal de Confirmación de Reset Pecédex -->
+      <div class="modal fade" id="resetPecedexModal" tabindex="-1" aria-labelledby="resetPecedexModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-danger" id="resetPecedexModalLabel">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Confirmar Reinicio
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <p class="mb-0">¿Seguro que quieres borrar todo tu registro de capturas de la Pecédex? Esta acción no se puede deshacer.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger" onclick="confirmResetPecedex()">
+                <i class="bi bi-trash me-1"></i> Sí, borrar todo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     `;
 };

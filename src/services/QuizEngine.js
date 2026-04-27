@@ -60,6 +60,7 @@ function generateSpeciesQuestions(speciesData) {
             return {
                 text: `¿Qué especie de pez se muestra en la imagen?`,
                 image: target.image,
+                imageAlt: `Foto de una especie marina de las aguas de Mallorca`,
                 options,
                 explanation: `Es un/a ${target.name} (${target.alternateName || ''}).`
             };
@@ -184,6 +185,7 @@ function generateNormativaQuestions(speciesData) {
             return {
                 text: `¿Qué nivel de dificultad tiene la pesca del ${target.name}?`,
                 image: target.image,
+                imageAlt: `Foto de un ejemplar de pez en su entorno natural`,
                 options,
                 explanation: `El ${target.name} se considera de dificultad: ${dif}.`
             };

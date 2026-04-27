@@ -13,7 +13,7 @@ import { ContactSection } from "./components/ContactSection.js";
 import { QuizSection, initQuiz } from "./components/QuizSection.js";
 import { PecedexSection } from "./components/PecedexSection.js";
 import { initTheme } from "../assets/js/main.js";
-import { initAccessibility } from "./services/AccessibilityService.js";
+import { initAccessibility, updateJsonLd } from "./services/AccessibilityService.js";
 
 const app = document.getElementById('app');
 
@@ -160,7 +160,7 @@ async function loadMonthSpecies() {
             slide.className = 'carousel-item';
             slide.setAttribute('data-species-name', sp.name);
             slide.innerHTML = `
-                <img src="${sp.image}" alt="${sp.name}" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
+                <img src="${sp.image}" alt="Foto de ${sp.name}" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
                 <div class="carousel-container">
                     <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Peces del Mes - ${formattedMonth}</h2>
                     <h3 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.5rem, 4vw, 2.5rem); margin-top: clamp(3rem, 15vw, 10rem);">${sp.name}</h3>
@@ -254,7 +254,7 @@ function renderSpotsCards(spotsArray) {
         htmlCards += `
           <div class="col-lg-4 col-md-6">
             <div class="card h-100 shadow-sm border-0 spot-card" onclick="openSpotModal(${originalIndex})" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-              <img src="${imgSrc}" class="card-img-top object-fit-cover" alt="${spot.name}" style="height:200px">
+              <img src="${imgSrc}" class="card-img-top object-fit-cover" alt="Foto de la zona de pesca ${spot.name}" style="height:200px">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title text-primary fw-bold">${spot.name}</h5>
                 <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
@@ -344,7 +344,7 @@ window.openSpotModal = (index) => {
     images.forEach(img => {
         galleryHtml += `
             <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
-                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Imagen de la zona" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Foto de la zona de pesca ${spot.name}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
             </div>
         `;
     });
@@ -578,7 +578,7 @@ function renderSpeciesSwiper(speciesArray) {
         htmlCards += `
           <div class="swiper-slide py-3">
              <div class="card h-100 shadow border-0 cursor-pointer species-card" onclick="openSpeciesModal(${index})" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-               <img src="${species.image}" class="card-img-top object-fit-cover" alt="${species.name}" style="height:250px" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+               <img src="${species.image}" class="card-img-top object-fit-cover" alt="Foto de ${species.name}" style="height:250px" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                <div class="card-body text-center bg-white rounded-bottom">
                  <h5 class="card-title text-primary fw-bold mb-1">${species.name}</h5>
                </div>
@@ -683,7 +683,7 @@ function fillAndShowSpeciesModal(species) {
         imgEl.style.opacity = '0';
         setTimeout(() => {
             imgEl.src = selected.includes('/') ? selected : `/assets/img/peces/${selected}`;
-            imgEl.alt = `${species.name} imagen ${currentImagePosition + 1}`;
+            imgEl.alt = `Foto de ${species.name}`;
             imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1.jpg'; };
             imgEl.style.opacity = '1';
         }, 150);
@@ -756,7 +756,7 @@ function fillAndShowSpeciesModal(species) {
                   <h5 class="fw-bold mb-3 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-play-btn-fill me-2"></i> Documental y Comportamiento</h5>
                   <div class="position-relative w-100 rounded overflow-hidden shadow-sm" style="aspect-ratio: 16 / 9; background-color: #000; border-radius: 1rem !important;">
                      <div id="videoPlaceholder" class="position-relative w-100 h-100 d-flex justify-content-center align-items-center" style="background-color: #000;">
-                        <img id="videoThumbnailImg" src="${videoThumbnail}" alt="Miniatura del vídeo" style="width: 100%; height: 100%; object-fit: contain; background-color: #000;" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'" />
+                        <img id="videoThumbnailImg" src="${videoThumbnail}" alt="Miniatura de vídeo de la especie" style="width: 100%; height: 100%; object-fit: contain; background-color: #000;" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'" />
                         <div class="position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: rgba(0,0,0,0.45);">
                            <button id="btnPlayVideo" class="btn btn-outline-light rounded-circle" style="width: 64px; height: 64px;"><i class="bi bi-play-fill fs-2"></i></button>
                            <span class="small fw-bold text-white text-uppercase mt-2" style="letter-spacing: 1px;">Reproducir Vídeo de la Especie</span>
@@ -831,6 +831,19 @@ function fillAndShowSpeciesModal(species) {
     if (!modal) {
         modal = new bootstrap.Modal(modalEl);
     }
+
+    // Actualizar JSON-LD para la especie
+    const speciesJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Animal",
+        "name": species.name,
+        "alternateName": species.alternateName,
+        "description": species.description,
+        "image": species.image,
+        "url": window.location.href
+    };
+    updateJsonLd(speciesJsonLd);
+
     modal.show();
 }
 
@@ -865,7 +878,7 @@ window.initPecedex = (speciesArray) => {
           <div class="col-4 col-sm-3 col-md-3 col-lg-2">
              <div class="card h-100 border-0 bg-transparent text-center" style="${pointerStyle}" ${hoverAnim} onclick="${action}" title="${isCaught ? 'Ver ficha técnica de la especie' : 'Ve a la lista de Especies para registrar esta captura'}">
                <div class="position-relative mx-auto rounded-circle d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background-color: ${isCaught ? '#eef2ff' : '#f8f9fa'}; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);">
-                 <img src="${species.image}" alt="${species.name}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                 <img src="${species.image}" alt="${isCaught ? `Foto de ${species.name}` : 'Foto de una especie marina no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                  ${isCaught ? '<i class="bi bi-check-circle-fill text-success position-absolute" style="bottom: 0px; right: 0px; font-size: 1.2rem; background: white; border-radius: 50%;"></i>' : ''}
                </div>
                <div class="card-body p-2">
@@ -908,10 +921,18 @@ window.toggleCatchSpecies = (event, name) => {
     }
 };
 
-window.resetPecedex = () => {
-    if (confirm('¿Seguro que quieres borrar todo tu registro de capturas de la Pecedex?')) {
-        caughtSpecies = [];
-        localStorage.removeItem('caughtSpecies');
-        if (currentSpeciesList) initPecedex(currentSpeciesList);
+window.showResetPecedexModal = () => {
+    const modal = new bootstrap.Modal(document.getElementById('resetPecedexModal'));
+    modal.show();
+};
+
+window.confirmResetPecedex = () => {
+    caughtSpecies = [];
+    localStorage.removeItem('caughtSpecies');
+    if (globalSpeciesList && globalSpeciesList.length > 0) {
+        initPecedex(globalSpeciesList);
     }
+    // Cerrar el modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('resetPecedexModal'));
+    modal.hide();
 };

@@ -5,21 +5,21 @@ export const HeroSection = () => {
           <div class="carousel-indicators" id="hero-carousel-indicators"></div>
           <div class="carousel-inner" id="hero-carousel-inner">
             <div class="carousel-item active">
-              <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="Pesca en Mallorca - Imagen 1">
+              <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="Pescador lanzando el anzuelo en la costa de Mallorca">
               <div class="carousel-container">
                 <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Bienvenido a Pesca Mallorca</h2>
                 <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Tu guía completa para conocer los mejores rincones de la costa Balear, su normativa y las especies reinas de nuestras aguas.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="Pesca en Mallorca - Imagen 2">
+              <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="Vista de un spot de pesca en la costa mallorquina">
               <div class="carousel-container">
                 <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Descubre Nuestras Zonas</h2>
                 <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Explora los mejores puntos de pesca en las Islas Baleares con información detallada de cada ubicación.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="Pesca en Mallorca - Imagen 3">
+              <img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="Barco de pesca navegando aguas de Mallorca">
               <div class="carousel-container">
                 <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Especies de Calidad</h2>
                 <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Conoce las diferentes especies que puedes encontrar y la normativa de pesca para cada una.</p>

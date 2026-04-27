@@ -220,7 +220,7 @@ export const initShops = () => {
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                <div class="card w-100 shadow-sm border-0 shop-card cursor-pointer" onclick="openShopModal(${store.id})" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                   <div class="position-relative">
-                     <img src="${store.image}" class="card-img-top object-fit-cover" alt="Tienda ${store.name}" style="height:220px" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                     <img src="${store.image}" class="card-img-top object-fit-cover" alt="Foto de la tienda ${store.name}" style="height:220px" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                      <div class="position-absolute bottom-0 start-0 m-3">
                          <span class="badge bg-dark align-items-center shadow-lg"><i class="bi bi-star-fill text-warning me-1"></i> ${store.rating} / 5</span>
                      </div>
@@ -259,7 +259,7 @@ window.openShopModal = (storeId) => {
     carouselIndicators += `<button type="button" data-bs-target="#shopGalleryCarousel" data-bs-slide-to="${index}" class="${activeClass}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Slide ${index + 1}"></button>`;
     carouselItems += `
             <div class="carousel-item ${activeClass}">
-                <img src="${img}" class="d-block w-100 object-fit-cover rounded shadow-sm" style="height: 350px;" alt="Galería ${store.name}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                <img src="${img}" class="d-block w-100 object-fit-cover rounded shadow-sm" style="height: 350px;" alt="Foto de la tienda ${store.name}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
             </div>
         `;
   });

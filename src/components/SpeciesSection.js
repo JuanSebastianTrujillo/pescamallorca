@@ -61,7 +61,7 @@ export const SpeciesSection = () => {
                     <!-- Columna Imagen (carrusel de imágenes) -->
                     <div class="col-12 col-md-5 position-relative bg-dark d-flex align-items-center" style="min-height: 400px;">
                        <div id="speciesMediaCarousel" class="w-100 h-100 position-relative">
-                       <img src="" id="speciesModalImage" class="w-100 h-100 object-fit-cover" alt="" style="opacity: 0.85; position: absolute; top:0; left:0; transition: opacity 0.35s ease-in-out;">
+                       <img src="" id="speciesModalImage" class="w-100 h-100 object-fit-cover" alt="Foto de la especie" style="opacity: 0.85; position: absolute; top:0; left:0; transition: opacity 0.35s ease-in-out;">
                        <button type="button" id="speciesCarouselPrev" class="btn btn-sm btn-outline-light position-absolute top-50 start-0 translate-middle-y m-2" style="z-index: 2;"><i class="bi bi-chevron-left"></i></button>
                        <button type="button" id="speciesCarouselNext" class="btn btn-sm btn-outline-light position-absolute top-50 end-0 translate-middle-y m-2" style="z-index: 2;"><i class="bi bi-chevron-right"></i></button>
                        <div id="speciesCarouselDots" class="position-absolute top-0 start-50 translate-middle-x mt-2 d-flex gap-1" style="z-index: 2; display: none;"></div>
