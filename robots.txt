@@ -1,0 +1,13 @@
+# Robots.txt para Pesca Mallorca
+# Ayuda a los buscadores a indexar la web correctamente
+
+User-agent: *
+Allow: /
+
+# Evitar indexar carpetas de sistema y scripts internos
+Disallow: /src/
+Disallow: /forms/
+Disallow: /assets/vendor/
+
+# Enlace al Sitemap
+Sitemap: https://www.pescamallorca.online/sitemap.xml

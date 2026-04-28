@@ -46,9 +46,11 @@ export const Header = () => {
               </ul>
             </div>
 
-            <a href="#login" class="btn btn-sm btn-light rounded-pill d-flex align-items-center px-3 text-nowrap" style="font-weight: 500;">
-              <i class="bi bi-person-circle fs-6 me-2"></i> Iniciar sesión
-            </a>
+            <div id="auth-container">
+              <a href="#login" class="btn btn-sm btn-light rounded-pill d-flex align-items-center px-3 text-nowrap" style="font-weight: 500;" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="bi bi-person-circle fs-6 me-2"></i> Iniciar sesión
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -98,9 +100,11 @@ export const Header = () => {
                   </ul>
                 </div>
 
-                <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;">
-                  <i class="bi bi-person-circle fs-5 me-2"></i> Iniciar sesión
-                </a>
+                <div id="auth-container-mobile">
+                  <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <i class="bi bi-person-circle fs-5 me-2"></i> Iniciar sesión
+                  </a>
+                </div>
                 
                 <div class="d-flex justify-content-center">
                   <div class="dropdown w-100">

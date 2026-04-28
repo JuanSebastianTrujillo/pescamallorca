@@ -1,3 +1,5 @@
+import { AuthService } from "../services/AuthService.js";
+
 export const ShopsSection = () => {
   return `
       <!-- Shops Section -->
@@ -426,16 +428,62 @@ window.openShopModal = (storeId) => {
   modal.show();
 };
 
-window.renderShopReviews = (storeId) => {
+window.renderShopReviews = async (storeId) => {
   const listEl = document.getElementById(`shopReviewsList_${storeId}`);
   if (!listEl) return;
-  const revs = JSON.parse(localStorage.getItem(`pm_shop_reviews_${storeId}`)) || [];
-  if (revs.length === 0) {
-    listEl.innerHTML = '<p class="text-muted small fst-italic"><i class="bi bi-info-circle me-1"></i>Aún no hay reseñas. ¡Sé el primero en valorar esta tienda de pesca!</p>';
+
+  // Cambiar la visibilidad del formulario según si está logueado
+  const reviewForm = document.querySelector('#shopModal form');
+  const authPromptId = `shopAuthPrompt_${storeId}`;
+  let authPrompt = document.getElementById(authPromptId);
+
+  if (AuthService.isLoggedIn()) {
+    if (reviewForm) reviewForm.classList.remove('d-none');
+    if (authPrompt) authPrompt.classList.add('d-none');
+  } else {
+    if (reviewForm) reviewForm.classList.add('d-none');
+    if (!authPrompt) {
+      authPrompt = document.createElement('div');
+      authPrompt.id = authPromptId;
+      authPrompt.className = 'text-center py-4 bg-light rounded shadow-sm mb-4';
+      authPrompt.innerHTML = `
+                <i class="bi bi-lock text-warning fs-2 mb-2"></i>
+                <h6 class="fw-bold">Inicia sesión para valorar esta tienda</h6>
+                <button class="btn btn-warning btn-sm rounded-pill mt-2 fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <i class="bi bi-person-circle me-1"></i> Identificarse
+                </button>
+            `;
+      listEl.parentNode.insertBefore(authPrompt, listEl);
+    } else {
+      authPrompt.classList.remove('d-none');
+    }
+  }
+
+  // 1. Cargar reseñas locales (Web Storage)
+  const localRevs = JSON.parse(localStorage.getItem(`pm_shop_reviews_${storeId}`)) || [];
+
+  // 2. Cargar reseñas del servidor (JSON central)
+  let serverRevs = [];
+  try {
+    const response = await fetch('assets/data/comments.json');
+    if (response.ok) {
+      const data = await response.json();
+      serverRevs = data.comments.filter(c => c.type === 'shop' && c.targetId === storeId);
+    }
+  } catch (err) {
+    console.warn("No se pudo cargar comments.json", err);
+  }
+
+  // Unificar y ordenar
+  const allRevs = [...serverRevs, ...localRevs].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  if (allRevs.length === 0) {
+    listEl.innerHTML = '<p class="text-muted small fst-italic text-center py-3"><i class="bi bi-info-circle me-1"></i>Aún no hay reseñas. ¡Sé el primero en valorar esta tienda de pesca!</p>';
     return;
   }
+
   let html = '';
-  revs.forEach(r => {
+  allRevs.forEach(r => {
     let starsHtml = '';
     for (let i = 1; i <= 5; i++) {
       if (r.rating >= i) starsHtml += '<i class="bi bi-star-fill text-warning"></i>';
@@ -446,7 +494,10 @@ window.renderShopReviews = (storeId) => {
     html += `
         <div class="mb-3 p-4 bg-white rounded shadow-sm border-start border-warning border-4">
             <div class="d-flex justify-content-between align-items-center mb-2">
-                <strong><i class="bi bi-person-circle me-2 text-secondary fs-5 align-middle"></i>Usuario Verificado</strong>
+                <div class="d-flex align-items-center">
+                    <img src="${r.avatar || 'https://i.pravatar.cc/150?u=demo'}" class="rounded-circle me-2" style="width: 35px; height: 35px; object-fit: cover;">
+                    <strong class="text-dark">${r.user || 'Usuario Verificado'}</strong>
+                </div>
                 <span class="small" style="text-shadow: 1px 1px 1px rgba(0,0,0,0.1);">${starsHtml}</span>
             </div>
             <p class="mb-2 text-dark" style="white-space: pre-wrap; font-size: 0.95rem;">${r.text}</p>
@@ -521,14 +572,22 @@ window.resetStarUI = (storeId) => {
 
 
 window.submitShopReview = (storeId) => {
+  const user = AuthService.getUser();
+  if (!user) return;
+
   const textEl = document.getElementById(`reviewTextInput_${storeId}`);
   const rateEl = document.getElementById(`reviewRatingInput_${storeId}`);
   if (!textEl || !rateEl || !textEl.value.trim()) return;
 
   const newRev = {
+    id: Date.now(),
+    type: 'shop',
+    targetId: storeId,
     rating: parseFloat(rateEl.value),
     text: textEl.value.trim(),
-    date: new Date().toLocaleDateString('es-ES')
+    date: new Date().toISOString().split('T')[0],
+    user: user.name,
+    avatar: user.picture
   };
   const revs = JSON.parse(localStorage.getItem(`pm_shop_reviews_${storeId}`)) || [];
   revs.unshift(newRev);
@@ -536,5 +595,15 @@ window.submitShopReview = (storeId) => {
 
   textEl.value = '';
   window.renderShopReviews(storeId);
+
+  // Envío real al servidor
+  fetch('forms/save_comments.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newRev)
+  })
+    .then(res => res.json())
+    .then(data => console.log("Servidor:", data))
+    .catch(err => console.error("Error al guardar en servidor:", err));
 };
 

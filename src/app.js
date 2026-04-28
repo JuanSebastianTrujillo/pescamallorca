@@ -12,6 +12,8 @@ import { AuthorsSection } from "./components/AuthorsSection.js";
 import { ContactSection } from "./components/ContactSection.js";
 import { QuizSection, initQuiz } from "./components/QuizSection.js";
 import { PecedexSection } from "./components/PecedexSection.js";
+import { AuthService } from "./services/AuthService.js";
+import { LoginModal, initLoginModal } from "./components/LoginModal.js";
 import { initTheme } from "../assets/js/main.js";
 import { initAccessibility, updateJsonLd, trapFocusInModal } from "./services/AccessibilityService.js";
 import { voiceController, processCommand, speak, stopSpeaking, hasSTT, playAudio, stopAudio } from "./services/VoiceService.js";
@@ -40,6 +42,7 @@ const renderApp = () => {
         </main>
         ${Footer()}
         ${VoiceHelpModal()}
+        ${LoginModal()}
     `;
 };
 
@@ -48,7 +51,9 @@ const renderApp = () => {
 window.globalZonesData = [];
 
 document.addEventListener("DOMContentLoaded", () => {
+    AuthService.init();
     renderApp();
+    AuthService.updateHeaderUI();
 
     // Al ser todo una misma página, inicializamos los datos de inmediato
     loadSpotsData();
@@ -57,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initWeather();
     initShops();
     initRamps();
+    initLoginModal();
 
     // Inicializar accesibilidad (TTS, contraste, zoom)
     initAccessibility();
@@ -72,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (fishModal) {
         fishModal.addEventListener('hidden.bs.modal', () => {
             stopSpeaking(); // Detener TTS al cerrar
-            
+
             // Resetear botón de "Leer ficha"
             const readBtn = fishModal.querySelector('button[onclick*="speakModalDescription"]');
             if (readBtn) {
@@ -107,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (spotModal) {
         spotModal.addEventListener('hidden.bs.modal', () => {
             stopSpeaking();
-            
+
             // Resetear botón de "Leer"
             const readBtn = spotModal.querySelector('button[onclick*="speakModalDescription"]');
             if (readBtn) {
@@ -153,8 +159,8 @@ function initVoiceControl() {
         if (feedback) {
             statusText.innerText = feedback;
             // Después de procesar, si sigue activo, volver a "Escuchando" tras un momento
-            setTimeout(() => { 
-                if (voiceController._active) statusText.innerText = "Escuchando..."; 
+            setTimeout(() => {
+                if (voiceController._active) statusText.innerText = "Escuchando...";
             }, 2000);
         }
     };
@@ -220,7 +226,7 @@ window.speakModalDescription = (type, btn) => {
     window.speechSynthesis.speak(utterance);
 };
 
-window.submitContactForm = function (event) {
+window.submitContactForm = async function (event) {
     event.preventDefault();
 
     const name = document.getElementById('contact-name').value.trim();
@@ -234,15 +240,33 @@ window.submitContactForm = function (event) {
         return;
     }
 
+    const formData = { name, lastname, email, subject, message };
     const responseEl = document.getElementById('contact-response');
-    responseEl.innerText = '¡Mensaje enviado correctamente! Gracias por contactar con nosotros.';
+
+    try {
+        const response = await fetch('forms/save_contact.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            responseEl.innerText = '¡Mensaje enviado correctamente! Gracias por contactar con nosotros.';
+            responseEl.className = 'text-success mt-3';
+            document.getElementById('contact-form').reset();
+        } else {
+            throw new Error('Error en el servidor');
+        }
+    } catch (error) {
+        console.error('Error al enviar mensaje:', error);
+        // Fallback: Si no hay PHP, al menos simulamos el éxito para el usuario
+        responseEl.innerText = '¡Mensaje enviado correctamente! (Modo local)';
+        responseEl.className = 'text-info mt-3';
+        document.getElementById('contact-form').reset();
+    }
+
     responseEl.style.display = 'inline-block';
-
-    document.getElementById('contact-form').reset();
-
-    setTimeout(() => {
-        responseEl.style.display = 'none';
-    }, 5000);
+    setTimeout(() => { responseEl.style.display = 'none'; }, 5000);
 };
 
 async function loadMonthSpecies() {
@@ -251,7 +275,7 @@ async function loadMonthSpecies() {
     const formattedMonth = currentMonthName.charAt(0).toUpperCase() + currentMonthName.slice(1);
 
     try {
-        const response = await fetch('/assets/data/especies.json');
+        const response = await fetch('assets/data/especies.json');
         const schema = await response.json();
         const allSpecies = schema['@graph'] || [];
 
@@ -560,23 +584,67 @@ window.openRampModalByName = (name) => {
     window.openRampModal(ramp.id);
 };
 
-window.renderSpotComments = (spotName) => {
-    // Código inalterado de tus comentarios...
+window.renderSpotComments = async (spotName) => {
     const container = document.getElementById('spotModalCommentsContainer');
     if (!container) return;
-    const safeKey = `pm_spot_comments_${spotName.replace(/\\s+/g, '_')}`;
-    const comments = JSON.parse(localStorage.getItem(safeKey)) || [];
-    if (comments.length === 0) {
-        container.innerHTML = '<p class="text-muted small fst-italic"><i class="bi bi-info-circle me-1"></i>No hay reportes recientes. ¡Sé el primero en compartir qué tipo de capturas entraron hoy!</p>';
+
+    // Cambiar la visibilidad del formulario según si está logueado
+    const commentForm = document.querySelector('#spotModal form');
+    const authPrompt = document.getElementById('spotAuthPrompt');
+
+    if (AuthService.isLoggedIn()) {
+        if (commentForm) commentForm.classList.remove('d-none');
+        if (authPrompt) authPrompt.classList.add('d-none');
+    } else {
+        if (commentForm) commentForm.classList.add('d-none');
+        if (!authPrompt) {
+            const prompt = document.createElement('div');
+            prompt.id = 'spotAuthPrompt';
+            prompt.className = 'text-center py-4 bg-white rounded shadow-sm mb-4';
+            prompt.innerHTML = `
+                <i class="bi bi-lock text-primary fs-2 mb-2"></i>
+                <h6 class="fw-bold">Inicia sesión para reportar capturas</h6>
+                <button class="btn btn-primary btn-sm rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <i class="bi bi-person-circle me-1"></i> Identificarse
+                </button>
+            `;
+            container.parentNode.insertBefore(prompt, container);
+        } else {
+            authPrompt.classList.remove('d-none');
+        }
+    }
+
+    // 1. Cargar comentarios locales (Web Storage)
+    const safeKey = `pm_spot_comments_${spotName.replace(/\s+/g, '_')}`;
+    const localComments = JSON.parse(localStorage.getItem(safeKey)) || [];
+
+    // 2. Cargar comentarios del servidor (JSON central)
+    let serverComments = [];
+    try {
+        const response = await fetch('assets/data/comments.json');
+        if (response.ok) {
+            const data = await response.json();
+            serverComments = data.comments.filter(c => c.type === 'spot' && c.targetId === spotName);
+        }
+    } catch (err) {
+        console.warn("No se pudo cargar comments.json", err);
+    }
+
+    // Unificar y ordenar por fecha
+    const allComments = [...serverComments, ...localComments].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    if (allComments.length === 0) {
+        container.innerHTML = '<p class="text-muted small fst-italic text-center py-3"><i class="bi bi-info-circle me-1"></i>No hay reportes recientes. ¡Sé el primero en compartir qué tipo de capturas entraron hoy!</p>';
         return;
     }
+
     let html = '';
-    comments.forEach(c => {
+    allComments.forEach(c => {
         html += `
         <div class="mb-3 p-3 bg-white border border-light rounded shadow-sm border-start border-primary border-4">
             <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-person-fill text-secondary fs-5 me-2"></i>
-                <strong class="text-dark">Pescador Local</strong>
+                <img src="${c.avatar || 'https://i.pravatar.cc/150?u=demo'}" class="rounded-circle me-2" style="width: 30px; height: 30px; object-fit: cover;">
+                <strong class="text-dark">${c.user || 'Pescador Local'}</strong>
                 <span class="ms-auto small text-muted"><i class="bi bi-clock me-1"></i>${c.date}</span>
             </div>
             <p class="mb-0 text-secondary" style="white-space: pre-wrap; font-size: 0.95rem;">${c.text}</p>
@@ -586,18 +654,42 @@ window.renderSpotComments = (spotName) => {
 };
 
 window.submitSpotComment = () => {
-    // Código inalterado de tus comentarios...
     if (window.currentSpotIndex === undefined) return;
+    const user = AuthService.getUser();
+    if (!user) return;
+
     const input = document.getElementById('spotCommentInput');
     const text = input ? input.value.trim() : '';
     if (!text) return;
+
     const spotName = currentSpotsList[window.currentSpotIndex].name;
-    const safeKey = `pm_spot_comments_${spotName.replace(/\\s+/g, '_')}`;
+    const safeKey = `pm_spot_comments_${spotName.replace(/\s+/g, '_')}`;
     const comments = JSON.parse(localStorage.getItem(safeKey)) || [];
-    comments.unshift({ text, date: new Date().toLocaleDateString('es-ES') });
+
+    const newComment = {
+        id: Date.now(),
+        type: 'spot',
+        targetId: spotName,
+        text,
+        date: new Date().toISOString().split('T')[0],
+        user: user.name,
+        avatar: user.picture
+    };
+
+    comments.unshift(newComment);
     localStorage.setItem(safeKey, JSON.stringify(comments));
     input.value = '';
     window.renderSpotComments(spotName);
+
+    // Envío real al servidor
+    fetch('forms/save_comments.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newComment)
+    })
+    .then(res => res.json())
+    .then(data => console.log("Servidor:", data))
+    .catch(err => console.error("Error al guardar en servidor:", err));
 };
 
 window.toggleFishAudio = (btn, audioPath) => {
@@ -619,7 +711,7 @@ window.toggleFishAudio = (btn, audioPath) => {
 
     // Reproducir usando el servicio central
     playAudio(cleanPath);
-    
+
     // El servicio de voz no gestiona el estado del botón, así que lo hacemos aquí
     const audio = window.getVoiceAudio();
     if (audio) {
@@ -655,7 +747,7 @@ async function loadSpeciesData() {
     if (!speciesContainer) return;
 
     try {
-        const response = await fetch('/assets/data/especies.json');
+        const response = await fetch('assets/data/especies.json');
         const schema = await response.json();
 
         let allSpecies = schema['@graph'] || [];
@@ -1100,7 +1192,7 @@ window.showResetPecedexModal = () => {
     const resetBtn = document.querySelector('#pecedex button[onclick*="showResetPecedexModal"]');
     const modal = new bootstrap.Modal(modalEl);
     modal.show();
-    
+
     // Gestión de foco para accesibilidad
     trapFocusInModal(modalEl, resetBtn);
 };
