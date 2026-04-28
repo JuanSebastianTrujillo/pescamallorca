@@ -138,27 +138,45 @@ export function initTheme() {
 
 
   /**
-   * Navmenu Scrollspy
+   * Navmenu Scrollspy - Optimized to avoid forced reflow
    */
   let navmenulinks = document.querySelectorAll('.navmenu a');
+  let sectionOffsets = [];
+
+  function cacheOffsets() {
+    sectionOffsets = [];
+    navmenulinks.forEach(link => {
+      if (!link.hash) return;
+      let section = document.querySelector(link.hash);
+      if (section) {
+        sectionOffsets.push({
+          link: link,
+          offsetTop: section.offsetTop,
+          offsetHeight: section.offsetHeight
+        });
+      }
+    });
+  }
 
   function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+    let position = window.scrollY + 200;
+    sectionOffsets.forEach(item => {
+      if (position >= item.offsetTop && position <= (item.offsetTop + item.offsetHeight)) {
         document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
+        item.link.classList.add('active');
       } else {
-        navmenulink.classList.remove('active');
+        item.link.classList.remove('active');
       }
-    })
+    });
   }
-  window.addEventListener('load', navmenuScrollspy);
+
+  window.addEventListener('load', () => {
+    cacheOffsets();
+    navmenuScrollspy();
+  });
+  window.addEventListener('resize', cacheOffsets);
   document.addEventListener('scroll', navmenuScrollspy);
-  navmenuScrollspy();
+
 
 }
 

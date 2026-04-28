@@ -29,40 +29,49 @@ window.closeMobileMenu = () => {
     }
 };
 
+// Datos globales compartidos entre módulos (mapa, quiz)
+window.globalZonesData = [];
+
 // Inicializar la estructura general renderizando todas las secciones de golpe
+// Renderizado progresivo: Primero lo que se ve (Critical), luego el resto (Deferred)
 const renderApp = () => {
+    // 1. Fase Crítica: Header y Hero (lo que el usuario ve al cargar)
     app.innerHTML = `
         ${Header()}
         <main class="main" id="main-content">
             ${HeroSection()}
-            ${SpotsSection()}
-            ${SpeciesSection()}
-            ${PecedexSection()}
-            ${MapSection()}           
-            ${WeatherSection()}
-            ${QuizSection()}
-            ${ShopsSection()}
-            ${RampsSection()}
-            ${RulesSection()}
-            ${AuthorsSection()}
-            ${ContactSection()}
+            <div id="deferred-sections"></div>
         </main>
         ${Footer()}
         ${VoiceHelpModal()}
         ${LoginModal()}
     `;
+
+    // 2. Fase Diferida: Inyectamos el resto un poco después
+    setTimeout(() => {
+        const deferred = document.getElementById('deferred-sections');
+        if (deferred) {
+            deferred.innerHTML = `
+                ${SpotsSection()}
+                ${SpeciesSection()}
+                ${PecedexSection()}
+                ${MapSection()}           
+                ${WeatherSection()}
+                ${QuizSection()}
+                ${ShopsSection()}
+                ${RampsSection()}
+                ${RulesSection()}
+                ${AuthorsSection()}
+                ${ContactSection()}
+            `;
+            // Una vez inyectado todo, inicializamos los datos de esas secciones
+            initAfterDeferred();
+        }
+    }, 50);
 };
 
-// Se ejecuta cuando el HTML index ha cargado la base
-// Datos globales compartidos entre módulos (mapa, quiz)
-window.globalZonesData = [];
-
-document.addEventListener("DOMContentLoaded", () => {
-    AuthService.init();
-    renderApp();
-    AuthService.updateHeaderUI();
-
-    // Al ser todo una misma página, inicializamos los datos de inmediato
+// Función para inicializar todo lo que depende del DOM inyectado después
+function initAfterDeferred() {
     loadSpotsData();
     loadSpeciesData();
     loadMonthSpecies();
@@ -70,48 +79,24 @@ document.addEventListener("DOMContentLoaded", () => {
     initShops();
     initRamps();
     initLoginModal();
-
-    // Inicializar accesibilidad (TTS, contraste, zoom)
     initAccessibility();
-
-    // Inicializar JS de Bootstrap y theme (scroll spy, headers pegadizos...);
-    initTheme();
-
-    // Inicializar Control de Voz
+    initTheme(); // Ahora AOS medirá secciones que ya existen
     initVoiceControl();
 
     // Listeners globales para apagar multimedia al cerrar modales
     const fishModal = document.getElementById('speciesModal');
     if (fishModal) {
         fishModal.addEventListener('hidden.bs.modal', () => {
-            stopSpeaking(); // Detener TTS al cerrar
-
-            // Resetear botón de "Leer ficha"
+            stopSpeaking();
             const readBtn = fishModal.querySelector('button[onclick*="speakModalDescription"]');
             if (readBtn) {
                 readBtn.innerHTML = '<i class="bi bi-volume-up-fill me-1"></i> Leer ficha';
                 readBtn.classList.replace('btn-danger', 'btn-outline-light');
             }
-
             if (window.currentFishAudio) {
                 window.currentFishAudio.pause();
                 window.currentFishAudio.currentTime = 0;
                 window.currentFishAudio = null;
-            }
-
-            // Restaurar cualquier botón de audio a estado por defecto
-            document.querySelectorAll('[id^="btnAudioToggle_"]').forEach(btn => {
-                btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> Escuchar Sonido';
-                btn.classList.remove('btn-primary', 'text-white');
-                btn.classList.add('btn-outline-primary');
-            });
-
-            const vidPlaceholder = document.getElementById('videoPlaceholder');
-            if (vidPlaceholder) {
-                const iframe = vidPlaceholder.querySelector('iframe');
-                if (iframe) iframe.src = iframe.src; // Recargar iframe corta el video
-                const videoTag = vidPlaceholder.querySelector('video');
-                if (videoTag) videoTag.pause();
             }
         });
     }
@@ -120,8 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (spotModal) {
         spotModal.addEventListener('hidden.bs.modal', () => {
             stopSpeaking();
-
-            // Resetear botón de "Leer"
             const readBtn = spotModal.querySelector('button[onclick*="speakModalDescription"]');
             if (readBtn) {
                 readBtn.innerHTML = '<i class="bi bi-volume-up-fill me-1"></i> Leer';
@@ -129,6 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    AuthService.init();
+    renderApp();
+    AuthService.updateHeaderUI();
 });
 
 // ─── CONTROL DE VOZ ─────────────────────────────────────────
@@ -515,7 +504,7 @@ window.openSpotModal = (index) => {
 
     const galleryContainer = document.getElementById('spotModalGallery');
     const images = Array.isArray(spot.image) ? spot.image : [spot.image];
-    
+
 
     let galleryHtml = '';
     images.forEach(img => {
@@ -1212,7 +1201,7 @@ window.initPecedex = (speciesArray) => {
                 <div class="p-5 bg-white rounded-4 shadow-sm border border-light">
                     <i class="bi bi-lock-fill text-primary mb-3" style="font-size: 3rem;"></i>
                     <h4 class="fw-bold">Pecédex Bloqueada</h4>
-                    <p class="text-muted">Inicia sesión con Google para registrar tus capturas y sincronizarlas en la nube.</p>
+                    <p class="text-muted">Inicia sesión con Google para registrar y sincronizar tus capturas.</p>
                     <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#loginModal">
                         <i class="bi bi-person-circle me-2"></i> Iniciar sesión ahora
                     </button>

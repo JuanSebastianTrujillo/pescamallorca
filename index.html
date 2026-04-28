@@ -72,6 +72,9 @@
   }
   </script>
 
+  <!-- Preload LCP Image -->
+  <link rel="preload" href="assets/img/hero-carousel/hero-carousel-1-640.webp" as="image" fetchpriority="high">
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -128,8 +131,8 @@
   <!-- Preconnect: fuentes y APIs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://api.open-meteo.com">
-  <link rel="preconnect" href="https://marine-api.open-meteo.com">
+  <link rel="preconnect" href="https://api.open-meteo.com" crossorigin>
+  <link rel="preconnect" href="https://marine-api.open-meteo.com" crossorigin>
   <link rel="dns-prefetch" href="https://unpkg.com">
 
   <!-- Preload LCP image (la más importante: se descarga con máxima prioridad) -->
