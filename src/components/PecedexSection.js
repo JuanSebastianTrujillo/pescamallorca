@@ -12,7 +12,7 @@ export const PecedexSection = () => {
         <div class="container" data-aos="fade-up" data-aos-delay="100">
            <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
               <h3 class="text-primary fw-bold mb-0 fs-5">Progreso: <span id="pecedex-progress" aria-live="polite">0</span> / <span id="pecedex-total">0</span></h3>
-              <button class="btn btn-outline-danger btn-sm" onclick="showResetPecedexModal()">
+              <button id="pecedex-reset-btn" class="btn btn-outline-danger btn-sm" onclick="showResetPecedexModal()" style="display: none;">
                  <i class="bi bi-trash"></i> Reiniciar
               </button>
            </div>

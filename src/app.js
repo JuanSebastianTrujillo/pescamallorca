@@ -1205,6 +1205,12 @@ window.initPecedex = (speciesArray) => {
     if (totalEl) totalEl.textContent = speciesArray.length;
     if (progressEl) progressEl.textContent = isGoogleUser ? caughtSpecies.length : 0;
 
+    // Controlar visibilidad del botón de reinicio
+    const resetBtn = document.getElementById('pecedex-reset-btn');
+    if (resetBtn) {
+        resetBtn.style.display = isGoogleUser ? 'inline-block' : 'none';
+    }
+
     if (!isGoogleUser) {
         grid.innerHTML = `
             <div class="col-12 text-center py-5">
