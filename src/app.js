@@ -508,9 +508,16 @@ window.openSpotModal = (index) => {
 
     let galleryHtml = '';
     images.forEach(img => {
+        const rutaLimpia = img.substring(0, img.lastIndexOf('.'));
         galleryHtml += `
             <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
-                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'" loading="lazy">
+                <img 
+                    src="${rutaLimpia}-800.webp" 
+                    class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
+                    style="height: 200px;" 
+                    alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" 
+                    onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'" 
+                    loading="lazy">
             </div>
         `;
     });
@@ -955,7 +962,8 @@ function fillAndShowSpeciesModal(species) {
 
         imgEl.style.opacity = '0';
         setTimeout(() => {
-            imgEl.src = selected.includes('/') ? selected : `/assets/img/peces/${selected}`;
+            const rutaLimpia = selected.substring(0, selected.lastIndexOf('.'));
+            imgEl.src = `${rutaLimpia}-800.webp`;
             imgEl.alt = `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca`;
             imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1.jpg'; };
             imgEl.style.opacity = '1';
