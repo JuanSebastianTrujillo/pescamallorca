@@ -510,12 +510,23 @@ window.openSpotModal = (index) => {
 
     const galleryContainer = document.getElementById('spotModalGallery');
     const images = Array.isArray(spot.image) ? spot.image : [spot.image];
+    const rutaLimpia = images.substring(0, images.lastIndexOf('.'));
 
     let galleryHtml = '';
     images.forEach(img => {
         galleryHtml += `
             <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
-                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'" loading="lazy">
+                <img 
+                src="${rutaLimpia}-800.webp" 
+                srcset="
+                   ${rutaLimpia}-400.webp 400w, 
+                   ${rutaLimpia}-800.webp 800w"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
+                alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" 
+                style="height:200px"
+                loading="lazy"
+                onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
             </div>
         `;
     });
@@ -836,11 +847,16 @@ function renderSpeciesSwiper(speciesArray) {
 
     let htmlCards = '';
     speciesArray.forEach((species, index) => {
+        const rutaLimpia = species.image.substring(0, species.image.lastIndexOf('.'));
         htmlCards += `
           <div class="swiper-slide py-3">
              <div class="card h-100 shadow border-0 cursor-pointer species-card" role="button" tabindex="0" aria-label="Ver detalles de ${species.name}" onclick="openSpeciesModal(${index})" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                <img 
-                 src="${species.image}" 
+                 src="${rutaLimpia}-700.webp" 
+                 srcset="
+                    ${rutaLimpia}-400.webp 400w, 
+                    ${rutaLimpia}-700.webp 700w"
+                 sizes="(max-width: 700px) 100vw, 33vw"
                  class="card-img-top object-fit-cover" 
                  alt="Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca" 
                  style="height:250px" 
