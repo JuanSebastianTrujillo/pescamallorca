@@ -515,23 +515,13 @@ window.openSpotModal = (index) => {
 
     const galleryContainer = document.getElementById('spotModalGallery');
     const images = Array.isArray(spot.image) ? spot.image : [spot.image];
-    const rutaLimpia = images.substring(0, images.lastIndexOf('.'));
+    
 
     let galleryHtml = '';
     images.forEach(img => {
         galleryHtml += `
             <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
-                <img 
-                src="${rutaLimpia}-800.webp" 
-                srcset="
-                   ${rutaLimpia}-400.webp 400w, 
-                   ${rutaLimpia}-800.webp 800w"
-                sizes="(max-width: 768px) 100vw, 33vw"
-                class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
-                alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" 
-                style="height:200px"
-                loading="lazy"
-                onerror="this.onerror=null;this.srcset='';this.src='${img}'">
+                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'" loading="lazy">
             </div>
         `;
     });
