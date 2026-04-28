@@ -22,6 +22,13 @@ import { VoiceHelpModal } from "./components/VoiceHelpModal.js";
 
 const app = document.getElementById('app');
 
+window.closeMobileMenu = () => {
+    if (document.body.classList.contains('mobile-nav-active')) {
+        const btn = document.querySelector('.mobile-nav-toggle');
+        if (btn) btn.click();
+    }
+};
+
 // Inicializar la estructura general renderizando todas las secciones de golpe
 const renderApp = () => {
     app.innerHTML = `
@@ -687,9 +694,9 @@ window.submitSpotComment = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newComment)
     })
-    .then(res => res.json())
-    .then(data => console.log("Servidor:", data))
-    .catch(err => console.error("Error al guardar en servidor:", err));
+        .then(res => res.json())
+        .then(data => console.log("Servidor:", data))
+        .catch(err => console.error("Error al guardar en servidor:", err));
 };
 
 window.toggleFishAudio = (btn, audioPath) => {
@@ -1083,20 +1090,30 @@ function fillAndShowSpeciesModal(species) {
     // Actualizar botón de captura en el header
     const actionContainer = document.getElementById('speciesModalCatchAction');
     if (actionContainer) {
-        const isCaught = caughtSpecies.includes(species.name);
-        if (isCaught) {
-            actionContainer.innerHTML = `<button class="btn btn-success btn-sm rounded-pill py-1 px-3 shadow-sm" onclick="toggleCatchSpecies(event, '${species.name}')"><i class="bi bi-check-circle-fill me-1"></i> Capturado</button>`;
+        const user = AuthService.getUser();
+        const isGoogleUser = user && !user.id.startsWith('mock-');
+
+        if (!isGoogleUser) {
+            actionContainer.innerHTML = ''; // Ocultar botón si no es Google
         } else {
-            actionContainer.innerHTML = `<button class="btn btn-primary btn-sm rounded-pill py-1 px-3 shadow-sm text-white" onclick="toggleCatchSpecies(event, '${species.name}')"><i class="bi bi-plus-circle me-1"></i> Marcar como capturado</button>`;
+            const isCaught = caughtSpecies.includes(species.name);
+            if (isCaught) {
+                actionContainer.innerHTML = `<button class="btn btn-success btn-sm rounded-pill py-1 px-3 shadow-sm" onclick="toggleCatchSpecies(event, '${species.name}')"><i class="bi bi-check-circle-fill me-1"></i> Capturado</button>`;
+            } else {
+                actionContainer.innerHTML = `<button class="btn btn-primary btn-sm rounded-pill py-1 px-3 shadow-sm text-white" onclick="toggleCatchSpecies(event, '${species.name}')"><i class="bi bi-plus-circle me-1"></i> Marcar como capturado</button>`;
+            }
         }
     }
 
-    // Verificar si el modal ya está inicializado. Si no, lo inicializa Bootstrap.
+    // Verificar si el modal ya está inicializado
     const modalEl = document.getElementById('speciesModal');
     let modal = bootstrap.Modal.getInstance(modalEl);
     if (!modal) {
         modal = new bootstrap.Modal(modalEl);
     }
+
+    // ... resto de lógica de JSON-LD y show() ...
+
 
     // Actualizar JSON-LD para la especie
     const speciesJsonLd = {
@@ -1120,31 +1137,93 @@ function fillAndShowSpeciesModal(species) {
 
 let caughtSpecies = JSON.parse(localStorage.getItem('caughtSpecies')) || [];
 
+// Función para sincronizar con el servidor
+async function syncPecedexWithServer(merge = false) {
+    const user = AuthService.getUser();
+    if (!user || user.id.startsWith('mock-')) return;
+
+    try {
+        const response = await fetch('forms/sync_pecedex.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_id: user.id,
+                caught_list: caughtSpecies,
+                merge: merge // El PHP decide si fusiona o sobrescribe
+            })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.status === 'success' && data.caught_list) {
+                caughtSpecies = data.caught_list;
+                localStorage.setItem('caughtSpecies', JSON.stringify(caughtSpecies));
+
+                if (globalSpeciesList && globalSpeciesList.length > 0) {
+                    initPecedex(globalSpeciesList);
+                }
+            }
+        }
+    } catch (err) {
+        console.warn("Error en la sincronización de Pecédex:", err);
+    }
+}
+
+// Escuchar cambios de sesión para sincronizar
+window.addEventListener('auth-change', (e) => {
+    const user = e.detail;
+    if (user && !user.id.startsWith('mock-')) {
+        syncPecedexWithServer(true); // Fusionar al entrar
+    } else {
+        caughtSpecies = [];
+        localStorage.removeItem('caughtSpecies');
+        if (window.globalSpeciesList && window.globalSpeciesList.length > 0) {
+            window.initPecedex(window.globalSpeciesList);
+        }
+    }
+});
+
 window.initPecedex = (speciesArray) => {
     const grid = document.getElementById('pecedex-grid');
     const progressEl = document.getElementById('pecedex-progress');
     const totalEl = document.getElementById('pecedex-total');
     if (!grid) return;
 
+    const user = AuthService.getUser();
+    const isGoogleUser = user && !user.id.startsWith('mock-');
+
     if (totalEl) totalEl.textContent = speciesArray.length;
-    if (progressEl) progressEl.textContent = caughtSpecies.length;
+    if (progressEl) progressEl.textContent = isGoogleUser ? caughtSpecies.length : 0;
+
+    if (!isGoogleUser) {
+        grid.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <div class="p-5 bg-white rounded-4 shadow-sm border border-light">
+                    <i class="bi bi-lock-fill text-primary mb-3" style="font-size: 3rem;"></i>
+                    <h4 class="fw-bold">Pecédex Bloqueada</h4>
+                    <p class="text-muted">Inicia sesión con Google para registrar tus capturas y sincronizarlas en la nube.</p>
+                    <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="bi bi-person-circle me-2"></i> Iniciar sesión ahora
+                    </button>
+                </div>
+            </div>
+        `;
+        return;
+    }
 
     let html = '';
     speciesArray.forEach((species, index) => {
         const isCaught = caughtSpecies.includes(species.name);
-        // Efectos: La silueta se oscurece al 20% y en blanco y negro (0.2 y grayscale)
         const imgStyle = isCaught ? 'filter: brightness(1) drop-shadow(0 4px 6px rgba(0,0,0,0.1));' : 'filter: brightness(0.1) grayscale(1); opacity: 0.6;';
-
-        // Si está capturado abre la ficha. Si no, no hace nada
         const action = isCaught ? `openSpeciesModalGlobal(${index})` : ``;
         const pointerStyle = isCaught ? `cursor: pointer; transition: transform 0.2s;` : `cursor: default; opacity: 0.8;`;
         const hoverAnim = isCaught ? `onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"` : '';
 
         html += `
           <div class="col-4 col-sm-3 col-md-3 col-lg-2">
-             <div class="card h-100 border-0 bg-transparent text-center" role="button" tabindex="0" aria-label="${isCaught ? `Ver detalles de ${species.name}` : 'Especie no capturada'}" style="${pointerStyle}" ${hoverAnim} onclick="${action}" title="${isCaught ? 'Ver ficha técnica de la especie' : 'Ve a la lista de Especies para registrar esta captura'}">
+             <div class="card h-100 border-0 bg-transparent text-center" role="button" tabindex="0" aria-label="${isCaught ? `Ver detalles de ${species.name}` : 'Especie no capturada'}" style="${pointerStyle}" ${hoverAnim} onclick="${action}" title="${isCaught ? 'Ver ficha técnica de la especie' : 'Captura esta especie para desbloquearla'}">
                <div class="position-relative mx-auto rounded-circle d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background-color: ${isCaught ? '#eef2ff' : '#f8f9fa'}; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);">
-                 <img src="${species.image}" alt="${isCaught ? `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca` : 'Foto de una especie marina no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                 <img src="${species.image}" alt="${isCaught ? `Fotografía de ${species.name}` : 'Especie no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                  ${isCaught ? '<i class="bi bi-check-circle-fill text-success position-absolute" style="bottom: 0px; right: 0px; font-size: 1.2rem; background: white; border-radius: 50%;"></i>' : ''}
                </div>
                <div class="card-body p-2">
@@ -1162,20 +1241,18 @@ window.toggleCatchSpecies = (event, name) => {
     if (event) event.stopPropagation();
 
     if (caughtSpecies.includes(name)) {
-        // Desmarcar
         caughtSpecies = caughtSpecies.filter(s => s !== name);
     } else {
-        // Marcar
         caughtSpecies.push(name);
     }
     localStorage.setItem('caughtSpecies', JSON.stringify(caughtSpecies));
 
-    // Auto-update Pecedex Grid en fondo
+    syncPecedexWithServer();
+
     if (globalSpeciesList && globalSpeciesList.length > 0) {
         initPecedex(globalSpeciesList);
     }
 
-    // Cambiar estado visual del botón del modal instantáneamente
     const actionContainer = document.getElementById('speciesModalCatchAction');
     if (actionContainer) {
         const isCaught = caughtSpecies.includes(name);
@@ -1192,18 +1269,16 @@ window.showResetPecedexModal = () => {
     const resetBtn = document.querySelector('#pecedex button[onclick*="showResetPecedexModal"]');
     const modal = new bootstrap.Modal(modalEl);
     modal.show();
-
-    // Gestión de foco para accesibilidad
     trapFocusInModal(modalEl, resetBtn);
 };
 
 window.confirmResetPecedex = () => {
     caughtSpecies = [];
     localStorage.removeItem('caughtSpecies');
+    syncPecedexWithServer();
     if (globalSpeciesList && globalSpeciesList.length > 0) {
         initPecedex(globalSpeciesList);
     }
-    // Cerrar el modal
     const modal = bootstrap.Modal.getInstance(document.getElementById('resetPecedexModal'));
     modal.hide();
 };

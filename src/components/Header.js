@@ -93,15 +93,15 @@ export const Header = () => {
                     <i class="bi bi-person-wheelchair fs-5 me-2"></i> Accesibilidad
                   </button>
                   <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="accessibilityDropdownMobile">
-                    <li><button class="dropdown-item" id="tts-toggle-mobile"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
-                    <li><button class="dropdown-item" id="voice-command-toggle-mobile"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
-                    <li><button class="dropdown-item" id="zoom-toggle-mobile"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
-                    <li><button class="dropdown-item" id="contrast-toggle-mobile"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
+                    <li><button class="dropdown-item" id="tts-toggle-mobile" onclick="window.closeMobileMenu()"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
+                    <li><button class="dropdown-item" id="voice-command-toggle-mobile" onclick="window.closeMobileMenu()"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
+                    <li><button class="dropdown-item" id="zoom-toggle-mobile" onclick="window.closeMobileMenu()"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
+                    <li><button class="dropdown-item" id="contrast-toggle-mobile" onclick="window.closeMobileMenu()"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
                   </ul>
                 </div>
 
                 <div id="auth-container-mobile">
-                  <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;" data-bs-toggle="modal" data-bs-target="#loginModal">
+                  <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="window.closeMobileMenu()">
                     <i class="bi bi-person-circle fs-5 me-2"></i> Iniciar sesión
                   </a>
                 </div>

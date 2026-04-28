@@ -408,6 +408,7 @@ export function processCommand(transcript) {
 
     // 6. Comando de Ayuda
     if (text.includes("ayuda") || text.includes("que puedo decir") || text.includes("opciones")) {
+        window.closeMobileMenu();
         const helpModalEl = document.getElementById('voiceHelpModal');
         if (helpModalEl) {
             const instance = bootstrap.Modal.getInstance(helpModalEl) || new bootstrap.Modal(helpModalEl);
