@@ -415,17 +415,22 @@ function renderSpotsCards(spotsArray) {
     spotsArray.forEach((spot) => {
         const originalIndex = currentSpotsList.indexOf(spot); // Indice para abrir el modal correcto
         const imgSrc = Array.isArray(spot.image) ? spot.image[0] : spot.image;
+        const rutaLimpia = imgSrc.substring(0, imgSrc.lastIndexOf('.'));
         htmlCards += `
           <div class="col-lg-4 col-md-6">
             <div class="card h-100 shadow-sm border-0 spot-card" role="button" tabindex="0" aria-label="Ver detalles de ${spot.name}" onclick="openSpotModal(${originalIndex})" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
               <img 
-                 src="${imgSrc}" 
-                 class="card-img-top object-fit-cover" 
-                 alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}"
-                 style="height:200px" 
-                 loading="lazy"
-                 decoding="async"
-                 onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                src="${rutaLimpia}-800.webp" 
+                srcset="
+                   ${rutaLimpia}-400.webp 400w, 
+                   ${rutaLimpia}-800.webp 800w"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                class="card-img-top object-fit-cover" 
+                alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}"
+                style="height:200px"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='assets/img/hero-carousel/hero-carousel-1-600.jpg'">              
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title text-primary fw-bold fs-5">${spot.name}</h3>
                 <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
@@ -852,11 +857,11 @@ function renderSpeciesSwiper(speciesArray) {
           <div class="swiper-slide py-3">
              <div class="card h-100 shadow border-0 cursor-pointer species-card" role="button" tabindex="0" aria-label="Ver detalles de ${species.name}" onclick="openSpeciesModal(${index})" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                <img 
-                 src="${rutaLimpia}-700.webp" 
+                 src="${rutaLimpia}-800.webp" 
                  srcset="
                     ${rutaLimpia}-400.webp 400w, 
-                    ${rutaLimpia}-700.webp 700w"
-                 sizes="(max-width: 700px) 100vw, 33vw"
+                    ${rutaLimpia}-800.webp 800w"
+                 sizes="(max-width: 768px) 100vw, 33vw"
                  class="card-img-top object-fit-cover" 
                  alt="Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca" 
                  style="height:250px" 
