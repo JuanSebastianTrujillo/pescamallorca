@@ -962,11 +962,12 @@ function fillAndShowSpeciesModal(species) {
 
         imgEl.style.opacity = '0';
         setTimeout(() => {
-            const rutaCompleta = selected.includes('/') ? selected : `assets/img/peces/${selected}`;
-            const rutaLimpia = rutaCompleta.substring(0, rutaCompleta.lastIndexOf('.'));
-            imgEl.src = `${rutaLimpia}-800.webp`;
+            //const rutaCompleta = selected.includes('/') ? selected : `assets/img/peces/${selected}`;
+            //const rutaLimpia = rutaCompleta.substring(0, rutaCompleta.lastIndexOf('.'));
+            //imgEl.src = `${rutaLimpia}-800.webp`;
+            imgEl.src = selected.includes('/') ? selected : `/assets/img/peces/${selected}`;
             imgEl.alt = `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca`;
-            imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1.jpg'; };
+            imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1-640.jpg'; };
             imgEl.style.opacity = '1';
         }, 150);
 
