@@ -511,13 +511,7 @@ window.openSpotModal = (index) => {
         const rutaLimpia = img.substring(0, img.lastIndexOf('.'));
         galleryHtml += `
             <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
-                <img 
-                    src="${rutaLimpia}-800.webp" 
-                    class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
-                    style="height: 200px;" 
-                    alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" 
-                    onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'" 
-                    loading="lazy">
+                <img src="${img}" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'" loading="lazy">
             </div>
         `;
     });
