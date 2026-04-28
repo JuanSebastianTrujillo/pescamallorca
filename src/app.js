@@ -430,7 +430,7 @@ function renderSpotsCards(spotsArray) {
                 style="height:200px"
                 loading="lazy"
                 decoding="async"
-                onerror="this.src='assets/img/hero-carousel/hero-carousel-1-600.jpg'">              
+                onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">              
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title text-primary fw-bold fs-5">${spot.name}</h3>
                 <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
