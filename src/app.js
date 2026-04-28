@@ -526,7 +526,7 @@ window.openSpotModal = (index) => {
                 alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" 
                 style="height:200px"
                 loading="lazy"
-                onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                onerror="this.onerror=null;this.srcset='';this.src='${img}'">
             </div>
         `;
     });
@@ -861,7 +861,7 @@ function renderSpeciesSwiper(speciesArray) {
                  alt="Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca" 
                  style="height:250px" 
                  loading="lazy"
-                 onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                 onerror="this.onerror=null;this.srcset='';this.src='${species.image}'">
                <div class="card-body text-center bg-white rounded-bottom">
                  <h3 class="card-title text-primary fw-bold mb-1 fs-5">${species.name}</h3>
                </div>
