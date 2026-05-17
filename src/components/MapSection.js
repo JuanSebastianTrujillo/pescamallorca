@@ -5,15 +5,15 @@ export const MapSection = () => {
       <!-- Map Section -->
       <section id="mapa" class="section light-background">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Mapa Interactivo</h2>
-          <p>Explora de forma visual todos los puntos de interés náutico y pesquero en la isla.</p>
+          <h2 data-i18n="map_title">Mapa Interactivo</h2>
+          <p data-i18n="map_tagline">Explora de forma visual todos los puntos de interés náutico y pesquero en la isla.</p>
         </div>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="card shadow-sm border-0 overflow-hidden">
             <div id="map-container" style="height: 500px; width: 100%; z-index: 1;"></div>
           </div>
           <div class="text-center mt-3">
-            <small class="text-muted"><i class="bi bi-info-circle me-1"></i>Usa el control de capas (esquina superior derecha) para filtrar los marcadores por tipo.</small>
+            <small class="text-muted"><i class="bi bi-info-circle me-1"></i><span data-i18n="map_layers_hint">Usa el control de capas (esquina superior derecha) para filtrar los marcadores por tipo.</span></small>
           </div>
         </div>
       </section>

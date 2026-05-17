@@ -1,0 +1,149 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@id": "https://www.pescamallorca.online/zonas/cala-figuera-formentor",
+            "@type": "Place",
+            "name": "Cala Figuera",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Pollença",
+                "addressRegion": "Illes Balears"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.9536,
+                "longitude": 3.1714
+            },
+            "image": [
+                "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp",
+                "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+            ],
+            "keywords": "Fishing zone, Hard access, Rocky bottom, Deep fishing, Cliff",
+            "description": "Breathtaking virgin cove surrounded by cliffs on the northernmost tip of the island, perfect for targeted fishing of large rock species.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Access",
+                    "value": "Access requires a 20-minute descent on foot via a rocky goat path from the Formentor road, with extremely limited parking and technical footwear being mandatory."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seabed",
+                    "value": "Renowned for its rugged rocky shelves with steep drops plunging deeper than 20 meters just off the shoreline."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Frequent Species",
+                    "value": "Dusky grouper, Common dentex, Red scorpionfish"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Recommended Techniques",
+                    "value": "Heavy rockfishing, Shore Jigging, Deep bottom fishing with live bait"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Time of Day",
+                    "value": "Day, Dawn, Dusk"
+                }
+            ]
+        },
+        {
+            "@id": "https://www.pescamallorca.online/zonas/playa-de-muro-es-comu",
+            "@type": "Place",
+            "name": "Muro Beach",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Muro",
+                "addressRegion": "Illes Balears"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.7891,
+                "longitude": 3.1235
+            },
+            "image": [
+                "https://www.pescamallorca.online/assets/img/spots/playa-muro-1.webp",
+                "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+            ],
+            "keywords": "Fishing zone, Easy access, Sandy bottom, Night fishing, Surfcasting",
+            "description": "Extensive fine white sand beach and shallow crystal waters in Alcúdia Bay, perfect for overnight surfcasting of seabream.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Access",
+                    "value": "Extremely easy walk from parking lots near the protected natural area, flat terrain perfectly suited for hauling heavy gear and beach carts."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seabed",
+                    "value": "Dominated by fine, light sand with a very gentle bathymetric slope. Long distance casting is required to reach depth, with sparse Posidonia patches starting past 100 meters."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Frequent Species",
+                    "value": "Gilt-head bream, White seabream, Dreamfish"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Recommended Techniques",
+                    "value": "Classic surfcasting (highly preferred at night or during winter months to avoid beachgoers)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Time of Day",
+                    "value": "Night, Dusk"
+                }
+            ]
+        },
+        {
+            "@id": "https://www.pescamallorca.online/zonas/cap-de-ses-salines",
+            "@type": "Place",
+            "name": "Cap de ses Salines",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Santanyí",
+                "addressRegion": "Illes Balears"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.2646,
+                "longitude": 3.0545
+            },
+            "image": [
+                "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+                "https://www.pescamallorca.online/assets/img/spots/salines-2.webp"
+            ],
+            "keywords": "Fishing zone, Medium access, Strong currents, Mixed bottom, Foam waves",
+            "description": "The southernmost tip of Mallorca, famous for its severe marine currents that draw in numerous large coastal pelagic predators.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Access",
+                    "value": "Arriving early is highly recommended to park near the lighthouse. Walk with extreme caution over the sharp limestone rocky coast to find the best spots."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seabed",
+                    "value": "Features a shallow rocky shelf transitioning into a mixed seabed of large stone blocks and dense Posidonia meadows."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Frequent Species",
+                    "value": "White seabream, Gilt-head bream, Common dentex, Saddled seabream"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Recommended Techniques",
+                    "value": "Light/medium spinning, Float fishing"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Time of Day",
+                    "value": "Dawn, Day"
+                }
+            ]
+        }
+    ]
+}

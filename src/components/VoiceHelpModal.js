@@ -1,6 +1,6 @@
 export const VoiceHelpModal = () => {
     return `
-    <div class="modal fade" id="voiceHelpModal" tabindex="-1" aria-labelledby="voiceHelpModalLabel" aria-hidden="true">
+    <div class="modal fade" id="voiceHelpModal" role="dialog" aria-modal="true" tabindex="-1" aria-labelledby="voiceHelpModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content border-0 shadow-lg" style="border-radius: 1.5rem; overflow: hidden;">
                 <div class="modal-header bg-primary text-white py-4 px-4">

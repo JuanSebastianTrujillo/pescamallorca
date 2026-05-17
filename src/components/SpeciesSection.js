@@ -2,39 +2,39 @@ export const SpeciesSection = () => {
     return `
       <!-- Species Section -->
       <section id="especies" class="section">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Directorio de Especies</h2>
-          <p>Fichas detalladas con biología, hábitat y regulaciones de las especies de Baleares.</p>
-        </div>
+            <div class="container section-title" data-aos="fade-up">
+               <h2 data-i18n="species_title">Directorio de Especies</h2>
+               <p data-i18n="species_tagline">Fichas detalladas con biología, hábitat y regulaciones de las especies de Baleares.</p>
+            </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           
           <!-- UI de Filtros Avanzados -->
           <div class="row mb-4 justify-content-center">
              <div class="col-md-3 mb-2">
-                <label for="filter-dificultad" class="visually-hidden">Filtrar por dificultad</label>
+                <label for="filter-dificultad" class="visually-hidden" data-i18n="filter_dificultad_label">Filtrar por dificultad</label>
                 <select id="filter-dificultad" class="form-select shadow-sm border-primary text-primary species-filter fw-bold">
-                   <option value="Todo">Dificultad: Todas</option>
-                   <option value="Baja">Baja</option>
-                   <option value="Media">Media</option>
-                   <option value="Alta">Alta</option>
-                   <option value="Muy alta">Muy Alta</option>
+                   <option value="Todo" data-i18n="species_option_all_difficulty">Dificultad: Todas</option>
+                   <option value="Baja" data-i18n="species_option_low_difficulty">Baja</option>
+                   <option value="Media" data-i18n="species_option_medium_difficulty">Media</option>
+                   <option value="Alta" data-i18n="species_option_high_difficulty">Alta</option>
+                   <option value="Muy alta" data-i18n="species_option_very_high_difficulty">Muy Alta</option>
                 </select>
              </div>
              <div class="col-md-3 mb-2">
-                <label for="filter-calidad" class="visually-hidden">Filtrar por calidad gastronómica</label>
+                <label for="filter-calidad" class="visually-hidden" data-i18n="filter_calidad_label">Filtrar por calidad gastronómica</label>
                 <select id="filter-calidad" class="form-select shadow-sm border-primary text-primary species-filter fw-bold">
-                   <option value="Todo">Calidad Gastronómica: Todas</option>
-                   <option value="Excelente">Excelente</option>
-                   <option value="buena">Buena / Muy Buena</option>
-                   <option value="Moderada">Moderada / Baja</option>
+                   <option value="Todo" data-i18n="species_option_all_quality">Calidad Gastronómica: Todas</option>
+                   <option value="Excelente" data-i18n="species_option_quality_excellent">Excelente</option>
+                   <option value="buena" data-i18n="species_option_quality_good">Buena / Muy Buena</option>
+                   <option value="Moderada" data-i18n="species_option_quality_moderate">Moderada / Baja</option>
                 </select>
              </div>
              <div class="col-md-4 mb-2">
                 <div class="input-group shadow-sm border-primary rounded">
                     <span class="input-group-text bg-primary text-white border-primary"><i class="bi bi-search"></i></span>
-                    <label for="filter-text" class="visually-hidden">Buscar especies</label>
-                    <input type="text" id="filter-text" class="form-control border-primary species-filter" placeholder="Buscar por pesca, nombre o zona...">
+                    <label for="filter-text" class="visually-hidden" data-i18n="filter_text_label">Buscar especies</label>
+                    <input type="text" id="filter-text" class="form-control border-primary species-filter" placeholder="Buscar por nombre, zona o método de pesca" data-i18n-placeholder="species_search_placeholder">
                 </div>
              </div>
           </div>
@@ -42,22 +42,22 @@ export const SpeciesSection = () => {
           <!-- Swiper Container -->
           <div class="swiper species-swiper" style="padding-bottom: 50px;">
             <div class="swiper-wrapper" id="species-container">
-               <div class="text-center w-100">Cargando Especies...</div>
+               <div class="text-center w-100" data-i18n="species_loading">Cargando Especies...</div>
             </div>
             <div class="swiper-pagination"></div>
           </div>
 
         </div>
 
-        <!-- Specie Detail Modal -->
-        <div class="modal fade" id="speciesModal" tabindex="-1" aria-labelledby="speciesModalLabel" aria-hidden="true">
+      <!-- Specie Detail Modal -->
+      <div class="modal fade" id="speciesModal" role="dialog" aria-modal="true" tabindex="-1" aria-labelledby="speciesModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content border-0 shadow-lg overflow-hidden" style="border-radius: 1rem;">
               <div class="modal-header align-items-center py-3 px-4" style="background: linear-gradient(135deg, var(--bs-primary) 0%, #1A365D 100%);">
-                <h3 class="modal-title fw-bold text-white mb-0 fs-4" id="speciesModalLabel">Nombre</h3>
-                <button class="btn btn-sm btn-outline-light rounded-pill ms-auto me-3 px-3 fw-bold" onclick="window.speakModalDescription('species', this)">
-                  <i class="bi bi-volume-up-fill me-1"></i> Leer ficha
-                </button>
+                        <h3 class="modal-title fw-bold text-white mb-0 fs-4" id="speciesModalLabel" data-i18n="species_modal_name">Nombre</h3>
+                        <button class="btn btn-sm btn-outline-light rounded-pill ms-auto me-3 px-3 fw-bold" data-speak-modal="species">
+                           <i class="bi bi-volume-up-fill me-1"></i> <span data-i18n="species_modal_read">Leer ficha</span>
+                        </button>
                 <div id="speciesModalCatchAction" class="me-3"></div>
                 <button type="button" class="btn-close btn-close-white ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
@@ -70,7 +70,7 @@ export const SpeciesSection = () => {
                      <button type="button" id="speciesCarouselNext" aria-label="Imagen siguiente" class="btn btn-sm btn-outline-light position-absolute top-50 end-0 translate-middle-y m-2" style="z-index: 2;"><i class="bi bi-chevron-right"></i></button>
                      <div id="speciesCarouselDots" class="position-absolute top-0 start-50 translate-middle-x mt-2 d-flex gap-1" style="z-index: 2; display: none;"></div>
                      <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); z-index: 2;">
-                        <h4 class="text-white fst-italic mb-0 fw-light fs-6" id="speciesModalScientific"><i class="bi bi-tag-fill me-2 text-info"></i>Nombre Cientifico</h4>
+                           <h4 class="text-white fst-italic mb-0 fw-light fs-6" id="speciesModalScientific"><i class="bi bi-tag-fill me-2 text-info"></i><span data-i18n="species_modal_scientific">Nombre Cientifico</span></h4>
                      </div>
                   </div>
                   </div>
@@ -78,7 +78,7 @@ export const SpeciesSection = () => {
                   <!-- Datos debajo -->
                   <div class="p-4 p-md-5 bg-light overflow-auto" style="max-height: 50vh;">
                        <div class="d-flex align-items-center mb-3 border-bottom border-secondary-subtle pb-2">
-                          <h4 class="fw-bold mb-0 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-book me-2"></i> Notas Biológicas</h4>
+                          <h4 class="fw-bold mb-0 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-book me-2"></i> <span data-i18n="species_notes">Notas Biológicas</span></h4>
                           <div id="speciesModalAudioContainer"></div>
                        </div>
                        
@@ -86,7 +86,7 @@ export const SpeciesSection = () => {
                        
                        <div id="speciesModalLocations"></div>
 
-                       <h4 class="fw-bold mb-4 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-clipboard2-data me-2"></i> Ficha Técnica y Legalidad</h4>
+                       <h4 class="fw-bold mb-4 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-clipboard2-data me-2"></i> <span data-i18n="species_legal">Ficha Técnica y Legalidad</span></h4>
                        <div id="speciesModalProperties">
                           <!-- Listado paramétrico inyectado vía JS (Grid layout dinámico) -->
                        </div>
@@ -96,7 +96,7 @@ export const SpeciesSection = () => {
 
               </div>
               <div class="modal-footer bg-light border-top-0 justify-content-end">
-                <button type="button" class="btn btn-secondary px-4 fw-bold rounded-pill shadow-sm" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary px-4 fw-bold rounded-pill shadow-sm" data-bs-dismiss="modal" data-i18n="close">Cerrar</button>
               </div>
             </div>
           </div>

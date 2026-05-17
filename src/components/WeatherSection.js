@@ -5,18 +5,18 @@ export const WeatherSection = () => {
       <!-- Weather Section -->
       <section id="meteo" class="section light-background">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Parte Meteorológico</h2>
-          <p>Estado del mar, vientos y mareas para planificar tu próxima salida de pesca.</p>
+          <h2 data-i18n="weather_title">Parte Meteorológico</h2>
+          <p data-i18n="weather_tagline">Estado del mar, vientos y mareas para planificar tu próxima salida de pesca.</p>
         </div>
         <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
            <div class="row justify-content-center mb-4">
               <div class="col-lg-6">
-                <label for="weather-zone-select" class="visually-hidden">Selecciona una zona</label>
+                <label for="weather-zone-select" class="visually-hidden" data-i18n="weather_select_label">Selecciona una zona</label>
                 <select id="weather-zone-select" class="form-select form-select-lg shadow-sm border-0 mb-3 text-center text-primary fw-bold cursor-pointer">
-                  <option value="norte">Norte (Tramuntana/Alcudia)</option>
-                  <option value="sur" selected>Sur (Palma/Llucmajor)</option>
-                  <option value="este">Este (Llevant)</option>
-                  <option value="oeste">Oeste (Andratx)</option>
+                  <option value="norte" data-i18n="zone_norte">Norte (Tramuntana/Alcudia)</option>
+                  <option value="sur" selected data-i18n="zone_sur">Sur (Palma/Llucmajor)</option>
+                  <option value="este" data-i18n="zone_este">Este (Llevant)</option>
+                  <option value="oeste" data-i18n="zone_oeste">Oeste (Andratx)</option>
                 </select>
               </div>
            </div>
@@ -48,6 +48,7 @@ export const initWeather = () => {
     const renderWeather = async (zoneId) => {
         const card = document.getElementById("weather-card");
         const zoneInfo = weatherZones[zoneId];
+        const t = window._i18n ? window._i18n.t.bind(window._i18n) : (key, opts) => key;
         
         // Render Skeleton Loading state
         card.innerHTML = `
@@ -79,18 +80,18 @@ export const initWeather = () => {
 
         // Verificar si hubo error en la API
         const errorBanner = data.error
-            ? `<div class="alert alert-warning border-0 shadow-sm mb-3 small"><i class="bi bi-wifi-off me-2"></i>No se pudo conectar con la API meteorológica. Los datos podrían no ser actuales.</div>`
+            ? `<div class="alert alert-warning border-0 shadow-sm mb-3 small"><i class="bi bi-wifi-off me-2"></i>${window._i18n ? window._i18n.t('weather_api_error') : 'No se pudo conectar con la API meteorológica. Los datos podrían no ser actuales.'}</div>`
             : '';
 
         card.innerHTML = `
           ${errorBanner}
-          <h3 class="mb-4 fs-4">${zoneInfo.name} - <span class="text-primary">Previsión Actual</span></h3>
+          <h3 class="mb-4 fs-4">${t('zone_' + zoneId, { defaultValue: zoneInfo.name })} - <span class="text-primary">${t('weather_current_forecast')}</span></h3>
           
           <div class="row row-cols-2 row-cols-md-5 g-3 mt-3 px-2">
              <div class="col text-center">
                  <div class="p-3 bg-white rounded shadow-sm h-100 border">
                      <i class="bi bi-thermometer-half fs-2 text-danger d-block mb-2"></i>
-                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">Temperatura</span>
+                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">${t('weather_temperature')}</span>
                      <span class="fs-6">${data.temp}</span>
                  </div>
              </div>
@@ -98,7 +99,7 @@ export const initWeather = () => {
              <div class="col text-center">
                  <div class="p-3 bg-white rounded shadow-sm h-100 border">
                      <i class="bi bi-wind fs-2 text-info d-block mb-2"></i>
-                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">Viento</span>
+                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">${t('weather_wind')}</span>
                      <span class="fs-6">${data.wind}</span>
                  </div>
              </div>
@@ -106,7 +107,7 @@ export const initWeather = () => {
              <div class="col text-center">
                  <div class="p-3 bg-primary text-white rounded shadow-sm h-100">
                      <i class="bi bi-water fs-2 d-block mb-2"></i>
-                     <span class="d-block text-white-50 small text-uppercase mb-1 fw-bold">Mar y Oleaje</span>
+                     <span class="d-block text-white-50 small text-uppercase mb-1 fw-bold">${t('weather_sea_state')}</span>
                      <span class="fs-6 d-block">${data.seaState}</span>
                      <small class="text-white-50">${data.waves}</small>
                  </div>
@@ -115,7 +116,7 @@ export const initWeather = () => {
              <div class="col text-center">
                  <div class="p-3 bg-white rounded shadow-sm h-100 border">
                      <i class="bi ${data.statusIcon} fs-2 text-warning d-block mb-2"></i>
-                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">Cielo</span>
+                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">${t('weather_sky')}</span>
                      <span class="fs-6">${data.statusDesc}</span>
                  </div>
              </div>
@@ -123,7 +124,7 @@ export const initWeather = () => {
              <div class="col text-center">
                  <div class="p-3 bg-white rounded shadow-sm h-100 border">
                      <i class="bi bi-cloud-drizzle fs-2 text-secondary d-block mb-2"></i>
-                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">Lluvias</span>
+                     <span class="d-block text-secondary small text-uppercase mb-1 fw-bold">${t('weather_rain_probability')}</span>
                      <span class="fs-6">${data.rainProb}</span>
                  </div>
              </div>
@@ -134,6 +135,12 @@ export const initWeather = () => {
     select.addEventListener("change", (e) => {
         renderWeather(e.target.value);
     });
+
+    if (window._i18n && typeof window._i18n.on === 'function') {
+        window._i18n.on('languageChanged', () => {
+            renderWeather(select.value);
+        });
+    }
 
     // Initial render
     renderWeather(select.value);

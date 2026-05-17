@@ -19,6 +19,10 @@ let textZoomLevel = 0; // 0 = normal, 1 = grande, 2 = muy grande
 
 const ZOOM_LEVELS = ['100%', '115%', '130%'];
 
+const t = (key, defaultValue) => {
+    return window._i18n ? window._i18n.t(key, { defaultValue }) : (defaultValue || key);
+};
+
 // ─── TTS (Text-to-Speech) ───────────────────────────────────
 
 function toggleTTS() {
@@ -32,12 +36,12 @@ function toggleTTS() {
     if (ttsActive) {
         // Activar: al hacer click en cualquier texto de sección, lo lee
         document.addEventListener('click', handleTTSClick);
-        showNotification('Lectura por voz activada. Haz clic en cualquier texto para escucharlo.');
+        showNotification(t('tts_enabled', 'Lectura por voz activada. Haz clic en cualquier texto para escucharlo.'));
     } else {
         // Desactivar
         window.speechSynthesis.cancel();
         document.removeEventListener('click', handleTTSClick);
-        showNotification('Lectura por voz desactivada.');
+        showNotification(t('tts_disabled', 'Lectura por voz desactivada.'));
     }
 
     // Actualizar estado visual de los botones
@@ -114,35 +118,41 @@ function updateTTSButtons() {
     buttons.forEach(btn => {
         if (!btn) return;
         if (ttsActive) {
-            btn.innerHTML = '<i class="bi bi-volume-mute-fill me-2 text-danger"></i> Desactivar voz';
+            btn.innerHTML = `<i class="bi bi-volume-mute-fill me-2 text-danger"></i> <span data-i18n="tts_off">${t('tts_off', 'Desactivar voz')}</span>`;
         } else {
-            btn.innerHTML = '<i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz';
+            btn.innerHTML = `<i class="bi bi-volume-up-fill me-2 text-primary"></i> <span data-i18n="tts">${t('tts', 'Lectura por voz')}</span>`;
         }
     });
 }
 
 function updateHighContrastButtons() {
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-        const text = item.textContent.trim().toLowerCase();
-        if (text.includes('alto contraste') || text.includes('contraste normal')) {
-            if (highContrastActive) {
-                item.innerHTML = '<i class="bi bi-circle-half me-2 text-danger"></i> Contraste normal';
-            } else {
-                item.innerHTML = '<i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste';
-            }
+    const buttons = [
+        document.getElementById('contrast-toggle-desktop'),
+        document.getElementById('contrast-toggle-mobile')
+    ];
+
+    buttons.forEach(btn => {
+        if (!btn) return;
+        if (highContrastActive) {
+            btn.innerHTML = `<i class="bi bi-circle-half me-2 text-danger"></i> <span data-i18n="contrast_normal">${t('contrast_normal', 'Contraste normal')}</span>`;
+        } else {
+            btn.innerHTML = `<i class="bi bi-circle-half me-2 text-primary"></i> <span data-i18n="high_contrast">${t('high_contrast', 'Alto contraste')}</span>`;
         }
     });
 }
 
 function updateTextZoomButtons() {
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-        const text = item.textContent.trim().toLowerCase();
-        if (text.includes('aumentar texto') || text.includes('reducir texto')) {
-            if (textZoomLevel === 2) {
-                item.innerHTML = '<i class="bi bi-zoom-out me-2 text-danger"></i> Reducir texto';
-            } else {
-                item.innerHTML = '<i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto';
-            }
+    const buttons = [
+        document.getElementById('zoom-toggle-desktop'),
+        document.getElementById('zoom-toggle-mobile')
+    ];
+
+    buttons.forEach(btn => {
+        if (!btn) return;
+        if (textZoomLevel === 2) {
+            btn.innerHTML = `<i class="bi bi-zoom-out me-2 text-danger"></i> <span data-i18n="reduce_text">${t('reduce_text', 'Reducir texto')}</span>`;
+        } else {
+            btn.innerHTML = `<i class="bi bi-zoom-in me-2 text-primary"></i> <span data-i18n="increase_text">${t('increase_text', 'Aumentar texto')}</span>`;
         }
     });
 }
@@ -212,6 +222,20 @@ export function makeFocusable(element) {
     if (!element) return;
     if (!element.hasAttribute('tabindex') && !['button', 'input', 'select', 'textarea', 'a'].includes(element.tagName.toLowerCase())) {
         element.setAttribute('tabindex', '0');
+    }
+
+    // Añadir activación por teclado (Enter / Space) para elementos focalizables no nativos
+    const keyHandler = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            element.click && element.click();
+        }
+    };
+
+    // Evitar añadir múltiples listeners
+    if (!element.__a11y_key_attached) {
+        element.addEventListener('keydown', keyHandler);
+        element.__a11y_key_attached = true;
     }
 }
 
@@ -352,10 +376,10 @@ function toggleHighContrast() {
             document.head.appendChild(style);
 
         }
-        showNotification('Alto contraste activado.');
+        showNotification(t('contrast_enabled', 'Alto contraste activado.'));
     } else {
         body.removeAttribute('data-high-contrast');
-        showNotification('Alto contraste desactivado.');
+        showNotification(t('contrast_disabled', 'Alto contraste desactivado.'));
     }
 
     // Actualizar estado visual de los botones
@@ -368,8 +392,12 @@ function cycleTextZoom() {
     textZoomLevel = (textZoomLevel + 1) % ZOOM_LEVELS.length;
     document.documentElement.style.fontSize = ZOOM_LEVELS[textZoomLevel];
 
-    const labels = ['Normal', 'Grande (115%)', 'Muy grande (130%)'];
-    showNotification(`Tamaño de texto: ${labels[textZoomLevel]}`);
+    const labels = [
+        t('text_zoom_normal', 'Tamaño de texto: Normal'),
+        t('text_zoom_large', 'Tamaño de texto: Grande (115%)'),
+        t('text_zoom_xlarge', 'Tamaño de texto: Muy grande (130%)')
+    ];
+    showNotification(labels[textZoomLevel]);
 
     // Actualizar estado visual de los botones
     updateTextZoomButtons();
@@ -474,6 +502,44 @@ export function initAccessibility() {
     updateTTSButtons();
     updateHighContrastButtons();
     updateTextZoomButtons();
+
+    // Exponer un refresco de etiquetas para cuando cambie el idioma
+    window.updateAccessibilityButtons = () => {
+        updateTTSButtons();
+        updateHighContrastButtons();
+        updateTextZoomButtons();
+    };
+}
+
+// Añadir manejadores de activación por teclado a elementos con role=button
+function upgradeAriaButtons(root = document) {
+    const clickableRoles = root.querySelectorAll('[role="button"]');
+    clickableRoles.forEach(el => {
+        try { makeFocusable(el); } catch (e) { /* no-op */ }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    upgradeAriaButtons(document);
+    observeDynamicFocusableButtons();
+});
+
+function observeDynamicFocusableButtons() {
+    if (!('MutationObserver' in window)) return;
+
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+                if (!(node instanceof HTMLElement)) return;
+                if (node.matches('[role="button"]')) {
+                    makeFocusable(node);
+                }
+                node.querySelectorAll && upgradeAriaButtons(node);
+            });
+        });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
 }
 
 /**

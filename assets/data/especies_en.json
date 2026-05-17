@@ -1,0 +1,883 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/dorada",
+            "name": "Gilt-head bream",
+            "alternateName": "Sparus aurata",
+            "image": "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/dorada.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/dorada.mp4",
+            "description": "A member of the seabream family, highly common in the Balearic Islands. Recognizable by the golden stripe between its eyes and its strong jaw adapted for crushing shells.",
+            "url": "https://www.pescamallorca.online/peces/dorada",
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/dorada2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/dorada3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Molluscs, bivalve crustaceans, and small fish"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "September to December"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Mixed sandy, rocky sea beds and Posidonia oceanica meadows"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum quota",
+                    "value": "5",
+                    "unitText": "kg/day per license"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "70",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Bottom fishing, Spinning, Fly fishing"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Coast, Beach, Estuaries"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "Medium"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Excellent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "9",
+                    "unitText": "September"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "12",
+                    "unitText": "December"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/llampuga",
+            "name": "Dolphin fish",
+            "alternateName": "Coryphaena hippurus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/llampuga-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/llampuga.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/llampuga.mp4",
+            "description": "Very fast and voracious pelagic fish, recognizable by its bright blue-green and yellow coloration that fades quickly upon death.",
+            "url": "https://www.pescamallorca.online/peces/llampuga",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Small pelagic fish (sardines, anchovies), squids, and crustaceans"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Late August to November"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Open waters, often under floating objects (fish aggregating devices or capcers)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "60",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum quota",
+                    "value": "1",
+                    "unitText": "fish per license (restrictive limit)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "15",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "150",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Trolling, Spinning, Live bait fishing"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Open sea, floating objects"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "High"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Excellent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "8",
+                    "unitText": "August"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "11",
+                    "unitText": "November"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/mero",
+            "name": "Dusky grouper",
+            "alternateName": "Epinephelus marginatus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/mero-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/mero.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/mero.mp4",
+            "description": "Large serranid fish, emblematic of Balearic rocky sea beds. It is territorial, protogynous hermaphrodite, and exhibits very slow growth.",
+            "url": "https://www.pescamallorca.online/peces/mero",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Crabs, octopuses, and other fish"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Year-round (especially active in summer)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Caves, crevices, and deep rocky sea beds"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Closed season / Restriction",
+                    "value": "Maximum 1 specimen per license per day"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "60",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "150",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Bottom fishing with live bait, deep trolling, regulated spearfishing"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Rocky beds, caves, between 10 and 80 m"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "Very high"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Excellent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Vulnerable (VU)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "1",
+                    "unitText": "January"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "12",
+                    "unitText": "December"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/cap-roig",
+            "name": "Red scorpionfish",
+            "alternateName": "Scorpaena scrofa",
+            "image": "https://www.pescamallorca.online/assets/img/peces/cap-roig-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/cap-roig.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/cap-roig.mp4",
+            "description": "Reddish-colored fish with venomous spines in its dorsal fins. It camouflages perfectly with the rocky sea beds, waiting silently for prey.",
+            "url": "https://www.pescamallorca.online/peces/cap-roig",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Crustaceans, molluscs, and small rock fish"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Year-round (best in spring)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Rocky sea beds, coralligenous zones, and Posidonia meadows"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "25",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "3",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "50",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Bottom fishing with natural bait (squid, small fish), spinning with jigs"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Rocky beds, breakwaters"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "Medium"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Very good"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "3",
+                    "unitText": "March"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "6",
+                    "unitText": "June"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/sargo",
+            "name": "White seabream",
+            "alternateName": "Diplodus sargus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/sargo-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/sargo.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/sargo.mp4",
+            "description": "Silver-colored fish with dark vertical bands. Highly sought after by coastal anglers, especially on rough sea days or 'swell wave' days.",
+            "url": "https://www.pescamallorca.online/peces/sargo",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Sea urchins, molluscs, and crustaceans"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Winter and spring"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Surf zones, cliffs, and shallow rocky sea beds"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "23",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "2",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Bottom fishing with natural bait (worms, shrimp), float fishing"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Rocky coast, harbors, estuaries"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "Low"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Good"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "11",
+                    "unitText": "November"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "5",
+                    "unitText": "May"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/serrano",
+            "name": "Painted comber",
+            "alternateName": "Serranus scriba",
+            "image": "https://www.pescamallorca.online/assets/img/peces/serrano-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/serrano.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/serrano.mp4",
+            "description": "Small serranid with bright blue colors and vertical stripes. Inhabits shallow rocky beds and is highly combative for its size.",
+            "url": "https://www.pescamallorca.online/peces/serrano",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Crustaceans, small fish, worms"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Year-round"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Shallow rocky sea beds and Posidonia meadows"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "15",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum quota",
+                    "value": "No specific limit"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "0.5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "25",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Light spinning, bottom fishing with small hooks"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Rocky coast, harbors, breakwaters"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "Low"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Good (excellent for broth and fryups)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "1",
+                    "unitText": "January"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "12",
+                    "unitText": "December"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/denton",
+            "name": "Common dentex",
+            "alternateName": "Dentex dentex",
+            "image": "https://www.pescamallorca.online/assets/img/peces/denton-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/denton.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/denton.mp4",
+            "description": "Large seabream highly valued for its gastronomic quality and fierce fight. Inhabits rocky sea beds and Posidonia meadows.",
+            "url": "https://www.pescamallorca.online/peces/denton",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Fish, molluscs, crustaceans"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Spring and summer (spawning in spring)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Rocky and mixed sea beds, between 15 and 50 m"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "40",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum quota",
+                    "value": "2 specimens / day"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "100",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Bottom trolling, spinning with lures, deep bottom fishing with live bait"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Rocky beds, cliffs, strong current zones"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "High"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Excellent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "5",
+                    "unitText": "May"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "9",
+                    "unitText": "September"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/oblada",
+            "name": "Saddled seabream",
+            "alternateName": "Oblada melanura",
+            "image": "https://www.pescamallorca.online/assets/img/peces/oblada-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/oblada.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/oblada.mp4",
+            "description": "Silver-colored fish with a characteristic black spot surrounded by a white ring on the tail. Very common in shallow waters and forms large schools.",
+            "url": "https://www.pescamallorca.online/peces/oblada",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Algae, small crustaceans, molluscs"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Year-round (more abundant in summer)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Shallow rocky zones, harbors, Posidonia meadows"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum quota",
+                    "value": "No specific limit"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "0.8",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "34",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Float fishing, bottom fishing with natural bait (bread, shrimp)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Coast, harbors, breakwaters"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "Low"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Moderate (best grilled or fried)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "6",
+                    "unitText": "June"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "10",
+                    "unitText": "October"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/salpa",
+            "name": "Dreamfish",
+            "alternateName": "Sarpa salpa",
+            "image": "https://www.pescamallorca.online/assets/img/peces/salpa-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/salpa.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/salpa.mp4",
+            "description": "Herbivorous fish with horizontal yellow/golden stripes. Feeds almost exclusively on marine algae and forms massive schools in Posidonia meadows.",
+            "url": "https://www.pescamallorca.online/peces/salpa",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Algae, especially Posidonia oceanica"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Year-round"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Posidonia meadows, shallow rocky sea beds"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum quota",
+                    "value": "No specific limit"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "1.5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Float fishing, bottom fishing with green algae or bread"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Posidonia meadows, shallow rocky beds with vegetation"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "Low"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Low (soft flesh with strong herbal taste)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "1",
+                    "unitText": "January"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "12",
+                    "unitText": "December"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/bonito",
+            "name": "Atlantic bonito",
+            "alternateName": "Sarda sarda",
+            "image": "https://www.pescamallorca.online/assets/img/peces/bonito-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/bonito.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/bonito.mp4",
+            "description": "Medium-sized pelagic fish from the mackerel family. Highly migratory and voracious, offering spectacular active fights for sports fishers.",
+            "url": "https://www.pescamallorca.online/peces/bonito",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Diet",
+                    "value": "Sardines, anchovies, and squids"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Seasonality",
+                    "value": "Late spring to autumn"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Preferred habitat",
+                    "value": "Open sea, pelagic zone, coastal areas in summer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Minimum legal size",
+                    "value": "30",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum quota",
+                    "value": "5 ejemplares / día"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum weight",
+                    "value": "8",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximum size",
+                    "value": "90",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing methods",
+                    "value": "Spinning with hard lures, light trolling, jigging"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fishing zone",
+                    "value": "Open sea, cliff edges, cape heads"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Difficulty",
+                    "value": "Medium"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Culinary quality",
+                    "value": "Excellent (tasty red meat)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservation (IUCN)",
+                    "value": "Least Concern (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Start of season",
+                    "value": "6",
+                    "unitText": "June"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "End of season",
+                    "value": "10",
+                    "unitText": "October"
+                }
+            ]
+        }
+    ]
+}

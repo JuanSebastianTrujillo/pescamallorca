@@ -4,10 +4,15 @@
 User-agent: *
 Allow: /
 
+# Permitir recursos estáticos necesarios para renderizado y SEO
+Allow: /assets/
+Allow: /assets/vendor/
+Allow: /assets/js/
+Allow: /assets/css/
+
 # Evitar indexar carpetas de sistema y scripts internos
 Disallow: /src/
 Disallow: /forms/
-Disallow: /assets/vendor/
 
 # Enlace al Sitemap
 Sitemap: https://www.pescamallorca.online/sitemap.xml

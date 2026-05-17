@@ -17,8 +17,8 @@ export const HeroSection = () => {
                 loading="eager"
                 decoding="async">
               <div class="carousel-container">
-                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Bienvenido a Pesca Mallorca</h2>
-                <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Tu guía completa para conocer los mejores rincones de la costa Balear, su normativa y las especies reinas de nuestras aguas.</p>
+                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);" data-i18n="hero_welcome">Bienvenido a Pesca Mallorca</h2>
+                <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);" data-i18n="hero_tagline">Tu guía completa para conocer los mejores rincones de la costa Balear, su normativa y las especies reinas de nuestras aguas.</p>
               </div>
             </div>
             <div class="carousel-item">
@@ -32,8 +32,8 @@ export const HeroSection = () => {
                 loading="lazy"
                 decoding="async">
               <div class="carousel-container">
-                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Descubre Nuestras Zonas</h2>
-                <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Explora los mejores puntos de pesca en las Islas Baleares con información detallada de cada ubicación.</p>
+                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);" data-i18n="hero_discover_zones">Descubre Nuestras Zonas</h2>
+                <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);" data-i18n="hero_discover_desc">Explora los mejores puntos de pesca en las Islas Baleares con información detallada de cada ubicación.</p>
               </div>
             </div>
             <div class="carousel-item">
@@ -47,20 +47,19 @@ export const HeroSection = () => {
                 loading="lazy"
                 decoding="async">
               <div class="carousel-container">
-                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">Especies de Calidad</h2>
-                <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Conoce las diferentes especies que puedes encontrar y la normativa de pesca para cada una.</p>
+                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);" data-i18n="hero_species">Especies de Calidad</h2>
+                <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);" data-i18n="hero_species_desc">Conoce las diferentes especies que puedes encontrar y la normativa de pesca para cada una.</p>
               </div>
             </div>
-            <!-- Pez del Mes - Inyectado dinámicamente por JS -->
-            <div id="month-species-container"></div>
+            <!-- Pez del Mes - Inyectado dinámicamente por JS como .carousel-item -->
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden" data-i18n="carousel_prev">Previous</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden" data-i18n="carousel_next">Next</span>
           </button>
         </div>
       </section>

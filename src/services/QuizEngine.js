@@ -40,6 +40,10 @@ function getProp(species, propName) {
     return prop ? prop.value : null;
 }
 
+function t(key, options = {}) {
+    return (window._i18n && window._i18n.t) ? window._i18n.t(key, options) : null;
+}
+
 // ─── Generadores de Preguntas ───────────────────────────────
 
 /**
@@ -57,12 +61,13 @@ function generateSpeciesQuestions(speciesData) {
                 { text: target.name, correct: true },
                 ...distractors.map(d => ({ text: d.name, correct: false }))
             ]);
+            const altName = target.alternateName ? ` (${target.alternateName})` : '';
             return {
-                text: `¿Qué especie de pez se muestra en la imagen?`,
+                text: t('quiz_q_species_image') || `¿Qué especie de pez se muestra en la imagen?`,
                 image: target.image,
-                imageAlt: `Fotografía detallada de ${target.name}, una especie marina de las aguas de Mallorca`,
+                imageAlt: t('quiz_q_species_image_alt', { name: target.name }) || `Fotografía detallada de ${target.name}, una especie marina de las aguas de Mallorca`,
                 options,
-                explanation: `Es un/a ${target.name} (${target.alternateName || ''}).`
+                explanation: t('quiz_q_species_image_explanation', { name: target.name, alternateName: altName }) || `Es un/a ${target.name}${altName}.`
             };
         },
         // Tipo 2: ¿Cuál es el nombre científico de X?
@@ -76,10 +81,10 @@ function generateSpeciesQuestions(speciesData) {
             ]);
             if (options.length < 4) return null;
             return {
-                text: `¿Cuál es el nombre científico del ${target.name}?`,
+                text: t('quiz_q_scientific_name', { name: target.name }) || `¿Cuál es el nombre científico del ${target.name}?`,
                 image: null,
                 options,
-                explanation: `El nombre científico del ${target.name} es ${target.alternateName}.`
+                explanation: t('quiz_q_scientific_name_explanation', { name: target.name, alternateName: target.alternateName }) || `El nombre científico del ${target.name} es ${target.alternateName}.`
             };
         },
         // Tipo 3: ¿Cuál es el hábitat del X?
@@ -96,10 +101,10 @@ function generateSpeciesQuestions(speciesData) {
                 ...pickRandom(otherHabitats, 3).map(h => ({ text: h, correct: false }))
             ]);
             return {
-                text: `¿Cuál es el hábitat preferido del ${target.name}?`,
+                text: t('quiz_q_habitat', { name: target.name }) || `¿Cuál es el hábitat preferido del ${target.name}?`,
                 image: null,
                 options: opts,
-                explanation: `El ${target.name} prefiere: ${habitat}.`
+                explanation: t('quiz_q_habitat_explanation', { name: target.name, habitat }) || `El ${target.name} prefiere: ${habitat}.`
             };
         }
     ];
@@ -145,10 +150,10 @@ function generateNormativaQuestions(speciesData) {
                 ...wrongValues.map(v => ({ text: `${v} ${unit}`, correct: false }))
             ]);
             return {
-                text: `¿Cuál es la talla mínima legal para retener un ${target.name} en Baleares?`,
+                text: t('quiz_q_minimum_size', { name: target.name }) || `¿Cuál es la talla mínima legal para retener un ${target.name} en Baleares?`,
                 image: null,
                 options,
-                explanation: `La talla mínima del ${target.name} es ${talla} ${unit}.`
+                explanation: t('quiz_q_minimum_size_explanation', { name: target.name, talla, unit }) || `La talla mínima del ${target.name} es ${talla} ${unit}.`
             };
         },
         // Tipo 2: ¿Cuál de estos peces tiene la talla mínima más alta?
@@ -166,10 +171,10 @@ function generateNormativaQuestions(speciesData) {
                 }))
             );
             return {
-                text: `¿Cuál de estos peces tiene la talla mínima legal más alta en Baleares?`,
+                text: t('quiz_q_highest_minimum_size') || `¿Cuál de estos peces tiene la talla mínima legal más alta en Baleares?`,
                 image: null,
                 options,
-                explanation: `El ${correct.name} con ${getProp(correct, 'Talla mínima legal')} cm.`
+                explanation: t('quiz_q_highest_minimum_size_explanation', { name: correct.name, talla: getProp(correct, 'Talla mínima legal') }) || `El ${correct.name} con ${getProp(correct, 'Talla mínima legal')} cm.`
             };
         },
         // Tipo 3: ¿Qué dificultad tiene pescar X?
@@ -183,26 +188,26 @@ function generateNormativaQuestions(speciesData) {
                 ...pickRandom(wrongDifs, 3).map(d => ({ text: d, correct: false }))
             ]);
             return {
-                text: `¿Qué nivel de dificultad tiene la pesca del ${target.name}?`,
+                text: t('quiz_q_difficulty', { name: target.name }) || `¿Qué nivel de dificultad tiene la pesca del ${target.name}?`,
                 image: target.image,
-                imageAlt: `Foto de un ejemplar de pez en su entorno natural`,
+                imageAlt: t('quiz_q_difficulty_alt') || `Foto de un ejemplar de pez en su entorno natural`,
                 options,
-                explanation: `El ${target.name} se considera de dificultad: ${dif}.`
+                explanation: t('quiz_q_difficulty_explanation', { name: target.name, dif }) || `El ${target.name} se considera de dificultad: ${dif}.`
             };
         },
         // Tipo 4: Pregunta de cuota/límite diario
         () => {
             const options = shuffleArray([
-                { text: '5 kg más una pieza por licencia y día', correct: true },
-                { text: '10 kg por persona y día', correct: false },
-                { text: '3 kg por persona y día', correct: false },
-                { text: 'No existe límite de peso diario', correct: false }
+                { text: t('quiz_option_daily_limit_correct') || '5 kg más una pieza por licencia y día', correct: true },
+                { text: t('quiz_option_daily_limit_10kg') || '10 kg por persona y día', correct: false },
+                { text: t('quiz_option_daily_limit_3kg') || '3 kg por persona y día', correct: false },
+                { text: t('quiz_option_daily_limit_none') || 'No existe límite de peso diario', correct: false }
             ]);
             return {
-                text: '¿Cuál es el límite diario de extracción en pesca recreativa marítima en Baleares?',
+                text: t('quiz_q_daily_limit') || '¿Cuál es el límite diario de extracción en pesca recreativa marítima en Baleares?',
                 image: null,
                 options,
-                explanation: 'El tope legal es de 5 kg más una pieza por licencia y día.'
+                explanation: t('quiz_q_daily_limit_explanation') || 'El tope legal es de 5 kg más una pieza por licencia y día.'
             };
         }
     ];
@@ -247,10 +252,10 @@ function generateGeografiaQuestions(speciesData, zonesData) {
                 ...otherZones.map(z => ({ text: z.name, correct: false }))
             ]);
             return {
-                text: `¿En cuál de estas zonas es frecuente encontrar ${speciesName}?`,
+                text: t('quiz_q_zone_species', { speciesName }) || `¿En cuál de estas zonas es frecuente encontrar ${speciesName}?`,
                 image: null,
                 options,
-                explanation: `${speciesName} se encuentra frecuentemente en ${zone.name}.`
+                explanation: t('quiz_q_zone_species_explanation', { speciesName, zoneName: zone.name }) || `${speciesName} se encuentra frecuentemente en ${zone.name}.`
             };
         },
         // Tipo 2: ¿Qué técnica se recomienda en X zona?
@@ -276,10 +281,10 @@ function generateGeografiaQuestions(speciesData, zonesData) {
                 ...pickRandom(otherTecs, 3).map(t => ({ text: t.substring(0, 60), correct: false }))
             ]);
             return {
-                text: `¿Qué técnica de pesca se recomienda en ${zone.name} (${zone.address?.addressLocality || ''})?`,
+                text: t('quiz_q_zone_technique', { zoneName: zone.name, city: zone.address?.addressLocality || '' }) || `¿Qué técnica de pesca se recomienda en ${zone.name} (${zone.address?.addressLocality || ''})?`,
                 image: null,
                 options,
-                explanation: `En ${zone.name} se recomienda: ${tecRaw}.`
+                explanation: t('quiz_q_zone_technique_explanation', { zoneName: zone.name, technique: tecRaw }) || `En ${zone.name} se recomienda: ${tecRaw}.`
             };
         },
         // Tipo 3: ¿En qué municipio se encuentra X zona?
@@ -302,10 +307,10 @@ function generateGeografiaQuestions(speciesData, zonesData) {
                 ...pickRandom(otherLocs, 3).map(l => ({ text: l, correct: false }))
             ]);
             return {
-                text: `¿En qué municipio mallorquín se encuentra la zona de pesca "${zone.name}"?`,
+                text: t('quiz_q_zone_municipality', { zoneName: zone.name }) || `¿En qué municipio mallorquín se encuentra la zona de pesca "${zone.name}"?`,
                 image: null,
                 options,
-                explanation: `${zone.name} se encuentra en ${loc}.`
+                explanation: t('quiz_q_zone_municipality_explanation', { zoneName: zone.name, loc }) || `${zone.name} se encuentra en ${loc}.`
             };
         }
     ];
@@ -313,37 +318,37 @@ function generateGeografiaQuestions(speciesData, zonesData) {
     // Preguntas fijas de reservas marinas
     const reserveQuestions = [
         {
-            text: '¿Cuál de estas NO es una Reserva Marina oficial en Mallorca?',
+            text: t('quiz_q_reserve_not_official') || '¿Cuál de estas NO es una Reserva Marina oficial en Mallorca?',
             image: null,
             options: shuffleArray([
-                { text: 'Reserva de Cala Rajada', correct: true },
-                { text: 'Reserva del Llevant', correct: false },
-                { text: 'Reserva de la Bahía de Palma', correct: false },
-                { text: 'Reserva de Illes Malgrats', correct: false }
+                { text: t('quiz_option_reserve_cala_rajada') || 'Reserva de Cala Rajada', correct: true },
+                { text: t('quiz_option_reserve_llevant') || 'Reserva del Llevant', correct: false },
+                { text: t('quiz_option_reserve_bahia_palma') || 'Reserva de la Bahía de Palma', correct: false },
+                { text: t('quiz_option_reserve_illes_malgrats') || 'Reserva de Illes Malgrats', correct: false }
             ]),
-            explanation: 'Cala Rajada no tiene una reserva marina oficial declarada.'
+            explanation: t('quiz_q_reserve_not_official_explanation') || 'Cala Rajada no tiene una reserva marina oficial declarada.'
         },
         {
-            text: '¿Qué documento es obligatorio para pescar dentro de una Reserva Marina en Baleares?',
+            text: t('quiz_q_reserve_document') || '¿Qué documento es obligatorio para pescar dentro de una Reserva Marina en Baleares?',
             image: null,
             options: shuffleArray([
-                { text: 'Declaración responsable semanal', correct: true },
-                { text: 'Permiso del Ayuntamiento', correct: false },
-                { text: 'Carnet de buceador', correct: false },
-                { text: 'Solo la licencia estándar', correct: false }
+                { text: t('quiz_option_reserve_document_responsible') || 'Declaración responsable semanal', correct: true },
+                { text: t('quiz_option_reserve_document_permission') || 'Permiso del Ayuntamiento', correct: false },
+                { text: t('quiz_option_reserve_document_diver') || 'Carnet de buceador', correct: false },
+                { text: t('quiz_option_reserve_document_standard') || 'Solo la licencia estándar', correct: false }
             ]),
-            explanation: 'Se necesita una declaración responsable semanal y autorización del barco.'
+            explanation: t('quiz_q_reserve_document_explanation') || 'Se necesita una declaración responsable semanal y autorización del barco.'
         },
         {
-            text: '¿Cuántos años de vigencia tiene la licencia de pesca recreativa marítima en Baleares?',
+            text: t('quiz_q_license_duration') || '¿Cuántos años de vigencia tiene la licencia de pesca recreativa marítima en Baleares?',
             image: null,
             options: shuffleArray([
-                { text: '3 años', correct: true },
-                { text: '1 año', correct: false },
-                { text: '5 años', correct: false },
-                { text: '2 años', correct: false }
+                { text: t('quiz_option_years_3') || '3 años', correct: true },
+                { text: t('quiz_option_years_1') || '1 año', correct: false },
+                { text: t('quiz_option_years_5') || '5 años', correct: false },
+                { text: t('quiz_option_years_2') || '2 años', correct: false }
             ]),
-            explanation: 'La licencia de pesca recreativa tiene una vigencia de 3 años.'
+            explanation: t('quiz_q_license_duration_explanation') || 'La licencia de pesca recreativa tiene una vigencia de 3 años.'
         }
     ];
 

@@ -1,10 +1,8 @@
 export const Header = () => {
   return `
     <header id="header" class="header sticky-top">
-      
       <div class="topbar d-none d-md-flex align-items-center accent-background">
         <div class="container d-flex justify-content-center justify-content-md-between align-items-center">
-          
           <div class="contact-info d-flex align-items-center">
             <a href="mailto:info@pescamallorca.online" class="d-flex align-items-center text-white text-decoration-none text-nowrap">
               <i class="bi bi-envelope me-1 me-lg-2"></i><span style="font-size: 0.9rem;">info@pescamallorca.online</span>
@@ -12,70 +10,63 @@ export const Header = () => {
             <a href="tel:+34971000000" class="d-flex align-items-center ms-2 ms-lg-4 text-white text-decoration-none text-nowrap">
               <i class="bi bi-phone me-1"></i><span style="font-size: 0.9rem;">+34 971 00 00 00</span>
             </a>
-            
-            <div class="social-links d-flex align-items-center ms-2 ms-lg-4 gap-2">
-              <a href="#" class="twitter text-white" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
-              <a href="#" class="facebook text-white" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram text-white" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            </div>
           </div>
 
           <div class="auth-links d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0 ms-2">
             <div class="dropdown">
-              <button class="btn btn-sm btn-outline-light rounded-pill d-flex align-items-center px-3 text-nowrap dropdown-toggle" type="button" id="accessibilityDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones de Accesibilidad">
-                <i class="bi bi-person-wheelchair fs-6 me-1"></i> Accesibilidad
+              <button class="btn btn-sm btn-outline-light rounded-pill d-flex align-items-center px-3 text-nowrap dropdown-toggle" type="button" id="accessibilityDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones de Accesibilidad" data-i18n-title="accessibility_options_title">
+                <i class="bi bi-person-wheelchair fs-6 me-1"></i> <span data-i18n="accessibility">Accesibilidad</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="accessibilityDropdownDesktop" style="min-width: 200px;">
-                <li><h6 class="dropdown-header">Herramientas</h6></li>
-                <li><button class="dropdown-item d-flex align-items-center" id="tts-toggle-desktop"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
-                <li><button class="dropdown-item d-flex align-items-center" id="voice-command-toggle-desktop"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
-                <li><button class="dropdown-item d-flex align-items-center" id="zoom-toggle-desktop"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
-                <li><button class="dropdown-item d-flex align-items-center" id="contrast-toggle-desktop"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
+                <li><h6 class="dropdown-header" data-i18n="tools_header">Herramientas</h6></li>
+                <li><button class="dropdown-item d-flex align-items-center" id="tts-toggle-desktop"><i class="bi bi-volume-up-fill me-2 text-primary"></i> <span data-i18n="tts">Lectura por voz</span></button></li>
+                <li><button class="dropdown-item d-flex align-items-center" id="voice-command-toggle-desktop"><i class="bi bi-mic-fill me-2 text-primary"></i> <span data-i18n="voice_commands">Comandos de voz</span></button></li>
+                <li><button class="dropdown-item d-flex align-items-center" id="zoom-toggle-desktop"><i class="bi bi-zoom-in me-2 text-primary"></i> <span data-i18n="increase_text">Aumentar texto</span></button></li>
+                <li><button class="dropdown-item d-flex align-items-center" id="contrast-toggle-desktop"><i class="bi bi-circle-half me-2 text-primary"></i> <span data-i18n="high_contrast">Alto contraste</span></button></li>
               </ul>
             </div>
 
             <div class="dropdown">
               <button class="btn btn-sm btn-outline-light rounded-pill d-flex align-items-center px-3 text-nowrap dropdown-toggle" type="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" title="Seleccionar Idioma">
-                <i class="bi bi-globe me-1"></i> ES
+                <i class="bi bi-globe me-1"></i> <span id="currentLanguageLabel">ES</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="languageDropdownDesktop" style="min-width: 120px;">
-                <li><a class="dropdown-item active" href="#">Español</a></li>
-                <li><a class="dropdown-item" href="#">Català</a></li>
-                <li><a class="dropdown-item" href="#">English</a></li>
-                <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                <li><a class="dropdown-item active" href="#" data-lang="es">Español</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ca">Català</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
               </ul>
             </div>
 
             <div id="auth-container">
               <a href="#login" class="btn btn-sm btn-light rounded-pill d-flex align-items-center px-3 text-nowrap" style="font-weight: 500;" data-bs-toggle="modal" data-bs-target="#loginModal">
-                <i class="bi bi-person-circle fs-6 me-2"></i> Iniciar sesión
+                <i class="bi bi-person-circle fs-6 me-2"></i> <span data-i18n="login">Iniciar sesión</span>
               </a>
             </div>
           </div>
         </div>
       </div>
-      
+
       <div class="branding d-flex align-items-center">
         <div class="container position-relative d-flex align-items-center justify-content-between">
           <a href="/" data-link class="logo d-flex align-items-center" aria-label="Ir a la página de inicio">
-            <h1 class="sitename">Pesca Mallorca</h1>
+              <h1 class="sitename">Pesca Mallorca</h1>
           </a>
-          
           <nav id="navmenu" class="navmenu" aria-label="Menú principal de navegación">
             <ul>
-              <li><a href="#hero" class="active">Inicio</a></li>
-              <li><a href="#zonas">Spots</a></li>
-              <li><a href="#especies">Especies</a></li>
-              <li><a href="#pecedex">Pecédex</a></li>
-              <li><a href="#mapa">Mapa</a></li>
-              <li><a href="#quiz">Quiz</a></li>
-              <li><a href="#meteo">Tiempo</a></li>
-              <li><a href="#tiendas">Tiendas</a></li>
-              <li><a href="#rampas">Rampas</a></li>
-              <li><a href="#normativa">Normativa</a></li>
-              <li><a href="#autores">Autores</a></li>
-              <li><a href="#contacto">Contacto</a></li>
-              
+              <li><a href="#hero" class="active" data-i18n="nav_inicio">Inicio</a></li>
+              <li><a href="#zonas" data-i18n="nav_zonas">Spots</a></li>
+              <li><a href="#especies" data-i18n="nav_especies">Especies</a></li>
+              <li><a href="#pecedex" data-i18n="nav_pecedex">Pecédex</a></li>
+              <li><a href="#mapa" data-i18n="nav_mapa">Mapa</a></li>
+              <li><a href="#quiz" data-i18n="nav_quiz">Quiz</a></li>
+              <li><a href="#meteo" data-i18n="nav_meteo">Tiempo</a></li>
+              <li><a href="#tiendas" data-i18n="nav_tiendas">Tiendas</a></li>
+              <li><a href="#rampas" data-i18n="nav_rampas">Rampas</a></li>
+              <li><a href="#normativa" data-i18n="nav_normativa">Normativa</a></li>
+              <li><a href="#autores" data-i18n="nav_autores">Autores</a></li>
+              <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
+
               <li class="d-md-none mt-4 px-3 py-3 border-top">
                 <div class="d-flex flex-column gap-2 text-center">
                   <a href="mailto:info@pescamallorca.online" class="text-secondary text-decoration-none" style="font-size: 0.95rem;">
@@ -89,33 +80,33 @@ export const Header = () => {
 
               <li class="d-md-none px-3 pb-2">
                 <div class="dropdown w-100 mb-3">
-                  <button class="btn btn-outline-primary rounded-pill dropdown-toggle w-100 d-flex justify-content-center align-items-center" type="button" id="accessibilityDropdownMobile" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style="padding: 10px;" title="Opciones de Accesibilidad">
+                  <button class="btn btn-outline-primary rounded-pill dropdown-toggle w-100 d-flex justify-content-center align-items-center" type="button" id="accessibilityDropdownMobile" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style="padding: 10px;" title="Opciones de Accesibilidad" data-i18n="accessibility" data-i18n-title="accessibility_options_title">
                     <i class="bi bi-person-wheelchair fs-5 me-2"></i> Accesibilidad
                   </button>
                   <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="accessibilityDropdownMobile">
-                    <li><button class="dropdown-item" id="tts-toggle-mobile" onclick="window.closeMobileMenu()"><i class="bi bi-volume-up-fill me-2 text-primary"></i> Lectura por voz</button></li>
-                    <li><button class="dropdown-item" id="voice-command-toggle-mobile" onclick="window.closeMobileMenu()"><i class="bi bi-mic-fill me-2 text-primary"></i> Comandos de voz</button></li>
-                    <li><button class="dropdown-item" id="zoom-toggle-mobile" onclick="window.closeMobileMenu()"><i class="bi bi-zoom-in me-2 text-primary"></i> Aumentar texto</button></li>
-                    <li><button class="dropdown-item" id="contrast-toggle-mobile" onclick="window.closeMobileMenu()"><i class="bi bi-circle-half me-2 text-primary"></i> Alto contraste</button></li>
+                    <li><button class="dropdown-item" id="tts-toggle-mobile" data-close-mobile><i class="bi bi-volume-up-fill me-2 text-primary"></i> <span data-i18n="tts">Lectura por voz</span></button></li>
+                    <li><button class="dropdown-item" id="voice-command-toggle-mobile" data-close-mobile><i class="bi bi-mic-fill me-2 text-primary"></i> <span data-i18n="voice_commands">Comandos de voz</span></button></li>
+                    <li><button class="dropdown-item" id="zoom-toggle-mobile" data-close-mobile><i class="bi bi-zoom-in me-2 text-primary"></i> <span data-i18n="increase_text">Aumentar texto</span></button></li>
+                    <li><button class="dropdown-item" id="contrast-toggle-mobile" data-close-mobile><i class="bi bi-circle-half me-2 text-primary"></i> <span data-i18n="high_contrast">Alto contraste</span></button></li>
                   </ul>
                 </div>
 
                 <div id="auth-container-mobile">
-                  <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="window.closeMobileMenu()">
-                    <i class="bi bi-person-circle fs-5 me-2"></i> Iniciar sesión
+                  <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;" data-bs-toggle="modal" data-bs-target="#loginModal" data-close-mobile>
+                    <i class="bi bi-person-circle fs-5 me-2"></i> <span data-i18n="login">Iniciar sesión</span>
                   </a>
                 </div>
                 
                 <div class="d-flex justify-content-center">
                   <div class="dropdown w-100">
                     <button class="btn btn-outline-secondary rounded-pill dropdown-toggle w-100" type="button" id="languageDropdownMobile" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style="padding: 10px;">
-                      <i class="bi bi-globe me-2"></i> Español
+                      <i class="bi bi-globe me-2"></i> <span id="currentLanguageLabelMobile">Español</span>
                     </button>
                     <ul class="dropdown-menu shadow text-center border-0 w-100" aria-labelledby="languageDropdownMobile">
-                      <li><a class="dropdown-item active" href="#">Español</a></li>
-                      <li><a class="dropdown-item" href="#">Català</a></li>
-                      <li><a class="dropdown-item" href="#">English</a></li>
-                      <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                      <li><a class="dropdown-item active" href="#" data-lang="es">Español</a></li>
+                      <li><a class="dropdown-item" href="#" data-lang="ca">Català</a></li>
+                      <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                      <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
                     </ul>
                   </div>
                 </div>
@@ -145,8 +136,8 @@ export const Header = () => {
              <div class="dot"></div>
              <div class="dot"></div>
           </div>
-          <span id="voice-status-text" class="fw-bold">Escuchando...</span>
-          <button class="btn btn-sm btn-light rounded-circle ms-3" onclick="window.stopVoiceRecognition()" aria-label="Detener escucha">
+          <span id="voice-status-text" class="fw-bold" data-i18n="voice_listening">Escuchando...</span>
+          <button class="btn btn-sm btn-light rounded-circle ms-3" data-stop-voice data-i18n-aria="voice_stop_listen" aria-label="Detener escucha">
             <i class="bi bi-x"></i>
           </button>
        </div>

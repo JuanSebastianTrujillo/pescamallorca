@@ -7,22 +7,23 @@
   <title>Pesca Mallorca | Pesca en Mallorca, spots, especies y normativa</title>
   <meta name="description" content="Plataforma de pesca en Mallorca con spots, especies marinas, Pecédex balear, normativa y herramientas útiles para pescadores.">
   <meta name="keywords" content="pesca Mallorca, spots pesca, especies marinas, Pecédex, normativa pesca, pesca deportiva, Mallorca">
-  <link rel="canonical" href="https://pescamallorca.online/">
+  <link rel="canonical" href="https://www.pescamallorca.online/">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pescamallorca.online/">
+  <meta property="og:site_name" content="Pesca Mallorca">
+  <meta property="og:url" content="https://www.pescamallorca.online/">
   <meta property="og:title" content="Pesca Mallorca | Guía Completa de Pesca">
   <meta property="og:description" content="Descubre los mejores spots, especies y normativa de pesca en Mallorca.">
-  <meta property="og:image" content="https://pescamallorca.online/assets/img/hero-carousel/hero-carousel-1-1280.webp">
+  <meta property="og:image" content="https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1-1280.webp">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://pescamallorca.online/">
+  <meta property="twitter:url" content="https://www.pescamallorca.online/">
   <meta property="twitter:title" content="Pesca Mallorca | Guía Completa de Pesca">
   <meta property="twitter:description" content="Descubre los mejores spots, especies y normativa de pesca en Mallorca.">
-  <meta property="twitter:image" content="https://pescamallorca.online/assets/img/hero-carousel/hero-carousel-1-1280.webp">
+  <meta property="twitter:image" content="https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1-1280.webp">
 
   <script type="application/ld+json">
   {
@@ -79,54 +80,8 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- CSS Crítico Inline (above-the-fold) para evitar FOUC mientras carga el CSS externo -->
-  <style>
-    :root {
-      --background-color: #ffffff;
-      --default-color: #555555;
-      --heading-color: #2B4162;
-      --accent-color: #4281A4;
-      --surface-color: #ffffff;
-      --contrast-color: #ffffff;
-      --default-font: system-ui, -apple-system, "Segoe UI", sans-serif;
-      --heading-font: Georgia, serif;
-      --nav-font: system-ui, sans-serif;
-    }
-    body { margin: 0; color: var(--default-color); background-color: var(--background-color); font-family: var(--default-font); }
-    #preloader { position: fixed; inset: 0; z-index: 999999; background: var(--background-color); transition: all 0.6s ease-out; }
-    #preloader:before { content: ""; position: fixed; top: calc(50% - 30px); left: calc(50% - 30px); border: 6px solid var(--accent-color); border-right-color: transparent; border-radius: 50%; width: 60px; height: 60px; animation: _pre-spin 1s linear infinite; }
-    @keyframes _pre-spin { to { transform: rotate(360deg); } }
-    .hero { position: relative; min-height: 100vh; overflow: hidden; }
-    /* Hero carousel: ocupa toda la altura de la sección */
-    #hero-carousel { position: relative; width: 100%; height: 100vh; }
-    #hero-carousel .carousel-inner { height: 100%; }
-    /* Sobreescribimos el float-layout de Bootstrap para el hero — los items deben ser absolutos */
-    #hero-carousel .carousel-item { position: absolute !important; top: 0; left: 0; right: 0; bottom: 0; height: 100%; float: none; margin-right: 0; }
-    #hero-carousel .carousel-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .header { position: sticky; top: 0; z-index: 997; background-color: var(--background-color); }
-    #app { min-height: 100vh; }
-    /* Bootstrap carousel crítico — necesario para que funcione antes de que cargue bootstrap.css */
-    .carousel { position: relative; }
-    .carousel-inner { position: relative; width: 100%; overflow: hidden; }
-    .carousel-item { position: relative; display: none; float: left; width: 100%; margin-right: -100%; backface-visibility: hidden; transition: transform .6s ease-in-out; }
-    .carousel-item.active, .carousel-item-next, .carousel-item-prev { display: block; }
-    .carousel-fade .carousel-item { opacity: 0; transition-property: opacity; transform: none; }
-    .carousel-fade .carousel-item.active { z-index: 1; opacity: 1; }
-    .carousel-fade .carousel-item-next.carousel-item-start,
-    .carousel-fade .carousel-item-prev.carousel-item-end { z-index: 1; opacity: 1; }
-    .carousel-fade .active.carousel-item-start,
-    .carousel-fade .active.carousel-item-end { z-index: 0; opacity: 0; transition: opacity 0s .6s; }
-    .carousel-control-prev, .carousel-control-next { position: absolute; top: 0; bottom: 0; z-index: 1; display: flex; align-items: center; justify-content: center; width: 15%; padding: 0; color: #fff; text-align: center; background: none; border: 0; opacity: .5; transition: opacity .15s ease; cursor: pointer; }
-    .carousel-control-prev { left: 0; }
-    .carousel-control-next { right: 0; }
-    .carousel-control-prev-icon, .carousel-control-next-icon { display: inline-block; width: 2rem; height: 2rem; background-repeat: no-repeat; background-position: 50%; background-size: 100% 100%; }
-    .carousel-control-prev-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e"); }
-    .carousel-control-next-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); }
-    .carousel-indicators { position: absolute; right: 0; bottom: 0; left: 0; z-index: 2; display: flex; justify-content: center; padding: 0; margin-right: 15%; margin-bottom: 1rem; margin-left: 15%; list-style: none; }
-    .carousel-indicators [data-bs-target] { box-sizing: content-box; flex: 0 1 30px; width: 30px; height: 3px; padding: 0; margin-right: 3px; margin-left: 3px; cursor: pointer; background-color: #fff; background-clip: padding-box; border: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; opacity: .5; transition: opacity .6s ease; }
-    .carousel-indicators .active { opacity: 1; }
-    .carousel-container { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; }
-  </style>
+  <!-- CSS crítico mínimo inline para evitar FOUC mientras carga el CSS externo -->
+  <style>html{background:#ffffff}body{margin:0}</style>
 
   <!-- Preconnect: fuentes y APIs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,11 +119,9 @@
   <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css"></noscript>
 
-  <!-- Leaflet CSS — no bloqueante (mapa below-the-fold) -->
-  <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""></noscript>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 
   <!-- Main CSS — no bloqueante -->
   <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -188,6 +141,14 @@
   <!-- Contenedor principal de la SPA -->
   <div id="app"></div>
 
+  <!-- i18next (multilanguage) -->
+  <script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-http-backend@1.4.2/i18nextHttpBackend.min.js"></script>
+  <script src="https://unpkg.com/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
+
+  <!-- Leaflet JS (Mapa Interactivo) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+
   <!-- Script principal importando componentes en ES6 module format -->
   <script type="module" src="./src/app.js"></script>
 
@@ -197,13 +158,13 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Leaflet JS (Mapa Interactivo) -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/vendor/aos/aos.js" defer></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+
+  <!-- Chatbot widget -->
+  <link rel="stylesheet" href="assets/css/chatbot.css">
 
 </body>
 

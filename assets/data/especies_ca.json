@@ -1,0 +1,883 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/dorada",
+            "name": "Orada",
+            "alternateName": "Sparus aurata",
+            "image": "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/dorada.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/dorada.mp4",
+            "description": "Peix de la família dels espàrids, molt comú a les Illes Balears. Destaca per la franja daurada entre els ulls i la seva potent mandíbula adaptada per triturar cloïsses.",
+            "url": "https://www.pescamallorca.online/peces/dorada",
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/dorada2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/dorada3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Mol·luscs, crustacis bivalves i petits peixos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Setembre a Desembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Fons mixts de sorra, roca i praderies de Posidonia oceanica"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Quota màxima",
+                    "value": "5",
+                    "unitText": "kg/dia per llicència"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "70",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Fons, Spinning, Mosca"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa, Platja, Desembocadures"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Mitjana"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Excel·lent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "9",
+                    "unitText": "setembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "12",
+                    "unitText": "desembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/llampuga",
+            "name": "Llampuga",
+            "alternateName": "Coryphaena hippurus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/llampuga-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/llampuga.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/llampuga.mp4",
+            "description": "Peix pelàgic molt ràpid i voraç, recognoscible pel seu color verd blau i groc brillant que perd immediatament en morir.",
+            "url": "https://www.pescamallorca.online/peces/llampuga",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Petits peixos pelàgics (sardina, seitó), calamars i crustacis"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Finals d'Agost a Novembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Aigües obertes, sovint sota objectes flotants (capcers)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "60",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Quota màxima",
+                    "value": "1",
+                    "unitText": "peça per llicència (límit restrictiu)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "15",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "150",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Curricà, Spinning, Pesca a l'espera amb esquer viu"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Mar obert, objectes flotants"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Excel·lent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "8",
+                    "unitText": "agost"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "11",
+                    "unitText": "novembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/mero",
+            "name": "Mero",
+            "alternateName": "Epinephelus marginatus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/mero-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/mero.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/mero.mp4",
+            "description": "Serrànid de gran grandària, emblemàtic dels fons rocosos balears. És una espècie territorial i hermafrodita proterogínica amb un creixement molt lent.",
+            "url": "https://www.pescamallorca.online/peces/mero",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Crancs, pops i altres peixos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Tot l'any (especialment actiu a l'estiu)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Coves, esquerdes i fons rocosos profunds"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Veda/Restricció",
+                    "value": "Màxim 1 exemplar per llicència al dia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "60",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "150",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Fons amb esquer viu, curricà de fons, pesca submarina (regulada)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Fons rocosos, coves, entre 10 i 80 m"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Molt alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Excel·lent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Vulnerable (VU)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "1",
+                    "unitText": "gener"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "12",
+                    "unitText": "desembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/cap-roig",
+            "name": "Cap-roig",
+            "alternateName": "Scorpaena scrofa",
+            "image": "https://www.pescamallorca.online/assets/img/peces/cap-roig-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/cap-roig.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/cap-roig.mp4",
+            "description": "Peix de color vermellós amb espines venenoses a les aletes dorsals. Es camufla perfectament amb el fons marí esperant les seves preses.",
+            "url": "https://www.pescamallorca.online/peces/cap-roig",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Crustacis, mol·luscs i petits peixos de roca"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Tot l'any (millor a la primavera)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Fons de roca, coral·ligen i praderies de posidònia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "25",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "3",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "50",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Fons amb esquer natural (peix, sípia), spinning amb jigs"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Fons rocosos, esculleres"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Mitjana"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Molt bona"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "3",
+                    "unitText": "març"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "6",
+                    "unitText": "juny"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/sargo",
+            "name": "Sarg",
+            "alternateName": "Diplodus sargus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/sargo-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/sargo.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/sargo.mp4",
+            "description": "Peix platejat amb bandes verticals fosques. Molt buscat pels pescadors de costa, especialment en dies de mala mar o 'mar de fons'.",
+            "url": "https://www.pescamallorca.online/peces/sargo",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Eriçons, mol·luscs i crustacis"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Hivern i primavera"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Zones de rompent, penya-segats i fons rocosos de poca profunditat"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "23",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "2",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Fons amb esquer natural (cucs, gamba), suro o flotador"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa rocosa, ports, desembocadures"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Baixa"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Bona"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "11",
+                    "unitText": "novembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "5",
+                    "unitText": "maig"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/serrano",
+            "name": "Serrà",
+            "alternateName": "Serranus scriba",
+            "image": "https://www.pescamallorca.online/assets/img/peces/serrano-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/serrano.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/serrano.mp4",
+            "description": "Petit serrànid de vius colors blaus i ratlles verticals. Habita fons rocosos de poca profunditat i és molt combatiu per a la seva mida.",
+            "url": "https://www.pescamallorca.online/peces/serrano",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Crustacis, petits peixos, cucs"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Tot l'any"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Fons rocosos i praderies de posidònia de poca profunditat"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "15",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Quota màxima",
+                    "value": "Sense límit específic"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "0.5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "25",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Spinning lleuger, fons amb petits hams"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa rocosa, ports, esculleres"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Baixa"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Bona (bessó per a caldos i fregides)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "1",
+                    "unitText": "gener"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "12",
+                    "unitText": "desembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/denton",
+            "name": "Déntol",
+            "alternateName": "Dentex dentex",
+            "image": "https://www.pescamallorca.online/assets/img/peces/denton-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/denton.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/denton.mp4",
+            "description": "Espàrid de gran grandària, molt apreciat per la seva qualitat gastronòmica i la seva forta lluita. Habita fons rocosos i praderies de posidònia.",
+            "url": "https://www.pescamallorca.online/peces/denton",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Peixos, mol·luscs, crustacis"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Primavera i estiu (reproducció a la primavera)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Fons rocosos i mixts, entre 15 i 50 m"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "40",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Quota màxima",
+                    "value": "2 exemplars / dia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "100",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Curricà de fons, spinning amb artificials, pesca a fons amb esquer viu"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Fons rocosos, cantils, zones de corrents"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Excel·lent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "5",
+                    "unitText": "maig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "9",
+                    "unitText": "setembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/oblada",
+            "name": "Oblada",
+            "alternateName": "Oblada melanura",
+            "image": "https://www.pescamallorca.online/assets/img/peces/oblada-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/oblada.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/oblada.mp4",
+            "description": "Peix platejat amb una característica taca negra en el peduncle caudal. Molt comú en aigües someres, formant grans bancs.",
+            "url": "https://www.pescamallorca.online/peces/oblada",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Algues, petits crustacis, mol·luscs"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Tot l'any (més abundant a l'estiu)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Zones rocoses someres, ports, praderies de posidònia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Quota màxima",
+                    "value": "Sense límit específic"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "0.8",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "34",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Suro o flotador, fons amb esquer natural (pa, gamba)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa, ports, esculleres"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Baixa"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Moderada (millor a la planxa o fregit)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "6",
+                    "unitText": "juny"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "10",
+                    "unitText": "octubre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/salpa",
+            "name": "Salpa",
+            "alternateName": "Sarpa salpa",
+            "image": "https://www.pescamallorca.online/assets/img/peces/salpa-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/salpa.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/salpa.mp4",
+            "description": "Peix herbívor amb ratlles grogues horitzontals. S'alimenta d'algues i forma grans bancs a les praderies de posidònia.",
+            "url": "https://www.pescamallorca.online/peces/salpa",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Algues, especialment posidònia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Tot l'any"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Praderies de posidònia, fons rocosos somers"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Quota màxima",
+                    "value": "Sense límit específic"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "1.5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Suro o flotador, fons amb esquer vegetal (pa, algues)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Praderies de posidònia, zones rocoses amb vegetació"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Baixa"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Baixa (carn tova, gust intens d'algues)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "1",
+                    "unitText": "gener"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "12",
+                    "unitText": "desembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/bonito",
+            "name": "Bonic",
+            "alternateName": "Sarda sarda",
+            "image": "https://www.pescamallorca.online/assets/img/peces/bonito-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/bonito.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/bonito.mp4",
+            "description": "Peix pelàgic de mitjana grandària de la família de la tonyina. Molt migratori i voraç, ofereix combats espectaculars als pescadors esportius.",
+            "url": "https://www.pescamallorca.online/peces/bonito",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Sardines, seitons i calamars"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalitat",
+                    "value": "Finals de primavera a la tardor"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hàbitat preferit",
+                    "value": "Mar obert, zona pelàgica, zones de costa a l'estiu"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "30",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Quota màxima",
+                    "value": "5 ejemplares / día"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Pes màxim",
+                    "value": "8",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla màxima",
+                    "value": "90",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mètodes de pesca",
+                    "value": "Spinning amb peixets artificials, curricà lleuger, jigging"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Mar obert, penya-segats, caps de costa"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultat",
+                    "value": "Mitjana"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Qualitat culinària",
+                    "value": "Excel·lent (carn vermella molt saborosa)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservació (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inici de temporada",
+                    "value": "6",
+                    "unitText": "juny"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fi de temporada",
+                    "value": "10",
+                    "unitText": "octubre"
+                }
+            ]
+        }
+    ]
+}

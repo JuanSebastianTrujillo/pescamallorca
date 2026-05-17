@@ -1,0 +1,100 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://www.cansionpesca.com/",
+      "@type": "SportingGoodsStore",
+      "name": "Ca'n Sion Palma",
+      "image": [
+        "https://www.pescamallorca.online/assets/tiendas/cansion-fachada.webp",
+        "https://www.pescamallorca.online/assets/tiendas/cansion-interior.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer del Banc de l'Oli, 7",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears",
+        "postalCode": "07002"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5719,
+        "longitude": 2.6526
+      },
+      "hasMap": "https://maps.google.com/?cid=123456789",
+      "telephone": "+34 971 72 39 21",
+      "url": "http://www.cansionpesca.com/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "180"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00",
+          "description": "Cerrado a mediodía (13:30 - 16:30)"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:30",
+          "description": "Abierto solo mañanas"
+        }
+      ],
+      "keywords": "Pesca submarina, Vende Cebo Vivo, Reparaciones, Tienda Histórica",
+      "description": "Espaciosa tienda histórica en el centro de Palma, dedicada a la pesca deportiva y submarina, que ofrece envíos a domicilio y asesoramiento experto.",
+      "disambiguatingDescription": "CATÁLOGO DE SERVICIOS: Ofrecen un gran surtido de cebos vivos para pesca desde costa y embarcación, destacando su taller con expertos en reparación de fusiles de pesca submarina y mantenimiento de carretes, además de la venta de material náutico ligero. ESPECIALIDADES: Son los referentes absolutos en Mallorca en cuanto a material de pesca submarina, trajes de neopreno y equipamiento avanzado de apnea."
+    },
+    {
+      "@id": "http://calicopalma.com/",
+      "@type": "SportingGoodsStore",
+      "name": "Casa Calicó Portixol",
+      "image": [
+        "https://www.pescamallorca.online/assets/tiendas/calico-fachada.webp",
+        "https://www.pescamallorca.online/assets/tiendas/calico-pasillos.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Passeig de Bartomeu Barceló i Mir, 17",
+        "addressLocality": "Palma (Portixol)",
+        "addressRegion": "Illes Balears",
+        "postalCode": "07006"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5607,
+        "longitude": 2.6709
+      },
+      "hasMap": "https://maps.google.com/?cid=987654321",
+      "telephone": "+34 971 24 60 04",
+      "url": "http://calicopalma.com/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "150"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00",
+          "description": "Descanso de mediodía de 13:30 a 16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:30"
+        }
+      ],
+      "keywords": "Cebo Vivo Fresco, Surfcasting, Jigging, Fácil Aparcamiento",
+      "description": "Una de las tiendas de pesca más emblemáticas cerca del Portixol. Destaca por su ubicación estratégica junto al mar y su variedad de productos.",
+      "disambiguatingDescription": "CATÁLOGO DE SERVICIOS: Proveen diferentes tipos de cebo vivo como titón, coreano, americano, rosca y lombriz de arena, contando también con un taller dedicado al anillado de cañas y la reparación de punteras. ESPECIALIDADES: Es un comercio muy fuerte en modalidades como la pesca a boya, el jigging y el surfcasting, ofreciendo siempre asesoramiento de primera mano sobre qué se está pescando en la bahía en cada temporada."
+    }
+  ]
+}

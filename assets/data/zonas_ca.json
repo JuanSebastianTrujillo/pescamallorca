@@ -1,0 +1,149 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@id": "https://www.pescamallorca.online/zonas/cala-figuera-formentor",
+            "@type": "Place",
+            "name": "Cala Figuera",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Pollença",
+                "addressRegion": "Illes Balears"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.9536,
+                "longitude": 3.1714
+            },
+            "image": [
+                "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp",
+                "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+            ],
+            "keywords": "Zona de pesca, Accés difícil, Fons rocallós, Pesca profunda, Penya-segat",
+            "description": "Impressionant cala verge envoltada de penya-segats a l'extrem nord de l'illa, ideal per cercar espècies de roca de grans dimensions.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Accés",
+                    "value": "Arribar-hi requereix baixar a peu per un sender de cabres durant 20 minuts des de la carretera de Formentor, amb un aparcament molt limitat i sent obligatori l'ús de calçat tècnic."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fons Marí",
+                    "value": "Destaca per la seva roca escarpada amb caigudes abruptes que superen els 20 metres a poca distància de la vora."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Espècies Freqüents",
+                    "value": "Mero, Déntol, Cap-roig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Tècniques Recomanades",
+                    "value": "Rockfishing pesat, Shore Jigging, Pesca a fons amb esquer viu"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Momento del Dia",
+                    "value": "Dia, Alba, Capvespre"
+                }
+            ]
+        },
+        {
+            "@id": "https://www.pescamallorca.online/zonas/playa-de-muro-es-comu",
+            "@type": "Place",
+            "name": "Platja de Muro",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Muro",
+                "addressRegion": "Illes Balears"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.7891,
+                "longitude": 3.1235
+            },
+            "image": [
+                "https://www.pescamallorca.online/assets/img/spots/playa-muro-1.webp",
+                "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+            ],
+            "keywords": "Zona de pesca, Accés fàcil, Fons arenós, Pesca nocturna, Surfcasting",
+            "description": "Extensa platja d'arena blanca i aigües someres a la Badia d'Alcúdia, perfecta per a la pesca nocturna d'espàrids.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Accés",
+                    "value": "Molt fàcil d'arribar-hi a peu des dels aparcaments propers a la zona natural protegida, amb un terreny pla ideal per transportar equip pesat i carros de pesca."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fons Marí",
+                    "value": "Predomina l'arena fina i clara amb una batimetria molt suau, per la qual cosa cal llançar lluny per guanyar profunditat, trobant petites taques de Posidònia a més de 100 metres."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Espècies Freqüents",
+                    "value": "Orada, Sarg, Salpa"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Tècniques Recomanades",
+                    "value": "Surfcasting clàssic (preferiblement de nit o als mesos d'hivern per evitar l'afluència de banyistes)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Momento del Dia",
+                    "value": "Nit, Capvespre"
+                }
+            ]
+        },
+        {
+            "@id": "https://www.pescamallorca.online/zonas/cap-de-ses-salines",
+            "@type": "Place",
+            "name": "Cap de ses Salines",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Santanyí",
+                "addressRegion": "Illes Balears"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.2646,
+                "longitude": 3.0545
+            },
+            "image": [
+                "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+                "https://www.pescamallorca.online/assets/img/spots/salines-2.webp"
+            ],
+            "keywords": "Zona de pesca, Accés mitjà, Corrents forts, Fons mixt, Escuma",
+            "description": "El punt més meridional de Mallorca, famós pels seus forts corrents que atreuen nombrosos depredadors costaners.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Accés",
+                    "value": "Es recomana arribar molt d'hora per aparcar al costat del far i caminar amb precaució per la afilada costa rocosa buscant el millor lloc."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fons Marí",
+                    "value": "Presenta una plataforma rocosa superficial que dona pas a un fons mixt de grans blocs de pedra i extenses praderies de Posidònia."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Espècies Freqüents",
+                    "value": "Sarg, Orada, Déntol, Oblada"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Tècniques Recomanades",
+                    "value": "Spinning lleuger/mitjà, Pesca a boia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Momento del Dia",
+                    "value": "Alba, Dia"
+                }
+            ]
+        }
+    ]
+}

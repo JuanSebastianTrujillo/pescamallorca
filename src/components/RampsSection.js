@@ -2,10 +2,10 @@ export const RampsSection = () => {
     return `
       <!-- Ramps Section -->
       <section id="rampas" class="section ramps light-background">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Módulo de Rampas y Lugares de Botadura</h2>
-          <p>Catálogo técnico de accesos al mar. Priorizamos la viabilidad logística para asegurar tu confort y seguridad.</p>
-        </div>
+                <div class="container section-title" data-aos="fade-up">
+                    <h2 data-i18n="ramps_title">Módulo de Rampas y Lugares de Botadura</h2>
+                    <p data-i18n="ramps_tagline">Catálogo técnico de accesos al mar. Priorizamos la viabilidad logística para asegurar tu confort y seguridad.</p>
+                </div>
         
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             
@@ -13,31 +13,31 @@ export const RampsSection = () => {
             <div class="row mb-5 justify-content-center">
                <div class="col-lg-10">
                    <div class="card bg-white border-0 shadow-sm p-4">
-                       <h3 class="mb-3 text-secondary fs-6" style="text-transform: uppercase;"><strong><i class="bi bi-funnel-fill me-2 text-primary"></i>Filtros Técnicos Rápidos</strong></h3>
+                       <h3 class="mb-3 text-secondary fs-6" style="text-transform: uppercase;"><strong><i class="bi bi-funnel-fill me-2 text-primary"></i><span data-i18n="ramps_filters">Filtros Técnicos Rápidos</span></strong></h3>
                        <div class="d-flex flex-wrap gap-3 align-items-center">
-                           <label for="ramps-zone-filter" class="visually-hidden">Filtrar por zona</label>
+                           <label for="ramps-zone-filter" class="visually-hidden" data-i18n="label_filter_zone">Filtrar por zona</label>
                            <select id="ramps-zone-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;">
-                               <option value="all" selected>Cualquier zona</option>
-                               <option value="norte">Norte</option>
-                               <option value="sur">Sur</option>
-                               <option value="este">Este</option>
-                               <option value="oeste">Oeste</option>
+                               <option value="all" selected data-i18n="ramps_option_all_zones">Cualquier zona</option>
+                               <option value="norte" data-i18n="ramps_option_norte">Norte</option>
+                               <option value="sur" data-i18n="ramps_option_sur">Sur</option>
+                               <option value="este" data-i18n="ramps_option_este">Este</option>
+                               <option value="oeste" data-i18n="ramps_option_oeste">Oeste</option>
                            </select>
-                           <label for="ramps-type-filter" class="visually-hidden">Filtrar por tipo de firme</label>
+                           <label for="ramps-type-filter" class="visually-hidden" data-i18n="label_filter_type">Filtrar por tipo de firme</label>
                            <select id="ramps-type-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;">
-                               <option value="all" selected>Cualquier firme</option>
-                               <option value="hormigon">Hormigón</option>
-                               <option value="arena">Arena</option>
-                               <option value="roca">Roca natural</option>
+                               <option value="all" selected data-i18n="ramps_option_all_types">Cualquier firme</option>
+                               <option value="hormigon" data-i18n="ramps_option_hormigon">Hormigón</option>
+                               <option value="arena" data-i18n="ramps_option_arena">Arena</option>
+                               <option value="roca" data-i18n="ramps_option_roca">Roca natural</option>
                            </select>
-                           <label for="ramps-price-filter" class="visually-hidden">Filtrar por gestión/precio</label>
+                           <label for="ramps-price-filter" class="visually-hidden" data-i18n="label_filter_price">Filtrar por gestión/precio</label>
                            <select id="ramps-price-filter" class="form-select border-0 bg-light shadow-sm" style="width: auto; flex-grow: 1;">
-                               <option value="all" selected>Cualquier gestión</option>
-                               <option value="Gratuita">Gratuita</option>
-                               <option value="De pago">De pago</option>
-                               <option value="Exclusiva">Exclusiva Socios</option>
+                               <option value="all" selected data-i18n="ramps_option_all_prices">Cualquier gestión</option>
+                               <option value="Gratuita" data-i18n="ramps_option_free">Gratuita</option>
+                               <option value="De pago" data-i18n="ramps_option_paid">De pago</option>
+                               <option value="Exclusiva" data-i18n="ramps_option_exclusive">Exclusiva Socios</option>
                            </select>
-                           <button id="ramps-search-btn" class="btn btn-primary shadow-sm px-4 fw-bold"><i class="bi bi-search me-2"></i>Filtrar</button>
+                           <!-- Filtro aplicado automáticamente al cambiar los selects -->
                        </div>
                    </div>
                </div>
@@ -50,12 +50,12 @@ export const RampsSection = () => {
         </div>
 
         <!-- Ramp Details Modal -->
-        <div class="modal fade" id="rampModal" tabindex="-1" aria-labelledby="rampModalLabel" aria-hidden="true">
+        <div class="modal fade" id="rampModal" role="dialog" aria-modal="true" tabindex="-1" aria-labelledby="rampModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
               
               <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title fw-bold" id="rampModalLabel">Detalle de la Rampa</h5>
+                <h5 class="modal-title fw-bold" id="rampModalLabel" data-i18n="ramp_modal_title">Detalle de la Rampa</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               
@@ -65,7 +65,7 @@ export const RampsSection = () => {
               </div>
               
               <div class="modal-footer bg-light">
-                <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal" data-i18n="close">Cerrar</button>
               </div>
               
             </div>
@@ -77,110 +77,26 @@ export const RampsSection = () => {
 };
 
 // --- MOCK DATA FOR RAMPS ---
-const rampsData = [
-    {
-        id: 0,
-        name: "Rampa Port d'Andratx",
-        location: "Andratx, Ponent",
-        zone: "oeste",
-        type: "hormigon",
-        typeLabel: "Rampa de hormigón",
-        priceTag: "De pago",
-        priceColor: "warning",
-        suitabilityTag: "Apta para remolques",
-        suitabilityColor: "success",
-        image: "assets/img/hero-carousel/hero-carousel-1.jpg", 
-        gallery: [
-            "assets/img/hero-carousel/hero-carousel-1.jpg", 
-            "assets/img/hero-carousel/hero-carousel-2.jpg",
-            "assets/img/hero-carousel/hero-carousel-3.jpg"
-        ],
-        // Physical Characteristics & Bathymetry
-        draft: "1.5m",
-        width: "6 metros",
-        incline: "Moderada. Apta para coche normal tracción delantera, aunque 4x4 recomendado si hay algas.",
-        // Logistics
-        parkingLogistics: "Explanada anexa limitada. El vehículo y su remolque deben desengancharse y aparcar obligatoriamente en la zona de aparcamiento habilitada por Ports IB. Ocupar la zona de maniobra conlleva sanción inmediata.",
-        // Tariffs & Bureaucracy
-        tariffs: "Aprox. 12€/botadura. Posibilidad de bono anual (T-0). Pago en las oficinas del puerto o al responsable de la rampa presencialmente.",
-        // Annex Services
-        services: "Manguera de agua dulce disponible para endulzar el remolque y motor. Aseos anexos al edificio de capitanía y gasolinera marítima funcional.",
-        // Warnings
-        warnings: "Suele acumular verdín al final de la rampa en invierno; extremar precaución. En agosto la saturación de tráfico es muy alta.",
-        // Route
-        gps: "39.5445, 2.3888",
-        mapsLink: "https://maps.google.com/?q=39.5445,2.3888"
-    },
-    {
-        id: 1,
-        name: "Club Náutico S'Arenal",
-        location: "Llucmajor, Migjorn",
-        zone: "sur",
-        type: "hormigon",
-        typeLabel: "Rampa de hormigón lisa",
-        priceTag: "Exclusiva Socios (O pago alto)",
-        priceColor: "danger",
-        suitabilityTag: "Apta remolques grandes",
-        suitabilityColor: "primary",
-        image: "assets/img/hero-carousel/hero-carousel-3.jpg", 
-        gallery: [
-            "assets/img/hero-carousel/hero-carousel-3.jpg"
-        ],
-        draft: "2.5m",
-        width: "8 metros",
-        incline: "Suave, pavimento antideslizante en constante mantenimiento.",
-        parkingLogistics: "Aparcamiento privado dentro de las instalaciones del club. Zonas exclusivas extra-largas para coches con remolque con vigilancia 24h.",
-        tariffs: "Exclusivo para socios del CNA. No socios pueden consultar cuota de pasaje en oficina central (suele superar los 30€ por uso diario).",
-        services: "Instalaciones premium: manguera potente, marinería de apoyo, aseos y duchas privadas, gasolinera justo al lado.",
-        warnings: "Debido a regatas internacionales ocasionales, la rampa puede estar cerrada para uso general durante fines de semana de competición. Consultar tablón de anuncios marino.",
-        gps: "39.5019, 2.7534",
-        mapsLink: "https://maps.google.com/?q=39.5019,2.7534"
-    },
-    {
-        id: 2,
-        name: "Acceso natural Cala Pi",
-        location: "Llucmajor, Migjorn",
-        zone: "sur",
-        type: "roca",
-        typeLabel: "Acceso natural de roca",
-        priceTag: "Gratuita",
-        priceColor: "success",
-        suitabilityTag: "Solo Kayaks / Ligero",
-        suitabilityColor: "secondary",
-        image: "assets/img/hero-carousel/hero-carousel-2.jpg", 
-        gallery: [
-            "assets/img/hero-carousel/hero-carousel-2.jpg"
-        ],
-        draft: "Varía (0.5m media en la orilla)",
-        width: "Sin delimitación (acceso peatonal)",
-        incline: "Abrupta mediante escaleras. Totalmente inviable para remolques o coches.",
-        parkingLogistics: "Aparcamiento en la parte superior de la calle residencial. Requiere bajar la embarcación (kayak o paddle) a pulso o con carrito adaptado por escaleras empinadas.",
-        tariffs: "Totalmente pública y gratuita. (Ningún servicio asociado).",
-        services: "Ninguno. Máquina de agua o chiringuito en verano en la parte alta.",
-        warnings: "Ubicación rodeada de bañistas en temporada alta. Extremar cuidado al botar para evitar accidentes. Zonas de rocas sueltas y resbaladizas con temporales del sur.",
-        gps: "39.3638, 2.8361",
-        mapsLink: "https://maps.google.com/?q=39.3638,2.8361"
-    }
-];
+// Mock data removed. Ramps data is now loaded dynamically.
 
 export const initRamps = () => {
     const container = document.getElementById("ramps-container");
     const zoneFilter = document.getElementById("ramps-zone-filter");
     const typeFilter = document.getElementById("ramps-type-filter");
     const priceFilter = document.getElementById("ramps-price-filter");
-    const searchBtn = document.getElementById("ramps-search-btn");
 
-    if (!container || !zoneFilter || !typeFilter || !priceFilter || !searchBtn) return;
+    if (!container || !zoneFilter || !typeFilter || !priceFilter) return;
 
-    // We store data in a global scope for modal reference
-    window.currentRampsData = rampsData;
+    // We store data in a global scope for modal reference in app.js now
+    // window.currentRampsData = rampsData;
 
-    const renderRamps = () => {
+    window.renderRamps = () => {
         const zoneVal = zoneFilter.value;
         const typeVal = typeFilter.value;
         const priceVal = priceFilter.value;
 
-        const filtered = rampsData.filter(r => {
+        const currentRamps = window.currentRampsData || [];
+        const filtered = currentRamps.filter(r => {
             let pass = true;
             if (zoneVal !== 'all' && r.zone !== zoneVal) pass = false;
             if (typeVal !== 'all' && r.type !== typeVal) pass = false;
@@ -208,7 +124,7 @@ export const initRamps = () => {
 
             html += `
             <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 w-100 ramp-card" role="button" tabindex="0" aria-label="Ver detalles técnicos de ${rampa.name}" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onclick="openRampModal(${rampa.id})">
+                <div class="card shadow-sm border-0 w-100 ramp-card" role="button" tabindex="0" aria-label="Ver detalles técnicos de ${rampa.name}" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" data-open-ramp="${rampa.id}">
                     <div class="position-relative">
                         <img src="${rampa.image}" class="card-img-top object-fit-cover" alt="Fotografía detallada de la rampa de varada ${rampa.name}, ubicada en ${rampa.location}" style="height:220px;" loading="lazy" decoding="async" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                         <span class="badge bg-${rampa.priceColor} position-absolute top-0 end-0 m-3 fs-6 shadow-sm">${rampa.priceTag}</span>
@@ -223,7 +139,7 @@ export const initRamps = () => {
                         </div>
 
                         <div class="mt-auto pt-3 border-top">
-                            <button class="btn btn-outline-primary w-100 fw-bold" onclick="openRampModal(${rampa.id})"><i class="bi bi-file-earmark-text me-2"></i>Ver Detalles Técnicos</button>
+                            <button class="btn btn-outline-primary w-100 fw-bold" data-open-ramp="${rampa.id}"><i class="bi bi-file-earmark-text me-2"></i>Ver Detalles Técnicos</button>
                         </div>
                     </div>
                 </div>
@@ -234,8 +150,11 @@ export const initRamps = () => {
         container.innerHTML = html;
     };
 
-    searchBtn.addEventListener("click", renderRamps);
-    renderRamps(); // initial
+    // Aplicar filtros automáticamente cuando cambien los selects
+    zoneFilter.addEventListener("change", window.renderRamps);
+    typeFilter.addEventListener("change", window.renderRamps);
+    priceFilter.addEventListener("change", window.renderRamps);
+    // renderRamps(); // initial call happens when data is loaded
 };
 
 // Global function to open modal dynamically
@@ -262,16 +181,27 @@ window.openRampModal = (rampId) => {
     else if (rampa.type === 'arena') iconType = 'bi-brightness-alt-high-fill';
     else if (rampa.type === 'roca') iconType = 'bi-moat';
 
+    const t_nav_gps = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_navigate_gps') : 'Navegar con GPS';
+    const t_gallery = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_gallery') : 'Galería Técnica';
+    const t_physical = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_physical') : 'Características Físicas y Batimetría';
+    const t_draft = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_draft') : 'Calado Operativo:';
+    const t_width = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_width') : 'Anchura Útil:';
+    const t_incline = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_incline') : 'Inclinación y Firme:';
+    const t_logistics = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_logistics') : 'Logística de Aparcamiento';
+    const t_bur = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_bureaucracy') : 'Tarifas y Burocracia';
+    const t_annex = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_annex_services') : 'Servicios Anexos';
+    const t_warn = (window._i18n && window._i18n.t) ? window._i18n.t('ramp_local_warnings') : 'Avisos y Peligros';
+
     const modalBodyHTML = `
        <div class="p-4 bg-light text-center border-bottom">
            <h2 class="fw-bold mb-2 fs-3">${rampa.name}</h2>
            <p class="text-muted mb-3"><i class="bi bi-pin-map-fill text-danger"></i> ${rampa.location} | <i class="bi ${iconType} text-primary"></i> ${rampa.typeLabel}</p>
-           <a href="${rampa.mapsLink}" target="_blank" class="btn btn-success rounded-pill fw-bold shadow-sm px-4"><i class="bi bi-cursor-fill me-2"></i>Navegar con GPS</a>
+           <a href="${rampa.mapsLink}" target="_blank" class="btn btn-success rounded-pill fw-bold shadow-sm px-4"><i class="bi bi-cursor-fill me-2"></i>${t_nav_gps}</a>
        </div>
 
        <div class="p-4">
            <!-- Sección: Galería Técnica -->
-           <h3 class="fw-bold text-primary border-bottom pb-2 mb-3 fs-5"><i class="bi bi-images me-2"></i>Galería Técnica</h3>
+           <h3 class="fw-bold text-primary border-bottom pb-2 mb-3 fs-5"><i class="bi bi-images me-2"></i>${t_gallery}</h3>
            <div class="row mb-4">
                ${galleryHtml}
            </div>
@@ -281,11 +211,11 @@ window.openRampModal = (rampId) => {
                <div class="col-lg-6 mb-4">
                    <div class="card h-100 border-0 shadow-sm border-start border-info border-4 bg-white">
                        <div class="card-body">
-                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-water text-info fs-5 me-2"></i> Características Físicas y Batimetría</h4>
+                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-water text-info fs-5 me-2"></i> ${t_physical}</h4>
                            <ul class="list-unstyled mb-0">
-                               <li class="mb-2"><strong>Calado Operativo:</strong> <span class="text-muted">${rampa.draft}</span></li>
-                               <li class="mb-2"><strong>Anchura Útil:</strong> <span class="text-muted">${rampa.width}</span></li>
-                               <li><strong>Inclinación y Firme:</strong> <span class="text-muted">${rampa.incline}</span></li>
+                               <li class="mb-2"><strong>${t_draft}</strong> <span class="text-muted">${rampa.draft}</span></li>
+                               <li class="mb-2"><strong>${t_width}</strong> <span class="text-muted">${rampa.width}</span></li>
+                               <li><strong>${t_incline}</strong> <span class="text-muted">${rampa.incline}</span></li>
                            </ul>
                        </div>
                    </div>
@@ -295,7 +225,7 @@ window.openRampModal = (rampId) => {
                <div class="col-lg-6 mb-4">
                    <div class="card h-100 border-0 shadow-sm border-start border-secondary border-4 bg-white">
                        <div class="card-body">
-                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-p-square text-secondary fs-5 me-2"></i> Logística de Aparcamiento</h4>
+                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-p-square text-secondary fs-5 me-2"></i> ${t_logistics}</h4>
                            <p class="small text-muted mb-0" style="text-align: justify;">${rampa.parkingLogistics}</p>
                        </div>
                    </div>
@@ -305,7 +235,7 @@ window.openRampModal = (rampId) => {
                <div class="col-lg-6 mb-4">
                    <div class="card h-100 border-0 shadow-sm border-start border-warning border-4 bg-white">
                        <div class="card-body">
-                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-cash-coin text-warning fs-5 me-2"></i> Tarifas y Burocracia</h4>
+                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-cash-coin text-warning fs-5 me-2"></i> ${t_bur}</h4>
                            <p class="small text-muted mb-0">${rampa.tariffs}</p>
                        </div>
                    </div>
@@ -315,7 +245,7 @@ window.openRampModal = (rampId) => {
                <div class="col-lg-6 mb-4">
                    <div class="card h-100 border-0 shadow-sm border-start border-primary border-4 bg-white">
                        <div class="card-body">
-                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-wrench-adjustable text-primary fs-5 me-2"></i> Servicios Anexos</h4>
+                           <h4 class="fw-bold text-dark text-uppercase mb-3 fs-6"><i class="bi bi-wrench-adjustable text-primary fs-5 me-2"></i> ${t_annex}</h4>
                            <p class="small text-muted mb-0">${rampa.services}</p>
                        </div>
                    </div>
@@ -329,8 +259,8 @@ window.openRampModal = (rampId) => {
                                <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 2.5rem;"></i>
                            </div>
                            <div>
-                               <h4 class="fw-bold text-danger text-uppercase mb-1 fs-6">Avisos y Peligros Locales</h4>
-                               <p class="small text-danger mb-0"><strong>Crítico:</strong> ${rampa.warnings}</p>
+                               <h4 class="fw-bold text-danger text-uppercase mb-1 fs-6">${t_warn}</h4>
+                               <p class="small text-danger mb-0"><strong>${(window._i18n && window._i18n.t) ? window._i18n.t('ramp_local_warnings') : 'Crítico:'}</strong> ${rampa.warnings}</p>
                            </div>
                        </div>
                    </div>

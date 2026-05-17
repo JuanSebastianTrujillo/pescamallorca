@@ -65,33 +65,36 @@ export const AuthService = {
         const containers = [document.getElementById('auth-container'), document.getElementById('auth-container-mobile')];
         const user = this.getUser();
 
+        const t = (key, options = {}) => window._i18n ? window._i18n.t(key, options) : key;
+
         containers.forEach(container => {
             if (!container) return;
             if (this.isLoggedIn()) {
                 container.innerHTML = `
                     <div class="dropdown">
                         <button class="btn btn-sm ${container.id === 'auth-container' ? 'btn-light' : 'btn-outline-primary'} rounded-pill d-flex align-items-center px-2 pe-3 text-nowrap dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            <img src="${user.picture}" class="rounded-circle me-2" style="width: 24px; height: 24px;">
+                            <img src="${user.picture}" alt="Avatar de ${user.name}" class="rounded-circle me-2" style="width: 24px; height: 24px;">
                             <span class="${container.id === 'auth-container' ? 'd-none d-lg-inline' : ''}">${user.name.split(' ')[0]}</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow border-0">
                             <li><h6 class="dropdown-header">${user.email}</h6></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><button class="dropdown-item text-danger" onclick="AuthService.logout()"><i class="bi bi-box-arrow-right me-2"></i> Cerrar sesión</button></li>
+                            <li><button class="dropdown-item text-danger" data-auth-logout><i class="bi bi-box-arrow-right me-2"></i> ${t('logout')}</button></li>
                         </ul>
                     </div>
                 `;
             } else {
+                const loginText = t('login');
                 if (container.id === 'auth-container') {
                     container.innerHTML = `
                         <a href="#login" class="btn btn-sm btn-light rounded-pill d-flex align-items-center px-3 text-nowrap" style="font-weight: 500;" data-bs-toggle="modal" data-bs-target="#loginModal">
-                            <i class="bi bi-person-circle fs-6 me-2"></i> Iniciar sesión
+                            <i class="bi bi-person-circle fs-6 me-2"></i> ${loginText}
                         </a>
                     `;
                 } else {
                     container.innerHTML = `
                         <a href="#login" class="btn btn-primary rounded-pill d-flex justify-content-center align-items-center w-100 mb-3" style="color: white; padding: 10px;" data-bs-toggle="modal" data-bs-target="#loginModal">
-                            <i class="bi bi-person-circle fs-5 me-2"></i> Iniciar sesión
+                            <i class="bi bi-person-circle fs-5 me-2"></i> ${loginText}
                         </a>
                     `;
                 }

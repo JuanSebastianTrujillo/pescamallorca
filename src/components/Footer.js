@@ -7,7 +7,7 @@ export const Footer = () => {
               <a href="/" data-link class="logo d-flex align-items-center">
                 <span class="sitename">Pesca Mallorca</span>
               </a>
-              <p>Tu plataforma líder para descubrir los mejores spots de pesca, conocer la normativa actualizada y aprender más sobre el entorno marino en Mallorca.</p>
+              <p data-i18n="footer_description">Tu plataforma líder para descubrir los mejores spots de pesca, conocer la normativa actualizada y aprender más sobre el entorno marino en Mallorca.</p>
               <div class="social-links d-flex mt-4">
                 <a href="#" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
                 <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -16,21 +16,21 @@ export const Footer = () => {
             </div>
             
             <div class="col-lg-2 col-6 footer-links">
-              <h2 class="fs-5 fw-bold">Enlaces Útiles</h2>
+              <h2 class="fs-5 fw-bold" data-i18n="footer_links_title">Enlaces Útiles</h2>
               <ul>
-                <li><a href="/" data-link>Inicio</a></li>
-                <li><a href="/zonas" data-link>Zonas de Pesca</a></li>
-                <li><a href="/normativa" data-link>Normativa Legal</a></li>
-                <li><a href="/soporte" data-link>Reportar y Soporte</a></li>
-                <li><a href="/autores" data-link>Transparencia</a></li>
+                <li><a href="/" data-link data-i18n="nav_inicio">Inicio</a></li>
+                <li><a href="/zonas" data-link data-i18n="footer_zonas">Zonas de Pesca</a></li>
+                <li><a href="/normativa" data-link data-i18n="footer_normativa">Normativa Legal</a></li>
+                <li><a href="/soporte" data-link data-i18n="footer_support">Reportar y Soporte</a></li>
+                <li><a href="/autores" data-link data-i18n="footer_transparency">Transparencia</a></li>
               </ul>
             </div>
           </div>
         </div>
         
         <div class="container copyright text-center mt-4">
-          <p>© <span>Copyright</span> <strong class="px-1 sitename">Pesca Mallorca</strong> <span>Todos los Derechos Reservados</span></p>
-          <div class="credits">
+          <p data-i18n="footer_copyright">© <span>Copyright</span> <strong class="px-1 sitename">Pesca Mallorca</strong> <span>Todos los Derechos Reservados</span></p>
+          <div class="credits" data-i18n="footer_designed_in_mallorca">
             Diseñado en Mallorca
           </div>
         </div>

@@ -6,8 +6,8 @@ export const QuizSection = () => {
       <!-- Quiz Section -->
       <section id="quiz" class="section bg-light">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Quiz del Pescador</h2>
-          <p>Pon a prueba tus conocimientos sobre la normativa y las especies locales de Baleares.</p>
+          <h2 data-i18n="quiz_title">Quiz del Pescador</h2>
+          <p data-i18n="quiz_tagline">Pon a prueba tus conocimientos sobre la normativa y las especies locales de Baleares.</p>
         </div>
 
         <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
@@ -17,37 +17,37 @@ export const QuizSection = () => {
                    <div class="mb-4">
                       <i class="bi bi-controller text-primary" style="font-size: 4.5rem;"></i>
                    </div>
-                   <h3 class="fw-bold text-dark mb-4 fs-5">Elige tu desafío</h3>
+                   <h3 class="fw-bold text-dark mb-4 fs-5" data-i18n="quiz_choose">Elige tu desafío</h3>
                    
                    <div class="mb-4 text-start">
-                     <label for="quiz-selector" class="form-label text-muted small fw-bold text-uppercase">Temática del cuestionario</label>
-                     <select id="quiz-selector" class="form-select form-select-lg text-center border-primary shadow-sm text-primary fw-bold" style="cursor: pointer;">
-                        <option value="especies">🐟 Reconocimiento de Especies</option>
-                        <option value="normativa">📜 Normativa y Tallas Mínimas</option>
-                        <option value="geografia">🗺️ Mapa y Reservas Marinas</option>
-                     </select>
+                            <label for="quiz-selector" class="form-label text-muted small fw-bold text-uppercase" data-i18n="quiz_selector_label">Temática del cuestionario</label>
+                            <select id="quiz-selector" class="form-select form-select-lg text-center border-primary shadow-sm text-primary fw-bold" style="cursor: pointer;">
+                                <option value="especies" data-i18n="quiz_option_especies">🐟 Reconocimiento de Especies</option>
+                                <option value="normativa" data-i18n="quiz_option_normativa">📜 Normativa y Tallas Mínimas</option>
+                                <option value="geografia" data-i18n="quiz_option_geografia">🗺️ Mapa y Reservas Marinas</option>
+                            </select>
                    </div>
                    
-                   <button id="quiz-start-btn" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm fw-bold w-100 py-3">
-                      <i class="bi bi-play-fill me-1 fs-5"></i> Jugar Ahora
-                   </button>
+                         <button id="quiz-start-btn" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm fw-bold w-100 py-3" data-i18n="quiz_start_btn">
+                             <i class="bi bi-play-fill me-1 fs-5"></i> Jugar Ahora
+                         </button>
                 </div>
              </div>
           </div>
         </div>
 
         <!-- Quiz Interface Modal -->
-        <div class="modal fade" id="quizModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
+        <div class="modal fade" id="quizModal" role="dialog" aria-modal="true" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
               <div class="modal-header bg-primary text-white p-3">
                 <div class="d-flex w-100 justify-content-between align-items-center">
                    <h3 class="modal-title fw-bold m-0 fs-4" id="quizModalLabel">
-                     <i class="bi bi-patch-question-fill me-2 text-warning"></i> Pregunta <span id="quiz-current-question">1</span>/<span id="quiz-total-questions">10</span>
+                     <i class="bi bi-patch-question-fill me-2 text-warning"></i> <span id="quiz-progress-label">Pregunta 1/10</span>
                    </h3>
-                   <div class="badge bg-white text-primary fs-6 px-3 py-2 rounded-pill shadow-sm">
-                     Puntuación: <span id="quiz-score" class="fw-bold">0</span>
-                   </div>
+                                     <div class="badge bg-white text-primary fs-6 px-3 py-2 rounded-pill shadow-sm">
+                                         <span data-i18n="quiz_score">Puntuación:</span> <span id="quiz-score" class="fw-bold">0</span>
+                                     </div>
                 </div>
                 <button type="button" class="btn-close btn-close-white ms-3" data-bs-dismiss="modal" aria-label="Close" title="Abandonar partida"></button>
               </div>
@@ -55,9 +55,7 @@ export const QuizSection = () => {
               <div class="modal-body p-4 p-md-5 text-center bg-light">
                  
                  <!-- Pregunta -->
-                 <h4 class="mb-4 fw-bold text-dark lh-base fs-4" id="quiz-question-text">
-                    Cargando pregunta...
-                 </h4>
+                 <h4 class="mb-4 fw-bold text-dark lh-base fs-4" id="quiz-question-text" data-i18n="quiz_loading">Cargando pregunta...</h4>
                  
                  <!-- Imagen opcional para la pregunta -->
                  <img src="" id="quiz-question-img" class="img-fluid rounded-3 shadow-sm mb-4 d-none object-fit-cover w-100" style="max-height: 250px;" alt="Imagen ilustrativa de la especie marina para la pregunta del quiz de pesca en Mallorca">
@@ -74,9 +72,9 @@ export const QuizSection = () => {
 
               </div>
               <div class="modal-footer bg-white border-top p-3 justify-content-between align-items-center">
-                 <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Abandonar partida</button>
-                 <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm d-none" id="quiz-confirm-btn">Confirmar</button>
-                 <button type="button" class="btn btn-primary rounded-pill px-5 fw-bold shadow-sm d-none" id="quiz-next-btn">Siguiente <i class="bi bi-arrow-right ms-2"></i></button>
+                 <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" data-i18n="quiz_abort">Abandonar partida</button>
+                 <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm d-none" id="quiz-confirm-btn" data-i18n="quiz_confirm">Confirmar</button>
+                 <button type="button" class="btn btn-primary rounded-pill px-5 fw-bold shadow-sm d-none" id="quiz-next-btn" data-i18n="quiz_next">Siguiente <i class="bi bi-arrow-right ms-2"></i></button>
               </div>
             </div>
           </div>
@@ -136,9 +134,19 @@ export const initQuiz = (speciesData, zonesData) => {
         if (!els.questionText || !els.optionsContainer) return;
 
         // Actualizar header
-        if (els.currentQEl) els.currentQEl.textContent = quizEngine.currentIndex + 1;
-        if (els.totalQEl)   els.totalQEl.textContent   = quizEngine.questions.length;
-        if (els.scoreEl)    els.scoreEl.textContent     = quizEngine.score;
+        if (els.scoreEl) els.scoreEl.textContent = quizEngine.score;
+        if (window._i18n) {
+            const progressLabel = document.getElementById('quiz-progress-label');
+            if (progressLabel) {
+                progressLabel.textContent = window._i18n.t('quiz_question_counter', {
+                    current: quizEngine.currentIndex + 1,
+                    total: quizEngine.questions.length
+                });
+            }
+        } else {
+            if (els.currentQEl) els.currentQEl.textContent = quizEngine.currentIndex + 1;
+            if (els.totalQEl)   els.totalQEl.textContent   = quizEngine.questions.length;
+        }
 
         // Pregunta
         els.questionText.textContent = question.text;

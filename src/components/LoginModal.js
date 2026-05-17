@@ -2,7 +2,7 @@ import { AuthService } from "../services/AuthService.js";
 
 export const LoginModal = () => {
     return `
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal fade" id="loginModal" role="dialog" aria-modal="true" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 shadow-lg rounded-4">
           <div class="modal-header border-0 pb-0">
@@ -12,8 +12,8 @@ export const LoginModal = () => {
             <div class="mb-4">
                 <i class="bi bi-person-circle text-primary" style="font-size: 4rem;"></i>
             </div>
-            <h3 class="fw-bold mb-3">Bienvenido a Pesca Mallorca</h3>
-            <p class="text-muted mb-4">Accede para participar en nuestra comunidad.</p>
+            <h3 class="fw-bold mb-3" data-i18n="login_modal_title">Bienvenido a Pesca Mallorca</h3>
+            <p class="text-muted mb-4" data-i18n="login_modal_description">Accede para participar en nuestra comunidad.</p>
             
             <div class="d-grid gap-3">
                 <!-- Google Sign-In Button Container -->
@@ -28,16 +28,16 @@ export const LoginModal = () => {
 
                 <div class="divider d-flex align-items-center my-2">
                     <hr class="flex-grow-1">
-                    <span class="mx-2 text-muted small">O TAMBIÉN</span>
+                    <span class="mx-2 text-muted small" data-i18n="login_modal_also">O TAMBIÉN</span>
                     <hr class="flex-grow-1">
                 </div>
 
-                <button class="btn btn-outline-secondary btn-lg rounded-pill d-flex align-items-center justify-content-center py-2" onclick="window.mockLogin(); bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();">
-                    <i class="bi bi-person-badge me-2"></i> Entrar como Pescador Anónimo
+                <button class="btn btn-outline-secondary btn-lg rounded-pill d-flex align-items-center justify-content-center py-2" data-mock-login>
+                    <i class="bi bi-person-badge me-2"></i> <span data-i18n="login_modal_anonymous">Entrar como Pescador Anónimo</span>
                 </button>
             </div>
             
-            <p class="mt-4 small text-muted">Al iniciar sesión, aceptas nuestra política de privacidad y términos de uso.</p>
+            <p class="mt-4 small text-muted" data-i18n="login_modal_privacy_notice">Al iniciar sesión, aceptas nuestra política de privacidad y términos de uso.</p>
           </div>
         </div>
       </div>

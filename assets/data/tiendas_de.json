@@ -1,0 +1,100 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://www.cansionpesca.com/",
+      "@type": "SportingGoodsStore",
+      "name": "Ca'n Sion Palma",
+      "image": [
+        "https://www.pescamallorca.online/assets/tiendas/cansion-fachada.webp",
+        "https://www.pescamallorca.online/assets/tiendas/cansion-interior.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer del Banc de l'Oli, 7",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears",
+        "postalCode": "07002"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5719,
+        "longitude": 2.6526
+      },
+      "hasMap": "https://maps.google.com/?cid=123456789",
+      "telephone": "+34 971 72 39 21",
+      "url": "http://www.cansionpesca.com/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "180"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00",
+          "description": "Cerrado a mediodía (13:30 - 16:30)"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:30",
+          "description": "Abierto solo mañanas"
+        }
+      ],
+      "keywords": "Pesca submarina, Vende Cebo Vivo, Reparaciones, Geschäft Histórica",
+      "description": "Geräumiges, historisches Geschäft im Zentrum von Palma, das sich dem Sport- und Speerfischen widmet und Hauslieferungen sowie fachkundige Beratung anbietet.",
+      "disambiguatingDescription": "Sie bieten ein großes Sortiment an Lebendködern für das Angeln vom Ufer und vom Boot aus an. Hervorzuheben ist ihre Werkstatt mit Experten für die Reparatur von Harpunen und die Wartung von Rollen sowie der Verkauf von leichter nautischer Ausrüstung. Sie sind die absoluten Referenz in Mallorca in Bezug auf Speerfischerausrüstung, Neoprenanzüge und fortschrittliche Freitauchausrüstung."
+    },
+    {
+      "@id": "http://calicopalma.com/",
+      "@type": "SportingGoodsStore",
+      "name": "Casa Calicó Portixol",
+      "image": [
+        "https://www.pescamallorca.online/assets/tiendas/calico-fachada.webp",
+        "https://www.pescamallorca.online/assets/tiendas/calico-pasillos.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Passeig de Bartomeu Barceló i Mir, 17",
+        "addressLocality": "Palma (Portixol)",
+        "addressRegion": "Illes Balears",
+        "postalCode": "07006"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5607,
+        "longitude": 2.6709
+      },
+      "hasMap": "https://maps.google.com/?cid=987654321",
+      "telephone": "+34 971 24 60 04",
+      "url": "http://calicopalma.com/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "150"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00",
+          "description": "Descanso de mediodía de 13:30 a 16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:30"
+        }
+      ],
+      "keywords": "Cebo Vivo Fresco, Surfcasting, Jigging, Fácil Aparcamiento",
+      "description": "Eines der emblematischsten Angelgeschäfte in der Nähe von Portixol. Es zeichnet sich durch seine strategische Lage am Meer und seine Produktvielfalt aus.",
+      "disambiguatingDescription": "Sie bieten verschiedene Arten von Lebendködern wie Titón, Koreanisch, Amerikanisch, Rosca und Sandwurm an und verfügen über eine Werkstatt für das Beringen von Ruten und die Reparatur von Spitzen. Es ist ein sehr starkes Geschäft in Modalitäten wie Posenangeln, Jigging und Brandungsangeln und bietet immer Ratschläge aus erster Hand darüber, was in jeder Saison in der Bucht gefangen wird."
+    }
+  ]
+}

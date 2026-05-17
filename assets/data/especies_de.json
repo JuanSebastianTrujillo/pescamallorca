@@ -1,0 +1,883 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/dorada",
+            "name": "Goldbrasse",
+            "alternateName": "Sparus aurata",
+            "image": "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/dorada.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/dorada.mp4",
+            "description": "Ein Mitglied der Familie der Meerbrassen, sehr häufig auf den Balearen. Erkennbar an dem goldenen Streifen zwischen den Augen und seinem kräftigen Kiefer, der zum Knacken von Muscheln geeignet ist.",
+            "url": "https://www.pescamallorca.online/peces/dorada",
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/dorada2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/dorada3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Weichtiere, zweischalige Krebstiere und kleine Fische"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "September bis Dezember"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Gemischte Sand- und Felsböden sowie Posidonia oceanica-Wiesen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Quote",
+                    "value": "5",
+                    "unitText": "kg/Tag pro Lizenz"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "70",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Grundangeln, Spinning, Fliegenfischen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Küste, Strand, Mündungen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Mittel"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Hervorragend"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "9",
+                    "unitText": "September"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "12",
+                    "unitText": "Dezember"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/llampuga",
+            "name": "Goldmakrele",
+            "alternateName": "Coryphaena hippurus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/llampuga-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/llampuga.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/llampuga.mp4",
+            "description": "Sehr schneller und gefräßiger pelagischer Fisch, erkennbar an seiner leuchtenden blaugrünen und gelben Färbung, die nach dem Tod schnell verblasst.",
+            "url": "https://www.pescamallorca.online/peces/llampuga",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Kleine pelagische Fische (Sardinen, Sardellen), Tintenfische und Krebstiere"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Ende August bis November"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Offenes Wasser, oft unter treibenden Objekten (Fischsammler oder Capcers)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "60",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Quote",
+                    "value": "1",
+                    "unitText": "Fisch pro Lizenz (restriktives Limit)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "15",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "150",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Schleppangeln, Spinning, Live-Bait-Angeln"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Offenes Meer, treibende Objekte"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Hoch"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Hervorragend"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "8",
+                    "unitText": "August"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "11",
+                    "unitText": "November"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/mero",
+            "name": "Zackenbarsch",
+            "alternateName": "Epinephelus marginatus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/mero-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/mero.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/mero.mp4",
+            "description": "Großer Sägebarsch, sinnbildlich für die felsigen Meeresböden der Balearen. Er ist territorial, ein protogyner Zwitter und wächst sehr langsam.",
+            "url": "https://www.pescamallorca.online/peces/mero",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Krabben, Oktopusse und andere Fische"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Ganzjährig (besonders aktiv im Sommer)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Höhlen, Spalten und tiefe Felsböden"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schonzeit / Einschränkung",
+                    "value": "Maximal 1 Exemplar pro Lizenz und Tag"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "60",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "150",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Grundangeln mit Naturköder, Tiefschleppen, reguliertes Harpunieren"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Felsboden, Höhlen, zwischen 10 und 80 m"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Sehr hoch"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Hervorragend"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Gefährdet (VU)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "1",
+                    "unitText": "Januar"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "12",
+                    "unitText": "Dezember"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/cap-roig",
+            "name": "Roter Drachenkopf",
+            "alternateName": "Scorpaena scrofa",
+            "image": "https://www.pescamallorca.online/assets/img/peces/cap-roig-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/cap-roig.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/cap-roig.mp4",
+            "description": "Rötlicher Fisch mit giftigen Stacheln an den Rückenflossen. Er tarnt sich perfekt auf dem felsigen Meeresboden und wartet geduldig auf Beute.",
+            "url": "https://www.pescamallorca.online/peces/cap-roig",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Krebstiere, Weichtiere und kleine Felsfische"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Ganzjährig (am besten im Frühling)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Felsböden, Korallenriffe und Posidonia-Wiesen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "25",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "3",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "50",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Grundangeln mit Naturköder (Tintenfisch, Fisch), Spinning mit Jigs"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Felsboden, Wellenbrecher"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Mittel"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Sehr gut"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "3",
+                    "unitText": "März"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "6",
+                    "unitText": "Juni"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/sargo",
+            "name": "Geißbrasse",
+            "alternateName": "Diplodus sargus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/sargo-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/sargo.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/sargo.mp4",
+            "description": "Silberner Fisch mit dunklen vertikalen Streifen. Sehr begehrt bei Küstenanglern, besonders an Tagen mit rauem Meer oder Dünung.",
+            "url": "https://www.pescamallorca.online/peces/sargo",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Seeigel, Weichtiere und Krebstiere"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Winter und Frühling"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Brandungszonen, Klippen und flache Felsböden"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "23",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "2",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Grundangeln mit Naturköder (Wurm, Garnele), Posenangeln"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Felsküste, Häfen, Mündungen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Niedrig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Gut"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "11",
+                    "unitText": "November"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "5",
+                    "unitText": "Mai"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/serrano",
+            "name": "Schriftbarsch",
+            "alternateName": "Serranus scriba",
+            "image": "https://www.pescamallorca.online/assets/img/peces/serrano-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/serrano.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/serrano.mp4",
+            "description": "Kleiner Sägebarsch mit leuchtenden blauen Farben und vertikalen Streifen. Bewohnt flache Felsböden und ist für seine Größe sehr kampfstark.",
+            "url": "https://www.pescamallorca.online/peces/serrano",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Krebstiere, kleine Fische, Würmer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Ganzjährig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Flache Felsböden und Posidonia-Wiesen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "15",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Quote",
+                    "value": "Kein spezifisches Limit"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "0.5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "25",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Leichtes Spinning, Grundangeln mit kleinen Haken"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Felsküste, Häfen, Wellenbrecher"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Niedrig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Gut (ideal für Brühen und Frittiertes)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "1",
+                    "unitText": "Januar"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "12",
+                    "unitText": "Dezember"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/denton",
+            "name": "Zahnbrasse",
+            "alternateName": "Dentex dentex",
+            "image": "https://www.pescamallorca.online/assets/img/peces/denton-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/denton.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/denton.mp4",
+            "description": "Große Meerbrasse, die wegen ihrer gastronomischen Qualität und ihres erbitterten Kampfes sehr geschätzt wird. Bewohnt Felsböden und Posidonia-Wiesen.",
+            "url": "https://www.pescamallorca.online/peces/denton",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Fische, Weichtiere, Krebstiere"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Frühling und Sommer (Laichen im Frühjahr)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Felsige und gemischte Böden, zwischen 15 und 50 m"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "40",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Quote",
+                    "value": "2 Exemplare / Tag"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "100",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Schleppangeln am Grund, Spinning mit Kunstködern, Grundangeln mit Live-Bait"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Felsboden, Klippen, Strömungsbereiche"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Hoch"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Hervorragend"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "5",
+                    "unitText": "Mai"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "9",
+                    "unitText": "September"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/oblada",
+            "name": "Brandbrasse",
+            "alternateName": "Oblada melanura",
+            "image": "https://www.pescamallorca.online/assets/img/peces/oblada-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/oblada.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/oblada.mp4",
+            "description": "Silberner Fisch mit einem charakteristischen schwarzen Fleck am Schwanzansatz. Sehr häufig in flachen Gewässern und bildet große Schulen.",
+            "url": "https://www.pescamallorca.online/peces/oblada",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Algen, kleine Krebstiere, Weichtiere"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Ganzjährig (häufiger im Sommer)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Flache felsige Bereiche, Häfen, Posidonia-Wiesen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Quote",
+                    "value": "Kein spezifisches Limit"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "0.8",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "34",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Posenangeln, Grundangeln mit Naturköder (Brot, Garnele)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Küste, Häfen, Wellenbrecher"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Niedrig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Mittelmäßig (am besten gegrillt oder frittiert)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "6",
+                    "unitText": "Juni"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "10",
+                    "unitText": "Oktober"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/salpa",
+            "name": "Goldstrieme",
+            "alternateName": "Sarpa salpa",
+            "image": "https://www.pescamallorca.online/assets/img/peces/salpa-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/salpa.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/salpa.mp4",
+            "description": "Pflanzenfressender Fisch mit gelben Längsstreifen. Ernährt sich fast ausschließlich von Algen und bildet riesige Schwärme in Posidonia-Wiesen.",
+            "url": "https://www.pescamallorca.online/peces/salpa",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Algen, insbesondere Posidonia oceanica"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Ganzjährig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Posidonia-Wiesen, flache Felsböden"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Quote",
+                    "value": "Kein spezifisches Limit"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "1.5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Posenangeln, Grundangeln mit Algen oder Brot"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Posidonia-Wiesen, flache bewachsene Felsbereiche"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Niedrig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Schlecht (weiches Fleisch mit stark krautigem Geschmack)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "1",
+                    "unitText": "Januar"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "12",
+                    "unitText": "Dezember"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/bonito",
+            "name": "Pelamide",
+            "alternateName": "Sarda sarda",
+            "image": "https://www.pescamallorca.online/assets/img/peces/bonito-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/bonito.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/bonito.mp4",
+            "description": "Mittlerer pelagischer Fisch aus der Familie der Makrelen. Sehr wanderfreudig und gefräßig, bietet er Sportanglern spektakuläre Drills.",
+            "url": "https://www.pescamallorca.online/peces/bonito",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Ernährung",
+                    "value": "Sardinen, Sardellen und Tintenfische"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonabhängigkeit",
+                    "value": "Spätfrühling bis Herbst"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Bevorzugter Lebensraum",
+                    "value": "Offenes Meer, pelagische Zone, Küstennähe im Sommer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Mindestmaß",
+                    "value": "30",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Quote",
+                    "value": "5 ejemplares / día"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximales Gewicht",
+                    "value": "8",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Maximale Größe",
+                    "value": "90",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelmethoden",
+                    "value": "Spinning mit Kunstködern, leichtes Schleppangeln, Jigging"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Angelgebiet",
+                    "value": "Offenes Meer, Klippenkanten, Kaps"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Schwierigkeit",
+                    "value": "Mittel"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Kulinarische Qualität",
+                    "value": "Hervorragend (geschmackvolles rotes Fleisch)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Erhaltung (IUCN)",
+                    "value": "Nicht gefährdet (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonstart",
+                    "value": "6",
+                    "unitText": "Juni"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Saisonende",
+                    "value": "10",
+                    "unitText": "Oktober"
+                }
+            ]
+        }
+    ]
+}

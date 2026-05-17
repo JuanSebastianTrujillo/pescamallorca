@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://www.pescamallorca.online/rampas/cn-portocristo",
+      "@type": "Place",
+      "name": "Rampa Club Náutico Portocristo",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/portocristo-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-firme.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-parking.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Porto Cristo (Manacor)",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5413,
+        "longitude": 3.3328
+      },
+      "hasMap": "https://maps.google.com/?cid=15319691598248867444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ0",
+      "keywords": "Rampa de hormigón, De pagament, Apta para remolques, Agua dulce",
+      "description": "Moderna rampa de formigó situada dins les instal·lacions del Club Nàutic, ideal per a avarades segures i còmodes d'embarcacions a motor mitjanes i grans.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Ofereix una profunditat excel·lent al final de la rampa superant el metre i mig sense risc per a les cues de motors grans, destacant per ser molt ampla, amb pendent moderat i un ferm de formigó ratllat que no requereix vehicle 4x4. LOGÍSTICA DE APARCAMIENTO: Existeix una zona habilitada per estacionar cotxe i remolc dins del recinte portuari subjecta a disponibilitat. TARIFAS Y BUROCRACIA: Té un cost aproximat de 15 a 20 euros per maniobra d'avarada que es paga directament a l'oficina de marineria. SERVICIOS ANEXOS: Disposa de mànega d'aigua dolça a peu de rampa per endolcir motors, un sortidor de combustible a escassos metres i accés a banys. AVISOS Y PELIGROS LOCALES: És una rampa molt concorreguda en els mesos d'estiu per la qual cosa es recomana anar a primera hora tenint sempre cura amb el trànsit intern del port."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-pollenca-publica",
+      "@type": "Place",
+      "name": "Rampa Pública Port de Pollença",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/pollenca-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/pollenca-inclinacion.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Port de Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.9042,
+        "longitude": 3.0841
+      },
+      "hasMap": "http://googleusercontent.com/maps.google.com/9",
+      "keywords": "Rampa de hormigón, Gratuïta, Apta para remolques, Parking difícil",
+      "description": "Rampa pública i gratuïta gestionada per Ports IB, molt utilitzada per pescadors de la zona nord de l'illa per accedir a les badies de Pollença i Alcúdia.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Té un calat mitjà o baix que obliga a posar força el remolc a l'aigua per a embarcacions pesades, tractant-se d'una rampa de formigó estàndard amb pendent suau la part submergida de la qual pot acumular verdet. LOGÍSTICA DE APARCAMIENTO: L'aparcament és crític ja que no hi ha zona específica per a remolcs, sent fàcil aparcar a l'hivern però gairebé impossible a l'estiu, amb alt risc de multa si el remolc envaeix la calçada. TARIFAS Y BUROCRACIA: És totalment gratuïta al ser d'ús públic. SERVICIOS ANEXOS: No compta amb serveis directes ni mànega d'aigua dolça disponible per endolcir. AVISOS Y PELIGROS LOCALES: Resulta molt relliscosa a l'hivern per l'acumulació d'algues, recomanant tracció 4x4 si el vaixell pesa molt, i és perillosa amb temporals forts de component Nord o Est."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/son-serra-marina",
+      "@type": "Place",
+      "name": "Accés Natural Son Serra de Marina",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/sonserra-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/sonserra-rocas.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Margalida",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7365,
+        "longitude": 3.2289
+      },
+      "hasMap": "https://maps.google.com/?cid=15319691598248867444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ0",
+      "keywords": "Accés natural de roca, Gratuïta, Solo Kayaks y Neumáticas pequeñas",
+      "description": "Avarada natural en costa oberta, ideal per a caiacs i pescadors submarins que busquen un accés ràpid a la badia d'Alcúdia lluny dels ports.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Presenta un calat nul on s'entra directament caminant al mar des de la roca o la sorra, amb un accés per terreny irregular totalment inviable per a remolcs d'embarcacions rígides. LOGÍSTICA DE APARCAMIENTO: Permet descarregar el caiac o la pneumàtica prop del mar, però el cotxe s'ha d'aparcar obligatòriament als carrers residencials del darrere. TARIFAS Y BUROCRACIA: L'accés és totalment lliure i gratuït. SERVICIOS ANEXOS: No disposa de cap servei en ser una zona verge i residencial sense instal·lacions nàutiques. AVISOS Y PELIGROS LOCALES: És una zona molt exposada en la qual cal extremar la precaució amb el vent de Tramuntana o el mar de fons ja que les onades trenquen directament a la zona d'avarada, requerint també màxima cura amb els banyistes durant els mesos de juliol i agost."
+    }
+  ]
+}

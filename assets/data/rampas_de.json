@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://www.pescamallorca.online/rampas/cn-portocristo",
+      "@type": "Place",
+      "name": "Rampe Club Náutico Portocristo",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/portocristo-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-firme.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-parking.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Porto Cristo (Manacor)",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5413,
+        "longitude": 3.3328
+      },
+      "hasMap": "https://maps.google.com/?cid=15319691598248867444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ0",
+      "keywords": "Rampe de hormigón, Kostenpflichtig, Apta para remolques, Agua dulce",
+      "description": "Moderne Betonrampe innerhalb der Yachtclub-Einrichtungen, ideal für das sichere und bequeme Zuwasserlassen von mittleren und großen Motorbooten.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Es bietet eine ausgezeichnete Tiefe am Ende der Rampe von über eineinhalb Metern ohne Risiko für die Hecks großer Motoren. Es zeichnet sich dadurch aus, dass es sehr breit ist, ein mäßiges Gefälle aufweist und eine gerillte Betonoberfläche hat, die kein 4x4-Fahrzeug erfordert. LOGÍSTICA DE APARCAMIENTO: Auf dem Hafengelände gibt es je nach Verfügbarkeit einen ausgewiesenen Bereich zum Parken von Auto und Anhänger. TARIFAS Y BUROCRACIA: Das Manöver zum Zuwasserlassen kostet etwa 15 bis 20 Euro, die direkt im Seemannsbüro bezahlt werden. SERVICIOS ANEXOS: Am Fuß der Rampe gibt es einen Süßwasserschlauch, um die Motoren zu spülen, eine Zapfsäule nur wenige Meter entfernt und Zugang zu Toiletten. AVISOS Y PELIGROS LOCALES: Es ist eine sehr belebte Rampe in den Sommermonaten, daher wird empfohlen, früh dorthin zu fahren und stets auf den internen Verkehr des Hafens zu achten."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-pollenca-publica",
+      "@type": "Place",
+      "name": "Rampe Pública Port de Pollença",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/pollenca-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/pollenca-inclinacion.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Port de Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.9042,
+        "longitude": 3.0841
+      },
+      "hasMap": "http://googleusercontent.com/maps.google.com/9",
+      "keywords": "Rampe de hormigón, Kostenlos, Apta para remolques, Parking difícil",
+      "description": "Öffentliche und kostenlose Rampe, verwaltet von Ports IB, die häufig von Fischern im Norden der Insel genutzt wird, um die Buchten von Pollença und Alcúdia zu erreichen.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Es hat einen mittleren oder niedrigen Tiefgang, bei dem der Anhänger für schwere Boote recht tief ins Wasser gefahren werden muss. Es handelt sich um eine Standard-Betonrampe mit einem sanften Gefälle, an deren eingetauchtem Teil sich Algen ansammeln können. LOGÍSTICA DE APARCAMIENTO: Das Parken ist kritisch, da es keinen speziellen Bereich für Anhänger gibt. Im Winter ist das Parken einfach, im Sommer jedoch fast unmöglich, mit einem hohen Risiko eines Bußgeldes, wenn der Anhänger die Straße blockiert. TARIFAS Y BUROCRACIA: Die Nutzung ist völlig kostenlos, da sie für den öffentlichen Gebrauch bestimmt ist. SERVICIOS ANEXOS: Es gibt keine direkten Dienstleistungen oder Süßwasserschläuche zum Spülen. AVISOS Y PELIGROS LOCALES: Im Winter ist es aufgrund von Algenansammlungen sehr rutschig. Bei schweren Booten wird ein Allradantrieb empfohlen, und bei starken Nord- oder Oststürmen ist es gefährlich."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/son-serra-marina",
+      "@type": "Place",
+      "name": "Zugang Natural Son Serra de Marina",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/sonserra-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/sonserra-rocas.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Margalida",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7365,
+        "longitude": 3.2289
+      },
+      "hasMap": "https://maps.google.com/?cid=15319691598248867444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ0",
+      "keywords": "Zugang natural de roca, Kostenlos, Solo Kayaks y Neumáticas pequeñas",
+      "description": "Natürlicher Zugang an der offenen Küste, ideal für Kajakfahrer und Speerfischer, die einen schnellen Zugang zur Bucht von Alcúdia abseits der Häfen suchen.",
+      "disambiguatingDescription": "MERKMALE UND BATIMETRIE: Es gibt keinen Tiefgang; man gelangt direkt vom Fels oder Sand ins Meer. Der Zugang über unebenes Gelände ist für Bootsanhänger völlig ungeeignet. PARKLOGISTIK: Das Kajak oder Schlauchboot kann in der Nähe des Meeres abgeladen werden, aber das Auto muss zwingend in den hinteren Wohnstraßen geparkt werden. GEBÜHREN UND FORMALITÄTEN: Der Zugang ist völlig frei und kostenlos. ZUSÄTZLICHE DIENSTLEISTUNGEN: Es gibt keine Dienstleistungen, da es sich um ein unberührtes Wohngebiet ohne nautische Einrichtungen handelt. LOKALE HINWEISE UND GEFAHREN: Es ist ein sehr exponiertes Gebiet, in dem extreme Vorsicht bei Tramuntana-Wind oder Grunddünung geboten ist, da die Wellen direkt in der Einstiegszone brechen. In den Monaten Juli und August ist zudem höchste Vorsicht bei Badegästen geboten."
+    }
+  ]
+}

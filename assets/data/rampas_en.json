@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://www.pescamallorca.online/rampas/cn-portocristo",
+      "@type": "Place",
+      "name": "Ramp Club Náutico Portocristo",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/portocristo-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-firme.webp",
+        "https://www.pescamallorca.online/assets/rampas/portocristo-parking.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Porto Cristo (Manacor)",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5413,
+        "longitude": 3.3328
+      },
+      "hasMap": "https://maps.google.com/?cid=15319691598248867444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ0",
+      "keywords": "Ramp de hormigón, Paid, Apta para remolques, Agua dulce",
+      "description": "Modern concrete ramp located within the Yacht Club facilities, ideal for safe and comfortable launching of medium and large motor boats.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: It offers excellent depth at the end of the ramp exceeding a meter and a half without risk to the tails of large engines, standing out for being very wide, with a moderate slope and a grooved concrete surface that does not require a 4x4 vehicle. LOGÍSTICA DE APARCAMIENTO: There is a designated area to park car and trailer within the port enclosure subject to availability. TARIFAS Y BUROCRACIA: It has an approximate cost of 15 to 20 euros per launching maneuver that is paid directly at the seamanship office. SERVICIOS ANEXOS: It has a fresh water hose at the foot of the ramp to sweeten engines, a fuel pump a few meters away and access to bathrooms. AVISOS Y PELIGROS LOCALES: It is a very busy ramp in the summer months so it is recommended to go early, always being careful with the internal traffic of the port."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-pollenca-publica",
+      "@type": "Place",
+      "name": "Ramp Pública Port de Pollença",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/pollenca-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/pollenca-inclinacion.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Port de Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.9042,
+        "longitude": 3.0841
+      },
+      "hasMap": "http://googleusercontent.com/maps.google.com/9",
+      "keywords": "Ramp de hormigón, Free, Apta para remolques, Parking difícil",
+      "description": "Public and free ramp managed by Ports IB, widely used by fishermen in the north of the island to access the bays of Pollença and Alcúdia.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: It has a medium or low draft that requires putting the trailer quite deep into the water for heavy boats, being a standard concrete ramp with a gentle slope whose submerged part can accumulate algae. LOGÍSTICA DE APARCAMIENTO: Parking is critical as there is no specific area for trailers, being easy to park in winter but almost impossible in summer, with a high risk of a fine if the trailer invades the road. TARIFAS Y BUROCRACIA: It is totally free as it is for public use. SERVICIOS ANEXOS: It has no direct services or fresh water hose available for sweetening. AVISOS Y PELIGROS LOCALES: It is very slippery in winter due to algae accumulation, recommending 4x4 traction if the boat is heavy, and it is dangerous with strong North or East storms."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/son-serra-marina",
+      "@type": "Place",
+      "name": "Access Natural Son Serra de Marina",
+      "image": [
+        "https://www.pescamallorca.online/assets/rampas/sonserra-1.webp",
+        "https://www.pescamallorca.online/assets/rampas/sonserra-rocas.webp"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Margalida",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7365,
+        "longitude": 3.2289
+      },
+      "hasMap": "https://maps.google.com/?cid=15319691598248867444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ0",
+      "keywords": "Access natural de roca, Free, Solo Kayaks y Neumáticas pequeñas",
+      "description": "Natural launch on the open coast, ideal for kayakers and spearfishers looking for quick access to the bay of Alcúdia away from ports.",
+      "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: It has zero draft where you walk directly into the sea from the rock or sand, with access over uneven terrain totally unfeasible for rigid boat trailers. LOGÍSTICA DE APARCAMIENTO: It allows unloading the kayak or dinghy near the sea, but the car must be parked in the residential streets behind. TARIFAS Y BUROCRACIA: Access is completely free. SERVICIOS ANEXOS: It does not have any services as it is a virgin and residential area without nautical facilities. AVISOS Y PELIGROS LOCALES: It is a highly exposed area where extreme caution must be taken with the Tramuntana wind or groundswell as the waves break directly in the launch area, also requiring maximum care with bathers during the months of July and August."
+    }
+  ]
+}

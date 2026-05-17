@@ -1,0 +1,883 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/dorada",
+            "name": "Dorada",
+            "alternateName": "Sparus aurata",
+            "image": "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/dorada.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/dorada.mp4",
+            "description": "Pez de la familia de los espáridos, muy común en las Islas Baleares. Destaca por la franja dorada entre sus ojos y su potente mandíbula adaptada para triturar conchas.",
+            "url": "https://www.pescamallorca.online/peces/dorada",
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/dorada2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/dorada3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/dorada-min.webp",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Moluscos, crustáceos bivalvos y pequeños peces"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Septiembre a Diciembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Fondos mixtos de arena, roca y praderas de Posidonia oceanica"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "5",
+                    "unitText": "kg/día por licencia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "70",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Fondo, Spinning, Mosca"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa, Playa, Desembocaduras"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Media"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excelente"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "9",
+                    "unitText": "septiembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "12",
+                    "unitText": "diciembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/llampuga",
+            "name": "Llampuga",
+            "alternateName": "Coryphaena hippurus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/llampuga-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/llampuga.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/llampuga.mp4",
+            "description": "Pez pelágico muy rápido y voraz, reconocible por su colorido verde azulado y amarillo brillante que pierde al morir.",
+            "url": "https://www.pescamallorca.online/peces/llampuga",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Peces pelágicos pequeños (sardina, boquerón), calamares y crustáceos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Finales de Agosto a Noviembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Aguas abiertas, a menudo bajo objetos flotantes (capcers)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "60",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "1",
+                    "unitText": "pieza por licencia (ejemplo restrictivo)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "15",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "150",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Curricán, Spinning, Pesca a la espera con cebo vivo"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Mar abierto, objetos flotantes"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excelente"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "8",
+                    "unitText": "agosto"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "11",
+                    "unitText": "noviembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/mero",
+            "name": "Mero",
+            "alternateName": "Epinephelus marginatus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/mero-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/mero.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/mero.mp4",
+            "description": "Serránido de gran tamaño, emblemático de los fondos rocosos baleares. Es una especie territorial y hermafrodita proterogínica con un crecimiento muy lento.",
+            "url": "https://www.pescamallorca.online/peces/mero",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Cangrejos, pulpos y otros peces"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Todo el año (especialmente activo en verano)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Cuevas, grietas y fondos rocosos profundos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Veda/Restricción",
+                    "value": "Máximo 1 ejemplar por licencia al día"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "60",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "150",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Fondo con cebo vivo, curricán de fondo, pesca submarina (regulada)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Fondo rocoso, cuevas, entre 10 y 80 m"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Muy alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excelente"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Vulnerable (VU)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "1",
+                    "unitText": "enero"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "12",
+                    "unitText": "diciembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/cap-roig",
+            "name": "Cap-roig (Escórpora)",
+            "alternateName": "Scorpaena scrofa",
+            "image": "https://www.pescamallorca.online/assets/img/peces/cap-roig-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/cap-roig.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/cap-roig.mp4",
+            "description": "Pez de color rojizo con espinas venenosas en las aletas dorsales. Se camufla perfectamente con el fondo marino esperando a sus presas.",
+            "url": "https://www.pescamallorca.online/peces/cap-roig",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Crustáceos, moluscos y pequeños peces de roca"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Todo el año (mejor en primavera)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Fondos de roca, coralígeno y praderas de posidonia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "25",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "3",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "50",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Fondo con cebo natural (pescado, sepia), spinning con jigs"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Fondo rocoso, escolleras"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Media"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Muy buena"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "3",
+                    "unitText": "marzo"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "6",
+                    "unitText": "junio"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/sargo",
+            "name": "Sargo (Sarg)",
+            "alternateName": "Diplodus sargus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/sargo-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/sargo.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/sargo.mp4",
+            "description": "Pez plateado con bandas verticales oscuras. Muy buscado por los pescadores de costa, especialmente en días de mala mar o 'mar de fondo'.",
+            "url": "https://www.pescamallorca.online/peces/sargo",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Erizos, moluscos y crustáceos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Invierno y primavera"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Zonas de rompiente, acantilados y fondos rocosos de poca profundidad"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "23",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "2",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Fondo con cebo natural (gusana, gamba), flotador"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa rocosa, puertos, desembocaduras"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Baja"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Buena"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "11",
+                    "unitText": "noviembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "5",
+                    "unitText": "mayo"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/serrano",
+            "name": "Serrano (Pintarroja)",
+            "alternateName": "Serranus scriba",
+            "image": "https://www.pescamallorca.online/assets/img/peces/serrano-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/serrano.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/serrano.mp4",
+            "description": "Pequeño serránido de vivos colores azulados y rayas verticales. Habita fondos rocosos someros y es muy combativo para su tamaño.",
+            "url": "https://www.pescamallorca.online/peces/serrano",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Crustáceos, pequeños peces, gusanos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Todo el año"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Fondos rocosos y praderas de posidonia de poca profundidad"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "15",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Sin límite específico"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "0.5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "25",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Spinning ligero, fondo con pequeños anzuelos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa rocosa, puertos, escolleras"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Baja"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Buena (caldo y frituras)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "1",
+                    "unitText": "enero"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "12",
+                    "unitText": "diciembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/denton",
+            "name": "Dentón",
+            "alternateName": "Dentex dentex",
+            "image": "https://www.pescamallorca.online/assets/img/peces/denton-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/denton.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/denton.mp4",
+            "description": "Espárido de gran tamaño, muy apreciado por su calidad gastronómica y su pelea. Habita fondos rocosos y praderas de posidonia.",
+            "url": "https://www.pescamallorca.online/peces/denton",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Peces, moluscos, crustáceos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Primavera y verano (reproducción en primavera)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Fondos rocosos y mixtos, entre 15 y 50 m"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "40",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "2 ejemplares / día"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "100",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Curricán de fondo, spinning con señuelos, pesca a fondo con cebo vivo"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Fondo rocoso, cantiles, zonas de corrientes"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excelente"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "5",
+                    "unitText": "mayo"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "9",
+                    "unitText": "septiembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/oblada",
+            "name": "Oblada",
+            "alternateName": "Oblada melanura",
+            "image": "https://www.pescamallorca.online/assets/img/peces/oblada-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/oblada.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/oblada.mp4",
+            "description": "Pez plateado con una característica mancha negra en el pedúnculo caudal. Muy común en aguas someras y formando grandes bancos.",
+            "url": "https://www.pescamallorca.online/peces/oblada",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Algas, pequeños crustáceos, moluscos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Todo el año (más abundante en verano)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Zonas rocosas someras, puertos, praderas de posidonia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Sin límite específico"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "0.8",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "34",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Flotador, fondo con cebo natural (pan, gamba)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa, puertos, escolleras"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Baja"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Moderada (mejor a la plancha o frito)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "6",
+                    "unitText": "junio"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "10",
+                    "unitText": "octubre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/salpa",
+            "name": "Salpa",
+            "alternateName": "Sarpa salpa",
+            "image": "https://www.pescamallorca.online/assets/img/peces/salpa-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/salpa.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/salpa.mp4",
+            "description": "Pez herbívoro con rayas amarillas horizontales. Se alimenta de algas y forma grandes cardúmenes en praderas de posidonia.",
+            "url": "https://www.pescamallorca.online/peces/salpa",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Algas, especialmente posidonia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Todo el año"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Praderas de posidonia, fondos rocosos someros"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "20",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Sin límite específico"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "1.5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "45",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Fondo con cebo vegetal (pan, algas), flotador"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Praderas de posidonia, zonas rocosas con vegetación"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Baja"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Baja (carne blanda, sabor herbáceo)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "1",
+                    "unitText": "enero"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "12",
+                    "unitText": "diciembre"
+                }
+            ]
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/bonito",
+            "name": "Bonito",
+            "alternateName": "Sarda sarda",
+            "image": "https://www.pescamallorca.online/assets/img/peces/bonito-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/bonito.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/bonito.mp4",
+            "description": "Pelágico migrador de la familia de los escómbridos. Muy apreciado por su velocidad y su carne, típico de las costas baleares en verano.",
+            "url": "https://www.pescamallorca.online/peces/bonito",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Peces pequeños (sardinas, boquerones), calamares"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Verano y otoño (paso migratorio)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Aguas superficiales abiertas, cerca de bancos de peces"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "30",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "5 ejemplares / día"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "8",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "90",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Curricán, spinning, pesca a mosca, chambel"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Mar abierto, cerca de la superficie"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excelente"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupación menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "6",
+                    "unitText": "junio"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "10",
+                    "unitText": "octubre"
+                }
+            ]
+        }
+    ]
+}

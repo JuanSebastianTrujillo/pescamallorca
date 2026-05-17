@@ -13,6 +13,7 @@
 // ─── Estado interno ─────────────────────────────────────────
 
 let mapInstance = null;
+let layerControl = null;
 const markerLayers = {
     spots: null,
     ramps: null,
@@ -61,6 +62,10 @@ export function initMap(containerId) {
 
     // Evitar doble inicialización
     if (mapInstance) {
+        if (layerControl) {
+            layerControl.remove();
+            layerControl = null;
+        }
         mapInstance.remove();
         mapInstance = null;
     }
@@ -101,6 +106,7 @@ export function addSpotMarkers(spots) {
     if (!mapInstance || !markerLayers.spots) return;
     markerLayers.spots.clearLayers();
 
+    const t = window._i18n ? window._i18n.t.bind(window._i18n) : (key, defaultValue) => defaultValue || key;
     spots.forEach((spot, index) => {
         if (!spot.geo) return;
 
@@ -115,11 +121,11 @@ export function addSpotMarkers(spots) {
                     <i class="bi bi-geo-alt text-danger"></i> ${spot.address?.addressLocality || ''}
                 </p>
                 <p style="margin: 0 0 8px 0; font-size: 12px; color: #495057;">${spot.description?.substring(0, 100)}...</p>
-                ${speciesRaw ? `<p style="margin: 0 0 8px 0; font-size: 11px;"><strong>Especies:</strong> ${speciesRaw}</p>` : ''}
+                ${speciesRaw ? `<p style="margin: 0 0 8px 0; font-size: 11px;"><strong>${t('spot_popup_species', 'Especies:')}</strong> ${speciesRaw}</p>` : ''}
                 <button class="btn btn-primary btn-sm w-100 rounded-pill" 
-                    onclick="openSpotModal(${index})" 
+                    data-open-spot="${index}" 
                     style="font-size: 12px; font-weight: 600;">
-                    <i class="bi bi-eye me-1"></i>Ver Ficha Completa
+                    <i class="bi bi-eye me-1"></i>${t('map_view_full', 'Ver Ficha Completa')}
                 </button>
             </div>
         `;
@@ -150,6 +156,8 @@ export function addRampMarkers(ramps) {
     if (!mapInstance || !markerLayers.ramps) return;
     markerLayers.ramps.clearLayers();
 
+    const t = window._i18n ? window._i18n.t.bind(window._i18n) : (key, defaultValue) => defaultValue || key;
+
     ramps.forEach(ramp => {
         if (!ramp.gps) return;
 
@@ -169,9 +177,9 @@ export function addRampMarkers(ramps) {
                     <span style="font-size: 11px; background: #6c757d; color: white; padding: 2px 8px; border-radius: 10px; margin-left: 4px;">${ramp.typeLabel}</span>
                 </div>
                 <button class="btn btn-success btn-sm w-100 rounded-pill"
-                    onclick="openRampModal(${ramp.id})"
+                    data-open-ramp="${ramp.id}"
                     style="font-size: 12px; font-weight: 600;">
-                    <i class="bi bi-eye me-1"></i>Ver Detalles
+                    <i class="bi bi-eye me-1"></i>${t('ramp_view_details', 'Ver Detalles')}
                 </button>
             </div>
         `;
@@ -276,14 +284,28 @@ export function addReserveMarkers() {
 export function addLayerControl() {
     if (!mapInstance) return;
 
+    const t = window._i18n ? window._i18n.t.bind(window._i18n) : (key, defaultValue) => defaultValue || key;
     const overlays = {
-        '🐟 Zonas de Pesca': markerLayers.spots,
-        '🚤 Rampas de Botadura': markerLayers.ramps,
-        '⚠️ Reservas Marinas': markerLayers.reserves
+        [t('map_layer_spots', { defaultValue: '🐟 Zonas de Pesca' })]: markerLayers.spots,
+        [t('map_layer_ramps', { defaultValue: '🚤 Rampas de Botadura' })]: markerLayers.ramps,
+        [t('map_layer_reserves', { defaultValue: '⚠️ Reservas Marinas' })]: markerLayers.reserves
     };
 
-    L.control.layers(null, overlays, { collapsed: false, position: 'topright' })
+    if (layerControl) {
+        layerControl.remove();
+        layerControl = null;
+    }
+
+    layerControl = L.control.layers(null, overlays, { collapsed: false, position: 'topright' })
         .addTo(mapInstance);
+}
+
+export function refreshMapTranslations(spots = [], ramps = []) {
+    if (!mapInstance) return;
+    addSpotMarkers(spots);
+    addRampMarkers(ramps);
+    addReserveMarkers();
+    addLayerControl();
 }
 
 /**
