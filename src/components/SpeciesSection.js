@@ -1,7 +1,7 @@
 export const SpeciesSection = () => {
     return `
       <!-- Species Section -->
-      <section id="especies" class="section">
+      <section id="especies" class="section light-background">
             <div class="container section-title" data-aos="fade-up">
                <h2 data-i18n="species_title">Directorio de Especies</h2>
                <p data-i18n="species_tagline">Fichas detalladas con biología, hábitat y regulaciones de las especies de Baleares.</p>
@@ -41,9 +41,11 @@ export const SpeciesSection = () => {
 
           <!-- Swiper Container -->
           <div class="swiper species-swiper" style="padding-bottom: 50px;">
+            <div class="swiper-button-prev species-swiper-prev"></div>
             <div class="swiper-wrapper" id="species-container">
                <div class="text-center w-100" data-i18n="species_loading">Cargando Especies...</div>
             </div>
+            <div class="swiper-button-next species-swiper-next"></div>
             <div class="swiper-pagination"></div>
           </div>
 

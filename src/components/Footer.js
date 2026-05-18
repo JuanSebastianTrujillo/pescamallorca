@@ -8,11 +8,6 @@ export const Footer = () => {
                 <span class="sitename">Pesca Mallorca</span>
               </a>
               <p data-i18n="footer_description">Tu plataforma líder para descubrir los mejores spots de pesca, conocer la normativa actualizada y aprender más sobre el entorno marino en Mallorca.</p>
-              <div class="social-links d-flex mt-4">
-                <a href="#" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-              </div>
             </div>
             
             <div class="col-lg-2 col-6 footer-links">

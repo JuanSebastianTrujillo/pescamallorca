@@ -43,9 +43,14 @@ export const RampsSection = () => {
                </div>
             </div>
 
-            <!-- Ramps Grid Container -->
-            <div class="row gy-4" id="ramps-container">
-                <!-- Ramps will be dynamically injected here -->
+            <!-- Ramps Swiper Container -->
+            <div class="swiper ramps-swiper" style="padding-bottom: 55px;">
+              <div class="swiper-button-prev ramps-swiper-prev"></div>
+              <div class="swiper-wrapper" id="ramps-container">
+                <div class="swiper-slide text-center" data-i18n="ramps_loading">Cargando Rampas...</div>
+              </div>
+              <div class="swiper-button-next ramps-swiper-next"></div>
+              <div class="swiper-pagination ramps-swiper-pagination"></div>
             </div>
         </div>
 
@@ -76,8 +81,30 @@ export const RampsSection = () => {
     `;
 };
 
-// --- MOCK DATA FOR RAMPS ---
-// Mock data removed. Ramps data is now loaded dynamically.
+// --- RAMPS SWIPER ---
+let rampsSwiperInstance = null;
+
+function reinitRampsSwiper() {
+    if (rampsSwiperInstance) {
+        rampsSwiperInstance.destroy(true, true);
+        rampsSwiperInstance = null;
+    }
+    if (typeof Swiper !== 'undefined') {
+        rampsSwiperInstance = new Swiper('.ramps-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.ramps-swiper-next',
+                prevEl: '.ramps-swiper-prev'
+            },
+            pagination: { el: '.ramps-swiper-pagination', clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                992: { slidesPerView: 3, spaceBetween: 40 }
+            }
+        });
+    }
+}
 
 export const initRamps = () => {
     const container = document.getElementById("ramps-container");
@@ -106,11 +133,12 @@ export const initRamps = () => {
 
         if (filtered.length === 0) {
             container.innerHTML = `
-                <div class="col-12 text-center py-5">
+                <div class="swiper-slide text-center py-5">
                     <i class="bi bi-search fs-1 text-muted mb-3 d-block"></i>
                     <h5 class="text-secondary">No se han encontrado rampas en esta zona.</h5>
                 </div>
             `;
+            reinitRampsSwiper();
             return;
         }
 
@@ -123,10 +151,10 @@ export const initRamps = () => {
             else if (rampa.type === 'roca') iconType = 'bi-moat';
 
             html += `
-            <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 w-100 ramp-card" role="button" tabindex="0" aria-label="Ver detalles técnicos de ${rampa.name}" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" data-open-ramp="${rampa.id}">
+            <div class="swiper-slide d-flex" style="height:auto;">
+                <div class="card shadow-sm border-0 w-100 ramp-card" role="button" tabindex="0" aria-label="Ver detalles t&eacute;cnicos de ${rampa.name}" style="transition: transform 0.2s; cursor:pointer;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'" data-open-ramp="${rampa.id}">
                     <div class="position-relative">
-                        <img src="${rampa.image}" class="card-img-top object-fit-cover" alt="Fotografía detallada de la rampa de varada ${rampa.name}, ubicada en ${rampa.location}" style="height:220px;" loading="lazy" decoding="async" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                        <img src="${rampa.image}" class="card-img-top object-fit-cover" alt="Fotograf&iacute;a de la rampa ${rampa.name} en ${rampa.location}" style="height:220px;" loading="lazy" decoding="async" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
                         <span class="badge bg-${rampa.priceColor} position-absolute top-0 end-0 m-3 fs-6 shadow-sm">${rampa.priceTag}</span>
                     </div>
                     <div class="card-body d-flex flex-column">
@@ -139,7 +167,7 @@ export const initRamps = () => {
                         </div>
 
                         <div class="mt-auto pt-3 border-top">
-                            <button class="btn btn-outline-primary w-100 fw-bold" data-open-ramp="${rampa.id}"><i class="bi bi-file-earmark-text me-2"></i>Ver Detalles Técnicos</button>
+                            <button class="btn btn-outline-primary w-100 fw-bold" data-open-ramp="${rampa.id}"><i class="bi bi-file-earmark-text me-2"></i>Ver Detalles T&eacute;cnicos</button>
                         </div>
                     </div>
                 </div>
@@ -148,6 +176,7 @@ export const initRamps = () => {
         });
         
         container.innerHTML = html;
+        reinitRampsSwiper();
     };
 
     // Aplicar filtros automáticamente cuando cambien los selects

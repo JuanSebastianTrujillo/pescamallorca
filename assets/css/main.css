@@ -1910,3 +1910,63 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Species & Ramps Swiper Navigation Arrows
+--------------------------------------------------------------*/
+.species-swiper,
+.ramps-swiper {
+  padding-left: 44px;
+  padding-right: 44px;
+}
+
+.species-swiper-prev,
+.species-swiper-next,
+.ramps-swiper-prev,
+.ramps-swiper-next {
+  width: 36px !important;
+  height: 36px !important;
+  background-color: var(--accent-color, #0d6efd);
+  border-radius: 50%;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.species-swiper-prev:after,
+.species-swiper-next:after,
+.ramps-swiper-prev:after,
+.ramps-swiper-next:after {
+  font-size: 14px !important;
+  color: #fff;
+  font-weight: 700;
+}
+
+.species-swiper-prev:hover,
+.species-swiper-next:hover,
+.ramps-swiper-prev:hover,
+.ramps-swiper-next:hover {
+  background-color: color-mix(in srgb, var(--accent-color, #0d6efd), #000 20%);
+  transform: scale(1.1);
+}
+
+.species-swiper-prev.swiper-button-disabled,
+.species-swiper-next.swiper-button-disabled,
+.ramps-swiper-prev.swiper-button-disabled,
+.ramps-swiper-next.swiper-button-disabled {
+  background-color: #dee2e6;
+  box-shadow: none;
+}
+
+@media (max-width: 575px) {
+  .species-swiper,
+  .ramps-swiper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .species-swiper-prev,
+  .species-swiper-next,
+  .ramps-swiper-prev,
+  .ramps-swiper-next {
+    display: none !important;
+  }
+}

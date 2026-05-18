@@ -1207,6 +1207,10 @@ function renderSpeciesSwiper(speciesArray) {
         speciesSwiperInstance = new Swiper('.species-swiper', {
             slidesPerView: 1,
             spaceBetween: 20,
+            navigation: {
+                nextEl: '.species-swiper-next',
+                prevEl: '.species-swiper-prev'
+            },
             pagination: { el: '.swiper-pagination', clickable: true },
             breakpoints: {
                 768: { slidesPerView: 2, spaceBetween: 30 },

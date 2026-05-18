@@ -3,7 +3,7 @@ import { AuthService } from "../services/AuthService.js";
 export const ShopsSection = () => {
   return `
       <!-- Shops Section -->
-      <section id="tiendas" class="section light-background">
+      <section id="tiendas" class="section">
         <div class="container section-title" data-aos="fade-up">
           <h2 data-i18n="shops_title">Módulo de Tiendas y Proveedores</h2>
           <p data-i18n="shops_tagline">Directorio comercial experto. Encuentra el mejor material, cebo fresco y servicios de reparación naval en Mallorca.</p>

@@ -2,17 +2,9 @@ export const Header = () => {
   return `
     <header id="header" class="header sticky-top">
       <div class="topbar d-none d-md-flex align-items-center accent-background">
-        <div class="container d-flex justify-content-center justify-content-md-between align-items-center">
-          <div class="contact-info d-flex align-items-center">
-            <a href="mailto:info@pescamallorca.online" class="d-flex align-items-center text-white text-decoration-none text-nowrap">
-              <i class="bi bi-envelope me-1 me-lg-2"></i><span style="font-size: 0.9rem;">info@pescamallorca.online</span>
-            </a>
-            <a href="tel:+34971000000" class="d-flex align-items-center ms-2 ms-lg-4 text-white text-decoration-none text-nowrap">
-              <i class="bi bi-phone me-1"></i><span style="font-size: 0.9rem;">+34 971 00 00 00</span>
-            </a>
-          </div>
+        <div class="container d-flex justify-content-end align-items-center">
 
-          <div class="auth-links d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0 ms-2">
+          <div class="auth-links d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
             <div class="dropdown">
               <button class="btn btn-sm btn-outline-light rounded-pill d-flex align-items-center px-3 text-nowrap dropdown-toggle" type="button" id="accessibilityDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones de Accesibilidad" data-i18n-title="accessibility_options_title">
                 <i class="bi bi-person-wheelchair fs-6 me-1"></i> <span data-i18n="accessibility">Accesibilidad</span>
@@ -67,16 +59,7 @@ export const Header = () => {
               <li><a href="#autores" data-i18n="nav_autores">Autores</a></li>
               <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
 
-              <li class="d-md-none mt-4 px-3 py-3 border-top">
-                <div class="d-flex flex-column gap-2 text-center">
-                  <a href="mailto:info@pescamallorca.online" class="text-secondary text-decoration-none" style="font-size: 0.95rem;">
-                    <i class="bi bi-envelope me-2"></i>info@pescamallorca.online
-                  </a>
-                  <a href="tel:+34971000000" class="text-secondary text-decoration-none" style="font-size: 0.95rem;">
-                    <i class="bi bi-phone me-2"></i>+34 971 00 00 00
-                  </a>
-                </div>
-              </li>
+
 
               <li class="d-md-none px-3 pb-2">
                 <div class="dropdown w-100 mb-3">
@@ -112,12 +95,6 @@ export const Header = () => {
                 </div>
               </li>
 
-              <li class="d-md-none text-center pb-3">
-                <div class="social-links d-flex justify-content-center gap-4 mt-2">
-                  <a href="#" class="twitter text-secondary" aria-label="X (Twitter)"><i class="bi bi-twitter-x fs-4"></i></a>
-                  <a href="#" class="facebook text-secondary" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
-                  <a href="#" class="instagram text-secondary" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
-                </div>
               </li>
             </ul>
             <button class="mobile-nav-toggle d-xl-none btn btn-link p-0 border-0" aria-label="Abrir menú de navegación" type="button">

@@ -1,7 +1,7 @@
 export const ContactSection = () => {
     return `
       <!-- Contact/Support Section -->
-      <section id="contacto" class="section contact light-background">
+      <section id="contacto" class="section contact">
         <div class="container section-title" data-aos="fade-up">
           <h2 data-i18n="contact_title">Soporte y Atención al Usuario</h2>
           <p data-i18n="contact_tagline">¿Tienes dudas, aportaciones o quieres reportar alguna incidencia? Estamos aquí para ayudarte.</p>

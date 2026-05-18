@@ -1,6 +1,6 @@
 export const AuthorsSection = () => {
   return `
-      <section id="autores" class="section team">
+      <section id="autores" class="section team light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2 data-i18n="authors_title">Transparencia y Autores</h2>
           <p data-i18n="authors_tagline">Conoce al equipo detrás de la plataforma y nuestros valores fundamentales.</p>

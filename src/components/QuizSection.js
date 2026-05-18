@@ -4,7 +4,7 @@ import { trapFocusInModal } from "../services/AccessibilityService.js";
 export const QuizSection = () => {
     return `
       <!-- Quiz Section -->
-      <section id="quiz" class="section bg-light">
+      <section id="quiz" class="section light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2 data-i18n="quiz_title">Quiz del Pescador</h2>
           <p data-i18n="quiz_tagline">Pon a prueba tus conocimientos sobre la normativa y las especies locales de Baleares.</p>

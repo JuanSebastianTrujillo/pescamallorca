@@ -3,7 +3,7 @@ import { fetchRealWeatherData } from "../services/WeatherService.js";
 export const WeatherSection = () => {
     return `
       <!-- Weather Section -->
-      <section id="meteo" class="section light-background">
+      <section id="meteo" class="section">
         <div class="container section-title" data-aos="fade-up">
           <h2 data-i18n="weather_title">Parte Meteorológico</h2>
           <p data-i18n="weather_tagline">Estado del mar, vientos y mareas para planificar tu próxima salida de pesca.</p>
