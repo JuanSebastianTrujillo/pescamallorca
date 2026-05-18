@@ -144,6 +144,198 @@
           "value": "Amanecer, Día"
         }
       ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/port-soller-costa-norte",
+      "@type": "Place",
+      "name": "Puerto de Sóller y Costa Norte (Tramuntana)",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sóller",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7960,
+        "longitude": 2.6891
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "keywords": "Zona de pesca, Acceso medio, Fondo rocoso, Pesca técnica, Acantilados",
+      "description": "La costa norte de Mallorca, caracterizada por acantilados que caen directamente a gran profundidad y fondos rocosos. Es la zona más técnica de la isla, orientada a especies de roca y cefalópodos.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Acceso principalmente desde embarcación. Desde costa, los puntos más productivos requieren descender por senderos en la Serra de Tramuntana, con alta dificultad técnica."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Acantilados sumergidos con caídas abruptas a gran profundidad a poca distancia de la orilla. Fondos rocosos, coralígeno y grutas submarinas."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Mero, Cap-roig (Escórpora), Serrano"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Pesca a fondo, Jigging, Rockfishing pesado"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Amanecer, Día"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/bahia-alcudia-pollenca",
+      "@type": "Place",
+      "name": "Bahía de Alcúdia y Port de Pollença",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alcúdia / Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.8380,
+        "longitude": 3.1200
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "keywords": "Zona de pesca, Acceso fácil, Fondo arenoso, Posidonia, Surfcasting, Bahía cerrada",
+      "description": "El norte de Mallorca ofrece bahías cerradas con fondos predominantemente arenosos y praderas de Posidonia oceánica. Zona ideal para la pesca desde la costa con técnicas de surfcasting.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Acceso sencillo desde múltiples puntos de la bahía. Puntos como Sa Bassa Blanca son viables para el surfcasting con buen aparcamiento disponible."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Fondos predominantemente arenosos con extensas praderas de Posidonia oceánica. Batimetría suave y progresiva, ideal para el surfcasting de larga distancia."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Dorada, Sargo (Sarg), Salpa"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Surfcasting clásico, Pesca a fondo con cebo natural"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Noche, Atardecer, Amanecer"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/cala-rajada-levante",
+      "@type": "Place",
+      "name": "Cala Rajada y Litoral Sureste",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Capdepera",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7147,
+        "longitude": 3.4607
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "keywords": "Zona de pesca, Acceso medio, Pesca de altura, Canal de Menorca, Túnidos, Acantilados",
+      "description": "Situada en el extremo oriental de la isla, su proximidad al canal de Menorca la convierte en un punto estratégico para la pesca de altura y de acantilado.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Desde embarcación: acceso al canal de Menorca. Desde costa: los acantilados ofrecen buenos puntos de pesca a boya con acceso por senderos del litoral."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Fondos mixtos de roca y arena en la costa. En el canal de Menorca, aguas profundas con presencia de corrientes y paso de especies pelágicas."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Llampuga, Dentón, Sargo (Sarg), Oblada"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Curricán de altura (desde embarcación), Pesca a boya desde acantilado, Jigging"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Amanecer, Día"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/bahia-palma-andratx",
+      "@type": "Place",
+      "name": "Bahía de Palma y Suroeste (Port d'Andratx)",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Palma / Andratx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5350,
+        "longitude": 2.5500
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "keywords": "Zona de pesca, Acceso fácil, Diques y escolleras, Fondo mixto, Espáridos",
+      "description": "Zona de fácil acceso con múltiples puntos de pesca en diques y escolleras. La pesca es muy popular en las inmediaciones de los diques portuarios, respetando siempre la señalización náutica.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Acceso muy fácil desde múltiples puntos urbanos y paseos marítimos. No pescar dentro de instalaciones portuarias operativas ni en zonas balizadas para el baño."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Fondos mixtos de roca y arena en los alrededores de diques y escolleras, con presencia de posidonia en zonas más alejadas."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Sargo (Sarg), Oblada, Serrano"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Spinning ligero, Pesca a boya, Pesca a fondo desde dique"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Día, Atardecer, Noche"
+        }
+      ]
     }
   ]
 }

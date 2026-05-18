@@ -95,6 +95,140 @@
       "keywords": "Cebo Vivo Fresco, Surfcasting, Jigging, Fácil Aparcamiento",
       "description": "Una de las tiendas de pesca más emblemáticas cerca del Portixol. Destaca por su ubicación estratégica junto al mar y su variedad de productos.",
       "disambiguatingDescription": "CATÁLOGO DE SERVICIOS: Proveen diferentes tipos de cebo vivo como titón, coreano, americano, rosca y lombriz de arena, contando también con un taller dedicado al anillado de cañas y la reparación de punteras. ESPECIALIDADES: Es un comercio muy fuerte en modalidades como la pesca a boya, el jigging y el surfcasting, ofreciendo siempre asesoramiento de primera mano sobre qué se está pescando en la bahía en cada temporada."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/bazar-las-palmeras",
+      "@type": "SportingGoodsStore",
+      "name": "Bazar Las Palmeras",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer de Manacor",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears",
+        "postalCode": "07006"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5682,
+        "longitude": 2.6741
+      },
+      "hasMap": "https://maps.google.com/?q=bazar+las+palmeras+pesca+palma",
+      "telephone": "+34 971 24 00 00",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "120"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00",
+          "description": "Descanso a mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:30"
+        }
+      ],
+      "keywords": "Señuelos, Hilos técnicos, Pesca submarina, Electrónica náutica, Tienda Histórica",
+      "description": "Empresa familiar con más de 60 años en el sector, con tiendas en la Calle Manacor y en Portitxol. Distribuidores destacados de señuelos, hilos técnicos, montajes artesanales y electrónica náutica.",
+      "disambiguatingDescription": "CATÁLOGO DE SERVICIOS: Distribuidores destacados de señuelos artificiales de alta gama, hilos técnicos para todas las modalidades y montajes artesanales confeccionados en la propia tienda. Tienen también una sección avanzada de electrónica náutica y equipos para pesca submarina o apnea. ESPECIALIDADES: Referentes en Mallorca en la venta de material para pesca desde embarcación a larga distancia, con especial fuerza en la modalidad del spinning pesado y el jigging."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/can-amengual",
+      "@type": "SportingGoodsStore",
+      "name": "Can Amengual",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Palma (centro)",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5696,
+        "longitude": 2.6502
+      },
+      "hasMap": "https://maps.google.com/?q=can+amengual+pesca+palma",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "95"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:30",
+          "description": "Descanso de mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "keywords": "Pesca deportiva avanzada, Pesca submarina, Electrónica embarcaciones, Tienda Histórica",
+      "description": "Negocio con más de 50 años de recorrido técnico en Palma. Su inventario destaca en equipamiento avanzado para pesca deportiva, indumentaria y material específico para pesca submarina.",
+      "disambiguatingDescription": "CATÁLOGO DE SERVICIOS: Ofrecen equipamiento avanzado de pesca deportiva y de fondo, indumentaria técnica especializada y un catálogo completo de electrónica para embarcaciones (sondas, GPS, VHF). ESPECIALIDADES: Especializados en el equipamiento integral del pescador deportivo de embarcación, con productos de gama alta y asesoramiento técnico de confianza."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/blausub",
+      "@type": "SportingGoodsStore",
+      "name": "Blausub",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Palma",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5712,
+        "longitude": 2.6598
+      },
+      "hasMap": "https://maps.google.com/?q=blausub+pesca+submarina+palma",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "210"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:30",
+          "closes": "20:00",
+          "description": "Descanso a mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:30",
+          "closes": "13:30"
+        }
+      ],
+      "keywords": "Pesca submarina, Apnea, Náutica de precisión, +1000 referencias técnicas",
+      "description": "Comercio fuertemente especializado en equipos para pesca recreativa, con un enfoque predominante en la pesca submarina y la náutica de precisión, manejando un stock que supera las 1000 referencias.",
+      "disambiguatingDescription": "CATÁLOGO DE SERVICIOS: Más de 1000 referencias de productos técnicos para pesca submarina: fusiles de arco y de aire, trajes de neopreno de todo tipo, aletas, cuchillos, cañas de pesca submarina, boyas de seguridad y equipamiento completo para la apnea deportiva y competición. ESPECIALIDADES: El referente absoluto de Mallorca en pesca submarina de competición y apnea avanzada. Asesoran tanto a pescadores recreativos que se inician como a competidores de nivel regional y nacional."
     }
   ]
 }
