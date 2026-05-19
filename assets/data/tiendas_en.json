@@ -32,7 +32,13 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
           "opens": "09:00",
           "closes": "20:00",
           "description": "Cerrado a mediodía (13:30 - 16:30)"
@@ -80,7 +86,13 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
           "opens": "09:00",
           "closes": "20:00",
           "description": "Descanso de mediodía de 13:30 a 16:00"
@@ -95,6 +107,158 @@
       "keywords": "Cebo Vivo Fresco, Surfcasting, Jigging, Fácil Aparcamiento",
       "description": "One of the most emblematic fishing shops near Portixol. It stands out for its strategic location next to the sea and its variety of products.",
       "disambiguatingDescription": "They provide different types of live bait such as titón, korean, american, rosca and sandworm, also having a workshop dedicated to rod ringing and tip repair. It is a very strong business in modalities such as float fishing, jigging and surfcasting, always offering first-hand advice on what is being caught in the bay in each season."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/bazar-las-palmeras",
+      "@type": "SportingGoodsStore",
+      "name": "Las Palmeras Bazaar",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer de Manacor",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears",
+        "postalCode": "07006"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5682,
+        "longitude": 2.6741
+      },
+      "hasMap": "https://maps.google.com/?q=bazar+las+palmeras+pesca+palma",
+      "telephone": "+34 971 24 00 00",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "120"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "20:00",
+          "description": "Descanso a mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:30"
+        }
+      ],
+      "keywords": "Lures, Technical threads, Spearfishing, Nautical electronics, Historical Store",
+      "description": "Family business with more than 60 years in the sector, with stores on Calle Manacor and in Portitxol. Leading distributors of lures, technical threads, artisanal assemblies and nautical electronics.",
+      "disambiguatingDescription": "CATALOG OF SERVICES: Leading distributors of high-end artificial lures, technical threads for all modalities and artisanal assemblies made in the store itself. They also have an advanced section of nautical electronics and equipment for underwater fishing or freediving. SPECIALTIES: References in Mallorca in the sale of fishing equipment from long-distance boats, with special strength in the modality of heavy spinning and jigging."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/can-amengual",
+      "@type": "SportingGoodsStore",
+      "name": "Can Amengual",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Palma (centro)",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5696,
+        "longitude": 2.6502
+      },
+      "hasMap": "https://maps.google.com/?q=can+amengual+pesca+palma",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "95"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "19:30",
+          "description": "Descanso de mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "keywords": "Advanced sport fishing, Spearfishing, Electronic boats, Historical Store",
+      "description": "Business with more than 50 years of technical experience in Palma. Its inventory stands out in advanced equipment for sport fishing, clothing and specific material for underwater fishing.",
+      "disambiguatingDescription": "CATALOG OF SERVICES: They offer advanced sport and bottom fishing equipment, specialized technical clothing and a complete catalog of electronics for boats (probes, GPS, VHF). SPECIALTIES: Specialized in the comprehensive equipment of the boat sport fisherman, with high-end products and trusted technical advice."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/blausub",
+      "@type": "SportingGoodsStore",
+      "name": "Blausub",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Palma",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5712,
+        "longitude": 2.6598
+      },
+      "hasMap": "https://maps.google.com/?q=blausub+pesca+submarina+palma",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "210"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:30",
+          "closes": "20:00",
+          "description": "Descanso a mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:30",
+          "closes": "13:30"
+        }
+      ],
+      "keywords": "Spearfishing, Apnea, Precision nautical, +1000 technical references",
+      "description": "Trade strongly specialized in equipment for recreational fishing, with a predominant focus on underwater fishing and precision nautical, managing a stock that exceeds 1000 references.",
+      "disambiguatingDescription": "CATALOG OF SERVICES: More than 1000 references of technical products for spearfishing: bow and air rifles, neoprene suits of all types, fins, knives, spearfishing rods, safety buoys and complete equipment for sports apnea and competition. SPECIALTIES: Mallorca's absolute benchmark in competition underwater fishing and advanced freediving. They advise both beginning recreational fishermen and regional and national level competitors."
     }
   ]
 }

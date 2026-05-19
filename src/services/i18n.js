@@ -13,7 +13,7 @@ export async function initI18n() {
         fallbackLng: 'es',
         debug: false,
         backend: {
-            loadPath: '/assets/locales/{{lng}}.json?v=' + new Date().getTime()
+            loadPath: 'assets/locales/{{lng}}.json?v=' + new Date().getTime()
         },
         detection: {
             order: ['querystring', 'localStorage', 'navigator'],

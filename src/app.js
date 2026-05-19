@@ -788,8 +788,31 @@ window.openSpotModal = (index) => {
         document.getElementById('spotModalSpecies').innerHTML = speciesRaw;
     } else {
         const badges = speciesRaw.split(',').map(s => {
-            const fishName = s.trim();
-            return `<span class="badge bg-success me-1 mb-1 fs-6 px-3 py-2 shadow-sm" role="button" tabindex="0" aria-label="Ver detalles de ${fishName}" style="cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.classList.replace('bg-success', 'bg-primary')" onmouseout="this.style.transform='scale(1)'; this.classList.replace('bg-primary', 'bg-success')" data-open-species-name="${fishName}"><i class="bi bi-link-45deg me-1"></i>${fishName}</span>`;
+            let fishSlug = s.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            
+            // Handle historical Spanish names appearing in some spot translations
+            if (fishSlug.includes("cap-roig")) fishSlug = "cap-roig";
+            else if (fishSlug.includes("sargo")) fishSlug = "sargo";
+            else if (fishSlug.includes("dorada")) fishSlug = "dorada";
+            else if (fishSlug.includes("mero")) fishSlug = "mero";
+            else if (fishSlug.includes("denton")) fishSlug = "denton";
+            else if (fishSlug.includes("salpa")) fishSlug = "salpa";
+            else if (fishSlug.includes("oblada")) fishSlug = "oblada";
+            else if (fishSlug.includes("serrano")) fishSlug = "serrano";
+            else if (fishSlug.includes("llampuga")) fishSlug = "llampuga";
+            else if (fishSlug.includes("lubina")) fishSlug = "lubina";
+            else if (fishSlug.includes("corvallo")) fishSlug = "corvallo";
+            else if (fishSlug.includes("serviola") || fishSlug.includes("amberjack")) fishSlug = "serviola";
+            else if (fishSlug.includes("atun")) fishSlug = "atun-rojo";
+            else if (fishSlug.includes("caballa") || fishSlug.includes("mackerel")) fishSlug = "caballa";
+            else if (fishSlug.includes("bonito")) fishSlug = "bonito";
+
+            // Find species in global list by matching ID slug
+            const species = globalSpeciesList.find(sp => sp['@id'] && sp['@id'].endsWith('/' + fishSlug));
+            const displayName = species ? species.name : s.trim();
+            const targetName = species ? fishSlug : s.trim();
+
+            return `<span class="badge bg-success me-1 mb-1 fs-6 px-3 py-2 shadow-sm" role="button" tabindex="0" aria-label="Ver detalles de ${displayName}" style="cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.classList.replace('bg-success', 'bg-primary')" onmouseout="this.style.transform='scale(1)'; this.classList.replace('bg-primary', 'bg-success')" data-open-species-name="${targetName}"><i class="bi bi-link-45deg me-1"></i>${displayName}</span>`;
         }).join('');
         document.getElementById('spotModalSpecies').innerHTML = badges;
 
@@ -1236,6 +1259,7 @@ window.openSpeciesModalByName = (name) => {
     if (!name) return;
     const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
     const species = globalSpeciesList.find(s => {
+        if (s['@id'] && s['@id'].endsWith('/' + cleanQuery)) return true;
         const sName = s.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         const sAlt = (s.alternateName || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         return sName.includes(cleanQuery) || cleanQuery.includes(sName) || sAlt.includes(cleanQuery);
@@ -1324,7 +1348,7 @@ function fillAndShowSpeciesModal(species) {
     const audioContainer = document.getElementById('speciesModalAudioContainer');
     if (audioContainer) {
         if (species.audio) {
-                const audioPath = species.audio.includes('/') ? species.audio : `/assets/audio/${species.audio}`;
+                const audioPath = species.audio.includes('/') ? species.audio : `assets/audio/${species.audio}`;
                 audioContainer.innerHTML = `
                     <button id="btnAudioToggle_${species.name.replace(/\s+/g, '')}" class="btn btn-outline-primary btn-sm rounded-pill ms-3 shadow-sm px-3 fw-bold" data-toggle-fish-audio data-audio-path="${audioPath}"><i class="bi bi-volume-up me-2"></i> Escuchar Sonido</button>
                 `;
@@ -1373,7 +1397,7 @@ function fillAndShowSpeciesModal(species) {
                 const videoId = isEmbed ? species.video.split('embed/')[1]?.substring(0, 11) : isWatch ? species.video.split('watch?v=')[1]?.substring(0, 11) : species.video.split('.be/')[1]?.substring(0, 11);
                 videoCode = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; height:100%; border:0; background:#000; display:block;"></iframe>`;
             } else {
-                const videoPath = species.video.includes('/') ? species.video : `/assets/video/${species.video}`;
+                const videoPath = species.video.includes('/') ? species.video : `assets/video/${species.video}`;
                 videoCode = `<video controls autoplay style="width:100%; height:100%; object-fit: contain; background:#000; display:block;"><source src="${videoPath}" type="video/mp4">Tu navegador no soporta el video.</video>`;
             }
 
