@@ -1915,7 +1915,8 @@ section,
 # Species & Ramps Swiper Navigation Arrows
 --------------------------------------------------------------*/
 .species-swiper,
-.ramps-swiper {
+.ramps-swiper,
+.spots-swiper {
   padding-left: 44px;
   padding-right: 44px;
 }
@@ -1923,7 +1924,9 @@ section,
 .species-swiper-prev,
 .species-swiper-next,
 .ramps-swiper-prev,
-.ramps-swiper-next {
+.ramps-swiper-next,
+.spots-swiper-prev,
+.spots-swiper-next {
   width: 36px !important;
   height: 36px !important;
   background-color: var(--accent-color, #0d6efd);
@@ -1935,7 +1938,9 @@ section,
 .species-swiper-prev:after,
 .species-swiper-next:after,
 .ramps-swiper-prev:after,
-.ramps-swiper-next:after {
+.ramps-swiper-next:after,
+.spots-swiper-prev:after,
+.spots-swiper-next:after {
   font-size: 14px !important;
   color: #fff;
   font-weight: 700;
@@ -1944,7 +1949,9 @@ section,
 .species-swiper-prev:hover,
 .species-swiper-next:hover,
 .ramps-swiper-prev:hover,
-.ramps-swiper-next:hover {
+.ramps-swiper-next:hover,
+.spots-swiper-prev:hover,
+.spots-swiper-next:hover {
   background-color: color-mix(in srgb, var(--accent-color, #0d6efd), #000 20%);
   transform: scale(1.1);
 }
@@ -1952,21 +1959,26 @@ section,
 .species-swiper-prev.swiper-button-disabled,
 .species-swiper-next.swiper-button-disabled,
 .ramps-swiper-prev.swiper-button-disabled,
-.ramps-swiper-next.swiper-button-disabled {
+.ramps-swiper-next.swiper-button-disabled,
+.spots-swiper-prev.swiper-button-disabled,
+.spots-swiper-next.swiper-button-disabled {
   background-color: #dee2e6;
   box-shadow: none;
 }
 
 @media (max-width: 575px) {
   .species-swiper,
-  .ramps-swiper {
+  .ramps-swiper,
+  .spots-swiper {
     padding-left: 0;
     padding-right: 0;
   }
   .species-swiper-prev,
   .species-swiper-next,
   .ramps-swiper-prev,
-  .ramps-swiper-next {
+  .ramps-swiper-next,
+  .spots-swiper-prev,
+  .spots-swiper-next {
     display: none !important;
   }
 }

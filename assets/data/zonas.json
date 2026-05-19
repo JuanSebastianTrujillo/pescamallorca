@@ -35,7 +35,7 @@
         {
           "@type": "PropertyValue",
           "name": "Especies Frecuentes",
-          "value": "Mero, Dentón, Cap-roig (Escórpora)"
+          "value": "Mero, Dentón, Cabracho (Cap-roig), Serrano, Serviola, Congrio, Morena, Espetón / Barracuda"
         },
         {
           "@type": "PropertyValue",
@@ -83,7 +83,7 @@
         {
           "@type": "PropertyValue",
           "name": "Especies Frecuentes",
-          "value": "Dorada, Sargo (Sarg), Salpa"
+          "value": "Dorada, Sargo, Salpa, Herrera, Lubina, Breca / Pajel"
         },
         {
           "@type": "PropertyValue",
@@ -131,7 +131,7 @@
         {
           "@type": "PropertyValue",
           "name": "Especies Frecuentes",
-          "value": "Sargo (Sarg), Dorada, Dentón, Oblada"
+          "value": "Sargo, Dorada, Dentón, Oblada, Llampuga, Serviola, Espetón / Barracuda, Cabracho (Cap-roig)"
         },
         {
           "@type": "PropertyValue",
@@ -156,7 +156,7 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 39.7960,
+        "latitude": 39.796,
         "longitude": 2.6891
       },
       "image": [
@@ -179,7 +179,7 @@
         {
           "@type": "PropertyValue",
           "name": "Especies Frecuentes",
-          "value": "Mero, Cap-roig (Escórpora), Serrano"
+          "value": "Mero, Cabracho (Cap-roig), Serrano, Dentón, Pez de San Pedro, Congrio, Morena, Bonito, Jurel"
         },
         {
           "@type": "PropertyValue",
@@ -204,8 +204,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 39.8380,
-        "longitude": 3.1200
+        "latitude": 39.838,
+        "longitude": 3.12
       },
       "image": [
         "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
@@ -227,7 +227,7 @@
         {
           "@type": "PropertyValue",
           "name": "Especies Frecuentes",
-          "value": "Dorada, Sargo (Sarg), Salpa"
+          "value": "Dorada, Sargo, Salpa, Lubina, Herrera, Breca / Pajel, Raor / Galán"
         },
         {
           "@type": "PropertyValue",
@@ -275,7 +275,7 @@
         {
           "@type": "PropertyValue",
           "name": "Especies Frecuentes",
-          "value": "Llampuga, Dentón, Sargo (Sarg), Oblada"
+          "value": "Llampuga, Dentón, Sargo, Oblada, Atún Rojo, Bonito, Bacoreta, Serviola, Espetón / Barracuda"
         },
         {
           "@type": "PropertyValue",
@@ -300,8 +300,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 39.5350,
-        "longitude": 2.5500
+        "latitude": 39.535,
+        "longitude": 2.55
       },
       "image": [
         "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
@@ -323,7 +323,7 @@
         {
           "@type": "PropertyValue",
           "name": "Especies Frecuentes",
-          "value": "Sargo (Sarg), Oblada, Serrano"
+          "value": "Sargo, Oblada, Serrano, Salpa, Jurel, Caballa, Lubina"
         },
         {
           "@type": "PropertyValue",
@@ -334,6 +334,246 @@
           "@type": "PropertyValue",
           "name": "Momento del Día",
           "value": "Día, Atardecer, Noche"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-bahia-palma",
+      "@type": "Place",
+      "name": "Reserva Marina de la Bahía de Palma",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor / Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.489,
+        "longitude": 2.731
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+      ],
+      "keywords": "Reserva Marina, Pesca regulada, Arenal, Cabo Blanco, Fondo mixto",
+      "description": "Comprendida entre la zona de la Playa de Sant Antoni (Arenal) y la zona de El Dorado (Cabo Blanco). Zonas con restricciones temporales y de aparejo.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Acceso fácil desde la costa en zonas permitidas. Consultar visor cartográfico del Govern para coordenadas y días hábiles."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Fondos arenosos, rocosos y praderas de posidonia."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Sargo, Oblada, Dorada, Lubina, Salpa, Raor / Galán, Salmonete de roca"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Spinning ligero, Corcheo, Surfcasting (donde esté permitido)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Día, Atardecer"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-llevant",
+      "@type": "Place",
+      "name": "Reserva Marina de Llevant de Mallorca",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Artà / Capdepera",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.771,
+        "longitude": 3.328
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp"
+      ],
+      "keywords": "Reserva Marina, Veda absoluta, Pesca restringida, Noreste, Alta protección",
+      "description": "Ubicada en el noreste. Cuenta con áreas de veda absoluta y zonas donde la pesca recreativa está restringida a días concretos (generalmente martes, jueves, sábados y domingos).",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Acceso regulado. Es imperativo consultar el mapa del Govern para no pescar en áreas de veda integral."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Roca escarpada, praderas de posidonia y coralígeno."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Mero, Dentón, Sargo, Serviola, Llampuga, Cabracho (Cap-roig), Corvallo"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Jigging, Pesca a fondo, Spinning pesado (en días hábiles)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Días hábiles (Martes, Jueves, Sábados, Domingos)"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-migjorn",
+      "@type": "Place",
+      "name": "Reserva Marina del Migjorn",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor / Santanyí",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.317,
+        "longitude": 2.924
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "keywords": "Reserva Marina, Cap Blanc, Cap de Ses Salines, Sur, Pesca regulada",
+      "description": "Abarca el sur de la isla, desde Cap Blanc hasta Cap de Ses Salines. Destaca por sus acantilados y fondos mixtos repletos de vida.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Acceso medio a través de caminos litorales. Se deben revisar las normativas del Govern para las zonas y días de pesca."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Fondos mixtos, grandes bloques de piedra y extensas praderas de Posidonia."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Dentón, Sargo, Dorada, Llampuga, Serviola, Oblada, Cabracho (Cap-roig), Mero"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Spinning, Rockfishing, Pesca a fondo"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Amanecer, Día"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-toro-malgrats",
+      "@type": "Place",
+      "name": "Isla del Toro y las Islas Malgrats",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Calvià",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.467,
+        "longitude": 2.473
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+      ],
+      "keywords": "Reserva Marina, Alta protección, Veda estival, El Toro, Malgrats",
+      "description": "Zonas de alta protección. En El Toro y Malgrats la pesca submarina está estrictamente prohibida. La pesca desde embarcación tiene una veda que abarca normalmente los meses de verano (permitida de octubre a abril con restricciones).",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Principalmente desde embarcación (regulada y con veda en verano)."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Caídas pronunciadas, fondos rocosos y coralígeno profundo."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Mero, Dentón, Serviola, Llampuga, Bonito, Espetón / Barracuda, Corvallo"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Jigging, Pesca a fondo (solo de Octubre a Abril en zonas permitidas)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Invierno (Octubre a Abril)"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/cala-dor-sureste",
+      "@type": "Place",
+      "name": "Cala d'Or y Litoral Sureste",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santanyí / Felanitx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.373,
+        "longitude": 3.232
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "keywords": "Cala Gran, Cala Ferrera, Fondo mixto, Espáridos, Sureste",
+      "description": "Áreas como Cala Gran y Cala Ferrera presentan fondos mixtos que atraen a diversas especies de espárridos. La pesca a corcheo y el spinning ligero son efectivos desde las rocas exteriores de las calas.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Fácil acceso a pie por zonas urbanizadas y caminos naturales hacia las rocas exteriores."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Fondos mixtos de arena, rocas y algas."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Sargo, Dorada, Oblada, Salpa, Herrera, Breca / Pajel, Lubina, Raor / Galán"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Corcheo, Spinning ligero, Surfcasting suave"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Atardecer, Noche"
         }
       ]
     }

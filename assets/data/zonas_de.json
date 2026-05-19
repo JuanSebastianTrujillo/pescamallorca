@@ -35,7 +35,7 @@
         {
           "@type": "PropertyValue",
           "name": "Häufige Arten",
-          "value": "Zackenbarsch, Zahnbrasse, Roter Drachenkopf"
+          "value": "Zackenbarsch, Zahnbrasse, Roter Drachenkopf, Sägebarsch, Große Bernsteinmakrele, Meeraal, Muräne, Barrakuda"
         },
         {
           "@type": "PropertyValue",
@@ -83,7 +83,7 @@
         {
           "@type": "PropertyValue",
           "name": "Häufige Arten",
-          "value": "Goldbrasse, Geißbrasse, Goldstrieme"
+          "value": "Goldbrasse, Geißbrasse, Goldstrieme, Marmorbrasse, Wolfsbarsch, Rotbrasse"
         },
         {
           "@type": "PropertyValue",
@@ -131,7 +131,7 @@
         {
           "@type": "PropertyValue",
           "name": "Häufige Arten",
-          "value": "Geißbrasse, Goldbrasse, Zahnbrasse, Brandbrasse"
+          "value": "Geißbrasse, Goldbrasse, Zahnbrasse, Brandbrasse, Goldmakrele, Große Bernsteinmakrele, Barrakuda, Roter Drachenkopf"
         },
         {
           "@type": "PropertyValue",
@@ -168,27 +168,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Zugang",
           "value": "Zugang hauptsächlich vom Boot aus. Von der Küste aus erfordern die produktivsten Punkte absteigende Strecken in der Serra de Tramuntana mit hohem technischem Schwierigkeitsgrad."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Meeresgrund",
           "value": "Untergetauchte Klippen mit steilen Abfällen in große Tiefen, nicht weit vom Ufer entfernt. Felsiger Korallenboden und Unterwasserhöhlen."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Zackenbarsch, Cap-roig (Escópora), Serrano"
+          "name": "Häufige Arten",
+          "value": "Zackenbarsch, Roter Drachenkopf, Sägebarsch, Zahnbrasse, Petersfisch, Meeraal, Muräne, Pelamide, Stöcker"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Empfohlene Techniken",
           "value": "Grundfischen, Jiggen, schweres Felsenfischen"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Tageszeit",
           "value": "Morgendämmerung, Tag"
         }
       ]
@@ -216,27 +216,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Zugang",
           "value": "Einfacher Zugang von mehreren Punkten in der Bucht. Spots wie Sa Bassa Blanca eignen sich gut zum Surfcasting und es stehen gute Parkmöglichkeiten zur Verfügung."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Meeresgrund",
           "value": "Überwiegend sandiger Boden mit ausgedehnten Wiesen von Posidonia Oceanica. Sanfte und progressive Bathymetrie, ideal für das Surfcasting über weite Distanzen."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Dorada, Sargo (Sarg), Salpa"
+          "name": "Häufige Arten",
+          "value": "Goldbrasse, Geißbrasse, Goldstrieme, Wolfsbarsch, Marmorbrasse, Rotbrasse, Schermesserfisch"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Empfohlene Techniken",
           "value": "Klassisches Surfcasting, Tiefangeln mit Naturködern"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Tageszeit",
           "value": "Nacht, Dämmerung, Morgendämmerung"
         }
       ]
@@ -264,27 +264,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Zugang",
           "value": "Vom Boot aus: Zugang zum Menorca-Kanal. Von der Küste aus: Die Klippen bieten gute Angelplätze mit Bojen und sind über Küstenwege erreichbar."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Meeresgrund",
           "value": "Gemischter Fels- und Sandboden an der Küste. Im Menorca-Kanal tiefes Wasser mit Strömungen und Durchzug pelagischer Arten."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Llampuga, Dentón, Sargo (Sarg), Oblada"
+          "name": "Häufige Arten",
+          "value": "Goldmakrele, Zahnbrasse, Geißbrasse, Brandbrasse, Roter Thun, Pelamide, Falscher Bonito, Große Bernsteinmakrele, Barrakuda"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Empfohlene Techniken",
           "value": "Tiefsee-Trolling (vom Boot aus), Klippenbojenfischen, Jiggen"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Tageszeit",
           "value": "Morgendämmerung, Tag"
         }
       ]
@@ -312,28 +312,268 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Zugang",
           "value": "Sehr einfacher Zugang von mehreren städtischen Punkten und Strandpromenaden. Sie müssen die Schilder respektieren und nicht innerhalb der Betriebshafenanlagen oder in markierten Badebereichen angeln."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Meeresgrund",
           "value": "Gemischte Fels- und Sandböden rund um Deiche und Wellenbrecher, mit Vorkommen von Posidonia in entlegeneren Gebieten."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Sargo (Sarg), Oblada, Serrano"
+          "name": "Häufige Arten",
+          "value": "Geißbrasse, Brandbrasse, Sägebarsch, Goldstrieme, Stöcker, Makrele, Wolfsbarsch"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Empfohlene Techniken",
           "value": "Leichtes Spinnen, Bojenangeln, Grundangeln vom Damm aus"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Tageszeit",
           "value": "Tag, Dämmerung, Nacht"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-bahia-palma",
+      "@type": "Place",
+      "name": "Meeresschutzgebiet Bucht von Palma",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor / Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.489,
+        "longitude": 2.731
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+      ],
+      "keywords": "Meeresschutzgebiet, Regulierte Fischerei, Arenal, Cabo Blanco, Gemischter Grund",
+      "description": "Gelegen zwischen dem Strand Sant Antoni (Arenal) und El Dorado (Cabo Blanco). Gebiete mit zeitlichen und Ausrüstungsbeschränkungen.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Zugang",
+          "value": "Leichter Zugang von der Küste in erlaubten Gebieten. Überprüfen Sie den kartografischen Viewer der Regierung für Koordinaten und Arbeitstage."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Meeresgrund",
+          "value": "Sandige, felsige Böden und Posidonia-Wiesen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Häufige Arten",
+          "value": "Geißbrasse, Brandbrasse, Goldbrasse, Wolfsbarsch, Goldstrieme, Schermesserfisch, Streifenbarbe"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Empfohlene Techniken",
+          "value": "Leichtes Spinnfischen, Posenfischen, Brandungsangeln (wo erlaubt)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tageszeit",
+          "value": "Tag, Sonnenuntergang"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-llevant",
+      "@type": "Place",
+      "name": "Meeresschutzgebiet Llevant de Mallorca",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Artà / Capdepera",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.771,
+        "longitude": 3.328
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp"
+      ],
+      "keywords": "Meeresschutzgebiet, Absolute Schonzeit, Eingeschränkte Fischerei, Nordosten",
+      "description": "Das Hotel liegt im Nordosten. Es verfügt über absolute Schongebiete und Zonen, in denen die Freizeitfischerei auf bestimmte Tage beschränkt ist (in der Regel dienstags, donnerstags, samstags und sonntags).",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Zugang",
+          "value": "Regulierter Zugang. Es ist zwingend erforderlich, die Karte der Regierung zu konsultieren, um nicht in absoluten Schutzgebieten zu fischen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Meeresgrund",
+          "value": "Steile Felsen, Posidonia-Wiesen und Korallen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Häufige Arten",
+          "value": "Zackenbarsch, Zahnbrasse, Geißbrasse, Große Bernsteinmakrele, Goldmakrele, Roter Drachenkopf, Meerrabe"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Empfohlene Techniken",
+          "value": "Jigging, Grundfischen, Schweres Spinnfischen (an erlaubten Tagen)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tageszeit",
+          "value": "Erlaubte Tage (Dienstags, Donnerstags, Samstags, Sonntags)"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-migjorn",
+      "@type": "Place",
+      "name": "Meeresschutzgebiet Migjorn",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor / Santanyí",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.317,
+        "longitude": 2.924
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "keywords": "Meeresschutzgebiet, Cap Blanc, Cap de Ses Salines, Süden, Regulierte Fischerei",
+      "description": "Umfasst den Süden der Insel, von Cap Blanc bis Cap de Ses Salines. Bekannt für seine Klippen und gemischten Böden voller Leben.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Zugang",
+          "value": "Mittlerer Zugang über Küstenwege. Staatliche Vorschriften für Fanggebiete und Tage müssen beachtet werden."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Meeresgrund",
+          "value": "Gemischte Böden, große Steinblöcke und ausgedehnte Posidonia-Wiesen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Häufige Arten",
+          "value": "Zahnbrasse, Geißbrasse, Goldbrasse, Goldmakrele, Große Bernsteinmakrele, Brandbrasse, Roter Drachenkopf, Zackenbarsch"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Empfohlene Techniken",
+          "value": "Spinnfischen, Rockfishing, Grundfischen"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tageszeit",
+          "value": "Morgendämmerung, Tag"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-toro-malgrats",
+      "@type": "Place",
+      "name": "Insel El Toro und Malgrats Inseln",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Calvià",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.467,
+        "longitude": 2.473
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+      ],
+      "keywords": "Meeresschutzgebiet, Hoher Schutz, Sommerschonzeit, El Toro, Malgrats",
+      "description": "Hochgeschützte Gebiete. Das Speerfischen ist strengstens verboten. Für das Bootsangeln gilt eine Schonzeit, die normalerweise die Sommermonate umfasst (erlaubt von Oktober bis April mit Einschränkungen).",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Zugang",
+          "value": "Hauptsächlich vom Boot aus (reguliert und im Sommer geschlossen)."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Meeresgrund",
+          "value": "Steile Abfälle, felsige Böden und tiefe Korallen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Häufige Arten",
+          "value": "Zackenbarsch, Zahnbrasse, Große Bernsteinmakrele, Goldmakrele, Pelamide, Barrakuda, Meerrabe"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Empfohlene Techniken",
+          "value": "Jigging, Grundfischen (nur von Oktober bis April in erlaubten Bereichen)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tageszeit",
+          "value": "Winter (Oktober bis April)"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/cala-dor-sureste",
+      "@type": "Place",
+      "name": "Cala d'Or und Südostküste",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santanyí / Felanitx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.373,
+        "longitude": 3.232
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "keywords": "Cala Gran, Cala Ferrera, Gemischter Grund, Meerbrassen, Südosten",
+      "description": "Bereiche wie Cala Gran und Cala Ferrera haben gemischte Böden, die verschiedene Arten von Meerbrassen anziehen. Posenfischen und leichtes Spinnfischen sind von den äußeren Felsen der Buchten aus effektiv.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Zugang",
+          "value": "Leichter Zugang zu Fuß durch bebaute Gebiete und natürliche Wege zu den äußeren Felsen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Meeresgrund",
+          "value": "Gemischte Böden aus Sand, Felsen und Algen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Häufige Arten",
+          "value": "Geißbrasse, Goldbrasse, Brandbrasse, Goldstrieme, Marmorbrasse, Rotbrasse, Wolfsbarsch, Schermesserfisch"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Empfohlene Techniken",
+          "value": "Posenfischen, Leichtes Spinnfischen, Leichtes Brandungsangeln"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tageszeit",
+          "value": "Sonnenuntergang, Nacht"
         }
       ]
     }

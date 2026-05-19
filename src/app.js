@@ -629,6 +629,11 @@ function renderSpotsCards(spotsArray) {
     const spotsContainer = document.getElementById('spots-container');
     if (!spotsContainer) return;
 
+    if (window.spotsSwiperInstance) {
+        window.spotsSwiperInstance.destroy(true, true);
+        window.spotsSwiperInstance = null;
+    }
+
     if (spotsArray.length === 0) {
         spotsContainer.innerHTML = `
             <div class="col-12 text-center text-muted py-5">
@@ -645,26 +650,31 @@ function renderSpotsCards(spotsArray) {
         const imgSrc = Array.isArray(spot.image) ? spot.image[0] : spot.image;
         const rutaLimpia = imgSrc.substring(0, imgSrc.lastIndexOf('.'));
         htmlCards += `
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm border-0 spot-card" role="button" tabindex="0" aria-label="Ver detalles de ${spot.name}" data-open-spot="${originalIndex}" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-              <img 
-                src="${rutaLimpia}-800.webp" 
-                srcset="
-                   ${rutaLimpia}-400.webp 400w, 
-                   ${rutaLimpia}-800.webp 800w"
-                sizes="(max-width: 768px) 100vw, 33vw"
-                class="card-img-top object-fit-cover" 
-                alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}"
-                style="height:200px"
-                loading="lazy"
-                decoding="async"
-                onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">              
+          <div class="swiper-slide d-flex" style="height:auto;">
+            <div class="card h-100 shadow-sm border-0 w-100 spot-card" role="button" tabindex="0" aria-label="Ver detalles de ${spot.name}" data-open-spot="${originalIndex}" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+              <div class="position-relative">
+                <img 
+                  src="${rutaLimpia}-800.webp" 
+                  srcset="
+                     ${rutaLimpia}-400.webp 400w, 
+                     ${rutaLimpia}-800.webp 800w"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  class="card-img-top object-fit-cover" 
+                  alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}"
+                  style="height:220px"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">
+              </div>
               <div class="card-body d-flex flex-column">
-                <h3 class="card-title text-primary fw-bold fs-5">${spot.name}</h3>
-                <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
-                <p class="card-text text-truncate">${spot.description}</p>
-                <div class="mt-auto">
-                    ${spot.keywords ? spot.keywords.split(',').slice(0, 2).map(tag => `<span class="badge bg-light text-dark border me-1 my-1">${tag.trim()}</span>`).join('') : ''}
+                <h3 class="card-title text-primary fw-bold mb-1 fs-5">${spot.name}</h3>
+                <p class="card-text text-muted small mb-3"><i class="bi bi-geo-alt-fill text-danger me-1"></i> ${spot.address?.addressLocality || 'Desconocido'}</p>
+                <div class="mb-3 d-flex flex-wrap gap-2">
+                    ${spot.keywords ? spot.keywords.split(',').slice(0, 2).map(tag => `<span class="badge bg-light text-dark border"><i class="bi bi-tag-fill text-primary me-1"></i>${tag.trim()}</span>`).join('') : ''}
+                </div>
+                <p class="card-text text-truncate text-muted small mb-3">${spot.description}</p>
+                <div class="mt-auto pt-3 border-top">
+                    <button class="btn btn-outline-primary w-100 fw-bold" data-open-spot="${originalIndex}"><i class="bi bi-file-earmark-text me-2"></i>Ver Detalles T&eacute;cnicos</button>
                 </div>
               </div>
             </div>
@@ -685,6 +695,22 @@ function renderSpotsCards(spotsArray) {
     });
 
     if (typeof AOS !== 'undefined') AOS.init();
+    
+    if (typeof Swiper !== 'undefined') {
+        window.spotsSwiperInstance = new Swiper('.spots-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.spots-swiper-next',
+                prevEl: '.spots-swiper-prev'
+            },
+            pagination: { el: '.spots-swiper-pagination', clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                992: { slidesPerView: 3, spaceBetween: 40 }
+            }
+        });
+    }
 }
 
 // LÓGICA DEL RECOMENDADOR
@@ -1023,12 +1049,12 @@ window.toggleFishAudio = (btn, audioPath) => {
             btn.classList.add('text-white');
         };
         audio.onended = () => {
-            btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> ' + ((window._i18n && window._i18n.t) ? window._i18n.t('audio_listen') : 'Escuchar Sonido');
+            btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> ' + ((window._i18n && window._i18n.t) ? window._i18n.t('audio_listen') : 'Pronunciación mallorquina');
             btn.classList.replace('btn-primary', 'btn-outline-primary');
             btn.classList.remove('text-white');
         };
         audio.onpause = () => {
-            btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> ' + ((window._i18n && window._i18n.t) ? window._i18n.t('audio_listen') : 'Escuchar Sonido');
+            btn.innerHTML = '<i class="bi bi-volume-up me-2"></i> ' + ((window._i18n && window._i18n.t) ? window._i18n.t('audio_listen') : 'Pronunciación mallorquina');
             btn.classList.replace('btn-primary', 'btn-outline-primary');
             btn.classList.remove('text-white');
         };
@@ -1350,7 +1376,7 @@ function fillAndShowSpeciesModal(species) {
         if (species.audio) {
                 const audioPath = species.audio.includes('/') ? species.audio : `assets/audio/${species.audio}`;
                 audioContainer.innerHTML = `
-                    <button id="btnAudioToggle_${species.name.replace(/\s+/g, '')}" class="btn btn-outline-primary btn-sm rounded-pill ms-3 shadow-sm px-3 fw-bold" data-toggle-fish-audio data-audio-path="${audioPath}"><i class="bi bi-volume-up me-2"></i> Escuchar Sonido</button>
+                    <button id="btnAudioToggle_${species.name.replace(/\s+/g, '')}" class="btn btn-outline-primary btn-sm rounded-pill ms-3 shadow-sm px-3 fw-bold" data-toggle-fish-audio data-audio-path="${audioPath}"><i class="bi bi-volume-up me-2"></i> Pronunciación mallorquina</button>
                 `;
         } else {
             audioContainer.innerHTML = ``;

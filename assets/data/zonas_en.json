@@ -35,7 +35,7 @@
         {
           "@type": "PropertyValue",
           "name": "Frequent Species",
-          "value": "Dusky grouper, Common dentex, Red scorpionfish"
+          "value": "Dusky grouper, Common dentex, Red scorpionfish, Comber, Greater amberjack, European conger, Moray eel, Barracuda"
         },
         {
           "@type": "PropertyValue",
@@ -83,7 +83,7 @@
         {
           "@type": "PropertyValue",
           "name": "Frequent Species",
-          "value": "Gilt-head bream, White seabream, Dreamfish"
+          "value": "Gilt-head bream, White seabream, Salema porgy, Striped seabream, European seabass, Common pandora"
         },
         {
           "@type": "PropertyValue",
@@ -131,7 +131,7 @@
         {
           "@type": "PropertyValue",
           "name": "Frequent Species",
-          "value": "White seabream, Gilt-head bream, Common dentex, Saddled seabream"
+          "value": "White seabream, Gilt-head bream, Common dentex, Saddled seabream, Mahi-mahi / Dolphinfish, Greater amberjack, Barracuda, Red scorpionfish"
         },
         {
           "@type": "PropertyValue",
@@ -168,27 +168,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Access",
           "value": "Access mainly from boat. From the coast, the most productive points require descending trails in the Serra de Tramuntana, with high technical difficulty."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Seabed",
           "value": "Submerged cliffs with steep drops to great depths a short distance from the shore. Rocky, coralline bottoms and underwater caves."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Grouper, Cap-roig (Escópora), Serrano"
+          "name": "Frequent Species",
+          "value": "Dusky grouper, Red scorpionfish, Comber, Common dentex, John Dory, European conger, Moray eel, Atlantic bonito, Atlantic horse mackerel"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Recommended Techniques",
           "value": "Bottom Fishing, Jigging, Heavy Rockfishing"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Time of Day",
           "value": "Dawn, Day"
         }
       ]
@@ -216,27 +216,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Access",
           "value": "Easy access from multiple points in the bay. Spots like Sa Bassa Blanca are viable for surfcasting with good parking available."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Seabed",
           "value": "Predominantly sandy bottoms with extensive meadows of Posidonia oceanica. Smooth and progressive bathymetry, ideal for long distance surfcasting."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Dorada, Sargo (Sarg), Salpa"
+          "name": "Frequent Species",
+          "value": "Gilt-head bream, White seabream, Salema porgy, European seabass, Striped seabream, Common pandora, Pearly razorfish"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Recommended Techniques",
           "value": "Classic surfcasting, Deep fishing with natural bait"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Time of Day",
           "value": "Night, Dusk, Dawn"
         }
       ]
@@ -264,27 +264,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Access",
           "value": "From boat: access to the Menorca canal. From the coast: the cliffs offer good buoy fishing spots with access via coastal paths."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Seabed",
           "value": "Mixed rock and sand bottoms on the coast. In the Menorca channel, deep waters with the presence of currents and the passage of pelagic species."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Llampuga, Dentón, Sargo (Sarg), Oblada"
+          "name": "Frequent Species",
+          "value": "Mahi-mahi / Dolphinfish, Common dentex, White seabream, Saddled seabream, Atlantic bluefin tuna, Atlantic bonito, Little tunny, Greater amberjack, Barracuda"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Recommended Techniques",
           "value": "Deep sea trolling (from boat), Cliff buoy fishing, Jigging"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Time of Day",
           "value": "Dawn, Day"
         }
       ]
@@ -312,28 +312,268 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Access",
           "value": "Very easy access from multiple urban points and seafront promenades. You must respect the signs and do not fish within the operational port facilities or in marked areas for swimming."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Seabed",
           "value": "Mixed rock and sand bottoms around dikes and breakwaters, with the presence of posidonia in more remote areas."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Sargo (Sarg), Oblada, Serrano"
+          "name": "Frequent Species",
+          "value": "White seabream, Saddled seabream, Comber, Salema porgy, Atlantic horse mackerel, Atlantic mackerel, European seabass"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Recommended Techniques",
           "value": "Light spinning, Buoy fishing, Bottom fishing from the dam"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Time of Day",
           "value": "Day, Dusk, Night"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-bahia-palma",
+      "@type": "Place",
+      "name": "Bay of Palma Marine Reserve",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor / Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.489,
+        "longitude": 2.731
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+      ],
+      "keywords": "Marine Reserve, Regulated fishing, Arenal, Cabo Blanco, Mixed bottom",
+      "description": "Located between Sant Antoni Beach (Arenal) and El Dorado (Cabo Blanco). Areas with seasonal and gear restrictions.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Access",
+          "value": "Easy access from the coast in permitted areas. Check the Government's cartographic viewer for coordinates and working days."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Seabed",
+          "value": "Sandy, rocky bottoms and posidonia meadows."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Frequent Species",
+          "value": "White seabream, Saddled seabream, Gilt-head bream, European seabass, Salema porgy, Pearly razorfish, Striped red mullet"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Recommended Techniques",
+          "value": "Light spinning, Float fishing, Surfcasting (where permitted)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Time of Day",
+          "value": "Day, Sunset"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-llevant",
+      "@type": "Place",
+      "name": "Llevant de Mallorca Marine Reserve",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Artà / Capdepera",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.771,
+        "longitude": 3.328
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp"
+      ],
+      "keywords": "Marine Reserve, Strict closure, Restricted fishing, Northeast, High protection",
+      "description": "Located in the northeast. Features absolute closure areas and zones where recreational fishing is restricted to specific days (generally Tuesdays, Thursdays, Saturdays, and Sundays).",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Access",
+          "value": "Regulated access. It is imperative to consult the Government map to avoid fishing in no-take zones."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Seabed",
+          "value": "Steep rock, posidonia meadows, and coralligenous."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Frequent Species",
+          "value": "Dusky grouper, Common dentex, White seabream, Greater amberjack, Mahi-mahi / Dolphinfish, Red scorpionfish, Brown meagre"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Recommended Techniques",
+          "value": "Jigging, Bottom fishing, Heavy spinning (on permitted days)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Time of Day",
+          "value": "Permitted days (Tuesdays, Thursdays, Saturdays, Sundays)"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-migjorn",
+      "@type": "Place",
+      "name": "Migjorn Marine Reserve",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor / Santanyí",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.317,
+        "longitude": 2.924
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "keywords": "Marine Reserve, Cap Blanc, Cap de Ses Salines, South, Regulated fishing",
+      "description": "Covers the south of the island, from Cap Blanc to Cap de Ses Salines. Noted for its cliffs and mixed bottoms full of life.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Access",
+          "value": "Medium access via coastal paths. Government regulations must be reviewed for fishing areas and days."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Seabed",
+          "value": "Mixed bottoms, large stone blocks and extensive Posidonia meadows."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Frequent Species",
+          "value": "Common dentex, White seabream, Gilt-head bream, Mahi-mahi / Dolphinfish, Greater amberjack, Saddled seabream, Red scorpionfish, Dusky grouper"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Recommended Techniques",
+          "value": "Spinning, Rockfishing, Bottom fishing"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Time of Day",
+          "value": "Dawn, Day"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-toro-malgrats",
+      "@type": "Place",
+      "name": "El Toro and Malgrats Islands",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Calvià",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.467,
+        "longitude": 2.473
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+      ],
+      "keywords": "Marine Reserve, High protection, Summer closure, El Toro, Malgrats",
+      "description": "Highly protected areas. Spearfishing is strictly forbidden. Boat fishing has a closure that normally covers the summer months (allowed from October to April with restrictions).",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Access",
+          "value": "Mainly from a boat (regulated and closed in summer)."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Seabed",
+          "value": "Steep drop-offs, rocky bottoms and deep coralligenous."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Frequent Species",
+          "value": "Dusky grouper, Common dentex, Greater amberjack, Mahi-mahi / Dolphinfish, Atlantic bonito, Barracuda, Brown meagre"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Recommended Techniques",
+          "value": "Jigging, Bottom fishing (only from October to April in permitted areas)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Time of Day",
+          "value": "Winter (October to April)"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/cala-dor-sureste",
+      "@type": "Place",
+      "name": "Cala d'Or and Southeast Coast",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santanyí / Felanitx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.373,
+        "longitude": 3.232
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "keywords": "Cala Gran, Cala Ferrera, Mixed bottom, Sparids, Southeast",
+      "description": "Areas such as Cala Gran and Cala Ferrera have mixed bottoms that attract various species of sparids. Float fishing and light spinning are effective from the outer rocks of the coves.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Access",
+          "value": "Easy access on foot through urbanized areas and natural paths to the outer rocks."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Seabed",
+          "value": "Mixed bottoms of sand, rocks and algae."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Frequent Species",
+          "value": "White seabream, Gilt-head bream, Saddled seabream, Salema porgy, Striped seabream, Common pandora, European seabass, Pearly razorfish"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Recommended Techniques",
+          "value": "Float fishing, Light spinning, Light surfcasting"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Time of Day",
+          "value": "Sunset, Night"
         }
       ]
     }

@@ -66,8 +66,13 @@ export const SpotsSection = () => {
         </div>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4" id="spots-container">
-           <div class="col-12 text-center text-muted" data-i18n="spots_loading">Cargando Zonas desde JSON...</div>
+        <div class="swiper spots-swiper" style="padding-bottom: 50px;">
+          <div class="swiper-button-prev spots-swiper-prev"></div>
+          <div class="swiper-wrapper" id="spots-container">
+             <div class="text-center w-100" data-i18n="spots_loading">Cargando Zonas desde JSON...</div>
+          </div>
+          <div class="swiper-button-next spots-swiper-next"></div>
+          <div class="swiper-pagination spots-swiper-pagination"></div>
         </div>
       </div>
 

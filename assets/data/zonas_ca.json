@@ -35,7 +35,7 @@
         {
           "@type": "PropertyValue",
           "name": "Espècies Freqüents",
-          "value": "Mero, Déntol, Cap-roig"
+          "value": "Anfós, Déntol, Cap-roig, Serrà / Vaca, Cirviola / Verderol, Congre, Morena, Espet"
         },
         {
           "@type": "PropertyValue",
@@ -83,7 +83,7 @@
         {
           "@type": "PropertyValue",
           "name": "Espècies Freqüents",
-          "value": "Orada, Sarg, Salpa"
+          "value": "Orada, Sarg, Salpa, Mabre, Llobarro, Pagell"
         },
         {
           "@type": "PropertyValue",
@@ -131,7 +131,7 @@
         {
           "@type": "PropertyValue",
           "name": "Espècies Freqüents",
-          "value": "Sarg, Orada, Déntol, Oblada"
+          "value": "Sarg, Orada, Déntol, Oblada, Llampuga, Cirviola / Verderol, Espet, Cap-roig"
         },
         {
           "@type": "PropertyValue",
@@ -168,27 +168,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Accés",
           "value": "Accés principalment des d'embarcació. Des de costa, els punts més productius requereixen baixar per senders a la Serra de Tramuntana, amb alta dificultat tècnica."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Fons Marí",
           "value": "Penya-segats submergits amb caigudes abruptes a gran profunditat a poca distància de la riba. Fons rocosos, coral·ligen i grutes submarines."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Mero, Cap-roig (Escórpora), Serrano"
+          "name": "Espècies Freqüents",
+          "value": "Anfós, Cap-roig, Serrà / Vaca, Déntol, Gall de Sant Pere, Congre, Morena, Bonítol, Sorell"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Tècniques Recomanades",
           "value": "Pesca a fons, Jigging, Rockfishing pesat"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Moment del Dia",
           "value": "Clarejar, Dia"
         }
       ]
@@ -216,27 +216,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Accés",
           "value": "Accés senzill des de múltiples punts de la badia. Punts com Sa Bassa Blanca són viables per al surfcasting amb bon aparcament disponible."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Fons Marí",
           "value": "Fons predominantment sorrencs amb extenses praderies de Posidonia oceànica. Batimetria suau i progressiva, ideal per al surfcasting de llarga distància."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Daurada, Sargo (Sarg), Salpa"
+          "name": "Espècies Freqüents",
+          "value": "Orada, Sarg, Salpa, Llobarro, Mabre, Pagell, Raor"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Tècniques Recomanades",
           "value": "Surfcasting clàssic, Pesca a fons amb esquer natural"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Moment del Dia",
           "value": "Nit, Capvespre, Clarejar"
         }
       ]
@@ -264,27 +264,27 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Accés",
           "value": "Des d´embarcació: accés al canal de Menorca. Des de costa: els penya-segats ofereixen bons punts de pesca a boia amb accés per senders del litoral."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Fons Marí",
           "value": "Fons mixts de roca i sorra a la costa. Al canal de Menorca, aigües profundes amb presència de corrents i pas d'espècies pelàgiques."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Llampuga, Dentón, Sargo (Sarg), Oblada"
+          "name": "Espècies Freqüents",
+          "value": "Llampuga, Déntol, Sarg, Oblada, Tonyina, Bonítol, Bacoreta, Cirviola / Verderol, Espet"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Tècniques Recomanades",
           "value": "Curricà d'alçada (des d'embarcació), Pesca a boia des de penya-segat, Jigging"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Moment del Dia",
           "value": "Clarejar, Dia"
         }
       ]
@@ -312,28 +312,268 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Acceso",
+          "name": "Accés",
           "value": "Accés molt fàcil des de múltiples punts urbans i passeigs marítims. Cal respectar la senyalització i no pescar dins les instal·lacions portuàries operatives ni en zones abalisades per al bany."
         },
         {
           "@type": "PropertyValue",
-          "name": "Fondo Marino",
+          "name": "Fons Marí",
           "value": "Fons mixts de roca i sorra als voltants de dics i esculleres, amb presència de posidònia a zones més allunyades."
         },
         {
           "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Sargo (Sarg), Oblada, Serrano"
+          "name": "Espècies Freqüents",
+          "value": "Sarg, Oblada, Serrà / Vaca, Salpa, Sorell, Verat, Llobarro"
         },
         {
           "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
+          "name": "Tècniques Recomanades",
           "value": "Spinning lleuger, Pesca a boia, Pesca a fons des de dic"
         },
         {
           "@type": "PropertyValue",
-          "name": "Momento del Día",
+          "name": "Moment del Dia",
           "value": "Dia, Capvespre, Nit"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-bahia-palma",
+      "@type": "Place",
+      "name": "Reserva Marina de la Badia de Palma",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor / Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.489,
+        "longitude": 2.731
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+      ],
+      "keywords": "Reserva Marina, Pesca regulada, S'Arenal, Cap Blanc, Fons mixt",
+      "description": "Compresa entre la zona de la Platja de Sant Antoni (s'Arenal) i la zona d'El Dorado (Cap Blanc). Zones amb restriccions temporals i d'ormeigs.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Accés",
+          "value": "Accés fàcil des de la costa en zones permeses. Consultar visor cartogràfic del Govern per a coordenades i dies hàbils."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fons Marí",
+          "value": "Fons arenosos, rocosos i praderies de posidònia."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Espècies Freqüents",
+          "value": "Sarg, Oblada, Orada, Llobarro, Salpa, Raor, Moll de roca"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tècniques Recomanades",
+          "value": "Spinning lleuger, Suro, Surfcasting (on estigui permès)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Moment del Dia",
+          "value": "Dia, Capvespre"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-llevant",
+      "@type": "Place",
+      "name": "Reserva Marina de Llevant de Mallorca",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Artà / Capdepera",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.771,
+        "longitude": 3.328
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp"
+      ],
+      "keywords": "Reserva Marina, Veda absoluta, Pesca restringida, Nord-est, Alta protecció",
+      "description": "Situada al nord-est. Compta amb àrees de veda absoluta i zones on la pesca recreativa està restringida a dies concrets (generalment dimarts, dijous, dissabtes i diumenges).",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Accés",
+          "value": "Accés regulat. És imperatiu consultar el mapa del Govern per no pescar en àrees de veda integral."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fons Marí",
+          "value": "Roca escarpada, praderies de posidònia i coral·ligen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Espècies Freqüents",
+          "value": "Anfós, Déntol, Sarg, Cirviola / Verderol, Llampuga, Cap-roig, Escorball"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tècniques Recomanades",
+          "value": "Jigging, Pesca a fons, Spinning pesat (en dies hàbils)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Moment del Dia",
+          "value": "Dies hàbils (Dimarts, Dijous, Dissabtes, Diumenges)"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-migjorn",
+      "@type": "Place",
+      "name": "Reserva Marina del Migjorn",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor / Santanyí",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.317,
+        "longitude": 2.924
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "keywords": "Reserva Marina, Cap Blanc, Cap de Ses Salines, Sud, Pesca regulada",
+      "description": "Abasta el sud de l'illa, des de Cap Blanc fins a Cap de Ses Salines. Destaca pels seus penya-segats i fons mixts plens de vida.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Accés",
+          "value": "Accés mitjà a través de camins litorals. S'han de revisar les normatives del Govern per a les zones i dies de pesca."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fons Marí",
+          "value": "Fons mixts, grans blocs de pedra i extenses praderies de posidònia."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Espècies Freqüents",
+          "value": "Déntol, Sarg, Orada, Llampuga, Cirviola / Verderol, Oblada, Cap-roig, Anfós"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tècniques Recomanades",
+          "value": "Spinning, Rockfishing, Pesca a fons"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Moment del Dia",
+          "value": "Alba, Dia"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-toro-malgrats",
+      "@type": "Place",
+      "name": "Illa del Toro i les Illes Malgrats",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Calvià",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.467,
+        "longitude": 2.473
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+      ],
+      "keywords": "Reserva Marina, Alta protecció, Veda estival, El Toro, Malgrats",
+      "description": "Zones d'alta protecció. A El Toro i Malgrats la pesca submarina està estrictament prohibida. La pesca des d'embarcació té una veda que abasta normalment els mesos d'estiu (permesa d'octubre a abril amb restriccions).",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Accés",
+          "value": "Principalment des d'embarcació (regulada i amb veda a l'estiu)."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fons Marí",
+          "value": "Caigudes pronunciades, fons rocosos i coral·ligen profund."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Espècies Freqüents",
+          "value": "Anfós, Déntol, Cirviola / Verderol, Llampuga, Bonítol, Espet, Escorball"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tècniques Recomanades",
+          "value": "Jigging, Pesca a fons (només d'Octubre a Abril en zones permeses)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Moment del Dia",
+          "value": "Hivern (Octubre a Abril)"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/cala-dor-sureste",
+      "@type": "Place",
+      "name": "Cala d'Or i Litoral Sud-est",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santanyí / Felanitx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.373,
+        "longitude": 3.232
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "keywords": "Cala Gran, Cala Ferrera, Fons mixt, Espàrids, Sud-est",
+      "description": "Àrees com Cala Gran i Cala Ferrera presenten fons mixts que atreuen diverses espècies d'espàrids. La pesca a suro i l'spinning lleuger són efectius des de les roques exteriors de les cales.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Accés",
+          "value": "Fàcil accés a peu per zones urbanitzades i camins naturals cap a les roques exteriors."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fons Marí",
+          "value": "Fons mixts d'arena, roques i algues."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Espècies Freqüents",
+          "value": "Sarg, Orada, Oblada, Salpa, Mabre, Pagell, Llobarro, Raor"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tècniques Recomanades",
+          "value": "Suro, Spinning lleuger, Surfcasting suau"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Moment del Dia",
+          "value": "Capvespre, Nit"
         }
       ]
     }
