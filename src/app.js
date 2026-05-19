@@ -1029,7 +1029,12 @@ window.toggleFishAudio = (btn, audioPath) => {
     // Usar el controlador centralizado de VoiceService
     const currentAudio = window.getVoiceAudio();
 
-    if (currentAudio && !currentAudio.paused && currentAudio.src.includes(cleanPath)) {
+    const isCurrentlyPlaying = currentAudio && !currentAudio.paused && 
+        (currentAudio.src.includes(cleanPath) || 
+         currentAudio.currentSrc.includes(cleanPath) || 
+         (currentAudio.dataset && currentAudio.dataset.basePath === cleanPath));
+
+    if (isCurrentlyPlaying) {
         stopAudio();
         return;
     }
@@ -1373,11 +1378,52 @@ function fillAndShowSpeciesModal(species) {
     // 1. AUDIO (Dinámico)
     const audioContainer = document.getElementById('speciesModalAudioContainer');
     if (audioContainer) {
-        if (species.audio) {
-                const audioPath = species.audio.includes('/') ? species.audio : `assets/audio/${species.audio}`;
-                audioContainer.innerHTML = `
-                    <button id="btnAudioToggle_${species.name.replace(/\s+/g, '')}" class="btn btn-outline-primary btn-sm rounded-pill ms-3 shadow-sm px-3 fw-bold" data-toggle-fish-audio data-audio-path="${audioPath}"><i class="bi bi-volume-up me-2"></i> Pronunciación mallorquina</button>
-                `;
+        const audioMap = {
+            "dorada": "dorada",
+            "llampuga": "llampuga",
+            "mero": "mero",
+            "cap-roig": "cabracho",
+            "sargo": "sargo",
+            "serrano": "serrano",
+            "denton": "denton",
+            "oblada": "oblada",
+            "salpa": "salpa",
+            "lubina": "lubina",
+            "serviola": "serviola",
+            "espeton": "espeton",
+            "corvallo": "corvallo",
+            "bonito": "bonito",
+            "atun-rojo": "atun",
+            "bacoreta": "bacoreta",
+            "caballa": "caballa",
+            "jurel": "jurel",
+            "pez-san-pedro": "pezSanPedro",
+            "salmonete": "salmonete",
+            "raor": "raor",
+            "breca": "breca",
+            "herrera": "herrera",
+            "congrio": "congrio",
+            "morena": "morena"
+        };
+        
+        let slug = '';
+        if (species['@id']) {
+            slug = species['@id'].split('/').pop();
+        }
+        
+        const mappedAudio = audioMap[slug];
+        let finalAudioPath = null;
+        
+        if (mappedAudio) {
+            finalAudioPath = `assets/audio/peces-mallorquin/${mappedAudio}/${mappedAudio}`;
+        } else if (species.audio) {
+            finalAudioPath = species.audio.includes('/') ? species.audio : `assets/audio/${species.audio}`;
+        }
+
+        if (finalAudioPath) {
+            audioContainer.innerHTML = `
+                <button id="btnAudioToggle_${species.name.replace(/\s+/g, '')}" class="btn btn-outline-primary btn-sm rounded-pill ms-3 shadow-sm px-3 fw-bold" data-toggle-fish-audio data-audio-path="${finalAudioPath}"><i class="bi bi-volume-up me-2"></i> Pronunciación mallorquina</button>
+            `;
         } else {
             audioContainer.innerHTML = ``;
         }

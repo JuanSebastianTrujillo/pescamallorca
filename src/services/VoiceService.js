@@ -74,7 +74,30 @@ export function playAudio(audioSrc) {
         currentAudio.currentTime = 0;
     }
 
-    currentAudio = new Audio(cleanSrc);
+    // Determine if the source is a base path (without extension) or a direct file
+    currentAudio = document.createElement('audio');
+    currentAudio.dataset.basePath = cleanSrc;
+    
+    if (cleanSrc.match(/\.(mp3|wav|ogg|m4a|aac)$/i)) {
+        currentAudio.src = cleanSrc;
+    } else {
+        const sourceMp3 = document.createElement('source');
+        sourceMp3.src = `${cleanSrc}.mp3`;
+        sourceMp3.type = 'audio/mpeg';
+        
+        const sourceOgg = document.createElement('source');
+        sourceOgg.src = `${cleanSrc}.ogg`;
+        sourceOgg.type = 'audio/ogg';
+        
+        const sourceWav = document.createElement('source');
+        sourceWav.src = `${cleanSrc}.wav`;
+        sourceWav.type = 'audio/wav';
+        
+        currentAudio.appendChild(sourceMp3);
+        currentAudio.appendChild(sourceOgg);
+        currentAudio.appendChild(sourceWav);
+    }
+
     currentAudio.play().catch(err => {
         console.error("Error reproduciendo audio:", err);
     });
