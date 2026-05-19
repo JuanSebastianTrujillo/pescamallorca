@@ -183,7 +183,13 @@
                     "value": "11",
                     "unitText": "November"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/llampuga-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/llampuga2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/llampuga3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/llampuga-min.webp"
         },
         {
             "@type": "Taxon",
@@ -271,7 +277,13 @@
                     "value": "12",
                     "unitText": "Dezember"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/mero-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/mero2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/mero3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/mero-min.webp"
         },
         {
             "@type": "Taxon",
@@ -354,7 +366,13 @@
                     "value": "6",
                     "unitText": "Juni"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/cap-roig-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/cap-roig2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/cap-roig3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/cap-roig-min.webp"
         },
         {
             "@type": "Taxon",
@@ -437,7 +455,13 @@
                     "value": "5",
                     "unitText": "Mai"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/sargo-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/sargo2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/sargo3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/sargo-min.webp"
         },
         {
             "@type": "Taxon",
@@ -525,7 +549,13 @@
                     "value": "12",
                     "unitText": "Dezember"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/serrano-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/serrano2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/serrano3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/serrano-min.webp"
         },
         {
             "@type": "Taxon",
@@ -613,7 +643,13 @@
                     "value": "9",
                     "unitText": "September"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/denton-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/denton2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/denton3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/denton-min.webp"
         },
         {
             "@type": "Taxon",
@@ -701,7 +737,13 @@
                     "value": "10",
                     "unitText": "Oktober"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/oblada-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/oblada2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/oblada3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/oblada-min.webp"
         },
         {
             "@type": "Taxon",
@@ -789,7 +831,13 @@
                     "value": "12",
                     "unitText": "Dezember"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/salpa-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/salpa2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/salpa3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/salpa-min.webp"
         },
         {
             "@type": "Taxon",
@@ -877,7 +925,483 @@
                     "value": "10",
                     "unitText": "Oktober"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/bonito-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/bonito2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/bonito3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/bonito-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/lubina",
+            "name": "Wolfsbarsch (Llobarro)",
+            "alternateName": "Dicentrarchus labrax",
+            "image": "https://www.pescamallorca.online/assets/img/peces/lubina-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/lubina.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/lubina.mp4",
+            "description": "Aktives Raubtier auf sandigen Böden und Posidonia-Wiesen, auf den Balearen auch Llobarro genannt. Fisch von großem gastronomischem und sportlichem Wert.",
+            "url": "https://www.pescamallorca.online/peces/lubina",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Kleine Fische, Krebstiere, Kopffüßer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Herbst und Winter (beste Nachtaufnahme)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Sandige Böden, Posidonia-Wiesen, Mündungen und Brandungszonen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "36",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Kein spezifischer Grenzwert (innerhalb der Quote von 5 kg/Tag)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "100",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Nächtliches Brandungsangeln, Spinnfischen, Bojenangeln mit lebenden Ködern"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Strand, Mündungen, Wellenbrecher, Posidonia-Wiesen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Hoch"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Exzellent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Geringste Bedenken (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "10",
+                    "unitText": "octubre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "2",
+                    "unitText": "febrero"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/lubina-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/lubina2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/lubina3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/lubina-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/corvallo",
+            "name": "Corvallo (Escorball)",
+            "alternateName": "Sciaena umbra",
+            "image": "https://www.pescamallorca.online/assets/img/peces/corvallo-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/corvallo.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/corvallo.mp4",
+            "description": "Bodenfisch mit der Fähigkeit, mit seiner Schwimmblase Geräusche zu erzeugen. Aufgrund seiner erstklassigen Fleischqualität wird es von Unterwasser- und Grundfischern sehr geschätzt.",
+            "url": "https://www.pescamallorca.online/peces/corvallo",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Krebstiere, Weichtiere, Polychaetenwürmer und kleine Fische"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Ganzjährig (nachts am aktivsten)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Felsiger Boden mit Rissen, korallin, zwischen 5 und 50 Metern"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "30",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Keine spezifische Grenze"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "70",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Tiefseeangeln mit Naturködern, Unterwasserangeln"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Felsiger Boden, Spalten, tiefe Wellenbrecher"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Hoch"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Exzellent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Geringste Bedenken (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "1",
+                    "unitText": "enero"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "12",
+                    "unitText": "diciembre"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/corvallo-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/corvallo2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/corvallo3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/corvallo-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/serviola",
+            "name": "Bernsteinmakrele (Cirviola / Verderol Jungtier)",
+            "alternateName": "Seriola dumerili",
+            "image": "https://www.pescamallorca.online/assets/img/peces/serviola-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/serviola.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/serviola.mp4",
+            "description": "Einer der mächtigsten pelagischen Raubtiere im Mittelmeerraum. Die als „Verderols“ bekannten Jungfische bilden im Sommer Schwärme und sind bei Sportfischern sehr begehrt.",
+            "url": "https://www.pescamallorca.online/peces/serviola",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Pelagische Fische (Sardine, Makrele, Stöcker), Kopffüßer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Frühling bis Herbst (Sommerzug)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Pelagische Gewässer, in der Nähe von Klippen und Seebergen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "30",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Veda/Restricción",
+                    "value": "Jungfische (Verderols <30 cm) sind vom 1. Juli bis 15. September verboten"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "80",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "190",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Trolling, schweres Jiggen, Angeln mit lebenden Ködern, Spinnangeln am Ufer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Offenes Meer, in der Nähe von felsigen Böden und Klippen"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Sehr hoch"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Exzellent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Geringste Bedenken (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "5",
+                    "unitText": "mayo"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "10",
+                    "unitText": "octubre"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/serviola-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/serviola2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/serviola3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/serviola-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/atun-rojo",
+            "name": "Blauflossen-Thunfisch (Tonyina)",
+            "alternateName": "Thunnus thynnus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/atun-rojo-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/atun.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/atun.mp4",
+            "description": "Das größte pelagische Raubtier im Mittelmeer. Der Freizeitfang von Rotem Thun ist stark durch Quoten reguliert und erfordert Sondergenehmigungen.",
+            "url": "https://www.pescamallorca.online/peces/atun-rojo",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Pelagische Fische aller Größen, Kopffüßer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Juni bis September (Wanderpassage durch das Mittelmeer)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Ozeanische und pelagische offene Gewässer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "115",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Veda/Restricción",
+                    "value": "Erfordert eine spezielle Freizeitfischereiquote für Roten Thun (MAPAMA). Sehr begrenzte Quoten."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "680",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "300",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Tiefsee-Trolling, Lebendköderfischen, Tiefsee-Jigging"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Offenes Meer, tiefes Wasser"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Sehr hoch"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Exzellent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "In Gefahr (DE)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "6",
+                    "unitText": "junio"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "9",
+                    "unitText": "septiembre"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/atun-rojo-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/atun-rojo2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/atun-rojo3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/atun-rojo-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/caballa",
+            "name": "Makrele (Verat)",
+            "alternateName": "Scomber scombrus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/caballa-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/caballa.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/caballa.mp4",
+            "description": "Pelagischer Fisch aus der Familie der Scombridae, schnell und gesellig. Im Frühling und Sommer bildet es große Schwärme und ist zum Angeln vom Ufer und vom Boot aus sehr gut zugänglich.",
+            "url": "https://www.pescamallorca.online/peces/caballa",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Zooplankton, kleine Fische, Tintenfische"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Frühling und Sommer"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Pelagische Oberflächengewässer, Küsten und Buchten"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "18",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Keine spezifische Grenze (allgemeine Quote 5 kg/Tag)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "3.4",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "60",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Leichtes Spinnen mit Metallködern, Chambel und lebenden Ködern"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Küste, Deiche, offenes Meer nahe der Oberfläche"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Niedrig"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Gut / Sehr gut"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Geringste Bedenken (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "4",
+                    "unitText": "abril"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "9",
+                    "unitText": "septiembre"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/caballa-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/caballa2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/caballa3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/caballa-min.webp"
         }
     ]
 }

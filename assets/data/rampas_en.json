@@ -70,6 +70,144 @@
       "keywords": "Access natural de roca, Free, Solo Kayaks y Neumáticas pequeñas",
       "description": "Natural launch on the open coast, ideal for kayakers and spearfishers looking for quick access to the bay of Alcúdia away from ports.",
       "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: It has zero draft where you walk directly into the sea from the rock or sand, with access over uneven terrain totally unfeasible for rigid boat trailers. LOGÍSTICA DE APARCAMIENTO: It allows unloading the kayak or dinghy near the sea, but the car must be parked in the residential streets behind. TARIFAS Y BUROCRACIA: Access is completely free. SERVICIOS ANEXOS: It does not have any services as it is a virgin and residential area without nautical facilities. AVISOS Y PELIGROS LOCALES: It is a highly exposed area where extreme caution must be taken with the Tramuntana wind or groundswell as the waves break directly in the launch area, also requiring maximum care with bathers during the months of July and August."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-de-soller-publica",
+      "@type": "Place",
+      "name": "Port de Sóller Public Ramp (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sóller",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7966,
+        "longitude": 2.6894
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+port+soller+mallorca",
+      "keywords": "Concrete ramp, Additional charge, Suitable for trailers, Automated access control",
+      "description": "Public ramp managed by Ports IB in the emblematic Port de Sóller, located in the north of the island between the Serra de Tramuntana. It has an automated access control system using a license plate reader.",
+      "disambiguatingDescription": "CHARACTERISTICS AND BATHYMETRY: Concrete ramp in good condition with sufficient draft for medium-sized boats. PARKING LOGISTICS: Limited parking in high season; It is recommended to arrive first thing in the morning. RATES AND BUREAUCRACY: Requires payment of Rate E-4 for specific use (depending on length) or annual authorization of approximately €63.40. Since April 2026 reserved for List 7 vessels (private use). ANNEXED SERVICES: Port with basic services and access to the historic town of Sóller. WARNINGS AND LOCAL HAZARDS: The ramp has automated control by a license plate reader camera. Unauthorized access is automatically penalized. In the summer season attendance is very high."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-es-barcares",
+      "@type": "Place",
+      "name": "Port d'Es Barcarès Public Ramp (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alcúdia / Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.8815,
+        "longitude": 3.125
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+es+barcares+pollenca",
+      "keywords": "Concrete ramp, Additional charge, Suitable for trailers, Automated access control",
+      "description": "Ports IB public ramp in the Bay of Pollença/Alcúdia, with automated access control by license plate reader camera. Excellent launching point to explore the north of the island.",
+      "disambiguatingDescription": "FEATURES AND BATHYMETRY: Standard concrete ramp with good draft, suitable for medium-sized boats. The bay has calm waters with sandy bottoms. PARKING LOGISTICS: Area with parking available although very busy in summer. Incident management is processed through the Port de Pollença office. RATES AND BUREAUCRACY: Requires E-4 Rate depending on length or annual authorization (~€63.40). Reserved for private use vessels (List 7) ​​from April 2026. ANNEXED SERVICES: Close access to nautical services in the northern area of ​​the island. WARNINGS AND LOCAL HAZARDS: Automated control by camera. Unauthorized access is punishable. Incident management through Port de Pollença."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/sestanyol-llucmajor",
+      "@type": "Place",
+      "name": "S'Estanyol Public Ramp (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.371,
+        "longitude": 2.9955
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+sestanyol+llucmajor",
+      "keywords": "Concrete ramp, Additional charge, Suitable for trailers, Automated access control",
+      "description": "Ports IB public ramp located in the south of the island in S'Estanyol, Llucmajor. It incorporates automated access control by license plate. In-person management is processed through the Port de la Colònia de Sant Jordi office.",
+      "disambiguatingDescription": "CHARACTERISTICS AND BATHYMETRY: Concrete ramp in good condition with sufficient draft for most recreational boats. Access to the open sea of ​​southern Mallorca. PARKING LOGISTICS: Parking area available with space for trailers, although limited in high season. Management from the Port de la Colònia de Sant Jordi office. RATES AND BUREAUCRACY: Requires payment of Rate E-4 for specific use or annual authorization (~€63.40). Reserved for private use (List 7) ​​from April 2026. ANNEXED SERVICES: Basic services in the center of S'Estanyol. WARNINGS AND LOCAL HAZARDS: Automated control by license plate reader camera. Unauthorized access is automatically penalized. Area exposed to south and southwest winds."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-colonia-sant-jordi",
+      "@type": "Place",
+      "name": "Port Public Ramp of Colònia de Sant Jordi (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ses Salines",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.3318,
+        "longitude": 3.005
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+colonia+sant+jordi+mallorca",
+      "keywords": "Concrete ramp, Paid, Suitable for trailers, Access to Cabrera",
+      "description": "Ports IB public ramp in the south of the island, providing direct access to the southeast coast and the Cabrera archipelago. One of the best launching points on the southern coast of Mallorca.",
+      "disambiguatingDescription": "FEATURES AND BATHYMETRY: Well-maintained ramp with good draft and slope suitable for medium and large boats. Strategic access to the southeast coast and the Cabrera National Park. PARKING LOGISTICS: It has parking and is the central management point of the southern area, being the reference for S'Estanyol as well. RATES AND BUREAUCRACY: Requires E-4 Rate depending on length or annual authorization (~€63.40). Reserved for private use vessels (List 7) ​​from April 2026. ANNEXED SERVICES: Port with shops, restaurants and nautical services available in the town. WARNINGS AND LOCAL HAZARDS: Area of ​​high maritime traffic in summer due to excursions to Cabrera. Respect the traffic of the access channel and the separation buoys."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-andratx-publica",
+      "@type": "Place",
+      "name": "Port d'Andratx Public Ramp (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Andratx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5383,
+        "longitude": 2.3878
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+port+andratx+mallorca",
+      "keywords": "Concrete ramp, Additional charge, Suitable for trailers, Southwest",
+      "description": "Ports IB public ramp on the southwestern tip of the island, in the picturesque Port d'Andratx. Direct access to the waters of the south and the coast of the western Serra de Tramuntana.",
+      "disambiguatingDescription": "FEATURES AND BATHYMETRY: Operational concrete ramp with adequate draft for most recreational boats. Access to the southwest of Mallorca and the open waters of the Mediterranean. PARKING LOGISTICS: Parking available although with limited space for trailers in high season given the high nautical tourism in the area. RATES AND BUREAUCRACY: Requires E-4 Rate depending on length or annual authorization (~€63.40). Reserved for private use (List 7) ​​since April 2026. ANNEXED SERVICES: Port with multiple services: shops, restaurants and nearby nautical gas station. WARNINGS AND LOCAL DANGERS: Port very frequented by large vessels. It requires special attention to maritime traffic signaling within the port."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/cn-santa-ponsa",
+      "@type": "Place",
+      "name": "Ramp Nautical Club of Santa Ponsa",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Calvià (Santa Ponsa)",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5119,
+        "longitude": 2.4785
+      },
+      "hasMap": "https://maps.google.com/?q=club+nautico+santa+ponsa+rampa",
+      "keywords": "Concrete ramp, Additional charge, Suitable for trailers, Yacht club",
+      "description": "Daily payment ramp at the Santa Ponsa Yacht Club, in the southwest of the island. It offers good facilities although in high season it is essential to confirm prior availability.",
+      "disambiguatingDescription": "CHARACTERISTICS AND BATHYMETRY: Concrete ramp with good surface conditions and sufficient draft for medium-sized boats. Access to the bay of Santa Ponsa offers mixed rock and sand bottoms. PARKING LOGISTICS: Parking available at the club facilities with a specific area for trailers, although availability may be limited in high season. RATES AND BUREAUCRACY: Private club rates with variable daily cost depending on season and length. Confirm availability and price before going in July and August. ANNEXED SERVICES: Yacht club with full services: fuel, docking, fresh water and restaurants. WARNINGS AND LOCAL HAZARDS: Very busy area in summer. It is highly recommended to call the club to reserve the launch time and avoid waiting."
     }
   ]
 }

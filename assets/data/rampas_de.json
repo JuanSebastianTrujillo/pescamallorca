@@ -70,6 +70,144 @@
       "keywords": "Zugang natural de roca, Kostenlos, Solo Kayaks y Neumáticas pequeñas",
       "description": "Natürlicher Zugang an der offenen Küste, ideal für Kajakfahrer und Speerfischer, die einen schnellen Zugang zur Bucht von Alcúdia abseits der Häfen suchen.",
       "disambiguatingDescription": "MERKMALE UND BATIMETRIE: Es gibt keinen Tiefgang; man gelangt direkt vom Fels oder Sand ins Meer. Der Zugang über unebenes Gelände ist für Bootsanhänger völlig ungeeignet. PARKLOGISTIK: Das Kajak oder Schlauchboot kann in der Nähe des Meeres abgeladen werden, aber das Auto muss zwingend in den hinteren Wohnstraßen geparkt werden. GEBÜHREN UND FORMALITÄTEN: Der Zugang ist völlig frei und kostenlos. ZUSÄTZLICHE DIENSTLEISTUNGEN: Es gibt keine Dienstleistungen, da es sich um ein unberührtes Wohngebiet ohne nautische Einrichtungen handelt. LOKALE HINWEISE UND GEFAHREN: Es ist ein sehr exponiertes Gebiet, in dem extreme Vorsicht bei Tramuntana-Wind oder Grunddünung geboten ist, da die Wellen direkt in der Einstiegszone brechen. In den Monaten Juli und August ist zudem höchste Vorsicht bei Badegästen geboten."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-de-soller-publica",
+      "@type": "Place",
+      "name": "Öffentliche Rampe Port de Sóller (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sóller",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7966,
+        "longitude": 2.6894
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+port+soller+mallorca",
+      "keywords": "Betonrampe, Aufpreis, Geeignet für Anhänger, Automatisierte Zugangskontrolle",
+      "description": "Von Ports IB verwaltete öffentliche Rampe im symbolträchtigen Port de Sóller, im Norden der Insel zwischen der Serra de Tramuntana gelegen. Es verfügt über ein automatisiertes Zugangskontrollsystem mit einem Kennzeichenleser.",
+      "disambiguatingDescription": "EIGENSCHAFTEN UND BATHYMETRIE: Betonrampe in gutem Zustand mit ausreichendem Tiefgang für mittelgroße Boote. PARKLOGISTIK: Begrenzte Parkmöglichkeiten in der Hochsaison; Es wird empfohlen, gleich morgens anzureisen. PREISE UND BÜROKRATIE: Erfordert die Zahlung des Tarifs E-4 für eine bestimmte Nutzung (abhängig von der Länge) oder eine jährliche Genehmigung von ca. 63,40 €. Seit April 2026 für Schiffe der Liste 7 reserviert (private Nutzung). ANGEHÖRIGE DIENSTLEISTUNGEN: Hafen mit grundlegenden Dienstleistungen und Zugang zur historischen Stadt Sóller. WARNUNGEN UND LOKALE GEFAHREN: Die Rampe verfügt über eine automatische Steuerung durch eine Nummernschild-Lesekamera. Unbefugter Zugriff wird automatisch bestraft. In der Sommersaison ist die Besucherzahl sehr hoch."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-es-barcares",
+      "@type": "Place",
+      "name": "Öffentliche Rampe Port d'Es Barcarès (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alcúdia / Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.8815,
+        "longitude": 3.125
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+es+barcares+pollenca",
+      "keywords": "Betonrampe, Aufpreis, Geeignet für Anhänger, Automatisierte Zugangskontrolle",
+      "description": "Öffentliche Rampe Ports IB in der Bucht von Pollença/Alcúdia, mit automatischer Zugangskontrolle durch Kamera zum Lesen von Nummernschildern. Ausgezeichneter Ausgangspunkt, um den Norden der Insel zu erkunden.",
+      "disambiguatingDescription": "EIGENSCHAFTEN UND BATHYMETRIE: Standard-Betonrampe mit gutem Tiefgang, geeignet für mittelgroße Boote. Die Bucht hat ruhiges Wasser mit sandigem Boden. PARKLOGISTIK: Bereich mit Parkplätzen vorhanden, obwohl im Sommer sehr viel los ist. Das Vorfallmanagement wird über das Büro in Port de Pollença abgewickelt. PREISE UND BÜROKRATIE: Erfordert E-4-Tarif je nach Dauer oder Jahresgenehmigung (~63,40 €). Ab April 2026 für Schiffe zur privaten Nutzung (Liste 7) reserviert. ANGEHÖRIGE DIENSTLEISTUNGEN: Enger Zugang zu den nautischen Diensten im nördlichen Teil der Insel. WARNUNGEN UND LOKALE GEFAHREN: Automatisierte Steuerung durch Kamera. Unberechtigter Zugriff ist strafbar. Vorfallmanagement durch Port de Pollença."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/sestanyol-llucmajor",
+      "@type": "Place",
+      "name": "Öffentliche Rampe S'Estanyol (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.371,
+        "longitude": 2.9955
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+sestanyol+llucmajor",
+      "keywords": "Betonrampe, Aufpreis, Geeignet für Anhänger, Automatisierte Zugangskontrolle",
+      "description": "Öffentliche Rampe Ports IB im Süden der Insel in S'Estanyol, Llucmajor. Es beinhaltet eine automatisierte Zugangskontrolle anhand des Nummernschilds. Die persönliche Verwaltung erfolgt über das Büro in Port de la Colònia de Sant Jordi.",
+      "disambiguatingDescription": "EIGENSCHAFTEN UND BATHYMETRIE: Betonrampe in gutem Zustand mit ausreichendem Tiefgang für die meisten Freizeitboote. Zugang zum offenen Meer im Süden Mallorcas. PARKLOGISTIK: Parkplatz mit Platz für Anhänger vorhanden, allerdings in der Hochsaison begrenzt. Leitung vom Büro Port de la Colònia de Sant Jordi aus. PREISE UND BÜROKRATIE: Erfordert die Zahlung des Tarifs E-4 für eine bestimmte Nutzung oder eine jährliche Genehmigung (~63,40 €). Reserviert für den privaten Gebrauch (Liste 7) ab April 2026. ANGEHÖRIGE DIENSTLEISTUNGEN: Grundversorgung im Zentrum von S'Estanyol. WARNUNGEN UND LOKALE GEFAHREN: Automatisierte Steuerung durch Nummernschild-Lesekamera. Unbefugter Zugriff wird automatisch bestraft. Gebiet, das Süd- und Südwestwinden ausgesetzt ist."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-colonia-sant-jordi",
+      "@type": "Place",
+      "name": "Öffentliche Hafenrampe von Colònia de Sant Jordi (Häfen IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ses Salines",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.3318,
+        "longitude": 3.005
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+colonia+sant+jordi+mallorca",
+      "keywords": "Betonrampe, kostenpflichtig, für Anhänger geeignet, Zugang nach Cabrera",
+      "description": "Die öffentliche Rampe Ports IB im Süden der Insel bietet direkten Zugang zur Südostküste und zum Cabrera-Archipel. Einer der besten Startpunkte an der Südküste Mallorcas.",
+      "disambiguatingDescription": "EIGENSCHAFTEN UND BATHYMETRIE: Gepflegte Rampe mit gutem Tiefgang und Gefälle, geeignet für mittlere und große Boote. Strategischer Zugang zur Südostküste und zum Cabrera-Nationalpark. PARKLOGISTIK: Es verfügt über Parkplätze und ist der zentrale Verwaltungspunkt des südlichen Bereichs sowie die Referenz für S'Estanyol. PREISE UND BÜROKRATIE: Erfordert E-4-Tarif je nach Dauer oder Jahresgenehmigung (~63,40 €). Ab April 2026 für private Schiffe (Liste 7) reserviert. ANGEHÖRIGE DIENSTLEISTUNGEN: Hafen mit Geschäften, Restaurants und nautischen Dienstleistungen in der Stadt. WARNUNGEN UND LOKALE GEFAHREN: Gebiet mit hohem Seeverkehr im Sommer aufgrund von Ausflügen nach Cabrera. Respektieren Sie den Verkehr auf dem Zugangskanal und den Trennbojen."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-andratx-publica",
+      "@type": "Place",
+      "name": "Öffentliche Rampe Port d'Andratx (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Andratx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5383,
+        "longitude": 2.3878
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+port+andratx+mallorca",
+      "keywords": "Betonrampe, Aufpreis, Geeignet für Anhänger, Südwesten",
+      "description": "Öffentliche Rampe Ports IB an der südwestlichen Spitze der Insel, im malerischen Port d'Andratx. Direkter Zugang zu den Gewässern des Südens und der Küste der westlichen Serra de Tramuntana.",
+      "disambiguatingDescription": "EIGENSCHAFTEN UND BATHYMETRIE: Betriebsfähige Betonrampe mit ausreichendem Tiefgang für die meisten Freizeitboote. Zugang zum Südwesten Mallorcas und zu den offenen Gewässern des Mittelmeers. PARKLOGISTIK: Parkplätze stehen zur Verfügung, obwohl in der Hochsaison aufgrund des hohen Wassertourismus in der Gegend nur begrenzt Platz für Anhänger vorhanden ist. PREISE UND BÜROKRATIE: Erfordert E-4-Tarif je nach Dauer oder Jahresgenehmigung (~63,40 €). Seit April 2026 für den privaten Gebrauch reserviert (Liste 7). ANGEHÖRIGE DIENSTLEISTUNGEN: Hafen mit mehreren Dienstleistungen: Geschäfte, Restaurants und nahegelegene nautische Tankstelle. WARNHINWEISE UND LOKALE GEFAHREN: Der Hafen wird stark von großen Schiffen frequentiert. Besondere Aufmerksamkeit muss der Signalisierung des Seeverkehrs innerhalb des Hafens gewidmet werden."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/cn-santa-ponsa",
+      "@type": "Place",
+      "name": "Ramp Nautical Club von Santa Ponsa",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Calvià (Santa Ponsa)",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5119,
+        "longitude": 2.4785
+      },
+      "hasMap": "https://maps.google.com/?q=club+nautico+santa+ponsa+rampa",
+      "keywords": "Betonrampe, Aufpreis, Geeignet für Anhänger, Yachtclub",
+      "description": "Tägliche Zahlungsrampe am Santa Ponsa Yacht Club im Südwesten der Insel. Es bietet gute Einrichtungen, obwohl es in der Hochsaison unbedingt erforderlich ist, die Verfügbarkeit im Voraus zu bestätigen.",
+      "disambiguatingDescription": "EIGENSCHAFTEN UND BATHYMETRIE: Betonrampe mit guter Oberflächenbeschaffenheit und ausreichendem Tiefgang für mittelgroße Boote. Der Zugang zur Bucht von Santa Ponsa bietet gemischte Fels- und Sandböden. PARKLOGISTIK: Auf dem Gelände des Clubs stehen Parkplätze mit einem speziellen Bereich für Wohnwagen zur Verfügung, allerdings kann die Verfügbarkeit in der Hochsaison begrenzt sein. PREISE UND BÜROKRATIE: Privatclub-Tarife mit variablen Tageskosten je nach Saison und Länge. Bestätigen Sie die Verfügbarkeit und den Preis, bevor Sie im Juli und August losfahren. ANGEHÖRIGE DIENSTLEISTUNGEN: Yachtclub mit umfassenden Dienstleistungen: Treibstoff, Anlegestellen, Frischwasser und Restaurants. WARNHINWEISE UND LOKALE GEFAHREN: Im Sommer sehr belebtes Gebiet. Es wird dringend empfohlen, den Club anzurufen, um die Startzeit zu reservieren und Wartezeiten zu vermeiden."
     }
   ]
 }

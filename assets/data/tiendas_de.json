@@ -32,7 +32,13 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
           "opens": "09:00",
           "closes": "20:00",
           "description": "Cerrado a mediodía (13:30 - 16:30)"
@@ -80,7 +86,13 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
           "opens": "09:00",
           "closes": "20:00",
           "description": "Descanso de mediodía de 13:30 a 16:00"
@@ -95,6 +107,158 @@
       "keywords": "Cebo Vivo Fresco, Surfcasting, Jigging, Fácil Aparcamiento",
       "description": "Eines der emblematischsten Angelgeschäfte in der Nähe von Portixol. Es zeichnet sich durch seine strategische Lage am Meer und seine Produktvielfalt aus.",
       "disambiguatingDescription": "Sie bieten verschiedene Arten von Lebendködern wie Titón, Koreanisch, Amerikanisch, Rosca und Sandwurm an und verfügen über eine Werkstatt für das Beringen von Ruten und die Reparatur von Spitzen. Es ist ein sehr starkes Geschäft in Modalitäten wie Posenangeln, Jigging und Brandungsangeln und bietet immer Ratschläge aus erster Hand darüber, was in jeder Saison in der Bucht gefangen wird."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/bazar-las-palmeras",
+      "@type": "SportingGoodsStore",
+      "name": "Las Palmeras Basar",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer de Manacor",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears",
+        "postalCode": "07006"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5682,
+        "longitude": 2.6741
+      },
+      "hasMap": "https://maps.google.com/?q=bazar+las+palmeras+pesca+palma",
+      "telephone": "+34 971 24 00 00",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "120"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "20:00",
+          "description": "Descanso a mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:30"
+        }
+      ],
+      "keywords": "Köder, Technische Fäden, Speerfischen, Nautische Elektronik, Historisches Geschäft",
+      "description": "Familienunternehmen mit mehr als 60 Jahren Erfahrung in der Branche, mit Geschäften in der Calle Manacor und in Portitxol. Führender Vertreiber von Ködern, technischen Garnen, handwerklichen Baugruppen und nautischer Elektronik.",
+      "disambiguatingDescription": "DIENSTLEISTUNGSKATALOG: Führender Vertreiber hochwertiger Kunstköder, technischer Fäden für alle Modalitäten und handwerklicher Konfektionierungen, die im Geschäft selbst hergestellt werden. Sie verfügen außerdem über einen fortgeschrittenen Bereich mit nautischer Elektronik und Ausrüstung zum Unterwasserfischen oder Freitauchen. SPEZIALITÄTEN: Referenzen auf Mallorca im Verkauf von Angelausrüstung von Langstreckenbooten, mit besonderer Stärke in der Modalität Heavy Spinning und Jigging."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/can-amengual",
+      "@type": "SportingGoodsStore",
+      "name": "Kann Amengual",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Palma (centro)",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5696,
+        "longitude": 2.6502
+      },
+      "hasMap": "https://maps.google.com/?q=can+amengual+pesca+palma",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "95"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "19:30",
+          "description": "Descanso de mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "keywords": "Fortgeschrittenes Sportfischen, Speerfischen, elektronische Boote, historischer Laden",
+      "description": "Unternehmen mit mehr als 50 Jahren technischer Erfahrung in Palma. Der Bestand zeichnet sich durch fortschrittliche Ausrüstung für das Sportfischen, Bekleidung und spezielles Material für das Unterwasserfischen aus.",
+      "disambiguatingDescription": "DIENSTLEISTUNGSKATALOG: Sie bieten fortschrittliche Sport- und Grundangelausrüstung, spezielle technische Kleidung und einen vollständigen Katalog an Elektronik für Boote (Sonden, GPS, VHF). SPEZIALITÄTEN: Spezialisiert auf die umfassende Ausrüstung des Bootssportfischers, mit hochwertigen Produkten und zuverlässiger technischer Beratung."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/tiendas/blausub",
+      "@type": "SportingGoodsStore",
+      "name": "Blausub",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Palma",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5712,
+        "longitude": 2.6598
+      },
+      "hasMap": "https://maps.google.com/?q=blausub+pesca+submarina+palma",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "210"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:30",
+          "closes": "20:00",
+          "description": "Descanso a mediodía"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:30",
+          "closes": "13:30"
+        }
+      ],
+      "keywords": "Speerfischen, Apnoe, Präzisionsnautik, +1000 technische Referenzen",
+      "description": "Der Handel ist stark auf Ausrüstung für die Freizeitfischerei spezialisiert, mit Schwerpunkt auf Unterwasserfischerei und Präzisionsnautik, und verwaltet einen Bestand von mehr als 1000 Referenzen.",
+      "disambiguatingDescription": "DIENSTKATALOG: Mehr als 1000 Referenzen technischer Produkte für das Speerfischen: Bogen- und Luftgewehre, Neoprenanzüge aller Art, Flossen, Messer, Speerfischruten, Sicherheitsbojen und komplette Ausrüstung für Sportapnoe und Wettkampf. SPEZIALITÄTEN: Mallorcas absoluter Maßstab für Wettkampf-Unterwasserfischen und fortgeschrittenes Freitauchen. Sie beraten sowohl beginnende Freizeitfischer als auch Wettbewerber auf regionaler und nationaler Ebene."
     }
   ]
 }

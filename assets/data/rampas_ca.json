@@ -70,6 +70,144 @@
       "keywords": "Accés natural de roca, Gratuïta, Solo Kayaks y Neumáticas pequeñas",
       "description": "Avarada natural en costa oberta, ideal per a caiacs i pescadors submarins que busquen un accés ràpid a la badia d'Alcúdia lluny dels ports.",
       "disambiguatingDescription": "CARACTERÍSTICAS Y BATIMETRÍA: Presenta un calat nul on s'entra directament caminant al mar des de la roca o la sorra, amb un accés per terreny irregular totalment inviable per a remolcs d'embarcacions rígides. LOGÍSTICA DE APARCAMIENTO: Permet descarregar el caiac o la pneumàtica prop del mar, però el cotxe s'ha d'aparcar obligatòriament als carrers residencials del darrere. TARIFAS Y BUROCRACIA: L'accés és totalment lliure i gratuït. SERVICIOS ANEXOS: No disposa de cap servei en ser una zona verge i residencial sense instal·lacions nàutiques. AVISOS Y PELIGROS LOCALES: És una zona molt exposada en la qual cal extremar la precaució amb el vent de Tramuntana o el mar de fons ja que les onades trenquen directament a la zona d'avarada, requerint també màxima cura amb els banyistes durant els mesos de juliol i agost."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-de-soller-publica",
+      "@type": "Place",
+      "name": "Rampa Pública Port de Sóller (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sóller",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7966,
+        "longitude": 2.6894
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+port+soller+mallorca",
+      "keywords": "Rampa de formigó, De pagament, Apta per a remolcs, Control d'accés automatitzat",
+      "description": "Rampa pública gestionada per Ports IB a l'emblemàtic Port de Sóller, situat al nord de l'illa entre la Serra de Tramuntana. Disposa de sistema automatitzat de control daccés mitjançant lector de matrícules.",
+      "disambiguatingDescription": "CARACTERÍSTIQUES I BATIMETRIA: Rampa de formigó en bon estat amb calat suficient per a embarcacions mitjanes. LOGÍSTICA D'APARCAMENT: Aparcament limitat a temporada alta; es recomana arribar a primera hora. TARIFES I BUROCRÀCIA: Requereix abonament de Taxa E-4 per ús puntual (segons eslora) o autorització anual d'aproximadament 63,40 €. Des d'abril de 2026 reservada per a embarcacions de Llista 7a (ús particular). SERVEIS ANNEXOS: Port amb serveis bàsics i accés a la històrica localitat de Sóller. AVISOS I PERILLS LOCALS: La rampa disposa de control automatitzat per càmera lectora de matrícules. L'accés no autoritzat és penalitzat automàticament. En temporada estival la concurrència és molt elevada."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-es-barcares",
+      "@type": "Place",
+      "name": "Rampa Pública Port des Barcarès (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alcúdia / Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.8815,
+        "longitude": 3.125
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+es+barcares+pollenca",
+      "keywords": "Rampa de formigó, De pagament, Apta per a remolcs, Control d'accés automatitzat",
+      "description": "Rampa pública de Ports IB a la Badia de Pollença/Alcúdia, amb control automatitzat d'accés per càmera lectora de matrícules. Excel·lent punt de botadura per explorar el nord de l'illa.",
+      "disambiguatingDescription": "CARACTERÍSTIQUES I BATIMETRIA: Rampa de formigó estàndard amb bon calat, adequada per a embarcacions de mida mitjana. La badia és d´aigües tranquil·les amb fons sorrencs. LOGÍSTICA D'APARCAMENT: Zona amb aparcament disponible encara molt concorreguda a l'estiu. La gestió d‟incidències es tramita a través de l‟oficina del Port de Pollença. TARIFES I BUROCRÀCIA: Requereix Taxa E-4 segons eslora o autorització anual (~63,40 €). Reservada per a embarcacions d'ús particular (Llista 7a) des d'abril del 2026. SERVEIS ANNEXOS: Accés proper a serveis nàutics de la zona nord de l'illa. AVISOS I PERILLS LOCALS: Control automatitzat per càmera. L'accés sense autorització és sancionat. Gestió d'incidències a través del Port de Pollença."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/sestanyol-llucmajor",
+      "@type": "Place",
+      "name": "Rampa Pública S'Estanyol (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.371,
+        "longitude": 2.9955
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+sestanyol+llucmajor",
+      "keywords": "Rampa de formigó, De pagament, Apta per a remolcs, Control d'accés automatitzat",
+      "description": "Rampa pública de Ports IB situada al sud de l'illa a S'Estanyol, Llucmajor. Incorpora control automatitzat d´accessos per matrícula. La gestió presencial es tramita a través de loficina del Port de la Colònia de Sant Jordi.",
+      "disambiguatingDescription": "CARACTERÍSTIQUES I BATIMETRIA: Rampa de formigó en bon estat amb calat suficient per a la majoria d'embarcacions d'esbarjo. Accés al mar obert del sud de Mallorca. LOGÍSTICA D'APARCAMENT: Zona d'aparcament disponible amb espai per a remolcs, encara que limitada a temporada alta. Gestió des de loficina del Port de la Colònia de Sant Jordi. TARIFES I BUROCRÀCIA: Requereix abonament de Taxa E-4 per ús puntual o autorització anual (~63,40 €). Reservada per a ús particular (Llista 7a) des d'abril de 2026. SERVEIS ANNEXOS: Serveis bàsics al nucli de S'Estanyol. AVISOS I PERILLS LOCALS: Control automatitzat per càmera lectora de matrícules. L'accés no autoritzat és penalitzat automàticament. Zona exposada a vents del sud i sud-oest."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-colonia-sant-jordi",
+      "@type": "Place",
+      "name": "Rampa Pública Port de la Colònia de Sant Jordi (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ses Salines",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.3318,
+        "longitude": 3.005
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+colonia+sant+jordi+mallorca",
+      "keywords": "Rampa de formigó, De pagament, Apta per a remolcs, Accés a Cabrera",
+      "description": "Rampa pública de Ports IB al sud de l'illa, que proporciona accés directe a la costa sud-est ia l'arxipèlag de Cabrera. Un dels millors punts de botadura del litoral sud mallorquí.",
+      "disambiguatingDescription": "CARACTERÍSTIQUES I BATIMETRIA: Rampa ben mantinguda amb bon calat i pendent adequat per a embarcacions mitjanes i grans. Accés estratègic a la costa sud-est i al Parc Nacional de Cabrera. LOGÍSTICA D'APARCAMENT: Disposa d'aparcament i és el punt central de gestió de la zona sud, la referència per a s'Estanyol també. TARIFES I BUROCRÀCIA: Requereix Taxa E-4 segons eslora o autorització anual (~63,40 €). Reservada per a embarcacions d'ús particular (Llista 7a) des d'abril de 2026. SERVEIS ANNEXOS: Port amb botigues, restaurants i serveis nàutics disponibles a la localitat. AVISOS I PERILLS LOCALS: Zona d'alt trànsit marítim a l'estiu per les excursions a Cabrera. Respecteu el trànsit del canal d'accés i les boies de separació."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/port-andratx-publica",
+      "@type": "Place",
+      "name": "Rampa Pública Port d'Andratx (Ports IB)",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Andratx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5383,
+        "longitude": 2.3878
+      },
+      "hasMap": "https://maps.google.com/?q=rampa+port+andratx+mallorca",
+      "keywords": "Rampa de formigó, De pagament, Apta per a remolcs, Sud-oest",
+      "description": "Rampa pública de Ports IB a l'extrem sud-oest de l'illa, al pintoresc Port d'Andratx. Accés directe a les aigües del sud ia la costa de la Serra de Tramuntana occidental.",
+      "disambiguatingDescription": "CARACTERÍSTIQUES I BATIMETRIA: Rampa de formigó operativa amb calat adequat per a la majoria d'embarcacions d'esbarjo. Accés al sud-oest mallorquí ia aigües obertes de la Mediterrània. LOGÍSTICA D'APARCAMENT: Aparcament disponible encara que amb espai limitat per a remolcs en temporada alta atès l'elevat turisme nàutic de la zona. TARIFES I BUROCRÀCIA: Requereix Taxa E-4 segons eslora o autorització anual (~63,40 €). Reservada per a ús particular (Llista 7a) des d'abril de 2026. SERVEIS ANNEXOS: Port amb múltiples serveis: botigues, restaurants i benzinera nàutica propera. AVISOS I PERILLS LOCALS: Port molt freqüentat per embarcacions de gran eslora. Requereix especial atenció a la senyalització de trànsit marítim dins del port."
+    },
+    {
+      "@id": "https://www.pescamallorca.online/rampas/cn-santa-ponsa",
+      "@type": "Place",
+      "name": "Rampa Club Nàutic de Santa Ponsa",
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Calvià (Santa Ponsa)",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5119,
+        "longitude": 2.4785
+      },
+      "hasMap": "https://maps.google.com/?q=club+nautico+santa+ponsa+rampa",
+      "keywords": "Rampa de formigó, De pagament, Apta per a remolcs, Club nàutic",
+      "description": "Rampa de pagament diari al Club Nàutic de Santa Ponsa, al sud-oest de l'illa. Ofereix bones instal·lacions, encara que en temporada alta és imprescindible confirmar disponibilitat prèvia.",
+      "disambiguatingDescription": "CARACTERÍSTIQUES I BATIMETRIA: Rampa de formigó amb bones condicions de ferm i calat suficient per a embarcacions mitjanes. L´accés a la badia de Santa Ponsa ofereix fons mixts de roca i sorra. LOGÍSTICA D'APARCAMENT: Pàrquing disponible a les instal·lacions del club amb zona específica per a remolcs, encara que la disponibilitat pot ser limitada en temporada alta. TARIFES I BUROCRÀCIA: Tarifes privades del club amb cost diari variable segons temporada i eslora. Confirmeu disponibilitat i preu abans d'anar al juliol i l'agost. SERVEIS ANNEXOS: Club nàutic amb serveis complets: combustible, varada, aigua dolça i locals de restauració. AVISOS I PERILLS LOCALS: Zona molt concorreguda a l'estiu. Es recomana encaridament trucar al club per reservar l'horari de botadura i evitar esperes."
     }
   ]
 }

@@ -183,7 +183,13 @@
                     "value": "11",
                     "unitText": "novembre"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/llampuga-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/llampuga2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/llampuga3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/llampuga-min.webp"
         },
         {
             "@type": "Taxon",
@@ -271,7 +277,13 @@
                     "value": "12",
                     "unitText": "desembre"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/mero-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/mero2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/mero3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/mero-min.webp"
         },
         {
             "@type": "Taxon",
@@ -354,7 +366,13 @@
                     "value": "6",
                     "unitText": "juny"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/cap-roig-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/cap-roig2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/cap-roig3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/cap-roig-min.webp"
         },
         {
             "@type": "Taxon",
@@ -437,7 +455,13 @@
                     "value": "5",
                     "unitText": "maig"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/sargo-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/sargo2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/sargo3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/sargo-min.webp"
         },
         {
             "@type": "Taxon",
@@ -525,7 +549,13 @@
                     "value": "12",
                     "unitText": "desembre"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/serrano-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/serrano2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/serrano3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/serrano-min.webp"
         },
         {
             "@type": "Taxon",
@@ -613,7 +643,13 @@
                     "value": "9",
                     "unitText": "setembre"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/denton-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/denton2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/denton3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/denton-min.webp"
         },
         {
             "@type": "Taxon",
@@ -701,7 +737,13 @@
                     "value": "10",
                     "unitText": "octubre"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/oblada-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/oblada2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/oblada3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/oblada-min.webp"
         },
         {
             "@type": "Taxon",
@@ -789,7 +831,13 @@
                     "value": "12",
                     "unitText": "desembre"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/salpa-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/salpa2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/salpa3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/salpa-min.webp"
         },
         {
             "@type": "Taxon",
@@ -877,7 +925,483 @@
                     "value": "10",
                     "unitText": "octubre"
                 }
-            ]
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/bonito-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/bonito2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/bonito3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/bonito-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/lubina",
+            "name": "Lubina (Llobarro)",
+            "alternateName": "Dicentrarchus labrax",
+            "image": "https://www.pescamallorca.online/assets/img/peces/lubina-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/lubina.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/lubina.mp4",
+            "description": "Depredador actiu de fons sorrencs i praderies de posidònia, també anomenat llobarro a les Illes Balears. Peix de gran valor gastronòmic i esportiu.",
+            "url": "https://www.pescamallorca.online/peces/lubina",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Peixos petits, crustacis, cefalòpodes"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Tardor i hivern (millor captura nocturna)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Fons sorrencs, praderies de posidònia, desembocadures i zones de trencant"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "36",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Sense límit específic (dins la quota de 5 kg/dia)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "12",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "100",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Surfcasting nocturn, spinning, pesca a boia amb esquer viu"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Platja, desembocadures, esculleres, praderies de posidònia"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excel·lent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "10",
+                    "unitText": "octubre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "2",
+                    "unitText": "febrero"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/lubina-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/lubina2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/lubina3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/lubina-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/corvallo",
+            "name": "Corvallo (Escorball)",
+            "alternateName": "Sciaena umbra",
+            "image": "https://www.pescamallorca.online/assets/img/peces/corvallo-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/corvallo.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/corvallo.mp4",
+            "description": "Espècie de fons amb capacitat de produir sons amb la bufeta natatòria. Molt apreciada pels pescadors submarins i de fons per la carn de primera qualitat.",
+            "url": "https://www.pescamallorca.online/peces/corvallo",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Crustacis, mol·luscs, cucs poliquets i petits peixos"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Tot l'any (més actiu de nit)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Fons rocosos amb esquerdes, coral·ligen, entre 5 i 50 metres"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "30",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Sense límit específic"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "5",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "70",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Pesca a fons nocturna amb esquer natural, pesca submarina"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Fons rocosos, esquerdes, esculleres profundes"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excel·lent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "1",
+                    "unitText": "enero"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "12",
+                    "unitText": "diciembre"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/corvallo-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/corvallo2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/corvallo3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/corvallo-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/serviola",
+            "name": "Serviola (Cirviola / Verderol juvenil)",
+            "alternateName": "Seriola dumerili",
+            "image": "https://www.pescamallorca.online/assets/img/peces/serviola-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/serviola.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/serviola.mp4",
+            "description": "Un dels depredadors pelàgics més potents de la Mediterrània. Els juvenils, coneguts com a verderols, formen bancs a l'estiu i són molt buscats pels pescadors esportius.",
+            "url": "https://www.pescamallorca.online/peces/serviola",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Peixos pelàgics (sardina, voga, júrell), cefalòpodes"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Primavera a la tardor (migració estiuenca)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Aigües pelàgiques, prop de penya-segats i muntanyes submarines"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "30",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Veda/Restricción",
+                    "value": "Juvenils (verderols <30 cm) vedats de l'1 de juliol al 15 de setembre"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "80",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "190",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Curricà, jigging pesat, pesca amb esquer viu, spinning des de costa"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Mar obert, a prop de fons rocosos i penya-segats"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Molt alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excel·lent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "5",
+                    "unitText": "mayo"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "10",
+                    "unitText": "octubre"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/serviola-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/serviola2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/serviola3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/serviola-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/atun-rojo",
+            "name": "Tonyina Vermella (Tonyina)",
+            "alternateName": "Thunnus thynnus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/atun-rojo-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/atun.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/atun.mp4",
+            "description": "El depredador pelàgic més gran del Mediterrani. La pesca recreativa de la tonyina vermella està fortament regulada per quotes i requereix permís especial.",
+            "url": "https://www.pescamallorca.online/peces/atun-rojo",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Peixos pelàgics de totes les mides, cefalòpodes"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Juny a Setembre (pas migratori per la Mediterrània)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Aigües obertes oceàniques i pelàgiques"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "115",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Veda/Restricción",
+                    "value": "Requereix quota específica de pesca recreativa de tonyina vermella (MAPAMA). Contingències molt limitades."
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "680",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "300",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Curricà d'alçada, pesca amb esquer viu, jigging de gran profunditat"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Mar obert, aigües profundes"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Molt alta"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Excel·lent"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "En perill (EN)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "6",
+                    "unitText": "junio"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "9",
+                    "unitText": "septiembre"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/atun-rojo-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/atun-rojo2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/atun-rojo3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/atun-rojo-min.webp"
+        },
+        {
+            "@type": "Taxon",
+            "@id": "https://www.pescamallorca.online/peces/caballa",
+            "name": "Verat (Verat)",
+            "alternateName": "Scomber scombrus",
+            "image": "https://www.pescamallorca.online/assets/img/peces/caballa-min.webp",
+            "audio": "https://www.pescamallorca.online/assets/audio/caballa.mp3",
+            "video": "https://www.pescamallorca.online/assets/video/caballa.mp4",
+            "description": "Peix pelàgic de la família dels escombrats, ràpid i gregari. Forma grans bancs a la primavera i l'estiu, i és molt accessible per a la pesca des de costa i embarcació.",
+            "url": "https://www.pescamallorca.online/peces/caballa",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dieta",
+                    "value": "Zooplàncton, petits peixos, calamars"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Estacionalidad",
+                    "value": "Primavera i estiu"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Hábitat preferido",
+                    "value": "Aigües superficials pelàgiques, costes i badies"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla mínima legal",
+                    "value": "18",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Cuota máxima",
+                    "value": "Sense límit específic (quota general 5 kg/dia)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Peso máximo",
+                    "value": "3.4",
+                    "unitText": "kg"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Talla máxima",
+                    "value": "60",
+                    "unitText": "cm"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Métodos de pesca",
+                    "value": "Spinning lleuger amb cimbells metàl·lics, chambel, esquer viu"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Zona de pesca",
+                    "value": "Costa, dics, mar obert a prop de la superfície"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Dificultad",
+                    "value": "Baixa"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Calidad culinaria",
+                    "value": "Bona / Molt bona"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Conservación (UICN)",
+                    "value": "Preocupació menor (LC)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Inicio temporada",
+                    "value": "4",
+                    "unitText": "abril"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Fin temporada",
+                    "value": "9",
+                    "unitText": "septiembre"
+                }
+            ],
+            "images": [
+                "https://www.pescamallorca.online/assets/img/peces/caballa-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/caballa2-min.webp",
+                "https://www.pescamallorca.online/assets/img/peces/caballa3-min.webp"
+            ],
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/caballa-min.webp"
         }
     ]
 }

@@ -1,149 +1,341 @@
 {
-    "@context": "https://schema.org",
-    "@graph": [
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://www.pescamallorca.online/zonas/cala-figuera-formentor",
+      "@type": "Place",
+      "name": "Cala Figuera",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.9536,
+        "longitude": 3.1714
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+      ],
+      "keywords": "Angelgebiet, Schwerer Zugang, Felsboden, Tiefseeangeln, Klippe",
+      "description": "Atemberaubende unberührte Bucht, umgeben von Klippen am nördlichsten Punkt der Insel, ideal für die gezielte Fischerei auf große Felsfischarten.",
+      "additionalProperty": [
         {
-            "@id": "https://www.pescamallorca.online/zonas/cala-figuera-formentor",
-            "@type": "Place",
-            "name": "Cala Figuera",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Pollença",
-                "addressRegion": "Illes Balears"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 39.9536,
-                "longitude": 3.1714
-            },
-            "image": [
-                "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp",
-                "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
-            ],
-            "keywords": "Angelgebiet, Schwerer Zugang, Felsboden, Tiefseeangeln, Klippe",
-            "description": "Atemberaubende unberührte Bucht, umgeben von Klippen am nördlichsten Punkt der Insel, ideal für die gezielte Fischerei auf große Felsfischarten.",
-            "additionalProperty": [
-                {
-                    "@type": "PropertyValue",
-                    "name": "Zugang",
-                    "value": "Der Zugang erfordert einen 20-minütigen Abstieg zu Fuß über einen Ziegenpfad von der Formentor-Straße. Die Parkplätze sind stark begrenzt, und festes Schuhwerk ist zwingend erforderlich."
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Meeresboden",
-                    "value": "Bekannt für seine schroffen Felskanten mit abrupten Abfällen von über 20 Metern Tiefe nahe dem Ufer."
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Häufige Arten",
-                    "value": "Zackenbarsch, Zahnbrasse, Roter Drachenkopf"
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Empfohlene Methoden",
-                    "value": "Schweres Rockfishing, Shore Jigging, Grundangeln mit Naturköder"
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Tageszeit",
-                    "value": "Tag, Morgendämmerung, Abenddämmerung"
-                }
-            ]
+          "@type": "PropertyValue",
+          "name": "Zugang",
+          "value": "Der Zugang erfordert einen 20-minütigen Abstieg zu Fuß über einen Ziegenpfad von der Formentor-Straße. Die Parkplätze sind stark begrenzt, und festes Schuhwerk ist zwingend erforderlich."
         },
         {
-            "@id": "https://www.pescamallorca.online/zonas/playa-de-muro-es-comu",
-            "@type": "Place",
-            "name": "Muro Strand",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Muro",
-                "addressRegion": "Illes Balears"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 39.7891,
-                "longitude": 3.1235
-            },
-            "image": [
-                "https://www.pescamallorca.online/assets/img/spots/playa-muro-1.webp",
-                "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
-            ],
-            "keywords": "Angelgebiet, Leichter Zugang, Sandboden, Nachtangeln, Surfcasting",
-            "description": "Ausgedehnter weißer Sandstrand mit flachem Wasser in der Bucht von Alcúdia, ideal für das nächtliche Brandungsangeln auf Meerbrassen.",
-            "additionalProperty": [
-                {
-                    "@type": "PropertyValue",
-                    "name": "Zugang",
-                    "value": "Sehr leicht zu Fuß von den Parkplätzen nahe dem Naturschutzgebiet zu erreichen, flaches Gelände, ideal zum Transport von schwerem Gerät und Strandkarren."
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Meeresboden",
-                    "value": "Überwiegend feiner, heller Sand mit einem sehr sanften Tiefenprofil. Weite Würfe sind erforderlich, um Tiefe zu gewinnen; vereinzelte Posidonia-Flecken liegen über 100 Meter entfernt."
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Häufige Arten",
-                    "value": "Goldbrasse, Geißbrasse, Goldstrieme"
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Empfohlene Methoden",
-                    "value": "Klassisches Brandungsangeln (vorzugsweise nachts oder in den Wintermonaten, um Badegäste zu vermeiden)"
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Tageszeit",
-                    "value": "Nacht, Abenddämmerung"
-                }
-            ]
+          "@type": "PropertyValue",
+          "name": "Meeresboden",
+          "value": "Bekannt für seine schroffen Felskanten mit abrupten Abfällen von über 20 Metern Tiefe nahe dem Ufer."
         },
         {
-            "@id": "https://www.pescamallorca.online/zonas/cap-de-ses-salines",
-            "@type": "Place",
-            "name": "Cap de ses Salines",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Santanyí",
-                "addressRegion": "Illes Balears"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 39.2646,
-                "longitude": 3.0545
-            },
-            "image": [
-                "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
-                "https://www.pescamallorca.online/assets/img/spots/salines-2.webp"
-            ],
-            "keywords": "Angelgebiet, Mittlerer Zugang, Starke Strömungen, Gemischter Boden, Gischt",
-            "description": "Der südlichste Punkt Mallorcas, berühmt für seine starken Meeresströmungen, die zahlreiche küstennahe Raubfische anlocken.",
-            "additionalProperty": [
-                {
-                    "@type": "PropertyValue",
-                    "name": "Zugang",
-                    "value": "Es wird dringend empfohlen, früh anzureisen, um am Leuchtturm zu parken. Gehen Sie mit Vorsicht über die scharfe Felsküste, um den besten Platz zu finden."
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Meeresboden",
-                    "value": "Weist eine flache Felsplattform auf, die in einen gemischten Meeresboden aus großen Steinblöcken und dichten Posidonia-Wiesen übergeht."
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Häufige Arten",
-                    "value": "Geißbrasse, Goldbrasse, Zahnbrasse, Brandbrasse"
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Empfohlene Methoden",
-                    "value": "Leichtes/mittleres Spinning, Posenangeln"
-                },
-                {
-                    "@type": "PropertyValue",
-                    "name": "Tageszeit",
-                    "value": "Morgendämmerung, Tag"
-                }
-            ]
+          "@type": "PropertyValue",
+          "name": "Häufige Arten",
+          "value": "Zackenbarsch, Zahnbrasse, Roter Drachenkopf"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Empfohlene Methoden",
+          "value": "Schweres Rockfishing, Shore Jigging, Grundangeln mit Naturköder"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tageszeit",
+          "value": "Tag, Morgendämmerung, Abenddämmerung"
         }
-    ]
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/playa-de-muro-es-comu",
+      "@type": "Place",
+      "name": "Muro Strand",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Muro",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7891,
+        "longitude": 3.1235
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+      ],
+      "keywords": "Angelgebiet, Leichter Zugang, Sandboden, Nachtangeln, Surfcasting",
+      "description": "Ausgedehnter weißer Sandstrand mit flachem Wasser in der Bucht von Alcúdia, ideal für das nächtliche Brandungsangeln auf Meerbrassen.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Zugang",
+          "value": "Sehr leicht zu Fuß von den Parkplätzen nahe dem Naturschutzgebiet zu erreichen, flaches Gelände, ideal zum Transport von schwerem Gerät und Strandkarren."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Meeresboden",
+          "value": "Überwiegend feiner, heller Sand mit einem sehr sanften Tiefenprofil. Weite Würfe sind erforderlich, um Tiefe zu gewinnen; vereinzelte Posidonia-Flecken liegen über 100 Meter entfernt."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Häufige Arten",
+          "value": "Goldbrasse, Geißbrasse, Goldstrieme"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Empfohlene Methoden",
+          "value": "Klassisches Brandungsangeln (vorzugsweise nachts oder in den Wintermonaten, um Badegäste zu vermeiden)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tageszeit",
+          "value": "Nacht, Abenddämmerung"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/cap-de-ses-salines",
+      "@type": "Place",
+      "name": "Cap de ses Salines",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santanyí",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.2646,
+        "longitude": 3.0545
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp"
+      ],
+      "keywords": "Angelgebiet, Mittlerer Zugang, Starke Strömungen, Gemischter Boden, Gischt",
+      "description": "Der südlichste Punkt Mallorcas, berühmt für seine starken Meeresströmungen, die zahlreiche küstennahe Raubfische anlocken.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Zugang",
+          "value": "Es wird dringend empfohlen, früh anzureisen, um am Leuchtturm zu parken. Gehen Sie mit Vorsicht über die scharfe Felsküste, um den besten Platz zu finden."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Meeresboden",
+          "value": "Weist eine flache Felsplattform auf, die in einen gemischten Meeresboden aus großen Steinblöcken und dichten Posidonia-Wiesen übergeht."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Häufige Arten",
+          "value": "Geißbrasse, Goldbrasse, Zahnbrasse, Brandbrasse"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Empfohlene Methoden",
+          "value": "Leichtes/mittleres Spinning, Posenangeln"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tageszeit",
+          "value": "Morgendämmerung, Tag"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/port-soller-costa-norte",
+      "@type": "Place",
+      "name": "Hafen von Sóller und Nordküste (Tramuntana)",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sóller",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.796,
+        "longitude": 2.6891
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "keywords": "Angelgebiet, mittelschwerer Zugang, felsiger Boden, technisches Angeln, Klippen",
+      "description": "Die Nordküste Mallorcas ist geprägt von Klippen, die direkt in große Tiefen abfallen, und felsigen Böden. Es handelt sich um das technischste Gebiet der Insel, das auf Felsarten und Kopffüßer ausgerichtet ist.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Zugang hauptsächlich vom Boot aus. Von der Küste aus erfordern die produktivsten Punkte absteigende Strecken in der Serra de Tramuntana mit hohem technischem Schwierigkeitsgrad."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Untergetauchte Klippen mit steilen Abfällen in große Tiefen, nicht weit vom Ufer entfernt. Felsiger Korallenboden und Unterwasserhöhlen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Zackenbarsch, Cap-roig (Escópora), Serrano"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Grundfischen, Jiggen, schweres Felsenfischen"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Morgendämmerung, Tag"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/bahia-alcudia-pollenca",
+      "@type": "Place",
+      "name": "Bucht von Alcúdia und Port de Pollença",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alcúdia / Pollença",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.838,
+        "longitude": 3.12
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+      ],
+      "keywords": "Angelgebiet, einfacher Zugang, Sandboden, Posidonia, Brandungsangeln, geschlossene Bucht",
+      "description": "Der Norden Mallorcas bietet geschlossene Buchten mit überwiegend sandigem Grund und Posidonia-oceanica-Wiesen. Ideales Gebiet zum Angeln von der Küste aus mit Surfcasting-Techniken.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Einfacher Zugang von mehreren Punkten in der Bucht. Spots wie Sa Bassa Blanca eignen sich gut zum Surfcasting und es stehen gute Parkmöglichkeiten zur Verfügung."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Überwiegend sandiger Boden mit ausgedehnten Wiesen von Posidonia Oceanica. Sanfte und progressive Bathymetrie, ideal für das Surfcasting über weite Distanzen."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Dorada, Sargo (Sarg), Salpa"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Klassisches Surfcasting, Tiefangeln mit Naturködern"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Nacht, Dämmerung, Morgendämmerung"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/cala-rajada-levante",
+      "@type": "Place",
+      "name": "Cala Rajada und Südostküste",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Capdepera",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7147,
+        "longitude": 3.4607
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "keywords": "Angelgebiet, mittlerer Zugang, Hochseeangeln, Menorca-Kanal, Thunfisch, Klippen",
+      "description": "Die Lage am östlichen Ende der Insel macht sie aufgrund ihrer Nähe zum Menorca-Kanal zu einem strategischen Punkt für das Hochsee- und Klippenangeln.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Vom Boot aus: Zugang zum Menorca-Kanal. Von der Küste aus: Die Klippen bieten gute Angelplätze mit Bojen und sind über Küstenwege erreichbar."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Gemischter Fels- und Sandboden an der Küste. Im Menorca-Kanal tiefes Wasser mit Strömungen und Durchzug pelagischer Arten."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Llampuga, Dentón, Sargo (Sarg), Oblada"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Tiefsee-Trolling (vom Boot aus), Klippenbojenfischen, Jiggen"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Morgendämmerung, Tag"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.pescamallorca.online/zonas/bahia-palma-andratx",
+      "@type": "Place",
+      "name": "Bucht von Palma und Südwesten (Port d'Andratx)",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Palma / Andratx",
+        "addressRegion": "Illes Balears"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.535,
+        "longitude": 2.55
+      },
+      "image": [
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+      ],
+      "keywords": "Angelgebiet, einfacher Zugang, Dämme und Wellenbrecher, gemischter Grund, Spariden",
+      "description": "Leicht zugängliches Gebiet mit mehreren Angelplätzen an Dämmen und Wellenbrechern. Angeln ist in der Nähe der Hafendocks sehr beliebt, wobei stets die nautischen Zeichen beachtet werden müssen.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Acceso",
+          "value": "Sehr einfacher Zugang von mehreren städtischen Punkten und Strandpromenaden. Sie müssen die Schilder respektieren und nicht innerhalb der Betriebshafenanlagen oder in markierten Badebereichen angeln."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fondo Marino",
+          "value": "Gemischte Fels- und Sandböden rund um Deiche und Wellenbrecher, mit Vorkommen von Posidonia in entlegeneren Gebieten."
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Especies Frecuentes",
+          "value": "Sargo (Sarg), Oblada, Serrano"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Técnicas Recomendadas",
+          "value": "Leichtes Spinnen, Bojenangeln, Grundangeln vom Damm aus"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Momento del Día",
+          "value": "Tag, Dämmerung, Nacht"
+        }
+      ]
+    }
+  ]
 }
