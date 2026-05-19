@@ -256,11 +256,16 @@ export function processCommand(transcript) {
     console.log("Procesando comando:", text);
 
     // 1. Comandos de Navegación "Ir a..."
-    if (text.startsWith("ir a") || text.startsWith("navegar a") || text === "ver peces" || text === "ver zonas" || text === "ver mapa" || text.includes("rampas") || text.includes("normativa") || text.includes("autores") || text.includes("contacto")) {
+    if (text.startsWith("ir a") || text.startsWith("navegar a") || text === "ver peces" || text === "ver zonas" || text === "ver mapa" || text.includes("rampas") || text.includes("normativa") || text.includes("autores") || text.includes("contacto") || text.includes("playa") || text.includes("playas") || text.includes("platges") || text.includes("beaches") || text.includes("strande") || text.includes("strand")) {
         if (text.includes("peces") || text.includes("especies") || text.includes("pecedex")) {
             window.location.hash = "especies";
             showNotification("Navegando a especies...");
             return "Navegando a la sección de especies";
+        }
+        if (text.includes("playas") || text.includes("playa") || text.includes("platges") || text.includes("beaches") || text.includes("strande") || text.includes("strand")) {
+            window.location.hash = "playas";
+            showNotification("Navegando a playas...");
+            return "Navegando a la sección de playas";
         }
         if (text.includes("zonas") || text.includes("spots") || text.includes("lugares")) {
             window.location.hash = "zonas";
@@ -327,7 +332,7 @@ export function processCommand(transcript) {
 
     // 2.2 Ver Ficha o Zona (Ej: "ver dorada", "ver cala figuera")
     if (text.startsWith("ver ") || text.startsWith("abrir ")) {
-        const query = text.replace(/ver |abrir |ficha de |zona /g, "").trim();
+        const query = text.replace(/ver |abrir |ficha de |zona |playa de |playa |platja de |platja /g, "").trim();
         if (query) {
             // Intentar abrir pez
             const isFish = window.globalSpeciesList?.some(s =>
@@ -339,6 +344,19 @@ export function processCommand(transcript) {
                 window.openSpeciesModalByName(query);
                 showNotification(`Abriendo ficha de ${query}`);
                 return `Abriendo ficha de ${query}`;
+            }
+
+            // Intentar abrir playa
+            const isBeach = window.currentBeachesList?.some(b => {
+                const bName = normalizar(b.name);
+                const qName = normalizar(query);
+                return bName.includes(qName) || qName.includes(bName);
+            });
+
+            if (isBeach) {
+                window.openBeachModalByName(query);
+                showNotification(`Abriendo playa de ${query}`);
+                return `Abriendo playa de ${query}`;
             }
 
             // Intentar abrir zona

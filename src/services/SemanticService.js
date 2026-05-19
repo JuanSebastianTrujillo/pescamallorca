@@ -134,6 +134,73 @@ export const SemanticService = {
     },
 
     /**
+     * Genera y actualiza JSON-LD para una playa (Beach)
+     * @param {Object} beach - Objeto playa con name, description, geo, etc.
+     * @param {String} baseUrl - URL base del sitio
+     */
+    updateBeachJsonLd(beach, baseUrl = 'https://www.pescamallorca.online') {
+        if (!beach || !beach.name) return;
+
+        // Convertir nombre a slug
+        const slug = beach.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+        // Construir objeto JSON-LD para la playa
+        const jsonld = {
+            "@context": "https://schema.org",
+            "@type": "Beach",
+            "@id": `${baseUrl}/playas/${slug}`,
+            "name": beach.name,
+            "description": beach.description || '',
+            "url": `${baseUrl}/playas/${slug}`
+        };
+
+        // Agregar imagen principal
+        if (beach.image) {
+            jsonld.image = Array.isArray(beach.image) ? beach.image : [beach.image];
+        }
+
+        // Agregar coordenadas geográficas si existen
+        if (beach.geo && beach.geo.latitude && beach.geo.longitude) {
+            jsonld.geo = {
+                "@type": "GeoCoordinates",
+                "latitude": beach.geo.latitude,
+                "longitude": beach.geo.longitude
+            };
+        }
+
+        // Agregar dirección postal si existe
+        if (beach.address) {
+            jsonld.address = {
+                "@type": "PostalAddress",
+                "addressLocality": beach.address.addressLocality || '',
+                "addressRegion": beach.address.addressRegion || 'Illes Balears',
+                "addressCountry": beach.address.addressCountry || 'ES'
+            };
+        }
+
+        // Agregar servicios (amenityFeature)
+        if (beach.amenityFeature && Array.isArray(beach.amenityFeature)) {
+            jsonld.amenityFeature = beach.amenityFeature;
+        }
+
+        // Agregar propiedades adicionales
+        if (beach.additionalProperty && Array.isArray(beach.additionalProperty)) {
+            jsonld.additionalProperty = beach.additionalProperty;
+        }
+
+        // Agregar aggregateRating si existe
+        if (beach.aggregateRating) {
+            jsonld.aggregateRating = {
+                "@type": "AggregateRating",
+                "ratingValue": beach.aggregateRating.ratingValue,
+                "reviewCount": beach.aggregateRating.reviewCount
+            };
+        }
+
+        this._updateScriptTag(jsonld);
+    },
+
+    /**
      * Limpia el JSON-LD de entidad actual (al cerrar modales)
      */
     clearEntityJsonLd() {

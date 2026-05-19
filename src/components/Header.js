@@ -47,14 +47,15 @@ export const Header = () => {
           <nav id="navmenu" class="navmenu" aria-label="Menú principal de navegación">
             <ul>
               <li><a href="#hero" class="active" data-i18n="nav_inicio">Inicio</a></li>
-              <li><a href="#zonas" data-i18n="nav_zonas">Spots</a></li>
               <li><a href="#especies" data-i18n="nav_especies">Especies</a></li>
               <li><a href="#pecedex" data-i18n="nav_pecedex">Pecédex</a></li>
-              <li><a href="#mapa" data-i18n="nav_mapa">Mapa</a></li>
-              <li><a href="#quiz" data-i18n="nav_quiz">Quiz</a></li>
-              <li><a href="#meteo" data-i18n="nav_meteo">Tiempo</a></li>
-              <li><a href="#tiendas" data-i18n="nav_tiendas">Tiendas</a></li>
+              <li><a href="#zonas" data-i18n="nav_zonas">Spots</a></li>
               <li><a href="#rampas" data-i18n="nav_rampas">Rampas</a></li>
+              <li><a href="#playas" data-i18n="nav_playas">Playas</a></li>
+              <li><a href="#mapa" data-i18n="nav_mapa">Mapa</a></li>
+              <li><a href="#meteo" data-i18n="nav_meteo">Tiempo</a></li>
+              <li><a href="#quiz" data-i18n="nav_quiz">Quiz</a></li>
+              <li><a href="#tiendas" data-i18n="nav_tiendas">Tiendas</a></li>
               <li><a href="#normativa" data-i18n="nav_normativa">Normativa</a></li>
               <li><a href="#autores" data-i18n="nav_autores">Autores</a></li>
               <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>

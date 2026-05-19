@@ -1,0 +1,111 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Beach",
+      "@id": "playa_001",
+      "name": "Es Trenc",
+      "description": "Playa virgen de arena blanca y aguas cristalinas en el sur de Mallorca.",
+      "image": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Campos",
+        "addressRegion": "Islas Baleares",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.3425,
+        "longitude": 2.9861
+      },
+      "publicAccess": true,
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Parking",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Socorrista",
+          "value": true
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Tipo de playa",
+          "value": "Arena"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Dificultad de acceso",
+          "value": "Baja"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Nivel de ocupación habitual",
+          "value": "Alta"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.6,
+        "reviewCount": 128
+      }
+    },
+    {
+      "@type": "Beach",
+      "@id": "playa_002",
+      "name": "Cala Agulla",
+      "description": "Cala de arena fina y aguas turquesa rodeada de pinares en el noreste de Mallorca.",
+      "image": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Capdepera",
+        "addressRegion": "Islas Baleares",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7164,
+        "longitude": 3.4556
+      },
+      "publicAccess": true,
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Parking",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Socorrista",
+          "value": true
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Tipo de playa",
+          "value": "Arena"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Dificultad de acceso",
+          "value": "Media"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Nivel de ocupacion habitual",
+          "value": "Media"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.5,
+        "reviewCount": 96
+      }
+    }
+  ]
+}

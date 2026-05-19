@@ -1,7 +1,7 @@
 export const RulesSection = () => {
     return `
       <!-- Rules Section -->
-      <section id="normativa" class="section">
+      <section id="normativa" class="section light-background">
                 <div class="container section-title" data-aos="fade-up">
                     <h2 data-i18n="rules_title">Normativa Legal y Permisos</h2>
                     <p data-i18n="rules_tagline">Límites de capturas, cuotas y licencias marítimas vigentes en Islas Baleares.</p>

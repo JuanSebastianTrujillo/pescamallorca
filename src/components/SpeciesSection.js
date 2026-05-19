@@ -1,7 +1,7 @@
 export const SpeciesSection = () => {
     return `
       <!-- Species Section -->
-      <section id="especies" class="section light-background">
+      <section id="especies" class="section">
             <div class="container section-title" data-aos="fade-up">
                <h2 data-i18n="species_title">Directorio de Especies</h2>
                <p data-i18n="species_tagline">Fichas detalladas con biología, hábitat y regulaciones de las especies de Baleares.</p>

@@ -3,7 +3,7 @@ import { trapFocusInModal } from "../services/AccessibilityService.js";
 export const PecedexSection = () => {
   return `
       <!-- Pecedex Section -->
-      <section id="pecedex" class="section">
+      <section id="pecedex" class="section light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2 data-i18n="pecedex_title">Pecédex Balear</h2>
           <p data-i18n="pecedex_tagline">Lleva tu propio registro. Ve a la ficha de cada pez en la sección de Especies para marcar tus capturas y desbloquearlas aquí.</p>

@@ -23,6 +23,7 @@ import { voiceController, processCommand, speak, stopSpeaking, hasSTT, playAudio
 import { SemanticService } from "./services/SemanticService.js"
 
 import { VoiceHelpModal } from "./components/VoiceHelpModal.js";
+import { BeachesSection } from "./components/BeachesSection.js";
 
 const app = document.getElementById('app');
 
@@ -62,14 +63,15 @@ const renderApp = () => {
         const deferred = document.getElementById('deferred-sections');
         if (deferred) {
             deferred.innerHTML = `
-                ${SpotsSection()}
                 ${SpeciesSection()}
                 ${PecedexSection()}
-                ${MapSection()}           
+                ${SpotsSection()}
+                ${RampsSection()}
+                ${BeachesSection()}
+                ${MapSection()}
                 ${WeatherSection()}
                 ${QuizSection()}
                 ${ShopsSection()}
-                ${RampsSection()}
                 ${RulesSection()}
                 ${AuthorsSection()}
                 ${ContactSection()}
@@ -94,12 +96,14 @@ async function initAfterDeferred() {
     await loadShopsData();
     await loadRampsData();
     await loadSpotsData();
+    await loadBeachesData();
     await loadSpeciesData();
     await loadMonthSpecies();
 
     if (window._i18n && typeof window._i18n.on === 'function') {
         window.handleLanguageChange = async () => {
             await loadSpotsData();
+            await loadBeachesData();
             await loadSpeciesData();
             await loadMonthSpecies();
             await loadShopsData();
@@ -142,10 +146,24 @@ async function initAfterDeferred() {
         });
     }
 
+    const beachModal = document.getElementById('beachModal');
+    if (beachModal) {
+        beachModal.addEventListener('hidden.bs.modal', () => {
+            stopSpeaking();
+            SemanticService.clearEntityJsonLd(); // Limpiar JSON-LD de entidad
+            const readBtn = beachModal.querySelector('button[data-speak-modal="beach"]');
+            if (readBtn) {
+                const label = (window._i18n && window._i18n.t) ? window._i18n.t('beach_modal_read') : 'Leer';
+                readBtn.innerHTML = `<i class="bi bi-volume-up-fill me-1"></i> ${label}`;
+                readBtn.classList.replace('btn-danger', 'btn-outline-light');
+            }
+        });
+    }
+
     // Delegación de acciones por atributos data- (click y teclado)
     function attachDataActionListeners() {
         document.addEventListener('click', (ev) => {
-            const el = ev.target.closest('[data-open-spot],[data-open-species-index],[data-open-species-name],[data-open-species-global],[data-open-ramp],[data-open-shop],[data-toggle-fish-audio],[data-toggle-catch],[data-auth-logout],[data-close-mobile],[data-mock-login],[data-set-star],[data-speak-modal],[data-stop-voice],[data-pecedex-reset],[data-pecedex-confirm]');
+            const el = ev.target.closest('[data-open-spot],[data-open-beach],[data-open-species-index],[data-open-species-name],[data-open-species-global],[data-open-ramp],[data-open-shop],[data-toggle-fish-audio],[data-toggle-catch],[data-auth-logout],[data-close-mobile],[data-mock-login],[data-set-star],[data-speak-modal],[data-stop-voice],[data-pecedex-reset],[data-pecedex-confirm]');
             if (!el) return;
             ev.preventDefault();
             // Open spot
@@ -160,6 +178,7 @@ async function initAfterDeferred() {
             if (el.dataset.pecedexReset !== undefined) { showResetPecedexModal(); return; }
             if (el.dataset.pecedexConfirm !== undefined) { confirmResetPecedex(); return; }
             if (el.dataset.speakModal !== undefined) { window.speakModalDescription(el.dataset.speakModal, el); return; }
+            if (el.dataset.openBeach !== undefined) { openBeachModal(Number(el.dataset.openBeach)); return; }
             if (el.dataset.openSpeciesIndex !== undefined) { openSpeciesModal(Number(el.dataset.openSpeciesIndex)); return; }
             if (el.dataset.openSpeciesName) { openSpeciesModalByName(el.dataset.openSpeciesName); return; }
             if (el.dataset.openSpeciesGlobal !== undefined) { openSpeciesModalGlobal(Number(el.dataset.openSpeciesGlobal)); return; }
@@ -176,7 +195,7 @@ async function initAfterDeferred() {
         // Support teclado (Enter / Space) para los elementos con data-attributes
         document.addEventListener('keydown', (ev) => {
             if (ev.key !== 'Enter' && ev.key !== ' ') return;
-            const el = ev.target.closest('[data-open-spot],[data-open-species-index],[data-open-species-name],[data-open-species-global],[data-open-ramp],[data-open-shop],[data-toggle-fish-audio],[data-toggle-catch],[data-auth-logout],[data-close-mobile],[data-mock-login],[data-set-star],[data-speak-modal],[data-stop-voice],[data-pecedex-reset],[data-pecedex-confirm]');
+            const el = ev.target.closest('[data-open-spot],[data-open-beach],[data-open-species-index],[data-open-species-name],[data-open-species-global],[data-open-ramp],[data-open-shop],[data-toggle-fish-audio],[data-toggle-catch],[data-auth-logout],[data-close-mobile],[data-mock-login],[data-set-star],[data-speak-modal],[data-stop-voice],[data-pecedex-reset],[data-pecedex-confirm]');
             if (!el) return;
             ev.preventDefault();
             el.click();
@@ -264,7 +283,11 @@ window.speakModalDescription = (type, btn) => {
     if (window.speechSynthesis.speaking) {
         window.speechSynthesis.cancel();
         if (btn) {
-            const label = type === 'species' ? ((window._i18n && window._i18n.t) ? window._i18n.t('species_modal_read') : 'Leer ficha') : ((window._i18n && window._i18n.t) ? window._i18n.t('spot_modal_read') : 'Leer');
+            const label = type === 'species' 
+                ? ((window._i18n && window._i18n.t) ? window._i18n.t('species_modal_read') : 'Leer ficha') 
+                : (type === 'beach' 
+                    ? ((window._i18n && window._i18n.t) ? window._i18n.t('beach_modal_read') : 'Leer') 
+                    : ((window._i18n && window._i18n.t) ? window._i18n.t('spot_modal_read') : 'Leer'));
             btn.innerHTML = `<i class="bi bi-volume-up-fill me-1"></i> ${label}`;
             btn.classList.replace('btn-danger', 'btn-outline-light');
         }
@@ -283,6 +306,11 @@ window.speakModalDescription = (type, btn) => {
         const desc = document.getElementById('spotModalDescription').innerText;
         text = `${name}. ${desc}`;
         btnLabel = "Leer";
+    } else if (type === 'beach') {
+        const name = document.getElementById('beachModalLabel').innerText;
+        const desc = document.getElementById('beachModalDescription').innerText;
+        text = `${name}. ${desc}`;
+        btnLabel = "Leer";
     }
 
     if (btn) {
@@ -295,7 +323,11 @@ window.speakModalDescription = (type, btn) => {
     utterance.lang = 'es-ES';
     utterance.onend = () => {
         if (btn) {
-            const label = type === 'species' ? ((window._i18n && window._i18n.t) ? window._i18n.t('species_modal_read') : 'Leer ficha') : ((window._i18n && window._i18n.t) ? window._i18n.t('spot_modal_read') : 'Leer');
+            const label = type === 'species' 
+                ? ((window._i18n && window._i18n.t) ? window._i18n.t('species_modal_read') : 'Leer ficha') 
+                : (type === 'beach' 
+                    ? ((window._i18n && window._i18n.t) ? window._i18n.t('beach_modal_read') : 'Leer') 
+                    : ((window._i18n && window._i18n.t) ? window._i18n.t('spot_modal_read') : 'Leer'));
             btn.innerHTML = `<i class="bi bi-volume-up-fill me-1"></i> ${label}`;
             btn.classList.replace('btn-danger', 'btn-outline-light');
         }
@@ -910,6 +942,18 @@ window.openRampModalByName = (name) => {
     window.openRampModal(ramp.id);
 };
 
+window.openBeachModalByName = (name) => {
+    if (!name || !window.currentBeachesList) return;
+    const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    const beach = window.currentBeachesList.find(b => {
+        const bName = b.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return bName.includes(cleanQuery) || cleanQuery.includes(bName);
+    });
+    if (!beach) return;
+    const index = window.currentBeachesList.indexOf(beach);
+    window.openBeachModal(index);
+};
+
 window.renderSpotComments = async (spotName) => {
     const container = document.getElementById('spotModalCommentsContainer');
     if (!container) return;
@@ -1065,6 +1109,204 @@ window.toggleFishAudio = (btn, audioPath) => {
         };
     }
 };
+
+// ==========================================
+// SECCIÓN DE PLAYAS
+// ==========================================
+
+let currentBeachesList = [];
+window.currentBeachesList = [];
+let beachesSwiperInstance = null;
+
+async function loadBeachesData() {
+    const beachesContainer = document.getElementById('beaches-container');
+    if (!beachesContainer) return;
+
+    try {
+        const response = await fetch(`assets/data/playas.json?v=${new Date().getTime()}`);
+        const schema = await response.json();
+
+        let allBeaches = schema['@graph'] || [];
+        currentBeachesList = allBeaches;
+        window.currentBeachesList = allBeaches;
+        renderBeachesSwiper(allBeaches);
+
+        const applyFilters = () => {
+            const dif = document.getElementById('filter-beach-dificultad').value.toLowerCase();
+            const tipo = document.getElementById('filter-beach-tipo').value.toLowerCase();
+            const txtRaw = document.getElementById('filter-beach-text').value.trim();
+            const txt = txtRaw.toLowerCase();
+
+            const filtered = allBeaches.filter(beach => {
+                let pass = true;
+
+                if (dif !== 'todo') {
+                    const prop = beach.additionalProperty?.find(p => p.name === 'Dificultad de acceso');
+                    const val = prop ? prop.value.toLowerCase() : '';
+                    if (!val.includes(dif)) pass = false;
+                }
+
+                if (tipo !== 'todo' && pass) {
+                    const prop = beach.additionalProperty?.find(p => p.name === 'Tipo de playa');
+                    const val = prop ? prop.value.toLowerCase() : '';
+                    if (!val.includes(tipo)) pass = false;
+                }
+
+                if (txt.length > 0 && pass) {
+                    const jsonString = JSON.stringify(beach).toLowerCase();
+                    if (!jsonString.includes(txt)) pass = false;
+                }
+
+                return pass;
+            });
+
+            renderBeachesSwiper(filtered);
+        };
+
+        const filterElements = document.querySelectorAll('.beaches-filter');
+        filterElements.forEach(el => {
+            el.addEventListener('change', applyFilters);
+            el.addEventListener('keyup', applyFilters);
+            el.addEventListener('input', applyFilters);
+        });
+
+    } catch (e) {
+        console.error("Error al cargar JSON de playas:", e);
+        beachesContainer.innerHTML = '<div class="alert alert-danger w-100">Error cargando información de Playas.</div>';
+    }
+}
+
+function renderBeachesSwiper(beachesArray) {
+    const container = document.getElementById('beaches-container');
+    currentBeachesList = beachesArray;
+
+    if (beachesSwiperInstance) {
+        beachesSwiperInstance.destroy(true, true);
+        beachesSwiperInstance = null;
+    }
+
+    if (beachesArray.length === 0) {
+        const noResults = (window._i18n && window._i18n.t) ? window._i18n.t('beach_no_results', { defaultValue: 'No se encontraron playas con esos filtros.' }) : 'No se encontraron playas con esos filtros.';
+        container.innerHTML = `<div class="w-100 text-center text-muted my-5"><i class="bi bi-search fs-1"></i><p class="mt-2">${noResults}</p></div>`;
+        return;
+    }
+
+    let htmlCards = '';
+    beachesArray.forEach((beach, index) => {
+        const imgSrc = beach.image || 'assets/img/hero-carousel/hero-carousel-1-640.webp';
+        htmlCards += `
+          <div class="swiper-slide py-3">
+             <div class="card h-100 shadow border-0 cursor-pointer beach-card" role="button" tabindex="0" aria-label="Ver detalles de ${beach.name}" data-open-beach="${index}" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+               <img 
+                 src="${imgSrc}" 
+                 class="card-img-top object-fit-cover" 
+                 alt="Fotografía de ${beach.name}" 
+                 style="height:250px" 
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='assets/img/hero-carousel/hero-carousel-1-640.webp'">
+               <div class="card-body text-center bg-white rounded-bottom">
+                 <h3 class="card-title text-primary fw-bold mb-1 fs-5">${beach.name}</h3>
+                 <p class="card-text text-muted small mb-0"><i class="bi bi-geo-alt-fill text-danger me-1"></i> ${beach.address?.addressLocality || 'Desconocido'}</p>
+               </div>
+             </div>
+          </div>
+        `;
+    });
+
+    container.innerHTML = htmlCards;
+
+    const beachTriggers = container.querySelectorAll('[data-open-beach]');
+    beachTriggers.forEach(el => {
+        const idx = Number(el.getAttribute('data-open-beach'));
+        el.addEventListener('click', () => openBeachModal(idx));
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBeachModal(idx); } });
+    });
+
+    if (typeof Swiper !== 'undefined') {
+        beachesSwiperInstance = new Swiper('.beaches-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.beaches-swiper-next',
+                prevEl: '.beaches-swiper-prev'
+            },
+            pagination: { el: '.beaches-swiper-pagination', clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                992: { slidesPerView: 3, spaceBetween: 40 },
+                1200: { slidesPerView: 4, spaceBetween: 40 }
+            }
+        });
+    }
+}
+
+window.openBeachModal = (index) => {
+    const beach = currentBeachesList[index];
+    if (!beach) return;
+
+    document.getElementById('beachModalLabel').innerText = beach.name;
+    document.getElementById('beachModalLocality').innerHTML = `<i class="bi bi-geo-alt-fill me-2 text-danger"></i><span>${beach.address?.addressLocality || 'Desconocido'}</span>`;
+    document.getElementById('beachModalDescription').innerText = beach.description || '';
+    
+    const imgEl = document.getElementById('beachModalImage');
+    imgEl.src = beach.image || 'assets/img/hero-carousel/hero-carousel-1-640.webp';
+    imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1-640.webp'; };
+
+    const propsContainer = document.getElementById('beachModalProperties');
+    let propsHtml = '';
+    
+    if (beach.amenityFeature && beach.amenityFeature.length > 0) {
+        const servTitle = (window._i18n && window._i18n.t) ? window._i18n.t('beach_services', { defaultValue: 'Servicios:' }) : 'Servicios:';
+        propsHtml += `<div class="col-12 mb-3"><strong>${servTitle}</strong><br>`;
+        beach.amenityFeature.forEach(af => {
+            if (af.value) {
+                propsHtml += `<span class="badge bg-success me-2 mb-2"><i class="bi bi-check-circle me-1"></i>${af.name}</span>`;
+            }
+        });
+        propsHtml += '</div>';
+    }
+
+    if (beach.additionalProperty && beach.additionalProperty.length > 0) {
+        beach.additionalProperty.forEach(prop => {
+            propsHtml += `
+                <div class="col-sm-6 mb-2">
+                    <div class="p-2 border rounded bg-white shadow-sm">
+                        <small class="text-muted d-block">${prop.name}</small>
+                        <span class="fw-bold text-dark">${prop.value}</span>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    if (beach.aggregateRating) {
+        const valTitle = (window._i18n && window._i18n.t) ? window._i18n.t('beach_rating', { defaultValue: 'Valoración' }) : 'Valoración';
+        const reviewsLabel = (window._i18n && window._i18n.t) ? window._i18n.t('beach_reviews', { defaultValue: 'reseñas' }) : 'reseñas';
+        propsHtml += `
+            <div class="col-sm-6 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm">
+                    <small class="text-muted d-block">${valTitle}</small>
+                    <span class="fw-bold text-dark"><i class="bi bi-star-fill text-warning me-1"></i>${beach.aggregateRating.ratingValue} (${beach.aggregateRating.reviewCount} ${reviewsLabel})</span>
+                </div>
+            </div>
+        `;
+    }
+
+    propsContainer.innerHTML = propsHtml;
+
+    // Actualizar JSON-LD para la playa
+    SemanticService.updateBeachJsonLd(beach);
+    
+    const modalEl = document.getElementById('beachModal');
+    let modal = bootstrap.Modal.getInstance(modalEl);
+    if (!modal) {
+        modal = new bootstrap.Modal(modalEl);
+    }
+    // Trap focus inside modal and preserve opener
+    try { trapFocusInModal(modalEl, document.activeElement); } catch (e) { /* noop */ }
+    modal.show();
+};
+
 
 // ==========================================
 // SECCIÓN DE ESPECIES (ICTIOLOGÍA)
