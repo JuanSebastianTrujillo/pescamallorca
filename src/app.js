@@ -283,10 +283,10 @@ window.speakModalDescription = (type, btn) => {
     if (window.speechSynthesis.speaking) {
         window.speechSynthesis.cancel();
         if (btn) {
-            const label = type === 'species' 
-                ? ((window._i18n && window._i18n.t) ? window._i18n.t('species_modal_read') : 'Leer ficha') 
-                : (type === 'beach' 
-                    ? ((window._i18n && window._i18n.t) ? window._i18n.t('beach_modal_read') : 'Leer') 
+            const label = type === 'species'
+                ? ((window._i18n && window._i18n.t) ? window._i18n.t('species_modal_read') : 'Leer ficha')
+                : (type === 'beach'
+                    ? ((window._i18n && window._i18n.t) ? window._i18n.t('beach_modal_read') : 'Leer')
                     : ((window._i18n && window._i18n.t) ? window._i18n.t('spot_modal_read') : 'Leer'));
             btn.innerHTML = `<i class="bi bi-volume-up-fill me-1"></i> ${label}`;
             btn.classList.replace('btn-danger', 'btn-outline-light');
@@ -323,10 +323,10 @@ window.speakModalDescription = (type, btn) => {
     utterance.lang = 'es-ES';
     utterance.onend = () => {
         if (btn) {
-            const label = type === 'species' 
-                ? ((window._i18n && window._i18n.t) ? window._i18n.t('species_modal_read') : 'Leer ficha') 
-                : (type === 'beach' 
-                    ? ((window._i18n && window._i18n.t) ? window._i18n.t('beach_modal_read') : 'Leer') 
+            const label = type === 'species'
+                ? ((window._i18n && window._i18n.t) ? window._i18n.t('species_modal_read') : 'Leer ficha')
+                : (type === 'beach'
+                    ? ((window._i18n && window._i18n.t) ? window._i18n.t('beach_modal_read') : 'Leer')
                     : ((window._i18n && window._i18n.t) ? window._i18n.t('spot_modal_read') : 'Leer'));
             btn.innerHTML = `<i class="bi bi-volume-up-fill me-1"></i> ${label}`;
             btn.classList.replace('btn-danger', 'btn-outline-light');
@@ -462,7 +462,7 @@ async function loadMonthSpecies() {
 
         // 5. Regenerar indicadores para todas las diapositivas
         const totalSlides = carouselInner.querySelectorAll('.carousel-item').length;
-        
+
         for (let i = 0; i < totalSlides; i++) {
             const btn = document.createElement('button');
             btn.type = 'button';
@@ -541,24 +541,24 @@ async function loadShopsData() {
             const isTaller = kw.toLowerCase().includes('repara');
             const isSub = kw.toLowerCase().includes('submarina');
             const isLicencias = kw.toLowerCase().includes('licencia');
-            
+
             const keyServices = [];
             if (isCebo) keyServices.push('cebo');
             if (isTaller) keyServices.push('taller');
             if (isSub) keyServices.push('submarina');
             if (isLicencias) keyServices.push('licencias');
-            
+
             const badges = [];
             if (isCebo) badges.push({ text: "Cebo Vivo", color: "success", icon: "bi-bug" });
             if (isTaller) badges.push({ text: "Taller Reparación", color: "info", icon: "bi-tools" });
             if (isSub) badges.push({ text: "Pesca Submarina", color: "primary", icon: "bi-water" });
 
             const descParts = (item.disambiguatingDescription || "").split(/CATÁLOGO DE SERVICIOS:|ESPECIALIDADES:/).map(s => s.trim());
-            
+
             return {
                 id: index,
                 name: item.name,
-                geoZone: "palma", 
+                geoZone: "palma",
                 keyServices: keyServices,
                 location: item.address?.addressLocality || "",
                 address: item.address?.streetAddress || "",
@@ -609,23 +609,23 @@ async function loadRampsData() {
             const isArena = kw.toLowerCase().includes('arena');
             const isRoca = kw.toLowerCase().includes('roca');
             const type = isHormigon ? 'hormigon' : isArena ? 'arena' : 'roca';
-            
+
             const isFree = kw.toLowerCase().includes('gratuita') || kw.toLowerCase().includes('free') || kw.toLowerCase().includes('gratuïta') || kw.toLowerCase().includes('kostenlos');
             const isPaid = kw.toLowerCase().includes('pago') || kw.toLowerCase().includes('paid') || kw.toLowerCase().includes('pagament') || kw.toLowerCase().includes('kostenpflichtig');
             const isExclusive = kw.toLowerCase().includes('exclusiva') || kw.toLowerCase().includes('socios');
             const priceTag = isExclusive ? 'Exclusiva Socios' : isPaid ? 'De pago' : 'Gratuita';
             const priceColor = isExclusive ? 'danger' : isPaid ? 'warning' : 'success';
-            
+
             const suit = kw.includes('remolque') ? (kw.includes('grandes') ? 'Apta remolques grandes' : 'Apta para remolques') : 'Solo Kayaks / Ligero';
             const suitColor = suit.includes('grandes') ? 'primary' : suit.includes('remolque') ? 'success' : 'secondary';
-            
+
             const descParts = (item.disambiguatingDescription || "").split(/CARACTERÍSTICAS Y BATIMETRÍA:|LOGÍSTICA DE APARCAMIENTO:|TARIFAS Y BUROCRACIA:|SERVICIOS ANEXOS:|AVISOS Y PELIGROS LOCALES:/).map(s => s.trim());
-            
+
             return {
                 id: index,
                 name: item.name,
                 location: item.address?.addressLocality || "",
-                zone: "all", 
+                zone: "all",
                 type: type,
                 typeLabel: kw.split(',')[0] || type,
                 priceTag: priceTag,
@@ -727,7 +727,7 @@ function renderSpotsCards(spotsArray) {
     });
 
     if (typeof AOS !== 'undefined') AOS.init();
-    
+
     if (typeof Swiper !== 'undefined') {
         window.spotsSwiperInstance = new Swiper('.spots-swiper', {
             slidesPerView: 1,
@@ -847,7 +847,7 @@ window.openSpotModal = (index) => {
     } else {
         const badges = speciesRaw.split(',').map(s => {
             let fishSlug = s.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            
+
             // Handle historical Spanish names appearing in some spot translations
             if (fishSlug.includes("cap-roig")) fishSlug = "cap-roig";
             else if (fishSlug.includes("sargo")) fishSlug = "sargo";
@@ -1073,10 +1073,10 @@ window.toggleFishAudio = (btn, audioPath) => {
     // Usar el controlador centralizado de VoiceService
     const currentAudio = window.getVoiceAudio();
 
-    const isCurrentlyPlaying = currentAudio && !currentAudio.paused && 
-        (currentAudio.src.includes(cleanPath) || 
-         currentAudio.currentSrc.includes(cleanPath) || 
-         (currentAudio.dataset && currentAudio.dataset.basePath === cleanPath));
+    const isCurrentlyPlaying = currentAudio && !currentAudio.paused &&
+        (currentAudio.src.includes(cleanPath) ||
+            currentAudio.currentSrc.includes(cleanPath) ||
+            (currentAudio.dataset && currentAudio.dataset.basePath === cleanPath));
 
     if (isCurrentlyPlaying) {
         stopAudio();
@@ -1247,14 +1247,14 @@ window.openBeachModal = (index) => {
     document.getElementById('beachModalLabel').innerText = beach.name;
     document.getElementById('beachModalLocality').innerHTML = `<i class="bi bi-geo-alt-fill me-2 text-danger"></i><span>${beach.address?.addressLocality || 'Desconocido'}</span>`;
     document.getElementById('beachModalDescription').innerText = beach.description || '';
-    
+
     const imgEl = document.getElementById('beachModalImage');
     imgEl.src = beach.image || 'assets/img/hero-carousel/hero-carousel-1-640.webp';
     imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1-640.webp'; };
 
     const propsContainer = document.getElementById('beachModalProperties');
     let propsHtml = '';
-    
+
     if (beach.amenityFeature && beach.amenityFeature.length > 0) {
         const servTitle = (window._i18n && window._i18n.t) ? window._i18n.t('beach_services', { defaultValue: 'Servicios:' }) : 'Servicios:';
         propsHtml += `<div class="col-12 mb-3"><strong>${servTitle}</strong><br>`;
@@ -1296,7 +1296,7 @@ window.openBeachModal = (index) => {
 
     // Actualizar JSON-LD para la playa
     SemanticService.updateBeachJsonLd(beach);
-    
+
     const modalEl = document.getElementById('beachModal');
     let modal = bootstrap.Modal.getInstance(modalEl);
     if (!modal) {
@@ -1599,10 +1599,10 @@ function fillAndShowSpeciesModal(species) {
 
         imgEl.style.opacity = '0';
         setTimeout(() => {
-            const rutaCompleta = selected.includes('/') ? selected : `assets/img/peces/${selected}`;
+            const rutaCompleta = selected.includes('/') ? selected : `assets/img/peces/webp/${selected}`;
             const rutaLimpia = rutaCompleta.substring(0, rutaCompleta.lastIndexOf('.'));
             imgEl.src = `${rutaLimpia}-800.webp`;
-            
+
             imgEl.alt = `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca`;
             imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1-640.jpg'; };
             imgEl.style.opacity = '1';
@@ -1647,15 +1647,15 @@ function fillAndShowSpeciesModal(species) {
             "congrio": "congrio",
             "morena": "morena"
         };
-        
+
         let slug = '';
         if (species['@id']) {
             slug = species['@id'].split('/').pop();
         }
-        
+
         const mappedAudio = audioMap[slug];
         let finalAudioPath = null;
-        
+
         if (mappedAudio) {
             finalAudioPath = `assets/audio/peces-mallorquin/${mappedAudio}/${mappedAudio}`;
         } else if (species.audio) {
@@ -1911,7 +1911,7 @@ window.initPecedex = (speciesArray) => {
         const pointerStyle = isCaught ? `cursor: pointer; transition: transform 0.2s;` : `cursor: default; opacity: 0.8;`;
         const hoverAnim = isCaught ? `onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"` : '';
 
-                html += `
+        html += `
                     <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                          <div class="card h-100 border-0 bg-transparent text-center" role="button" tabindex="0" aria-label="${isCaught ? `Ver detalles de ${species.name}` : 'Especie no capturada'}" style="${pointerStyle}" ${hoverAnim} ${isCaught ? `data-open-species-global="${index}"` : ''} title="${isCaught ? 'Ver ficha técnica de la especie' : 'Captura esta especie para desbloquearla'}">
                <div class="position-relative mx-auto rounded-circle d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background-color: ${isCaught ? '#eef2ff' : '#f8f9fa'}; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);">
@@ -1946,7 +1946,7 @@ window.toggleCatchSpecies = (event, name) => {
     }
 
     const actionContainer = document.getElementById('speciesModalCatchAction');
-        if (actionContainer) {
+    if (actionContainer) {
         const isCaught = caughtSpecies.includes(name);
         if (isCaught) {
             actionContainer.innerHTML = `<button class="btn btn-success btn-sm rounded-pill py-1 px-3 shadow-sm" data-toggle-catch="${name}"><i class="bi bi-check-circle-fill me-1"></i> Capturado</button>`;
