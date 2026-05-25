@@ -464,8 +464,14 @@ async function loadMonthSpecies() {
             const slide = document.createElement('div');
             slide.className = 'carousel-item dynamic-slide';
             slide.setAttribute('data-species-name', sp.name);
+            const rutaLimpiaSlide = getImageBasePath(sp.image || '');
             slide.innerHTML = `
-                <img src="${sp.image}" alt="Foto de ${sp.name}" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
+                <picture style="position: absolute; width: 100%; height: 100%;">
+                  <source type="image/avif" srcset="${rutaLimpiaSlide}-400.avif 400w, ${rutaLimpiaSlide}-800.avif 800w" sizes="100vw">
+                  <source type="image/webp" srcset="${rutaLimpiaSlide}-400.webp 400w, ${rutaLimpiaSlide}-800.webp 800w" sizes="100vw">
+                  <source type="image/jpeg" srcset="${rutaLimpiaSlide}-400.jpg 400w, ${rutaLimpiaSlide}-800.jpg 800w" sizes="100vw">
+                  <img src="${rutaLimpiaSlide}-800.jpg" alt="Foto de ${sp.name}" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="eager" decoding="async">
+                </picture>
                 <div class="carousel-container">
                     <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 5vw, 3rem);">${(window._i18n && window._i18n.t) ? window._i18n.t('month_species_title', { month: formattedMonth }) : `Peces del Mes - ${formattedMonth}`}</h2>
                     <h3 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: clamp(1.5rem, 4vw, 2.5rem); margin-top: clamp(3rem, 15vw, 10rem);">${sp.name}</h3>
@@ -2146,7 +2152,7 @@ window.initPecedex = (speciesArray) => {
                     <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                          <div class="card h-100 border-0 bg-transparent text-center" role="button" tabindex="0" aria-label="${isCaught ? `Ver detalles de ${species.name}` : 'Especie no capturada'}" style="${pointerStyle}" ${hoverAnim} ${isCaught ? `data-open-species-global="${index}"` : ''} title="${isCaught ? 'Ver ficha técnica de la especie' : 'Captura esta especie para desbloquearla'}">
                <div class="position-relative mx-auto rounded-circle d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background-color: ${isCaught ? '#eef2ff' : '#f8f9fa'}; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);">
-                 <img src="${species.image}" alt="${isCaught ? `Fotografía de ${species.name}` : 'Especie no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}">
+                 <img src="${species.image}" alt="${isCaught ? `Fotografía de ${species.name}` : 'Especie no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" loading="lazy" decoding="async">
                  ${isCaught ? '<i class="bi bi-check-circle-fill text-success position-absolute" style="bottom: 0px; right: 0px; font-size: 1.2rem; background: white; border-radius: 50%;"></i>' : ''}
                </div>
                <div class="card-body p-2">
