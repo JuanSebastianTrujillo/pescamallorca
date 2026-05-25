@@ -6,17 +6,17 @@
             "@id": "https://www.pescamallorca.online/peces/dorada",
             "name": "Goldbrasse",
             "alternateName": "Sparus aurata",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/dorada.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/dorada.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/dorada.mp3",
             "video": "https://www.pescamallorca.online/assets/video/dorada.mp4",
             "description": "Ein Mitglied der Familie der Meerbrassen, sehr häufig auf den Balearen. Erkennbar an dem goldenen Streifen zwischen den Augen und seinem kräftigen Kiefer, der zum Knacken von Muscheln geeignet ist.",
             "url": "https://www.pescamallorca.online/peces/dorada",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/dorada.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/dorada2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/dorada3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/dorada.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/dorada2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/dorada3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/dorada.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/dorada.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -151,7 +151,7 @@
             "@id": "https://www.pescamallorca.online/peces/llampuga",
             "name": "Goldmakrele",
             "alternateName": "Coryphaena hippurus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/llampuga.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/llampuga.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/llampuga.mp3",
             "video": "https://www.pescamallorca.online/assets/video/llampuga.mp4",
             "description": "Sehr schneller und gefräßiger pelagischer Fisch, erkennbar an seiner leuchtenden blaugrünen und gelben Färbung, die nach dem Tod schnell verblasst.",
@@ -285,18 +285,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/llampuga.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/llampuga2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/llampuga3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/llampuga.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/llampuga2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/llampuga3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/llampuga.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/llampuga.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/mero",
             "name": "Zackenbarsch",
             "alternateName": "Epinephelus marginatus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/mero.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/mero.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/mero.mp3",
             "video": "https://www.pescamallorca.online/assets/video/mero.mp4",
             "description": "Großer Sägebarsch, sinnbildlich für die felsigen Meeresböden der Balearen. Er ist territorial, ein protogyner Zwitter und wächst sehr langsam.",
@@ -428,18 +428,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/mero.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/mero2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/mero3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/mero.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/mero2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/mero3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/mero.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/mero.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/caproig",
             "name": "Roter Drachenkopf",
             "alternateName": "Scorpaena scrofa",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/caproig.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/caproig.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/caproig.mp3",
             "video": "https://www.pescamallorca.online/assets/video/caproig.mp4",
             "description": "Rötlicher Fisch mit giftigen Stacheln an den Rückenflossen. Er tarnt sich perfekt auf dem felsigen Meeresboden und wartet geduldig auf Beute.",
@@ -561,18 +561,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/caproig.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/caproig2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/caproig3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/caproig.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/caproig2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/caproig3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/caproig.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/caproig.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/sargo",
             "name": "Geißbrasse",
             "alternateName": "Diplodus sargus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/sargo.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/sargo.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/sargo.mp3",
             "video": "https://www.pescamallorca.online/assets/video/sargo.mp4",
             "description": "Silberner Fisch mit dunklen vertikalen Streifen. Sehr begehrt bei Küstenanglern, besonders an Tagen mit rauem Meer oder Dünung.",
@@ -694,18 +694,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/sargo.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/sargo2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/sargo3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/sargo.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/sargo2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/sargo3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/sargo.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/sargo.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/serrano",
             "name": "Schriftbarsch",
             "alternateName": "Serranus scriba",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/serrano.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/serrano.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/serrano.mp3",
             "video": "https://www.pescamallorca.online/assets/video/serrano.mp4",
             "description": "Kleiner Sägebarsch mit leuchtenden blauen Farben und vertikalen Streifen. Bewohnt flache Felsböden und ist für seine Größe sehr kampfstark.",
@@ -837,18 +837,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/serrano.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/serrano2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/serrano3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/serrano.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/serrano2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/serrano3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/serrano.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/serrano.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/denton",
             "name": "Zahnbrasse",
             "alternateName": "Dentex dentex",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/denton.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/denton.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/denton.mp3",
             "video": "https://www.pescamallorca.online/assets/video/denton.mp4",
             "description": "Große Meerbrasse, die wegen ihrer gastronomischen Qualität und ihres erbitterten Kampfes sehr geschätzt wird. Bewohnt Felsböden und Posidonia-Wiesen.",
@@ -980,18 +980,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/denton.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/denton2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/denton3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/denton.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/denton2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/denton3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/denton.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/denton.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/oblada",
             "name": "Brandbrasse",
             "alternateName": "Oblada melanura",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/oblada.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/oblada.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/oblada.mp3",
             "video": "https://www.pescamallorca.online/assets/video/oblada.mp4",
             "description": "Silberner Fisch mit einem charakteristischen schwarzen Fleck am Schwanzansatz. Sehr häufig in flachen Gewässern und bildet große Schulen.",
@@ -1123,18 +1123,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/oblada.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/oblada2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/oblada3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/oblada.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/oblada2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/oblada3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/oblada.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/oblada.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/salpa",
             "name": "Goldstrieme",
             "alternateName": "Sarpa salpa",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/salpa.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/salpa.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/salpa.mp3",
             "video": "https://www.pescamallorca.online/assets/video/salpa.mp4",
             "description": "Pflanzenfressender Fisch mit gelben Längsstreifen. Ernährt sich fast ausschließlich von Algen und bildet riesige Schwärme in Posidonia-Wiesen.",
@@ -1266,18 +1266,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/salpa.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/salpa2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/salpa3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/salpa.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/salpa2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/salpa3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/salpa.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/salpa.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/bonito",
             "name": "Pelamide",
             "alternateName": "Sarda sarda",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/bonito.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/bonito.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/bonito.mp3",
             "video": "https://www.pescamallorca.online/assets/video/bonito.mp4",
             "description": "Mittlerer pelagischer Fisch aus der Familie der Makrelen. Sehr wanderfreudig und gefräßig, bietet er Sportanglern spektakuläre Drills.",
@@ -1409,18 +1409,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/bonito.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/bonito2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/bonito3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/bonito.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/bonito2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/bonito3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/bonito.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/bonito.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/lubina",
             "name": "Wolfsbarsch (Llobarro)",
             "alternateName": "Dicentrarchus labrax",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/lubina.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/lubina.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/lubina.mp3",
             "video": "https://www.pescamallorca.online/assets/video/lubina.mp4",
             "description": "Aktives Raubtier auf sandigen Böden und Posidonia-Wiesen, auf den Balearen auch Llobarro genannt. Fisch von großem gastronomischem und sportlichem Wert.",
@@ -1503,18 +1503,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/lubina.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/lubina2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/lubina3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/lubina.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/lubina2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/lubina3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/lubina.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/lubina.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/corvallo",
             "name": "Corvallo (Escorball)",
             "alternateName": "Sciaena umbra",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/corvallo.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/corvallo.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/corvallo.mp3",
             "video": "https://www.pescamallorca.online/assets/video/corvallo.mp4",
             "description": "Bodenfisch mit der Fähigkeit, mit seiner Schwimmblase Geräusche zu erzeugen. Aufgrund seiner erstklassigen Fleischqualität wird es von Unterwasser- und Grundfischern sehr geschätzt.",
@@ -1597,18 +1597,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/corvallo.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/corvallo2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/corvallo3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/corvallo.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/corvallo2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/corvallo3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/corvallo.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/corvallo.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/serviola",
             "name": "Bernsteinmakrele (Cirviola / Verderol Jungtier)",
             "alternateName": "Seriola dumerili",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/serviola.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/serviola.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/serviola.mp3",
             "video": "https://www.pescamallorca.online/assets/video/serviola.mp4",
             "description": "Einer der mächtigsten pelagischen Raubtiere im Mittelmeerraum. Die als „Verderols“ bekannten Jungfische bilden im Sommer Schwärme und sind bei Sportfischern sehr begehrt.",
@@ -1691,18 +1691,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/serviola.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/serviola2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/serviola3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/serviola.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/serviola2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/serviola3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/serviola.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/serviola.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/atun-rojo",
             "name": "Blauflossen-Thunfisch (Tonyina)",
             "alternateName": "Thunnus thynnus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/atun-rojo.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/atun-rojo.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/atun.mp3",
             "video": "https://www.pescamallorca.online/assets/video/atun.mp4",
             "description": "Das größte pelagische Raubtier im Mittelmeer. Der Freizeitfang von Rotem Thun ist stark durch Quoten reguliert und erfordert Sondergenehmigungen.",
@@ -1785,18 +1785,18 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/atun-rojo.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/atun-rojo2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/atun-rojo3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/atun-rojo.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/atun-rojo2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/atun-rojo3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/atun-rojo.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/atun-rojo.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/caballa",
             "name": "Makrele (Verat)",
             "alternateName": "Scomber scombrus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/caballa.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/caballa.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/caballa.mp3",
             "video": "https://www.pescamallorca.online/assets/video/caballa.mp4",
             "description": "Pelagischer Fisch aus der Familie der Scombridae, schnell und gesellig. Im Frühling und Sommer bildet es große Schwärme und ist zum Angeln vom Ufer und vom Boot aus sehr gut zugänglich.",
@@ -1879,28 +1879,28 @@
                 }
             ],
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/caballa.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/caballa2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/caballa3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/caballa.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/caballa2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/caballa3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/caballa.webp"
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/caballa.webp"
         },
         {
             "@type": "Taxon",
             "@id": "https://www.pescamallorca.online/peces/morena",
             "name": "Morena",
             "alternateName": "Muraena helena",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/morena.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/morena.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/morena.mp3",
             "video": "https://www.pescamallorca.online/assets/video/morena.mp4",
             "description": "Pez de cuerpo serpentiforme y sin escamas, conocido por su fuerte mandíbula. Permanece escondido en oquedades durante el día y caza activamente de noche.",
             "url": "https://www.pescamallorca.online/peces/morena",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/morena.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/morena2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/morena3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/morena.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/morena2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/morena3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/morena.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/morena.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -1978,17 +1978,17 @@
             "@id": "https://www.pescamallorca.online/peces/congrio",
             "name": "Congrio (Congre)",
             "alternateName": "Conger conger",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/congrio.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/congrio.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/congrio.mp3",
             "video": "https://www.pescamallorca.online/assets/video/congrio.mp4",
             "description": "Gran depredador bentónico de hábitos nocturnos. Frecuenta naufragios y grandes formaciones rocosas donde establece su guarida.",
             "url": "https://www.pescamallorca.online/peces/congrio",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/congrio.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/congrio2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/congrio3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/congrio.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/congrio2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/congrio3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/congrio.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/congrio.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -2067,17 +2067,17 @@
             "@id": "https://www.pescamallorca.online/peces/raor",
             "name": "Raor / Galán (Raor)",
             "alternateName": "Xyrichtys novacula",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/raor.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/raor.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/raor.mp3",
             "video": "https://www.pescamallorca.online/assets/video/raor.mp4",
             "description": "Pequeño lábrido de colores vivos, famoso por enterrarse en la arena ante el peligro. Es una de las especies más cotizadas de Baleares.",
             "url": "https://www.pescamallorca.online/peces/raor",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/raor.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/raor2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/raor3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/raor.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/raor2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/raor3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/raor.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/raor.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -2160,17 +2160,17 @@
             "@id": "https://www.pescamallorca.online/peces/herrera",
             "name": "Herrera (Mabre)",
             "alternateName": "Lithognathus mormyrus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/herrera.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/herrera.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/herrera.mp3",
             "video": "https://www.pescamallorca.online/assets/video/herrera.mp4",
             "description": "Espárido inconfundible por sus aletas y franjas verticales marrones sobre fondo plateado. Excava en la arena con su hocico en busca de alimento.",
             "url": "https://www.pescamallorca.online/peces/herrera",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/herrera.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/herrera2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/herrera3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/herrera.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/herrera2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/herrera3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/herrera.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/herrera.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -2249,17 +2249,17 @@
             "@id": "https://www.pescamallorca.online/peces/salmonete",
             "name": "Salmonete de roca (Moll de roca)",
             "alternateName": "Mullus surmuletus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/salmonete.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/salmonete.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/salmonete.mp3",
             "video": "https://www.pescamallorca.online/assets/video/salmonete.mp4",
             "description": "Pez bentónico caracterizado por su piel rojiza y los dos largos barbillones en su mentón, utilizados como órganos sensoriales táctiles.",
             "url": "https://www.pescamallorca.online/peces/salmonete",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/salmonete.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/salmonete2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/salmonete3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/salmonete.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/salmonete2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/salmonete3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/salmonete.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/salmonete.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -2338,17 +2338,17 @@
             "@id": "https://www.pescamallorca.online/peces/breca",
             "name": "Breca / Pajel (Pagell)",
             "alternateName": "Pagellus erythrinus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/breca.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/breca.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/breca.mp3",
             "video": "https://www.pescamallorca.online/assets/video/breca.mp4",
             "description": "Espárido de coloración rosácea brillante. Es un pez hermafrodita proterogínico que frecuenta zonas profundas de arena y roca.",
             "url": "https://www.pescamallorca.online/peces/breca",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/breca.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/breca2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/breca3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/breca.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/breca2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/breca3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/breca.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/breca.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -2427,17 +2427,17 @@
             "@id": "https://www.pescamallorca.online/peces/pez-de-san-pedro",
             "name": "Pez de San Pedro (Gall de Sant Pere)",
             "alternateName": "Zeus faber",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/pez-de-san-pedro.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/pez-de-san-pedro.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/pez-de-san-pedro.mp3",
             "video": "https://www.pescamallorca.online/assets/video/pez-de-san-pedro.mp4",
             "description": "Depredador comprimido lateralmente, inconfundible por la gran mancha negra en sus flancos y su enorme boca protráctil.",
             "url": "https://www.pescamallorca.online/peces/pez-de-san-pedro",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/pez-de-san-pedro.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/pez-de-san-pedro2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/pez-de-san-pedro3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/pez-de-san-pedro.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/pez-de-san-pedro2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/pez-de-san-pedro3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/pez-de-san-pedro.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/pez-de-san-pedro.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -2515,17 +2515,17 @@
             "@id": "https://www.pescamallorca.online/peces/espeton",
             "name": "Espetón / Barracuda (Espetón)",
             "alternateName": "Sphyraena viridensis",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/espeton.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/espeton.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/espeton.mp3",
             "video": "https://www.pescamallorca.online/assets/video/espeton.mp4",
             "description": "Depredador voraz y alargado con potentes mandíbulas. Caza en grupo o de manera solitaria persiguiendo bancos de forraje en la superficie.",
             "url": "https://www.pescamallorca.online/peces/espeton",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/espeton.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/espeton2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/espeton3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/espeton.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/espeton2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/espeton3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/espeton.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/espeton.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -2603,17 +2603,17 @@
             "@id": "https://www.pescamallorca.online/peces/bacoreta",
             "name": "Bacoreta",
             "alternateName": "Euthynnus alletteratus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/bacoreta.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/bacoreta.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/bacoreta.mp3",
             "video": "https://www.pescamallorca.online/assets/video/bacoreta.mp4",
             "description": "Pequeño túnido identificable por las singulares marcas oscuras (puntos) en el pecho y el rayado del dorso. Pelágico extremadamente veloz.",
             "url": "https://www.pescamallorca.online/peces/bacoreta",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/bacoreta.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/bacoreta2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/bacoreta3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/bacoreta.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/bacoreta2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/bacoreta3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/bacoreta.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/bacoreta.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
@@ -2691,17 +2691,17 @@
             "@id": "https://www.pescamallorca.online/peces/jurel",
             "name": "Jurel (Sorell)",
             "alternateName": "Trachurus trachurus",
-            "image": "https://www.pescamallorca.online/assets/img/peces/webp/jurel.webp",
+            "image": "https://www.pescamallorca.online/assets/img/peces/todos/jurel.webp",
             "audio": "https://www.pescamallorca.online/assets/audio/jurel.mp3",
             "video": "https://www.pescamallorca.online/assets/video/jurel.mp4",
             "description": "Depredador pelágico de cardumen, destacable por la marcada línea lateral de escudos óseos espinosos que recorre su flanco posterior.",
             "url": "https://www.pescamallorca.online/peces/jurel",
             "images": [
-                "https://www.pescamallorca.online/assets/img/peces/webp/jurel.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/jurel2.webp",
-                "https://www.pescamallorca.online/assets/img/peces/webp/jurel3.webp"
+                "https://www.pescamallorca.online/assets/img/peces/todos/jurel.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/jurel2.webp",
+                "https://www.pescamallorca.online/assets/img/peces/todos/jurel3.webp"
             ],
-            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/webp/jurel.webp",
+            "videoThumbnail": "https://www.pescamallorca.online/assets/img/peces/todos/jurel.webp",
             "additionalProperty": [
                 {
                     "@type": "PropertyValue",
