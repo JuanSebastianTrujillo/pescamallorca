@@ -150,11 +150,19 @@ export const initRamps = () => {
             else if (rampa.type === 'arena') iconType = 'bi-brightness-alt-high-fill';
             else if (rampa.type === 'roca') iconType = 'bi-moat';
 
+            const rutaLimpia = rampa.image.substring(0, rampa.image.lastIndexOf('.'));
+            
             html += `
             <div class="swiper-slide d-flex" style="height:auto;">
                 <div class="card shadow-sm border-0 w-100 ramp-card" role="button" tabindex="0" aria-label="Ver detalles t&eacute;cnicos de ${rampa.name}" style="transition: transform 0.2s; cursor:pointer;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'" data-open-ramp="${rampa.id}">
                     <div class="position-relative">
-                        <img src="${rampa.image}" class="card-img-top object-fit-cover" alt="Fotograf&iacute;a de la rampa ${rampa.name} en ${rampa.location}" style="height:220px;" loading="lazy" decoding="async" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                        <picture>
+                          <source type="image/avif" srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                          <source type="image/webp" srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                          <source type="image/jpeg" srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                          
+                          <img src="${rutaLimpia}-800.jpg" class="card-img-top object-fit-cover" alt="Rampa de botadura ${rampa.name}" style="height:220px;" loading="lazy" decoding="async" onerror="this.src='${rampa.image}'">
+                        </picture>
                         <span class="badge bg-${rampa.priceColor} position-absolute top-0 end-0 m-3 fs-6 shadow-sm">${rampa.priceTag}</span>
                     </div>
                     <div class="card-body d-flex flex-column">
