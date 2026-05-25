@@ -6,8 +6,8 @@
       "@type": "Place",
       "name": "Rampa Club Náutico Portocristo",
       "image": [
-        "https://www.pescamallorca.online/assets/rampas/portocristo-1.webp",
-        "https://www.pescamallorca.online/assets/rampas/portocristo-parking.webp"
+        "https://www.pescamallorca.online/assets/img/rampas/todos/portocristo-1.webp",
+        "https://www.pescamallorca.online/assets/img/rampas/todos/portocristo-parking.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -29,8 +29,8 @@
       "@type": "Place",
       "name": "Rampa Pública Port de Pollença",
       "image": [
-        "https://www.pescamallorca.online/assets/rampas/pollenca-1.webp",
-        "https://www.pescamallorca.online/assets/rampas/pollenca-parking.webp"
+        "https://www.pescamallorca.online/assets/img/rampas/todos/pollenca-1.webp",
+        "https://www.pescamallorca.online/assets/img/rampas/todos/pollenca-parking.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -52,8 +52,8 @@
       "@type": "Place",
       "name": "Accés Natural Son Serra de Marina",
       "image": [
-        "https://www.pescamallorca.online/assets/rampas/sonserra-1.webp",
-        "https://www.pescamallorca.online/assets/rampas/sonserra-parking.webp"
+        "https://www.pescamallorca.online/assets/img/rampas/todos/sonserra-1.webp",
+        "https://www.pescamallorca.online/assets/img/rampas/todos/sonserra-parking.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -75,8 +75,8 @@
       "@type": "Place",
       "name": "Rampa Pública Port de Sóller (Ports IB)",
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/soller-1.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/soller-parking.jpg"
+        "https://www.pescamallorca.online/assets/img/rampas/todos/soller-1.jpg",
+        "https://www.pescamallorca.online/assets/img/rampas/todos/soller-parking.jpg"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -98,7 +98,7 @@
       "@type": "Place",
       "name": "Rampa Pública Port des Barcarès (Ports IB)",
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
+        "https://www.pescamallorca.online/assets/imger/hero-carousel/ho-carousel-1.jpg",
         "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
       ],
       "address": {
