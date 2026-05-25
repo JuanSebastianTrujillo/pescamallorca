@@ -160,8 +160,8 @@
         "longitude": 2.6891
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/puerto-soller-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/puerto-soller-2.jpg"
       ],
       "keywords": "Angelgebiet, mittelschwerer Zugang, felsiger Boden, technisches Angeln, Klippen",
       "description": "Die Nordküste Mallorcas ist geprägt von Klippen, die direkt in große Tiefen abfallen, und felsigen Böden. Es handelt sich um das technischste Gebiet der Insel, das auf Felsarten und Kopffüßer ausgerichtet ist.",
@@ -208,8 +208,8 @@
         "longitude": 3.12
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/pollensa-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/pollensa-2.jpg"
       ],
       "keywords": "Angelgebiet, einfacher Zugang, Sandboden, Posidonia, Brandungsangeln, geschlossene Bucht",
       "description": "Der Norden Mallorcas bietet geschlossene Buchten mit überwiegend sandigem Grund und Posidonia-oceanica-Wiesen. Ideales Gebiet zum Angeln von der Küste aus mit Surfcasting-Techniken.",
@@ -256,8 +256,8 @@
         "longitude": 3.4607
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-ratjada-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-ratjada-2.jpg"
       ],
       "keywords": "Angelgebiet, mittlerer Zugang, Hochseeangeln, Menorca-Kanal, Thunfisch, Klippen",
       "description": "Die Lage am östlichen Ende der Insel macht sie aufgrund ihrer Nähe zum Menorca-Kanal zu einem strategischen Punkt für das Hochsee- und Klippenangeln.",
@@ -304,8 +304,8 @@
         "longitude": 2.55
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/bahia-palma-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/bahia-palma-2.jpg"
       ],
       "keywords": "Angelgebiet, einfacher Zugang, Dämme und Wellenbrecher, gemischter Grund, Spariden",
       "description": "Leicht zugängliches Gebiet mit mehreren Angelplätzen an Dämmen und Wellenbrechern. Angeln ist in der Nähe der Hafendocks sehr beliebt, wobei stets die nautischen Zeichen beachtet werden müssen.",
@@ -338,54 +338,6 @@
       ]
     },
     {
-      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-bahia-palma",
-      "@type": "Place",
-      "name": "Meeresschutzgebiet Bucht von Palma",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Llucmajor / Palma",
-        "addressRegion": "Illes Balears"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.489,
-        "longitude": 2.731
-      },
-      "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/playa-muro-2.webp"
-      ],
-      "keywords": "Meeresschutzgebiet, Regulierte Fischerei, Arenal, Cabo Blanco, Gemischter Grund",
-      "description": "Gelegen zwischen dem Strand Sant Antoni (Arenal) und El Dorado (Cabo Blanco). Gebiete mit zeitlichen und Ausrüstungsbeschränkungen.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Zugang",
-          "value": "Leichter Zugang von der Küste in erlaubten Gebieten. Überprüfen Sie den kartografischen Viewer der Regierung für Koordinaten und Arbeitstage."
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Meeresgrund",
-          "value": "Sandige, felsige Böden und Posidonia-Wiesen."
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Häufige Arten",
-          "value": "Geißbrasse, Brandbrasse, Goldbrasse, Wolfsbarsch, Goldstrieme, Schermesserfisch, Streifenbarbe"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Empfohlene Techniken",
-          "value": "Leichtes Spinnfischen, Posenfischen, Brandungsangeln (wo erlaubt)"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Tageszeit",
-          "value": "Tag, Sonnenuntergang"
-        }
-      ]
-    },
-    {
       "@id": "https://www.pescamallorca.online/zonas/reserva-marina-llevant",
       "@type": "Place",
       "name": "Meeresschutzgebiet Llevant de Mallorca",
@@ -400,8 +352,8 @@
         "longitude": 3.328
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-1.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/llevant-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/llevant-2.webp"
       ],
       "keywords": "Meeresschutzgebiet, Absolute Schonzeit, Eingeschränkte Fischerei, Nordosten",
       "description": "Das Hotel liegt im Nordosten. Es verfügt über absolute Schongebiete und Zonen, in denen die Freizeitfischerei auf bestimmte Tage beschränkt ist (in der Regel dienstags, donnerstags, samstags und sonntags).",
@@ -448,8 +400,8 @@
         "longitude": 2.924
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/todos/salines-1.webp",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/migjorn-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/migjorn-2.jpg"
       ],
       "keywords": "Meeresschutzgebiet, Cap Blanc, Cap de Ses Salines, Süden, Regulierte Fischerei",
       "description": "Umfasst den Süden der Insel, von Cap Blanc bis Cap de Ses Salines. Bekannt für seine Klippen und gemischten Böden voller Leben.",
@@ -496,8 +448,8 @@
         "longitude": 2.473
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/toro-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/toro-2.webp"
       ],
       "keywords": "Meeresschutzgebiet, Hoher Schutz, Sommerschonzeit, El Toro, Malgrats",
       "description": "Hochgeschützte Gebiete. Das Speerfischen ist strengstens verboten. Für das Bootsangeln gilt eine Schonzeit, die normalerweise die Sommermonate umfasst (erlaubt von Oktober bis April mit Einschränkungen).",
@@ -544,8 +496,8 @@
         "longitude": 3.232
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/todos/salines-2.webp",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/or-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/or-2.jpg"
       ],
       "keywords": "Cala Gran, Cala Ferrera, Gemischter Grund, Meerbrassen, Südosten",
       "description": "Bereiche wie Cala Gran und Cala Ferrera haben gemischte Böden, die verschiedene Arten von Meerbrassen anziehen. Posenfischen und leichtes Spinnfischen sind von den äußeren Felsen der Buchten aus effektiv.",

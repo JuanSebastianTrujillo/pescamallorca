@@ -160,8 +160,8 @@
         "longitude": 2.6891
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/puerto-soller-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/puerto-soller-2.jpg"
       ],
       "keywords": "Zona de pesca, Acceso medio, Fondo rocoso, Pesca técnica, Acantilados",
       "description": "La costa norte de Mallorca, caracterizada por acantilados que caen directamente a gran profundidad y fondos rocosos. Es la zona más técnica de la isla, orientada a especies de roca y cefalópodos.",
@@ -208,8 +208,8 @@
         "longitude": 3.12
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/pollensa-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/pollensa-2.jpg"
       ],
       "keywords": "Zona de pesca, Acceso fácil, Fondo arenoso, Posidonia, Surfcasting, Bahía cerrada",
       "description": "El norte de Mallorca ofrece bahías cerradas con fondos predominantemente arenosos y praderas de Posidonia oceánica. Zona ideal para la pesca desde la costa con técnicas de surfcasting.",
@@ -256,8 +256,8 @@
         "longitude": 3.4607
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-ratjada-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-ratjada-2.jpg"
       ],
       "keywords": "Zona de pesca, Acceso medio, Pesca de altura, Canal de Menorca, Túnidos, Acantilados",
       "description": "Situada en el extremo oriental de la isla, su proximidad al canal de Menorca la convierte en un punto estratégico para la pesca de altura y de acantilado.",
@@ -304,8 +304,8 @@
         "longitude": 2.55
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/bahia-palma-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/bahia-palma-2.jpg"
       ],
       "keywords": "Zona de pesca, Acceso fácil, Diques y escolleras, Fondo mixto, Espáridos",
       "description": "Zona de fácil acceso con múltiples puntos de pesca en diques y escolleras. La pesca es muy popular en las inmediaciones de los diques portuarios, respetando siempre la señalización náutica.",
@@ -338,54 +338,6 @@
       ]
     },
     {
-      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-bahia-palma",
-      "@type": "Place",
-      "name": "Reserva Marina de la Bahía de Palma",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Llucmajor / Palma",
-        "addressRegion": "Illes Balears"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.489,
-        "longitude": 2.731
-      },
-      "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/playa-muro-2.webp"
-      ],
-      "keywords": "Reserva Marina, Pesca regulada, Arenal, Cabo Blanco, Fondo mixto",
-      "description": "Comprendida entre la zona de la Playa de Sant Antoni (Arenal) y la zona de El Dorado (Cabo Blanco). Zonas con restricciones temporales y de aparejo.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Acceso",
-          "value": "Acceso fácil desde la costa en zonas permitidas. Consultar visor cartográfico del Govern para coordenadas y días hábiles."
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Fondo Marino",
-          "value": "Fondos arenosos, rocosos y praderas de posidonia."
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Especies Frecuentes",
-          "value": "Sargo, Oblada, Dorada, Lubina, Salpa, Raor / Galán, Salmonete de roca"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Técnicas Recomendadas",
-          "value": "Spinning ligero, Corcheo, Surfcasting (donde esté permitido)"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Momento del Día",
-          "value": "Día, Atardecer"
-        }
-      ]
-    },
-    {
       "@id": "https://www.pescamallorca.online/zonas/reserva-marina-llevant",
       "@type": "Place",
       "name": "Reserva Marina de Llevant de Mallorca",
@@ -400,8 +352,8 @@
         "longitude": 3.328
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-1.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/llevant-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/llevant-2.webp"
       ],
       "keywords": "Reserva Marina, Veda absoluta, Pesca restringida, Noreste, Alta protección",
       "description": "Ubicada en el noreste. Cuenta con áreas de veda absoluta y zonas donde la pesca recreativa está restringida a días concretos (generalmente martes, jueves, sábados y domingos).",
@@ -448,8 +400,8 @@
         "longitude": 2.924
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/todos/salines-1.webp",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/migjorn-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/migjorn-2.jpg"
       ],
       "keywords": "Reserva Marina, Cap Blanc, Cap de Ses Salines, Sur, Pesca regulada",
       "description": "Abarca el sur de la isla, desde Cap Blanc hasta Cap de Ses Salines. Destaca por sus acantilados y fondos mixtos repletos de vida.",
@@ -496,8 +448,8 @@
         "longitude": 2.473
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/toro-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/toro-2.webp"
       ],
       "keywords": "Reserva Marina, Alta protección, Veda estival, El Toro, Malgrats",
       "description": "Zonas de alta protección. En El Toro y Malgrats la pesca submarina está estrictamente prohibida. La pesca desde embarcación tiene una veda que abarca normalmente los meses de verano (permitida de octubre a abril con restricciones).",
@@ -544,8 +496,8 @@
         "longitude": 3.232
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/todos/salines-2.webp",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/or-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/or-2.jpg"
       ],
       "keywords": "Cala Gran, Cala Ferrera, Fondo mixto, Espáridos, Sureste",
       "description": "Áreas como Cala Gran y Cala Ferrera presentan fondos mixtos que atraen a diversas especies de espárridos. La pesca a corcheo y el spinning ligero son efectivos desde las rocas exteriores de las calas.",

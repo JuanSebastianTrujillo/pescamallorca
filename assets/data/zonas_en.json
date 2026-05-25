@@ -160,8 +160,8 @@
         "longitude": 2.6891
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/puerto-soller-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/puerto-soller-2.jpg"
       ],
       "keywords": "Fishing area, Medium access, Rocky bottom, Technical fishing, Cliffs",
       "description": "The northern coast of Mallorca, characterized by cliffs that fall directly to great depths and rocky bottoms. It is the most technical area of ​​the island, oriented towards rock species and cephalopods.",
@@ -208,8 +208,8 @@
         "longitude": 3.12
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/pollensa-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/pollensa-2.jpg"
       ],
       "keywords": "Fishing area, Easy access, Sandy bottom, Posidonia, Surfcasting, Closed bay",
       "description": "The north of Mallorca offers closed bays with predominantly sandy bottoms and Posidonia oceanica meadows. Ideal area for fishing from the coast with surfcasting techniques.",
@@ -256,8 +256,8 @@
         "longitude": 3.4607
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-ratjada-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-ratjada-2.jpg"
       ],
       "keywords": "Fishing area, Medium access, Deep sea fishing, Menorca Canal, Tuna, Cliffs",
       "description": "Located at the eastern end of the island, its proximity to the Menorca channel makes it a strategic point for deep-sea and cliff fishing.",
@@ -304,8 +304,8 @@
         "longitude": 2.55
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/bahia-palma-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/bahia-palma-2.jpg"
       ],
       "keywords": "Fishing area, Easy access, Dams and breakwaters, Mixed bottom, Sparids",
       "description": "Easy access area with multiple fishing spots on dams and breakwaters. Fishing is very popular in the vicinity of the port docks, always respecting the nautical signs.",
@@ -338,54 +338,6 @@
       ]
     },
     {
-      "@id": "https://www.pescamallorca.online/zonas/reserva-marina-bahia-palma",
-      "@type": "Place",
-      "name": "Bay of Palma Marine Reserve",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Llucmajor / Palma",
-        "addressRegion": "Illes Balears"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.489,
-        "longitude": 2.731
-      },
-      "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/playa-muro-2.webp"
-      ],
-      "keywords": "Marine Reserve, Regulated fishing, Arenal, Cabo Blanco, Mixed bottom",
-      "description": "Located between Sant Antoni Beach (Arenal) and El Dorado (Cabo Blanco). Areas with seasonal and gear restrictions.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Access",
-          "value": "Easy access from the coast in permitted areas. Check the Government's cartographic viewer for coordinates and working days."
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Seabed",
-          "value": "Sandy, rocky bottoms and posidonia meadows."
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Frequent Species",
-          "value": "White seabream, Saddled seabream, Gilt-head bream, European seabass, Salema porgy, Pearly razorfish, Striped red mullet"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Recommended Techniques",
-          "value": "Light spinning, Float fishing, Surfcasting (where permitted)"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Time of Day",
-          "value": "Day, Sunset"
-        }
-      ]
-    },
-    {
       "@id": "https://www.pescamallorca.online/zonas/reserva-marina-llevant",
       "@type": "Place",
       "name": "Llevant de Mallorca Marine Reserve",
@@ -400,8 +352,8 @@
         "longitude": 3.328
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-1.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/llevant-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/llevant-2.webp"
       ],
       "keywords": "Marine Reserve, Strict closure, Restricted fishing, Northeast, High protection",
       "description": "Located in the northeast. Features absolute closure areas and zones where recreational fishing is restricted to specific days (generally Tuesdays, Thursdays, Saturdays, and Sundays).",
@@ -448,8 +400,8 @@
         "longitude": 2.924
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/todos/salines-1.webp",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/migjorn-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/migjorn-2.jpg"
       ],
       "keywords": "Marine Reserve, Cap Blanc, Cap de Ses Salines, South, Regulated fishing",
       "description": "Covers the south of the island, from Cap Blanc to Cap de Ses Salines. Noted for its cliffs and mixed bottoms full of life.",
@@ -496,8 +448,8 @@
         "longitude": 2.473
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/toro-1.jpg",
+        "https://www.pescamallorca.online/assets/img/spots/todos/toro-2.webp"
       ],
       "keywords": "Marine Reserve, High protection, Summer closure, El Toro, Malgrats",
       "description": "Highly protected areas. Spearfishing is strictly forbidden. Boat fishing has a closure that normally covers the summer months (allowed from October to April with restrictions).",
@@ -544,8 +496,8 @@
         "longitude": 3.232
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/todos/salines-2.webp",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/spots/todos/or-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/or-2.jpg"
       ],
       "keywords": "Cala Gran, Cala Ferrera, Mixed bottom, Sparids, Southeast",
       "description": "Areas such as Cala Gran and Cala Ferrera have mixed bottoms that attract various species of sparids. Float fishing and light spinning are effective from the outer rocks of the coves.",
