@@ -1944,7 +1944,7 @@ function fillAndShowSpeciesModal(species) {
                 const normalizedVideoPath = videoSource.includes('/') ? videoSource : `assets/video/${videoSource}`;
                 const baseVideoPath = normalizedVideoPath.replace(/\.(mp4|webm|ogv|ogg)$/i, '');
                 videoCode = `
-                    <video controls preload="metadata" playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback poster="${videoThumbnail}" style="width:100%; height:100%; object-fit: contain; background:#000; display:block;">
+                    <video controls preload="metadata" playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback poster="${rutaLimpiaThumb}-800.jpg" style="width:100%; height:100%; object-fit: contain; background:#000; display:block;">
                         <source src="${baseVideoPath}.mp4" type="video/mp4">
                         <source src="${baseVideoPath}.webm" type="video/webm">
                         <source src="${baseVideoPath}.ogv" type="video/ogg">
