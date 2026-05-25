@@ -152,19 +152,27 @@ async function initAfterDeferred() {
 
             const videoContainer = fishModal.querySelector('#speciesModalVideo');
             if (videoContainer) {
-                videoContainer.querySelectorAll('video').forEach(video => {
-                    try {
-                        video.pause();
-                        video.currentTime = 0;
-                        video.removeAttribute('src');
-                        video.load();
-                    } catch (error) {
-                        console.warn('Error deteniendo vídeo del modal:', error);
-                    }
-                });
-                videoContainer.querySelectorAll('iframe').forEach(frame => {
-                    frame.src = '';
-                });
+                // Limpiar completamente el placeholder para evitar reproducción automática
+                const placeholder = videoContainer.querySelector('#videoPlaceholder');
+                if (placeholder) {
+                    // Pausa y limpia todos los videos dentro del placeholder
+                    placeholder.querySelectorAll('video').forEach(video => {
+                        try {
+                            video.pause();
+                            video.currentTime = 0;
+                            video.removeAttribute('autoplay');
+                            video.removeAttribute('src');
+                        } catch (error) {
+                            console.warn('Error deteniendo vídeo:', error);
+                        }
+                    });
+                    // Pausa y limpia todos los iframes dentro del placeholder
+                    placeholder.querySelectorAll('iframe').forEach(frame => {
+                        frame.src = '';
+                    });
+                    // Restaurar el placeholder al estado inicial (solo miniatura)
+                    placeholder.innerHTML = '';
+                }
             }
         });
     }
@@ -1995,9 +2003,7 @@ function fillAndShowSpeciesModal(species) {
                         placeholder.innerHTML = videoCode;
                         const insertedVideo = placeholder.querySelector('video');
                         if (insertedVideo) {
-                            insertedVideo.setAttribute('autoplay', '');
                             insertedVideo.setAttribute('playsinline', '');
-                            insertedVideo.load();
                             const playPromise = insertedVideo.play();
                             if (playPromise && typeof playPromise.catch === 'function') {
                                 playPromise.catch(() => {
