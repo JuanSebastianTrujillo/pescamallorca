@@ -1964,18 +1964,33 @@ function fillAndShowSpeciesModal(species) {
     // 3. VIDEO (Dinámico)
     const vidContainer = document.getElementById('speciesModalVideo');
     if (vidContainer) {
-        if (species.video) {
+        const speciesSlug = species['@id'] ? species['@id'].split('/').pop() : '';
+        let videoSource = species.video;
+
+        if (!videoSource || speciesSlug === 'lubina') {
+            videoSource = 'pesca.mp4';
+        }
+
+        if (videoSource) {
             const videoThumbnail = species.videoThumbnail || galleryImages[0] || species.image || 'assets/img/hero-carousel/hero-carousel-1.jpg';
             let videoCode = '';
 
-            if (species.video.includes('youtube.com') || species.video.includes('youtu.be')) {
-                const isEmbed = species.video.includes('embed');
-                const isWatch = species.video.includes('watch?v=');
-                const videoId = isEmbed ? species.video.split('embed/')[1]?.substring(0, 11) : isWatch ? species.video.split('watch?v=')[1]?.substring(0, 11) : species.video.split('.be/')[1]?.substring(0, 11);
+            if (videoSource.includes('youtube.com') || videoSource.includes('youtu.be')) {
+                const isEmbed = videoSource.includes('embed');
+                const isWatch = videoSource.includes('watch?v=');
+                const videoId = isEmbed ? videoSource.split('embed/')[1]?.substring(0, 11) : isWatch ? videoSource.split('watch?v=')[1]?.substring(0, 11) : videoSource.split('.be/')[1]?.substring(0, 11);
                 videoCode = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; height:100%; border:0; background:#000; display:block;"></iframe>`;
             } else {
-                const videoPath = species.video.includes('/') ? species.video : `assets/video/${species.video}`;
-                videoCode = `<video controls autoplay style="width:100%; height:100%; object-fit: contain; background:#000; display:block;"><source src="${videoPath}" type="video/mp4">Tu navegador no soporta el video.</video>`;
+                const normalizedVideoPath = videoSource.includes('/') ? videoSource : `assets/video/${videoSource}`;
+                const baseVideoPath = normalizedVideoPath.replace(/\.(mp4|webm|ogv|ogg)$/i, '');
+                videoCode = `
+                    <video controls preload="metadata" playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback poster="${videoThumbnail}" style="width:100%; height:100%; object-fit: contain; background:#000; display:block;">
+                        <source src="${baseVideoPath}.mp4" type="video/mp4">
+                        <source src="${baseVideoPath}.webm" type="video/webm">
+                        <source src="${baseVideoPath}.ogv" type="video/ogg">
+                        Tu navegador no soporta el vídeo HTML5.
+                    </video>
+                `;
             }
 
             const t_documentary = (window._i18n && window._i18n.t) ? window._i18n.t('fish_documentary') : 'Documental y Comportamiento';
