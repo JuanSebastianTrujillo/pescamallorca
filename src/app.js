@@ -1997,6 +1997,16 @@ function fillAndShowSpeciesModal(species) {
                         if (insertedVideo) {
                             insertedVideo.setAttribute('autoplay', '');
                             insertedVideo.setAttribute('playsinline', '');
+                            insertedVideo.load();
+                            const playPromise = insertedVideo.play();
+                            if (playPromise && typeof playPromise.catch === 'function') {
+                                playPromise.catch(() => {
+                                    insertedVideo.muted = true;
+                                    insertedVideo.play().catch(() => {
+                                    });
+                                });
+                            }
+                        }
                     }
                 };
             }
