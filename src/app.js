@@ -666,7 +666,7 @@ function renderSpotsCards(spotsArray) {
                     style="height:220px"
                     loading="lazy"
                     decoding="async"
-                    onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">
+                    >
                 </picture>
               </div>
               <div class="card-body d-flex flex-column">
@@ -794,7 +794,6 @@ window.openSpotModal = (index) => {
                     class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
                     style="height: 200px;" 
                     alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" 
-                    onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'" 
                     loading="lazy">
             </div>
         `;
@@ -1269,8 +1268,7 @@ function renderBeachesSwiper(beachesArray) {
                    class="w-100 h-100 object-fit-cover"
                    alt="Fotografía de ${beach.name}"
                    style="transition: transform 0.4s;"
-                   loading="lazy"
-                   onerror="this.onerror=null;this.src='assets/img/hero-carousel/hero-carousel-1-640.webp'">
+                   loading="lazy">
                  <div class="position-absolute top-0 end-0 m-2 d-flex flex-column gap-1">
                    <span class="badge bg-${typeColor} bg-opacity-90 shadow-sm">
                      <i class="bi bi-geo me-1"></i>${typeLabel}
@@ -1359,7 +1357,6 @@ window.openBeachModal = (index) => {
 
     const imgEl = document.getElementById('beachModalImage');
     imgEl.src = heroImg;
-    imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1-640.webp'; };
 
     const propsContainer = document.getElementById('beachModalProperties');
     let propsHtml = '';
@@ -1695,8 +1692,7 @@ function renderSpeciesSwiper(speciesArray) {
                    class="card-img-top object-fit-cover" 
                    alt="${species.name}" 
                    style="height:250px" 
-                   loading="lazy"
-                   onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">
+                   loading="lazy">
                </picture>              
                <div class="card-body text-center bg-white rounded-bottom">
                  <h3 class="card-title text-primary fw-bold mb-1 fs-5">${species.name}</h3>
@@ -1825,7 +1821,6 @@ function fillAndShowSpeciesModal(species) {
             imgEl.src = `${rutaLimpia}-800.webp`;
 
             imgEl.alt = `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca`;
-            imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1-640.jpg'; };
             imgEl.style.opacity = '1';
         }, 150);
 
@@ -1958,7 +1953,7 @@ function fillAndShowSpeciesModal(species) {
                   <h4 class="fw-bold mb-3 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-play-btn-fill me-2"></i> ${t_documentary}</h4>
                   <div class="position-relative w-100 rounded overflow-hidden shadow-sm" style="aspect-ratio: 16 / 9; background-color: #000; border-radius: 1rem !important;">
                      <div id="videoPlaceholder" class="position-relative w-100 h-100 d-flex justify-content-center align-items-center" style="background-color: #000;">
-                        <img id="videoThumbnailImg" src="${videoThumbnail}" alt="Miniatura de vídeo de la especie" style="width: 100%; height: 100%; object-fit: contain; background-color: #000;" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'" />
+                        <img id="videoThumbnailImg" src="${videoThumbnail}" alt="Miniatura de vídeo de la especie" style="width: 100%; height: 100%; object-fit: contain; background-color: #000;">
                         <div class="position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: rgba(0,0,0,0.45);">
                            <button id="btnPlayVideo" class="btn btn-outline-light rounded-circle" style="width: 64px; height: 64px;" aria-label="Reproducir vídeo documental de la especie"><i class="bi bi-play-fill fs-2"></i></button>
                            <span class="small fw-bold text-white text-uppercase mt-2" style="letter-spacing: 1px;">${t_play_video}</span>
@@ -2151,7 +2146,7 @@ window.initPecedex = (speciesArray) => {
                     <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                          <div class="card h-100 border-0 bg-transparent text-center" role="button" tabindex="0" aria-label="${isCaught ? `Ver detalles de ${species.name}` : 'Especie no capturada'}" style="${pointerStyle}" ${hoverAnim} ${isCaught ? `data-open-species-global="${index}"` : ''} title="${isCaught ? 'Ver ficha técnica de la especie' : 'Captura esta especie para desbloquearla'}">
                <div class="position-relative mx-auto rounded-circle d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background-color: ${isCaught ? '#eef2ff' : '#f8f9fa'}; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);">
-                 <img src="${species.image}" alt="${isCaught ? `Fotografía de ${species.name}` : 'Especie no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+                 <img src="${species.image}" alt="${isCaught ? `Fotografía de ${species.name}` : 'Especie no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}">
                  ${isCaught ? '<i class="bi bi-check-circle-fill text-success position-absolute" style="bottom: 0px; right: 0px; font-size: 1.2rem; background: white; border-radius: 50%;"></i>' : ''}
                </div>
                <div class="card-body p-2">
