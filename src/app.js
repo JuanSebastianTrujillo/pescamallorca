@@ -7,7 +7,6 @@ import { refreshMapTranslations } from "./services/MapService.js";
 import { SpeciesSection } from "./components/SpeciesSection.js";
 import { RulesSection } from "./components/RulesSection.js";
 import { WeatherSection, initWeather } from "./components/WeatherSection.js";
-import { ShopsSection, initShops } from "./components/ShopsSection.js";
 import { RampsSection, initRamps } from "./components/RampsSection.js";
 import { AuthorsSection } from "./components/AuthorsSection.js";
 import { ContactSection } from "./components/ContactSection.js";
@@ -86,7 +85,6 @@ const renderApp = () => {
                 ${MapSection()}
                 ${WeatherSection()}
                 ${QuizSection()}
-                ${ShopsSection()}
                 ${RulesSection()}
                 ${AuthorsSection()}
                 ${ContactSection()}
@@ -101,14 +99,12 @@ const renderApp = () => {
 // Función para inicializar todo lo que depende del DOM inyectado después
 async function initAfterDeferred() {
     initWeather();
-    initShops();
     initRamps();
     initLoginModal();
     initAccessibility();
     initTheme(); // Ahora AOS medirá secciones que ya existen
     initVoiceControl();
 
-    await loadShopsData();
     await loadRampsData();
     await loadSpotsData();
     await loadBeachesData();
@@ -121,7 +117,6 @@ async function initAfterDeferred() {
             await loadBeachesData();
             await loadSpeciesData();
             await loadMonthSpecies();
-            await loadShopsData();
             await loadRampsData();
             if (window.currentSpotsList?.length || window.currentRampsData?.length) {
                 refreshMapTranslations(window.currentSpotsList || [], window.currentRampsData || []);
@@ -144,6 +139,23 @@ async function initAfterDeferred() {
                 window.currentFishAudio.pause();
                 window.currentFishAudio.currentTime = 0;
                 window.currentFishAudio = null;
+            }
+
+            const videoContainer = fishModal.querySelector('#speciesModalVideo');
+            if (videoContainer) {
+                videoContainer.querySelectorAll('video').forEach(video => {
+                    try {
+                        video.pause();
+                        video.currentTime = 0;
+                        video.removeAttribute('src');
+                        video.load();
+                    } catch (error) {
+                        console.warn('Error deteniendo vídeo del modal:', error);
+                    }
+                });
+                videoContainer.querySelectorAll('iframe').forEach(frame => {
+                    frame.src = '';
+                });
             }
         });
     }
@@ -178,7 +190,7 @@ async function initAfterDeferred() {
     // Delegación de acciones por atributos data- (click y teclado)
     function attachDataActionListeners() {
         document.addEventListener('click', (ev) => {
-            const el = ev.target.closest('[data-open-spot],[data-open-beach],[data-open-species-index],[data-open-species-name],[data-open-species-global],[data-open-ramp],[data-open-shop],[data-toggle-fish-audio],[data-toggle-catch],[data-auth-logout],[data-close-mobile],[data-mock-login],[data-set-star],[data-speak-modal],[data-stop-voice],[data-pecedex-reset],[data-pecedex-confirm]');
+            const el = ev.target.closest('[data-open-spot],[data-open-beach],[data-open-species-index],[data-open-species-name],[data-open-species-global],[data-open-ramp],[data-toggle-fish-audio],[data-toggle-catch],[data-auth-logout],[data-close-mobile],[data-mock-login],[data-set-star],[data-speak-modal],[data-stop-voice],[data-pecedex-reset],[data-pecedex-confirm]');
             if (!el) return;
             ev.preventDefault();
             // Open spot
@@ -198,7 +210,6 @@ async function initAfterDeferred() {
             if (el.dataset.openSpeciesName) { openSpeciesModalByName(el.dataset.openSpeciesName); return; }
             if (el.dataset.openSpeciesGlobal !== undefined) { openSpeciesModalGlobal(Number(el.dataset.openSpeciesGlobal)); return; }
             if (el.dataset.openRamp !== undefined) { openRampModal(Number(el.dataset.openRamp)); return; }
-            if (el.dataset.openShop !== undefined) { openShopModal(Number(el.dataset.openShop)); return; }
             if (el.dataset.toggleFishAudio !== undefined) { window.toggleFishAudio(el, el.dataset.audioPath); return; }
             if (el.dataset.toggleCatch !== undefined) { toggleCatchSpecies(ev, el.dataset.toggleCatch); return; }
             if (el.dataset.authLogout !== undefined) { AuthService.logout(); return; }
@@ -210,7 +221,7 @@ async function initAfterDeferred() {
         // Support teclado (Enter / Space) para los elementos con data-attributes
         document.addEventListener('keydown', (ev) => {
             if (ev.key !== 'Enter' && ev.key !== ' ') return;
-            const el = ev.target.closest('[data-open-spot],[data-open-beach],[data-open-species-index],[data-open-species-name],[data-open-species-global],[data-open-ramp],[data-open-shop],[data-toggle-fish-audio],[data-toggle-catch],[data-auth-logout],[data-close-mobile],[data-mock-login],[data-set-star],[data-speak-modal],[data-stop-voice],[data-pecedex-reset],[data-pecedex-confirm]');
+            const el = ev.target.closest('[data-open-spot],[data-open-beach],[data-open-species-index],[data-open-species-name],[data-open-species-global],[data-open-ramp],[data-toggle-fish-audio],[data-toggle-catch],[data-auth-logout],[data-close-mobile],[data-mock-login],[data-set-star],[data-speak-modal],[data-stop-voice],[data-pecedex-reset],[data-pecedex-confirm]');
             if (!el) return;
             ev.preventDefault();
             el.click();
@@ -540,74 +551,6 @@ async function loadSpotsData() {
     } catch (e) {
         console.error("Error al cargar JSON de la zona:", e);
         spotsContainer.innerHTML = '<div class="alert alert-danger">' + ((window._i18n && window._i18n.t) ? window._i18n.t('spots_error_loading') : 'Error cargando información de Spots. Asegúrate de estar usando un servidor local.') + '</div>';
-    }
-}
-
-window.currentShopsData = [];
-async function loadShopsData() {
-    try {
-        const activeLang = (window._i18n && window._i18n.language) ? window._i18n.language.substring(0, 2) : 'es';
-        const response = await fetch(`assets/data/tiendas_${activeLang}.json?v=${new Date().getTime()}`);
-        const schema = await response.json();
-
-        const shops = schema['@graph'].filter(item => item['@type'] === 'SportingGoodsStore').map((item, index) => {
-            const kw = item.keywords || "";
-            const isCebo = kw.toLowerCase().includes('cebo');
-            const isTaller = kw.toLowerCase().includes('repara');
-            const isSub = kw.toLowerCase().includes('submarina');
-            const isLicencias = kw.toLowerCase().includes('licencia');
-
-            const keyServices = [];
-            if (isCebo) keyServices.push('cebo');
-            if (isTaller) keyServices.push('taller');
-            if (isSub) keyServices.push('submarina');
-            if (isLicencias) keyServices.push('licencias');
-
-            const badges = [];
-            if (isCebo) badges.push({ text: "Cebo Vivo", color: "success", icon: "bi-bug" });
-            if (isTaller) badges.push({ text: "Taller Reparación", color: "info", icon: "bi-tools" });
-            if (isSub) badges.push({ text: "Pesca Submarina", color: "primary", icon: "bi-water" });
-
-            const descParts = (item.disambiguatingDescription || "").split(/CATÁLOGO DE SERVICIOS:|ESPECIALIDADES:/).map(s => s.trim());
-
-            return {
-                id: index,
-                name: item.name,
-                geoZone: "palma",
-                keyServices: keyServices,
-                location: item.address?.addressLocality || "",
-                address: item.address?.streetAddress || "",
-                rating: item.aggregateRating?.ratingValue || "4.5",
-                image: Array.isArray(item.image) ? item.image[0] : item.image,
-                gallery: Array.isArray(item.image) ? item.image : [item.image],
-                contact: {
-                    phone: item.telephone,
-                    phoneStr: item.telephone,
-                    email: item.email || "",
-                    web: item.url || ""
-                },
-                googleMapsLink: item.hasMap || "",
-                hours: item.openingHoursSpecification ? item.openingHoursSpecification.map(h => ({
-                    condition: Array.isArray(h.dayOfWeek) ? h.dayOfWeek.join(', ') : h.dayOfWeek,
-                    time: `${h.opens} - ${h.closes}`
-                })) : [],
-                badges: badges,
-                services: {
-                    bait: descParts[1] || "",
-                    workshop: descParts[1] || "",
-                    licenses: "",
-                    misc: ""
-                },
-                specialty: descParts[2] || item.description
-            };
-        });
-
-        window.currentShopsData = shops;
-        if (typeof window.renderShops === 'function') {
-            window.renderShops();
-        }
-    } catch (e) {
-        console.error("Error loading shops:", e);
     }
 }
 
@@ -948,18 +891,18 @@ window.openSpotModalByName = (name) => {
     window.openSpotModal(index);
 };
 
-window.openShopModalByName = (name) => {
-    if (!name || !window.currentShopsData) return;
+window.openRampModalByName = (name) => {
+    if (!name || !window.currentRampsData) return;
     const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-    const shop = window.currentShopsData.find(s => {
-        const sName = s.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        return sName.includes(cleanQuery) || cleanQuery.includes(sName);
+    const ramp = window.currentRampsData.find(r => {
+        const rName = r.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return rName.includes(cleanQuery) || cleanQuery.includes(rName);
     });
-    if (!shop) return;
-    window.openShopModal(shop.id);
+    if (!ramp) return;
+    window.openRampModal(ramp.id);
 };
 
-window.openRampModalByName = (name) => {
+window.openBeachModalByName = (name) => {
     if (!name || !window.currentRampsData) return;
     const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
     const ramp = window.currentRampsData.find(r => {

@@ -55,7 +55,6 @@ export const Header = () => {
               <li><a href="#mapa" data-i18n="nav_mapa">Mapa</a></li>
               <li><a href="#meteo" data-i18n="nav_meteo">Tiempo</a></li>
               <li><a href="#quiz" data-i18n="nav_quiz">Quiz</a></li>
-              <li><a href="#tiendas" data-i18n="nav_tiendas">Tiendas</a></li>
               <li><a href="#normativa" data-i18n="nav_normativa">Normativa</a></li>
               <li><a href="#autores" data-i18n="nav_autores">Autores</a></li>
               <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>

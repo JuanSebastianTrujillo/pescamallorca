@@ -277,11 +277,6 @@ export function processCommand(transcript) {
             showNotification("Navegando al mapa...");
             return "Navegando al mapa";
         }
-        if (text.includes("tiendas") || text.includes("comercios")) {
-            window.location.hash = "tiendas";
-            showNotification("Navegando a tiendas...");
-            return "Navegando a tiendas";
-        }
         if (text.includes("rampas") || text.includes("botadura")) {
             window.location.hash = "rampas";
             showNotification("Navegando a rampas...");
@@ -370,19 +365,6 @@ export function processCommand(transcript) {
                 window.openSpotModalByName(query);
                 showNotification(`Abriendo zona ${query}`);
                 return `Abriendo zona ${query}`;
-            }
-
-            // Intentar abrir tienda
-            const isShop = window.currentShopsData?.some(s => {
-                const sName = normalizar(s.name);
-                const qName = normalizar(query);
-                return sName.includes(qName) || qName.includes(sName);
-            });
-
-            if (isShop) {
-                window.openShopModalByName(query);
-                showNotification(`Abriendo tienda ${query}`);
-                return `Abriendo tienda ${query}`;
             }
 
             // Intentar abrir rampa

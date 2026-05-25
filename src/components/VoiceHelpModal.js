@@ -19,7 +19,7 @@ export const VoiceHelpModal = () => {
                                     <h3 class="fs-6 fw-bold text-primary mb-3"><i class="bi bi-compass me-2"></i> Navegación</h3>
                                     <ul class="list-unstyled mb-0" style="font-size: 0.95rem;">
                                         <li class="mb-2"><code>"Ir a peces"</code>, <code>"Zonas"</code>, <code>"Mapa"</code></li>
-                                        <li class="mb-2"><code>"Tiendas"</code>, <code>"Rampas"</code>, <code>"Tiempo"</code></li>
+                                        <li class="mb-2"><code>"Rampas"</code>, <code>"Tiempo"</code></li>
                                         <li><code>"Ir al Quiz"</code> o <code>"Normas"</code></li>
                                     </ul>
                                 </div>

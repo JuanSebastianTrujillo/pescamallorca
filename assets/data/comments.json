@@ -11,16 +11,6 @@
             "rating": 5
         },
         {
-            "id": 2,
-            "type": "shop",
-            "targetId": 0,
-            "user": "Maria Sea",
-            "avatar": "https:\/\/i.pravatar.cc\/150?u=maria",
-            "text": "Tienen el mejor cebo vivo de Palma, siempre fresco.",
-            "date": "2026-04-22",
-            "rating": 4
-        },
-        {
             "id": 1777360785053,
             "type": "spot",
             "targetId": "Playa de Muro",
@@ -29,15 +19,6 @@
             "user": "JaJuHu",
             "avatar": "https:\/\/lh3.googleusercontent.com\/a\/ACg8ocKYBqwthEDJYj1rmJ9_HdhViksMZPdHqe3wg2eYKo8_yjnLX2r-dQ=s96-c"
         },
-        {
-            "id": 1777360826055,
-            "type": "shop",
-            "targetId": 1,
-            "rating": 5,
-            "text": "muy bien",
-            "date": "2026-04-28",
-            "user": "Pescador An\u00f3nimo",
-            "avatar": "https:\/\/i.pravatar.cc\/150?u=demo"
-        }
+
     ]
 }
