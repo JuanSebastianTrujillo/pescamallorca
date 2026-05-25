@@ -7,7 +7,6 @@
       "name": "Rampa Club Náutico Portocristo",
       "image": [
         "https://www.pescamallorca.online/assets/rampas/portocristo-1.webp",
-        "https://www.pescamallorca.online/assets/rampas/portocristo-firme.webp",
         "https://www.pescamallorca.online/assets/rampas/portocristo-parking.webp"
       ],
       "address": {
@@ -31,7 +30,7 @@
       "name": "Rampa Pública Port de Pollença",
       "image": [
         "https://www.pescamallorca.online/assets/rampas/pollenca-1.webp",
-        "https://www.pescamallorca.online/assets/rampas/pollenca-inclinacion.webp"
+        "https://www.pescamallorca.online/assets/rampas/pollenca-parking.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -54,7 +53,7 @@
       "name": "Acceso Natural Son Serra de Marina",
       "image": [
         "https://www.pescamallorca.online/assets/rampas/sonserra-1.webp",
-        "https://www.pescamallorca.online/assets/rampas/sonserra-rocas.webp"
+        "https://www.pescamallorca.online/assets/rampas/sonserra-parking.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -76,8 +75,8 @@
       "@type": "Place",
       "name": "Rampa Pública Port de Sóller (Ports IB)",
       "image": [
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg",
-        "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
+        "https://www.pescamallorca.online/assets/img/hero-carousel/soller-1.jpg",
+        "https://www.pescamallorca.online/assets/img/hero-carousel/soller-parking.jpg"
       ],
       "address": {
         "@type": "PostalAddress",

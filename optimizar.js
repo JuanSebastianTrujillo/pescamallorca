@@ -3,10 +3,10 @@ const path = require('path');
 const sharp = require('sharp');
 
 // 1. Dónde pones las fotos originales (pesadas, en alta calidad)
-const SOURCE_DIR = path.join(__dirname, 'assets', 'img', 'spots', 'originales');
+const SOURCE_DIR = path.join(__dirname, 'assets', 'img', 'rampas', 'originales');
 
 // 2. Dónde se guardarán todas las fotos listas para la web
-const TARGET_DIR = path.join(__dirname, 'assets', 'img', 'spots', 'todos');
+const TARGET_DIR = path.join(__dirname, 'assets', 'img', 'rampas', 'todos');
 
 // 3. Los anchos que necesita tu etiqueta <picture>
 const WIDTHS = [800, 400];
@@ -23,7 +23,7 @@ async function processImages() {
     }
 
     const files = fs.readdirSync(SOURCE_DIR);
-    const validExts = ['.jpg', '.jpeg', '.png', '.webp'];
+    const validExts = ['.jpg', '.jpeg', '.png', '.webp', '.avif'];
 
     for (const file of files) {
         const ext = path.extname(file).toLowerCase();
