@@ -43,6 +43,21 @@ const t = (key, defaultValue) => {
         : (defaultValue || key);
 };
 
+function getImageBasePath(imagePath) {
+    if (!imagePath) return '';
+    let path = imagePath;
+    if (path.startsWith('https://www.pescamallorca.online/assets/img/peces/webp/')) {
+        path = path.replace('https://www.pescamallorca.online/assets/img/peces/webp/', 'assets/img/peces/todos/');
+    } else if (path.startsWith('https://www.pescamallorca.online/assets/img/peces/')) {
+        path = path.replace('https://www.pescamallorca.online/assets/img/peces/', 'assets/img/peces/');
+    } else if (!path.includes('/') && path.length > 0) {
+        path = `assets/img/peces/todos/${path}`;
+    }
+
+    path = path.replace(/[-_](?:min|400|800|1200)(?=\.(?:avif|webp|jpg|jpeg|png)$)/gi, '');
+    return path.substring(0, path.lastIndexOf('.'));
+}
+
 // Inicializar la estructura general renderizando todas las secciones de golpe
 // Renderizado progresivo: Primero lo que se ve (Critical), luego el resto (Deferred)
 const renderApp = () => {
@@ -1712,7 +1727,7 @@ function renderSpeciesSwiper(speciesArray) {
 
     let htmlCards = '';
     speciesArray.forEach((species, index) => {
-        const rutaLimpia = species.image.substring(0, species.image.lastIndexOf('.'));
+        const rutaLimpia = getImageBasePath(species.image || '');
         htmlCards += `
           <div class="swiper-slide py-3">
              <div class="card h-100 shadow border-0 cursor-pointer species-card" role="button" tabindex="0" aria-label="Ver detalles de ${species.name}" data-open-species-index="${index}" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
@@ -1863,7 +1878,7 @@ function fillAndShowSpeciesModal(species) {
         imgEl.style.opacity = '0';
         setTimeout(() => {
             const rutaCompleta = selected.includes('/') ? selected : `assets/img/peces/webp/${selected}`;
-            const rutaLimpia = rutaCompleta.substring(0, rutaCompleta.lastIndexOf('.'));
+            const rutaLimpia = getImageBasePath(rutaCompleta);
             imgEl.src = `${rutaLimpia}-800.webp`;
 
             imgEl.alt = `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca`;
