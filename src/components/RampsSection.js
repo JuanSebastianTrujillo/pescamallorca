@@ -205,9 +205,15 @@ window.openRampModal = (rampId) => {
     // Generar Galería
     let galleryHtml = '';
     rampa.gallery.forEach(img => {
+        const rutaLimpiaGaleria = img.substring(0, img.lastIndexOf('.'));
         galleryHtml += `
             <div class="col-md-4 mb-3">
-               <img src="${img}" class="img-fluid rounded shadow-sm object-fit-cover w-100" style="height:150px;" alt="Fotografía detallada de la rampa de varada ${rampa.name}, ubicada en ${rampa.location}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1.jpg'">
+               <picture>
+                   <source type="image/avif" srcset="${rutaLimpiaGaleria}-400.avif 400w, ${rutaLimpiaGaleria}-800.avif 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                   <source type="image/webp" srcset="${rutaLimpiaGaleria}-400.webp 400w, ${rutaLimpiaGaleria}-800.webp 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                   <source type="image/jpeg" srcset="${rutaLimpiaGaleria}-400.jpg 400w, ${rutaLimpiaGaleria}-800.jpg 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                   <img src="${rutaLimpiaGaleria}-800.jpg" class="img-fluid rounded shadow-sm object-fit-cover w-100" style="height:150px;" alt="Fotografía detallada de la rampa de varada ${rampa.name}, ubicada en ${rampa.location}" onerror="this.src='${img}'">
+                </picture>
             </div>
         `;
     });

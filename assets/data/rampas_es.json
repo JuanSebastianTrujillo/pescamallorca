@@ -6,8 +6,8 @@
       "@type": "Place",
       "name": "Rampa Club Náutico Portocristo",
       "image": [
-        "https://www.pescamallorca.online/assets/rampas/portocristo-1.webp",
-        "https://www.pescamallorca.online/assets/rampas/portocristo-parking.webp"
+        "https://www.pescamallorca.online/assets/img/rampas/todos/portocristo-1.webp",
+        "https://www.pescamallorca.online/assets/img/rampas/todos/portocristo-parking.webp"
       ],
       "address": {
         "@type": "PostalAddress",
