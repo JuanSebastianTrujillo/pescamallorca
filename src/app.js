@@ -1738,7 +1738,7 @@ function renderSpeciesSwiper(speciesArray) {
                    alt="${species.name}" 
                    style="height:250px" 
                    loading="lazy"
-                   onerror="this.onerror=null; this.src='${species.image}'">
+                   onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">
                </picture>              
                <div class="card-body text-center bg-white rounded-bottom">
                  <h3 class="card-title text-primary fw-bold mb-1 fs-5">${species.name}</h3>

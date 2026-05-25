@@ -161,7 +161,7 @@ export const initRamps = () => {
                           <source type="image/webp" srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w" sizes="(max-width: 768px) 100vw, 33vw">
                           <source type="image/jpeg" srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w" sizes="(max-width: 768px) 100vw, 33vw">
                           
-                          <img src="${rutaLimpia}-800.jpg" class="card-img-top object-fit-cover" alt="Rampa de botadura ${rampa.name}" style="height:220px;" loading="lazy" decoding="async" onerror="this.src='${rampa.image}'">
+                          <img src="${rutaLimpia}-800.jpg" class="card-img-top object-fit-cover" alt="Rampa de botadura ${rampa.name}" style="height:220px;" loading="lazy" decoding="async" onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">
                         </picture>
                         <span class="badge bg-${rampa.priceColor} position-absolute top-0 end-0 m-3 fs-6 shadow-sm">${rampa.priceTag}</span>
                     </div>
@@ -212,7 +212,7 @@ window.openRampModal = (rampId) => {
                    <source type="image/avif" srcset="${rutaLimpiaGaleria}-400.avif 400w, ${rutaLimpiaGaleria}-800.avif 800w" sizes="(max-width: 768px) 100vw, 33vw">
                    <source type="image/webp" srcset="${rutaLimpiaGaleria}-400.webp 400w, ${rutaLimpiaGaleria}-800.webp 800w" sizes="(max-width: 768px) 100vw, 33vw">
                    <source type="image/jpeg" srcset="${rutaLimpiaGaleria}-400.jpg 400w, ${rutaLimpiaGaleria}-800.jpg 800w" sizes="(max-width: 768px) 100vw, 33vw">
-                   <img src="${rutaLimpiaGaleria}-800.jpg" class="img-fluid rounded shadow-sm object-fit-cover w-100" style="height:150px;" alt="Fotografía detallada de la rampa de varada ${rampa.name}, ubicada en ${rampa.location}" onerror="this.src='${img}'">
+                   <img src="${rutaLimpiaGaleria}-800.jpg" class="img-fluid rounded shadow-sm object-fit-cover w-100" style="height:150px;" alt="Fotografía detallada de la rampa de varada ${rampa.name}, ubicada en ${rampa.location}" onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">
                 </picture>
             </div>
         `;
