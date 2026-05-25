@@ -1135,11 +1135,39 @@ async function loadBeachesData() {
     const beachesContainer = document.getElementById('beaches-container');
     if (!beachesContainer) return;
 
-    try {
-        const response = await fetch(`assets/data/playas.json?v=${new Date().getTime()}`);
-        const schema = await response.json();
+    // ── Proxy CORS en cascada ─────────────────────────────────────────────────
+    // El sitio es 100% estático (sin PHP ni backend propio), así que la única
+    // forma de saltar la política CORS del navegador es usar un proxy intermedio.
+    // Probamos varios en orden; el primero que responda correctamente gana.
+    // En producción real lo ideal sería que mallorcalas.online añadiera la
+    // cabecera "Access-Control-Allow-Origin: *" en su servidor (1 línea de config).
+    const EXTERNAL_URL = 'https://www.mallorcalas.online/data/playas.json';
 
-        let allBeaches = schema['@graph'] || [];
+    const PROXIES = [
+        'https://corsproxy.io/?' + EXTERNAL_URL,
+        'https://api.allorigins.win/raw?url=' + encodeURIComponent(EXTERNAL_URL),
+        'https://thingproxy.freeboard.io/fetch/' + EXTERNAL_URL,
+    ];
+
+    async function fetchWithFallback(urls) {
+        for (const url of urls) {
+            try {
+                const res = await fetch(url);
+                if (res.ok) return res;
+                console.warn(`[Playas] Proxy respondió ${res.status}: ${url}`);
+            } catch (err) {
+                console.warn(`[Playas] Proxy falló (${err.message}): ${url}`);
+            }
+        }
+        throw new Error('Todos los proxies CORS fallaron.');
+    }
+
+    try {
+        const response = await fetchWithFallback(PROXIES);
+        const data = await response.json();
+
+        // El JSON externo es un array plano, no tiene '@graph'
+        let allBeaches = Array.isArray(data) ? data : [];
         currentBeachesList = allBeaches;
         window.currentBeachesList = allBeaches;
         renderBeachesSwiper(allBeaches);
@@ -1150,24 +1178,30 @@ async function loadBeachesData() {
             const txtRaw = document.getElementById('filter-beach-text').value.trim();
             const txt = txtRaw.toLowerCase();
 
+            const normalized = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
             const filtered = allBeaches.filter(beach => {
                 let pass = true;
 
+                // Filtro dificultad: usa accessDifficulty o access del JSON externo
                 if (dif !== 'todo') {
-                    const prop = beach.additionalProperty?.find(p => p.name === 'Dificultad de acceso');
-                    const val = prop ? prop.value.toLowerCase() : '';
-                    if (!val.includes(dif)) pass = false;
+                    const val = normalized(beach.accessDifficulty || beach.access || '');
+                    if (!val.includes(normalized(dif))) pass = false;
                 }
 
+                // Filtro tipo: usa el campo 'type' del JSON externo
                 if (tipo !== 'todo' && pass) {
-                    const prop = beach.additionalProperty?.find(p => p.name === 'Tipo de playa');
-                    const val = prop ? prop.value.toLowerCase() : '';
-                    if (!val.includes(tipo)) pass = false;
+                    const val = normalized(beach.type || '');
+                    if (!val.includes(normalized(tipo))) pass = false;
                 }
 
+                // Filtro texto libre
                 if (txt.length > 0 && pass) {
-                    const jsonString = JSON.stringify(beach).toLowerCase();
-                    if (!jsonString.includes(txt)) pass = false;
+                    const search = normalized(txt);
+                    const haystack = normalized(
+                        `${beach.name} ${beach.region} ${beach.zone} ${beach.description} ${beach.type}`
+                    );
+                    if (!haystack.includes(search)) pass = false;
                 }
 
                 return pass;
@@ -1184,9 +1218,26 @@ async function loadBeachesData() {
         });
 
     } catch (e) {
-        console.error("Error al cargar JSON de playas:", e);
-        beachesContainer.innerHTML = '<div class="alert alert-danger w-100">Error cargando información de Playas.</div>';
+        console.error('[Playas] Todos los proxies fallaron:', e);
+        beachesContainer.innerHTML = `
+            <div class="alert alert-warning w-100 p-4 text-center">
+                <i class="bi bi-cloud-slash fs-2 text-warning d-block mb-2"></i>
+                <strong>No se pudieron cargar las playas</strong>
+                <p class="text-muted small mb-0 mt-2">
+                    Los servicios intermediarios están temporalmente no disponibles.<br>
+                    Inténtalo de nuevo en unos minutos.
+                </p>
+            </div>`;
     }
+}
+
+// Convierte rutas relativas del JSON de mallorcalas.online en URLs absolutas
+// Ej: "./media/img/hero/cala-varques.jpg" → "https://www.mallorcalas.online/media/img/hero/cala-varques.jpg"
+function resolveBeachImg(path) {
+    if (!path) return null;
+    if (path.startsWith('http')) return path;               // ya es absoluta
+    const clean = path.replace(/^\.\//, '');                // quita el './' inicial
+    return 'https://www.mallorcalas.online/' + clean;
 }
 
 function renderBeachesSwiper(beachesArray) {
@@ -1204,22 +1255,103 @@ function renderBeachesSwiper(beachesArray) {
         return;
     }
 
+    // Helpers para renderizar la tarjeta con los nuevos campos del JSON externo
+    const accessIcon = (access) => {
+        const a = (access || '').toLowerCase();
+        if (a === 'facil' || a === 'fácil') return '<i class="bi bi-check-circle-fill text-success me-1"></i>';
+        if (a === 'media') return '<i class="bi bi-exclamation-circle-fill text-warning me-1"></i>';
+        if (a === 'dificil' || a === 'difícil') return '<i class="bi bi-x-circle-fill text-danger me-1"></i>';
+        return '<i class="bi bi-circle text-secondary me-1"></i>';
+    };
+
+    const featureIcons = {
+        parking:      { icon: 'bi-p-square-fill',    label: 'Parking',      color: 'text-primary' },
+        restaurante:  { icon: 'bi-cup-hot-fill',      label: 'Restaurante',  color: 'text-warning' },
+        accesible:    { icon: 'bi-person-wheelchair', label: 'Accesible',    color: 'text-success' },
+        chiringuito:  { icon: 'bi-umbrella-fill',     label: 'Chiringuito',  color: 'text-info'    },
+        ducha:        { icon: 'bi-droplet-fill',      label: 'Ducha',        color: 'text-info'    },
+    };
+
+    const renderFeatureBadges = (features) => {
+        if (!Array.isArray(features) || features.length === 0) return '';
+        return features.slice(0, 3).map(f => {
+            const meta = featureIcons[f.toLowerCase()] || { icon: 'bi-tag-fill', label: f, color: 'text-secondary' };
+            return `<span class="badge bg-light text-dark border me-1 mb-1"><i class="bi ${meta.icon} ${meta.color} me-1"></i>${meta.label}</span>`;
+        }).join('');
+    };
+
+    const renderStars = (rating) => {
+        const r = Math.round(Number(rating) * 2) / 2; // redondea a 0.5
+        let stars = '';
+        for (let i = 1; i <= 5; i++) {
+            if (r >= i) stars += '<i class="bi bi-star-fill text-warning" style="font-size:0.75rem;"></i>';
+            else if (r >= i - 0.5) stars += '<i class="bi bi-star-half text-warning" style="font-size:0.75rem;"></i>';
+            else stars += '<i class="bi bi-star text-warning" style="font-size:0.75rem;"></i>';
+        }
+        return stars;
+    };
+
     let htmlCards = '';
     beachesArray.forEach((beach, index) => {
-        const imgSrc = beach.image || 'assets/img/hero-carousel/hero-carousel-1-640.webp';
+        // El JSON externo usa rutas relativas → las convertimos a absolutas
+        const imgSrc = resolveBeachImg(beach.img || beach.image) || 'assets/img/hero-carousel/hero-carousel-1-640.webp';
+        const locality = beach.region || beach.zone || 'Mallorca';
+        const access = beach.accessDifficulty || beach.access || '';
+        const typeLabel = beach.type === 'Rocosa' ? 'Rocosa' : (beach.type || 'Arena');
+        const typeColor = beach.type === 'Rocosa' ? 'secondary' : 'info';
+        const ratingVal = beach.rating ? Number(beach.rating).toFixed(1) : null;
+
         htmlCards += `
           <div class="swiper-slide py-3">
-             <div class="card h-100 shadow border-0 cursor-pointer beach-card" role="button" tabindex="0" aria-label="Ver detalles de ${beach.name}" data-open-beach="${index}" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-               <img 
-                 src="${imgSrc}" 
-                 class="card-img-top object-fit-cover" 
-                 alt="Fotografía de ${beach.name}" 
-                 style="height:250px" 
-                 loading="lazy"
-                 onerror="this.onerror=null;this.src='assets/img/hero-carousel/hero-carousel-1-640.webp'">
-               <div class="card-body text-center bg-white rounded-bottom">
+             <div class="card h-100 shadow border-0 beach-card" role="button" tabindex="0" aria-label="Ver detalles de ${beach.name}" data-open-beach="${index}" style="transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+
+               <div class="position-relative overflow-hidden" style="height:220px;">
+                 <img
+                   src="${imgSrc}"
+                   class="w-100 h-100 object-fit-cover"
+                   alt="Fotografía de ${beach.name}"
+                   style="transition: transform 0.4s;"
+                   loading="lazy"
+                   onerror="this.onerror=null;this.src='assets/img/hero-carousel/hero-carousel-1-640.webp'">
+                 <div class="position-absolute top-0 end-0 m-2 d-flex flex-column gap-1">
+                   <span class="badge bg-${typeColor} bg-opacity-90 shadow-sm">
+                     <i class="bi bi-geo me-1"></i>${typeLabel}
+                   </span>
+                   ${beach.isFavorite ? '<span class="badge bg-danger bg-opacity-90 shadow-sm"><i class="bi bi-heart-fill me-1"></i>Destacada</span>' : ''}
+                 </div>
+               </div>
+
+               <div class="card-body d-flex flex-column bg-white">
                  <h3 class="card-title text-primary fw-bold mb-1 fs-5">${beach.name}</h3>
-                 <p class="card-text text-muted small mb-0"><i class="bi bi-geo-alt-fill text-danger me-1"></i> ${beach.address?.addressLocality || 'Desconocido'}</p>
+                 <p class="text-muted small mb-2">
+                   <i class="bi bi-geo-alt-fill text-danger me-1"></i>${locality}
+                   ${beach.zone ? `<span class="ms-2 text-muted fst-italic small">${beach.zone}</span>` : ''}
+                 </p>
+
+                 ${ratingVal ? `
+                 <div class="d-flex align-items-center gap-1 mb-2">
+                   ${renderStars(beach.rating)}
+                   <span class="small fw-bold text-dark ms-1">${ratingVal}</span>
+                   <span class="small text-muted">(${beach.reviews || 0})</span>
+                 </div>` : ''}
+
+                 <div class="mb-2">
+                   ${accessIcon(access)}<small class="text-muted">Acceso: <strong>${access || 'N/A'}</strong></small>
+                 </div>
+
+                 <div class="mb-3 d-flex flex-wrap gap-1">
+                   ${renderFeatureBadges(beach.features)}
+                 </div>
+
+                 <p class="card-text text-muted small mb-3 flex-grow-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+                   ${beach.description || ''}
+                 </p>
+
+                 <div class="mt-auto pt-2 border-top">
+                   <button class="btn btn-outline-primary w-100 fw-bold btn-sm" data-open-beach="${index}">
+                     <i class="bi bi-info-circle me-1"></i>Ver detalles
+                   </button>
+                 </div>
                </div>
              </div>
           </div>
@@ -1257,58 +1389,163 @@ window.openBeachModal = (index) => {
     const beach = currentBeachesList[index];
     if (!beach) return;
 
+    // Campos del JSON externo de mallorcalas.online
+    const locality = beach.region || beach.zone || 'Mallorca';
+    // Imagen de detalle: usa heroImg si existe, si no img — convierte ruta relativa a absoluta
+    const heroImg = resolveBeachImg(beach.heroImg || beach.img || beach.image) || 'assets/img/hero-carousel/hero-carousel-1-640.webp';
+
     document.getElementById('beachModalLabel').innerText = beach.name;
-    document.getElementById('beachModalLocality').innerHTML = `<i class="bi bi-geo-alt-fill me-2 text-danger"></i><span>${beach.address?.addressLocality || 'Desconocido'}</span>`;
+    document.getElementById('beachModalLocality').innerHTML =
+        `<i class="bi bi-geo-alt-fill me-2 text-danger"></i><span>${locality}${beach.zone ? ` · ${beach.zone}` : ''}</span>`;
     document.getElementById('beachModalDescription').innerText = beach.description || '';
 
     const imgEl = document.getElementById('beachModalImage');
-    imgEl.src = beach.image || 'assets/img/hero-carousel/hero-carousel-1-640.webp';
+    imgEl.src = heroImg;
     imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1-640.webp'; };
 
     const propsContainer = document.getElementById('beachModalProperties');
     let propsHtml = '';
 
-    if (beach.amenityFeature && beach.amenityFeature.length > 0) {
-        const servTitle = (window._i18n && window._i18n.t) ? window._i18n.t('beach_services', { defaultValue: 'Servicios:' }) : 'Servicios:';
-        propsHtml += `<div class="col-12 mb-3"><strong>${servTitle}</strong><br>`;
-        beach.amenityFeature.forEach(af => {
-            if (af.value) {
-                propsHtml += `<span class="badge bg-success me-2 mb-2"><i class="bi bi-check-circle me-1"></i>${af.name}</span>`;
-            }
-        });
-        propsHtml += '</div>';
-    }
-
-    if (beach.additionalProperty && beach.additionalProperty.length > 0) {
-        beach.additionalProperty.forEach(prop => {
-            propsHtml += `
-                <div class="col-sm-6 mb-2">
-                    <div class="p-2 border rounded bg-white shadow-sm">
-                        <small class="text-muted d-block">${prop.name}</small>
-                        <span class="fw-bold text-dark">${prop.value}</span>
-                    </div>
-                </div>
-            `;
-        });
-    }
-
-    if (beach.aggregateRating) {
-        const valTitle = (window._i18n && window._i18n.t) ? window._i18n.t('beach_rating', { defaultValue: 'Valoración' }) : 'Valoración';
-        const reviewsLabel = (window._i18n && window._i18n.t) ? window._i18n.t('beach_reviews', { defaultValue: 'reseñas' }) : 'reseñas';
+    // ── Valoración ──────────────────────────────────────────────────────────
+    if (beach.rating) {
         propsHtml += `
-            <div class="col-sm-6 mb-2">
-                <div class="p-2 border rounded bg-white shadow-sm">
-                    <small class="text-muted d-block">${valTitle}</small>
-                    <span class="fw-bold text-dark"><i class="bi bi-star-fill text-warning me-1"></i>${beach.aggregateRating.ratingValue} (${beach.aggregateRating.reviewCount} ${reviewsLabel})</span>
+            <div class="col-sm-6 col-lg-4 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm h-100">
+                    <small class="text-muted d-block"><i class="bi bi-star-fill text-warning me-1"></i>Valoración</small>
+                    <span class="fw-bold text-dark fs-5">${Number(beach.rating).toFixed(1)}</span>
+                    <span class="text-muted small"> / 5 (${beach.reviews || 0} reseñas)</span>
                 </div>
-            </div>
-        `;
+            </div>`;
+    }
+
+    // ── Tipo de playa ────────────────────────────────────────────────────────
+    if (beach.type) {
+        propsHtml += `
+            <div class="col-sm-6 col-lg-4 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm h-100">
+                    <small class="text-muted d-block"><i class="bi bi-layers-fill text-info me-1"></i>Tipo</small>
+                    <span class="fw-bold text-dark">${beach.type}</span>
+                </div>
+            </div>`;
+    }
+
+    // ── Acceso ───────────────────────────────────────────────────────────────
+    const accessLabel = beach.accessDifficulty || beach.access;
+    if (accessLabel) {
+        const colorMap = { facil: 'success', fácil: 'success', media: 'warning', dificil: 'danger', difícil: 'danger' };
+        const col = colorMap[(accessLabel || '').toLowerCase()] || 'secondary';
+        propsHtml += `
+            <div class="col-sm-6 col-lg-4 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm h-100">
+                    <small class="text-muted d-block"><i class="bi bi-signpost-fill text-${col} me-1"></i>Dificultad de acceso</small>
+                    <span class="badge bg-${col} fw-bold">${accessLabel}</span>
+                </div>
+            </div>`;
+    }
+
+    // ── Olas ─────────────────────────────────────────────────────────────────
+    if (beach.waves) {
+        propsHtml += `
+            <div class="col-sm-6 col-lg-4 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm h-100">
+                    <small class="text-muted d-block"><i class="bi bi-water text-info me-1"></i>Oleaje habitual</small>
+                    <span class="fw-bold text-dark">${beach.waves}</span>
+                </div>
+            </div>`;
+    }
+
+    // ── Atardecer ────────────────────────────────────────────────────────────
+    if (beach.sunsetWindow) {
+        propsHtml += `
+            <div class="col-sm-6 col-lg-4 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm h-100">
+                    <small class="text-muted d-block"><i class="bi bi-sunset text-warning me-1"></i>Ventana de atardecer</small>
+                    <span class="fw-bold text-dark">${beach.sunsetWindow}</span>
+                </div>
+            </div>`;
+    }
+
+    // ── Coordenadas / GPS ────────────────────────────────────────────────────
+    if (beach.lat && beach.lng) {
+        propsHtml += `
+            <div class="col-sm-6 col-lg-4 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm h-100">
+                    <small class="text-muted d-block"><i class="bi bi-pin-map-fill text-danger me-1"></i>Coordenadas</small>
+                    <a href="https://maps.google.com/?q=${beach.lat},${beach.lng}" target="_blank" rel="noopener" class="fw-bold text-primary small">
+                        ${beach.lat.toFixed(4)}, ${beach.lng.toFixed(4)} <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    </a>
+                </div>
+            </div>`;
+    }
+
+    // ── Parking ──────────────────────────────────────────────────────────────
+    if (beach.parking) {
+        propsHtml += `
+            <div class="col-12 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm">
+                    <small class="text-muted d-block"><i class="bi bi-p-square-fill text-primary me-1"></i>Parking</small>
+                    <span class="fw-bold text-dark small">${beach.parking}</span>
+                </div>
+            </div>`;
+    }
+
+    // ── Accesibilidad ────────────────────────────────────────────────────────
+    if (beach.accessibility) {
+        propsHtml += `
+            <div class="col-12 mb-2">
+                <div class="p-2 border rounded bg-white shadow-sm">
+                    <small class="text-muted d-block"><i class="bi bi-person-wheelchair text-success me-1"></i>Accesibilidad</small>
+                    <span class="fw-bold text-dark small">${beach.accessibility}</span>
+                </div>
+            </div>`;
+    }
+
+    // ── Servicios / Features ─────────────────────────────────────────────────
+    if (Array.isArray(beach.features) && beach.features.length > 0) {
+        const featureMeta = {
+            parking:     { icon: 'bi-p-square-fill',    label: 'Parking',      color: 'primary' },
+            restaurante: { icon: 'bi-cup-hot-fill',      label: 'Restaurante',  color: 'warning' },
+            accesible:   { icon: 'bi-person-wheelchair', label: 'Accesible',    color: 'success' },
+            chiringuito: { icon: 'bi-umbrella-fill',     label: 'Chiringuito',  color: 'info'    },
+            ducha:       { icon: 'bi-droplet-fill',      label: 'Duchas',       color: 'info'    },
+        };
+        propsHtml += `<div class="col-12 mb-3"><small class="text-muted d-block mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Servicios</small><div class="d-flex flex-wrap gap-2">`;
+        beach.features.forEach(f => {
+            const m = featureMeta[f.toLowerCase()] || { icon: 'bi-tag-fill', label: f, color: 'secondary' };
+            propsHtml += `<span class="badge bg-${m.color} bg-opacity-15 text-dark border border-${m.color} px-2 py-1">
+                <i class="bi ${m.icon} text-${m.color} me-1"></i>${m.label}
+            </span>`;
+        });
+        propsHtml += `</div></div>`;
+    }
+
+    // ── Consejos (tips) ──────────────────────────────────────────────────────
+    if (Array.isArray(beach.tips) && beach.tips.length > 0) {
+        propsHtml += `
+            <div class="col-12 mb-2">
+                <div class="p-3 border rounded shadow-sm" style="border-left: 4px solid var(--bs-primary) !important; background:#f8f9fa;">
+                    <small class="text-muted d-block mb-2 fw-bold"><i class="bi bi-lightbulb-fill text-warning me-1"></i>Consejos</small>
+                    <ul class="mb-0 ps-3 small text-dark">
+                        ${beach.tips.map(tip => `<li class="mb-1">${tip}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>`;
     }
 
     propsContainer.innerHTML = propsHtml;
 
-    // Actualizar JSON-LD para la playa
-    SemanticService.updateBeachJsonLd(beach);
+    // Actualizar JSON-LD para la playa (adaptamos el objeto al formato esperado)
+    try {
+        const beachForJsonLd = {
+            name: beach.name,
+            description: beach.description,
+            image: heroImg,
+            address: { addressLocality: locality },
+            aggregateRating: beach.rating ? { ratingValue: beach.rating, reviewCount: beach.reviews || 0 } : undefined,
+            geo: (beach.lat && beach.lng) ? { latitude: beach.lat, longitude: beach.lng } : undefined,
+        };
+        SemanticService.updateBeachJsonLd(beachForJsonLd);
+    } catch (e) { /* noop */ }
 
     const modalEl = document.getElementById('beachModal');
     let modal = bootstrap.Modal.getInstance(modalEl);

@@ -12,12 +12,12 @@ export const BeachesSection = () => {
           <!-- UI de Filtros Avanzados -->
           <div class="row mb-4 justify-content-center">
              <div class="col-md-3 mb-2">
-                <label for="filter-beach-dificultad" class="visually-hidden" data-i18n="filter_beach_dificultad_label">Filtrar por dificultad</label>
+                <label for="filter-beach-dificultad" class="visually-hidden" data-i18n="filter_beach_dificultad_label">Filtrar por dificultad de acceso</label>
                 <select id="filter-beach-dificultad" class="form-select shadow-sm border-primary text-primary beaches-filter fw-bold">
-                   <option value="Todo" data-i18n="beach_option_all_difficulty">Dificultad: Todas</option>
-                   <option value="Baja" data-i18n="beach_option_low_difficulty">Baja</option>
+                   <option value="Todo" data-i18n="beach_option_all_difficulty">Acceso: Todos</option>
+                   <option value="Facil" data-i18n="beach_option_easy">Fácil</option>
                    <option value="Media" data-i18n="beach_option_medium_difficulty">Media</option>
-                   <option value="Alta" data-i18n="beach_option_high_difficulty">Alta</option>
+                   <option value="Dificil" data-i18n="beach_option_hard">Difícil</option>
                 </select>
              </div>
              <div class="col-md-3 mb-2">
@@ -25,14 +25,14 @@ export const BeachesSection = () => {
                 <select id="filter-beach-tipo" class="form-select shadow-sm border-primary text-primary beaches-filter fw-bold">
                    <option value="Todo" data-i18n="beach_option_all_types">Tipo: Todos</option>
                    <option value="Arena" data-i18n="beach_option_sand">Arena</option>
-                   <option value="Roca" data-i18n="beach_option_rock">Roca</option>
+                   <option value="Rocosa" data-i18n="beach_option_rock">Rocosa</option>
                 </select>
              </div>
              <div class="col-md-4 mb-2">
                 <div class="input-group shadow-sm border-primary rounded">
                     <span class="input-group-text bg-primary text-white border-primary"><i class="bi bi-search"></i></span>
                     <label for="filter-beach-text" class="visually-hidden" data-i18n="filter_beach_text_label">Buscar playas</label>
-                    <input type="text" id="filter-beach-text" class="form-control border-primary beaches-filter" placeholder="Buscar por nombre o localidad" data-i18n-placeholder="beach_search_placeholder">
+                    <input type="text" id="filter-beach-text" class="form-control border-primary beaches-filter" placeholder="Buscar por nombre, zona o municipio" data-i18n-placeholder="beach_search_placeholder">
                 </div>
              </div>
           </div>
@@ -41,7 +41,10 @@ export const BeachesSection = () => {
           <div class="swiper beaches-swiper" style="padding-bottom: 50px;">
             <div class="swiper-button-prev beaches-swiper-prev"></div>
             <div class="swiper-wrapper" id="beaches-container">
-               <div class="text-center w-100" data-i18n="beach_loading">Cargando Playas...</div>
+               <div class="text-center w-100 py-4">
+                 <div class="spinner-border text-primary mb-2" role="status" aria-hidden="true"></div>
+                 <p class="text-muted small" data-i18n="beach_loading">Cargando playas desde mallorcalas.online…</p>
+               </div>
             </div>
             <div class="swiper-button-next beaches-swiper-next"></div>
             <div class="swiper-pagination beaches-swiper-pagination"></div>
