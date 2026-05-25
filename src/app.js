@@ -786,19 +786,21 @@ window.openSpotModal = (index) => {
 
     let galleryHtml = '';
     images.forEach(img => {
-        const rutaLimpia = img.substring(0, img.lastIndexOf('.'));
-        galleryHtml += `
-            <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
-                <img 
-                    src="${rutaLimpia}-800.webp" 
-                    class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
-                    style="height: 200px;" 
-                    alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" 
-                    onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'" 
-                    loading="lazy">
-            </div>
-        `;
+    const rutaLimpia = img.substring(0, img.lastIndexOf('.'));
+    galleryHtml += `
+        <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
+            <picture>
+                <source type="image/avif" srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                <source type="image/webp" srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                <source type="image/jpeg" srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                
+                <img src="${rutaLimpia}-800.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="height: 200px;" alt="Fotografía detallada" loading="lazy"
+                onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">
+            </picture>
+        </div>
+    `;
     });
+    
     galleryContainer.innerHTML = galleryHtml;
 
     const getPropValue = (nombresProp) => {
@@ -1767,7 +1769,7 @@ function fillAndShowSpeciesModal(species) {
     document.getElementById('speciesModalScientific').innerText = species.alternateName || '';
     document.getElementById('speciesModalDescription').innerText = species.description || '';
 
-    const imgEl = document.getElementById('speciesModalImage');
+    let imgEl = document.getElementById('speciesModalImage');
     if (!imgEl) return;
     imgEl.style.transition = 'opacity 0.35s ease-in-out';
 
@@ -1818,15 +1820,26 @@ function fillAndShowSpeciesModal(species) {
         currentImagePosition = ((pos % galleryImages.length) + galleryImages.length) % galleryImages.length;
         const selected = galleryImages[currentImagePosition];
 
+        
         imgEl.style.opacity = '0';
+        
         setTimeout(() => {
             const rutaCompleta = selected.includes('/') ? selected : `assets/img/peces/webp/${selected}`;
-            const rutaLimpia = getImageBasePath(rutaCompleta);
-            imgEl.src = `${rutaLimpia}-800.webp`;
+            const rutaLimpia = rutaCompleta.substring(0, rutaCompleta.lastIndexOf('.'));
 
-            imgEl.alt = `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca`;
-            imgEl.onerror = () => { imgEl.src = 'assets/img/hero-carousel/hero-carousel-1-640.jpg'; };
-            imgEl.style.opacity = '1';
+           
+            if (imgEl.parentElement) {
+                imgEl.parentElement.innerHTML = `
+                    <picture>
+                        <source type="image/avif" srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <source type="image/webp" srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <source type="image/jpeg" srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                        
+                        <img id="speciesModalImage" src="${rutaLimpia}-800.jpg" class="img-fluid rounded shadow-sm species-modal-img" alt="Fotografía detallada de ${species.name}" style="max-height: 280px; width: 100%; object-fit: cover; transition: opacity 0.35s ease-in-out; opacity: 1;" loading="lazy">
+                    </picture>
+                `;       
+                imgEl = document.getElementById('speciesModalImage');
+            }
         }, 150);
 
         renderDots();
