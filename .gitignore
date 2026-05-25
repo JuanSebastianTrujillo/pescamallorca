@@ -1,2 +1,14 @@
 node_modules/
 .DS_Store
+package-lock.json
+npm-debug.log*
+
+# Archivos generados por PurgeCSS (se regeneran con: npm run purgecss)
+assets/vendor/bootstrap/css/bootstrap.min.purged.css
+
+dist/
+src/app.min.js
+
+# Archivos de caché y temporales
+.cache/
+*.tmp

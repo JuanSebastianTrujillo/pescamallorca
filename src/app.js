@@ -19,7 +19,8 @@ import { initTheme } from "../assets/js/main.js";
 import { initI18n } from "./services/i18n.js";
 import { initAccessibility, updateJsonLd, trapFocusInModal } from "./services/AccessibilityService.js";
 import { voiceController, processCommand, speak, stopSpeaking, hasSTT, playAudio, stopAudio } from "./services/VoiceService.js";
-import { SemanticService } from "./services/SemanticService.js"
+import { SemanticService } from "./services/SemanticService.js";
+import { ImageOptimizationService } from "./services/ImageOptimizationService.js";
 
 import { VoiceHelpModal } from "./components/VoiceHelpModal.js";
 import { BeachesSection } from "./components/BeachesSection.js";
@@ -72,8 +73,16 @@ const renderApp = () => {
         ${LoginModal()}
     `;
 
-    // 2. Fase Diferida: Inyectamos el resto un poco después
-    setTimeout(() => {
+    // 2. Fase Diferida: Inyectamos el resto cuando el navegador esté en idle
+    const deferRender = (callback) => {
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(callback, { timeout: 1000 });
+        } else {
+            setTimeout(callback, 50);
+        }
+    };
+
+    deferRender(() => {
         const deferred = document.getElementById('deferred-sections');
         if (deferred) {
             deferred.innerHTML = `
@@ -93,7 +102,7 @@ const renderApp = () => {
             initAfterDeferred();
             window.updateI18nTexts?.();
         }
-    }, 50);
+    });
 };
 
 // Función para inicializar todo lo que depende del DOM inyectado después
@@ -233,6 +242,8 @@ async function initAfterDeferred() {
 
 document.addEventListener("DOMContentLoaded", async () => {
     AuthService.init();
+    ImageOptimizationService.enableWebPWithFallback();
+    ImageOptimizationService.init();
     try {
         await initI18n();
     } catch (e) {
@@ -1980,7 +1991,13 @@ function fillAndShowSpeciesModal(species) {
             if (btnPlay) {
                 btnPlay.onclick = () => {
                     const placeholder = document.getElementById('videoPlaceholder');
-                    if (placeholder) placeholder.innerHTML = videoCode;
+                    if (placeholder) {
+                        placeholder.innerHTML = videoCode;
+                        const insertedVideo = placeholder.querySelector('video');
+                        if (insertedVideo) {
+                            insertedVideo.setAttribute('autoplay', '');
+                            insertedVideo.setAttribute('playsinline', '');
+                    }
                 };
             }
         } else {

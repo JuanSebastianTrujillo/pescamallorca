@@ -1,5 +1,24 @@
 {
+  "scripts": {
+    "purgecss": "postcss assets/vendor/bootstrap/css/bootstrap.min.css --output assets/vendor/bootstrap/css/bootstrap.min.purged.css",
+    "minify-css": "postcss assets/css/main.css --use cssnano --output assets/css/main.css --no-map",
+    "bundle": "esbuild src/app.js --bundle --minify --outfile=dist/app.bundle.js --platform=browser --target=es2018 --format=esm",
+    "build": "npm run purgecss && npm run minify-css && npm run bundle",
+    "images:resize": "node resize_images.js",
+    "images:optimize": "node optimizar.js",
+    "images": "npm run images:resize && npm run images:optimize",
+    "build:all": "npm run images && npm run build",
+    "lighthouse": "lighthouse https://www.pescamallorca.online --output=json --output-path=./lighthouse-report-final.json"
+  },
   "dependencies": {
     "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "cssnano": "^8.0.1",
+    "esbuild": "^0.28.0",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^10.1.0",
+    "terser": "^5.48.0"
   }
 }

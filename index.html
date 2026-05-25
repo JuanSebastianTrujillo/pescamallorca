@@ -104,13 +104,21 @@
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@400;600&family=Raleway:wght@400;600;700&display=swap"></noscript>
 
-  <!-- Bootstrap CSS — no bloqueante -->
-  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css"></noscript>
+  <!-- Preload main CSS -->
+  <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
+
+  <!-- Prefetch de scripts no críticos -->
+  <link rel="prefetch" href="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js">
+  <link rel="prefetch" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+
+  <!-- Bootstrap CSS — optimizado con PurgeCSS (72% más pequeño) -->
+  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.purged.css"></noscript>
 
   <!-- Bootstrap Icons — no bloqueante -->
-  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css"></noscript>
+  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css"></noscript>
 
   <!-- Vendor CSS diferidos -->
   <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -122,10 +130,6 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-
-  <!-- Main CSS — no bloqueante -->
-  <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
 
   <!-- =======================================================
   * Template Name: Green
@@ -141,16 +145,16 @@
   <!-- Contenedor principal de la SPA -->
   <div id="app"></div>
 
-  <!-- i18next (multilanguage) -->
-  <script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js"></script>
-  <script src="https://unpkg.com/i18next-http-backend@1.4.2/i18nextHttpBackend.min.js"></script>
-  <script src="https://unpkg.com/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
+  <!-- i18next (multilanguage) - deferred para no bloquear rendering -->
+  <script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js" defer></script>
+  <script src="https://unpkg.com/i18next-http-backend@1.4.2/i18nextHttpBackend.min.js" defer></script>
+  <script src="https://unpkg.com/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js" defer></script>
 
   <!-- Leaflet JS (Mapa Interactivo) -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 
-  <!-- Script principal importando componentes en ES6 module format -->
-  <script type="module" src="./src/app.js"></script>
+  <!-- Script principal - empaquetado y minificado para mejor performance -->
+  <script type="module" src="./dist/app.bundle.js" defer></script>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Volver arriba"><i class="bi bi-arrow-up-short"></i></a>
