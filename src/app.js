@@ -136,14 +136,10 @@ async function initAfterDeferred() {
     // Listeners globales para apagar multimedia al cerrar modales
     const fishModal = document.getElementById('speciesModal');
     if (fishModal) {
-        fishModal.addEventListener('hidden.bs.modal', () => {
+        fishModal.addEventListener('hide.bs.modal', () => {
+            // Evento 'hide' dispara ANTES de que se cierre, garantiza limpieza inmediata
             stopSpeaking();
-            SemanticService.clearEntityJsonLd(); // Limpiar JSON-LD de entidad
-            const readBtn = fishModal.querySelector('button[data-speak-modal="species"]');
-            if (readBtn) {
-                readBtn.innerHTML = '<i class="bi bi-volume-up-fill me-1"></i> Leer ficha';
-                readBtn.classList.replace('btn-danger', 'btn-outline-light');
-            }
+            
             if (window.currentFishAudio) {
                 window.currentFishAudio.pause();
                 window.currentFishAudio.currentTime = 0;
@@ -152,27 +148,39 @@ async function initAfterDeferred() {
 
             const videoContainer = fishModal.querySelector('#speciesModalVideo');
             if (videoContainer) {
-                // Limpiar completamente el placeholder para evitar reproducción automática
                 const placeholder = videoContainer.querySelector('#videoPlaceholder');
                 if (placeholder) {
-                    // Pausa y limpia todos los videos dentro del placeholder
-                    placeholder.querySelectorAll('video').forEach(video => {
+                    // Pausa TODOS los vídeos e iframes con agresividad
+                    placeholder.querySelectorAll('video, iframe').forEach(media => {
                         try {
-                            video.pause();
-                            video.currentTime = 0;
-                            video.removeAttribute('autoplay');
-                            video.removeAttribute('src');
+                            if (media.tagName === 'VIDEO') {
+                                media.pause();
+                                media.muted = true;
+                                media.currentTime = 0;
+                                media.removeAttribute('autoplay');
+                                media.removeAttribute('src');
+                                media.style.display = 'none';
+                            } else if (media.tagName === 'IFRAME') {
+                                media.src = 'about:blank';
+                                media.style.display = 'none';
+                            }
                         } catch (error) {
-                            console.warn('Error deteniendo vídeo:', error);
+                            console.warn('Error deteniendo media:', error);
                         }
                     });
-                    // Pausa y limpia todos los iframes dentro del placeholder
-                    placeholder.querySelectorAll('iframe').forEach(frame => {
-                        frame.src = '';
-                    });
-                    // Restaurar el placeholder al estado inicial (solo miniatura)
+                    // Limpiar el placeholder completamente
                     placeholder.innerHTML = '';
                 }
+            }
+        });
+
+        fishModal.addEventListener('hidden.bs.modal', () => {
+            // Evento 'hidden' dispara DESPUÉS de cerrarse, asegura limpieza final
+            SemanticService.clearEntityJsonLd();
+            const readBtn = fishModal.querySelector('button[data-speak-modal="species"]');
+            if (readBtn) {
+                readBtn.innerHTML = '<i class="bi bi-volume-up-fill me-1"></i> Leer ficha';
+                readBtn.classList.replace('btn-danger', 'btn-outline-light');
             }
         });
     }
@@ -1784,6 +1792,31 @@ window.openSpeciesModalByName = (name) => {
 };
 
 function fillAndShowSpeciesModal(species) {
+    // Limpiar cualquier vídeo/audio anterior antes de cargar la nueva ficha
+    const oldVideoContainer = document.getElementById('speciesModalVideo');
+    if (oldVideoContainer) {
+        oldVideoContainer.querySelectorAll('video, iframe').forEach(media => {
+            try {
+                if (media.tagName === 'VIDEO') {
+                    media.pause();
+                    media.muted = true;
+                    media.currentTime = 0;
+                    media.src = '';
+                    media.style.display = 'none';
+                } else if (media.tagName === 'IFRAME') {
+                    media.src = 'about:blank';
+                    media.style.display = 'none';
+                }
+            } catch (err) { }
+        });
+        const placeholder = oldVideoContainer.querySelector('#videoPlaceholder');
+        if (placeholder) placeholder.innerHTML = '';
+    }
+    if (window.currentFishAudio) {
+        window.currentFishAudio.pause();
+        window.currentFishAudio = null;
+    }
+
     document.getElementById('speciesModalLabel').innerText = species.name;
     document.getElementById('speciesModalScientific').innerText = species.alternateName || '';
     document.getElementById('speciesModalDescription').innerText = species.description || '';
@@ -1958,12 +1991,12 @@ function fillAndShowSpeciesModal(species) {
                 const isEmbed = videoSource.includes('embed');
                 const isWatch = videoSource.includes('watch?v=');
                 const videoId = isEmbed ? videoSource.split('embed/')[1]?.substring(0, 11) : isWatch ? videoSource.split('watch?v=')[1]?.substring(0, 11) : videoSource.split('.be/')[1]?.substring(0, 11);
-                videoCode = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; height:100%; border:0; background:#000; display:block;"></iframe>`;
+                videoCode = `<iframe src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; height:100%; border:0; background:#000; display:block;"></iframe>`;
             } else {
                 const normalizedVideoPath = videoSource.includes('/') ? videoSource : `assets/video/${videoSource}`;
                 const baseVideoPath = normalizedVideoPath.replace(/\.(mp4|webm|ogv|ogg)$/i, '');
                 videoCode = `
-                    <video controls preload="metadata" playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback poster="${rutaLimpiaThumb}-800.jpg" style="width:100%; height:100%; object-fit: contain; background:#000; display:block;">
+                    <video controls preload="none" playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback poster="${rutaLimpiaThumb}-800.jpg" style="width:100%; height:100%; object-fit: contain; background:#000; display:block;">
                         <source src="${baseVideoPath}.mp4" type="video/mp4">
                         <source src="${baseVideoPath}.webm" type="video/webm">
                         <source src="${baseVideoPath}.ogv" type="video/ogg">
