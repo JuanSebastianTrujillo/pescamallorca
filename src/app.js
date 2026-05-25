@@ -1932,6 +1932,7 @@ function fillAndShowSpeciesModal(species) {
 
         if (videoSource) {
             const videoThumbnail = species.videoThumbnail || galleryImages[0] || species.image || 'assets/img/hero-carousel/hero-carousel-1.jpg';
+            const rutaLimpiaThumb = videoThumbnail.substring(0, videoThumbnail.lastIndexOf('.'));
             let videoCode = '';
 
             if (videoSource.includes('youtube.com') || videoSource.includes('youtu.be')) {
@@ -1959,7 +1960,13 @@ function fillAndShowSpeciesModal(species) {
                   <h4 class="fw-bold mb-3 text-primary" style="letter-spacing: -0.5px;"><i class="bi bi-play-btn-fill me-2"></i> ${t_documentary}</h4>
                   <div class="position-relative w-100 rounded overflow-hidden shadow-sm" style="aspect-ratio: 16 / 9; background-color: #000; border-radius: 1rem !important;">
                      <div id="videoPlaceholder" class="position-relative w-100 h-100 d-flex justify-content-center align-items-center" style="background-color: #000;">
-                        <img id="videoThumbnailImg" src="${videoThumbnail}" alt="Miniatura de vídeo de la especie" style="width: 100%; height: 100%; object-fit: contain; background-color: #000;">
+                        <picture>
+                        <source type="image/avif" srcset="${rutaLimpiaThumb}-400.avif 400w, ${rutaLimpiaThumb}-800.avif 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <source type="image/webp" srcset="${rutaLimpiaThumb}-400.webp 400w, ${rutaLimpiaThumb}-800.webp 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                        <source type="image/jpeg" srcset="${rutaLimpiaThumb}-400.jpg 400w, ${rutaLimpiaThumb}-800.jpg 800w" sizes="(max-width: 768px) 100vw, 33vw">
+                        
+                        <img id="videoThumbnailImg" src="${rutaLimpiaThumb}-800.jpg" alt="Miniatura de vídeo de la especie" style="width: 100%; height: 100%; object-fit: contain; background-color: #000;" loading="lazy">
+                        </picture>
                         <div class="position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: rgba(0,0,0,0.45);">
                            <button id="btnPlayVideo" class="btn btn-outline-light rounded-circle" style="width: 64px; height: 64px;" aria-label="Reproducir vídeo documental de la especie"><i class="bi bi-play-fill fs-2"></i></button>
                            <span class="small fw-bold text-white text-uppercase mt-2" style="letter-spacing: 1px;">${t_play_video}</span>
