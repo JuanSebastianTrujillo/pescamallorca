@@ -16,8 +16,8 @@
         "longitude": 3.1714
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp",
-        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso difícil, Fondo rocoso, Pesca profunda, Acantilado",
       "description": "Impresionante caleta virgen rodeada de acantilados en el extremo norte de la isla, ideal para buscar especies de roca de gran tamaño.",
@@ -64,8 +64,8 @@
         "longitude": 3.1235
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/playa-muro-1.webp",
-        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/playa-muro-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/playa-muro-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso fácil, Fondo arenoso, Pesca nocturna, Surfcasting",
       "description": "Extensa playa de arena blanca y aguas someras en la Bahía de Alcúdia, perfecta para la pesca nocturna de espáridos.",
@@ -112,8 +112,8 @@
         "longitude": 3.0545
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
-        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/salines-2.webp"
       ],
       "keywords": "Zona de pesca, Acceso medio, Corrientes fuertes, Fondo mixto, Espuma",
       "description": "El punto más meridional de Mallorca, famoso por sus fuertes corrientes que atraen a numerosos depredadores costeros.",
@@ -353,7 +353,7 @@
       },
       "image": [
         "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/playa-muro-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/playa-muro-2.webp"
       ],
       "keywords": "Reserva Marina, Pesca regulada, Arenal, Cabo Blanco, Fondo mixto",
       "description": "Comprendida entre la zona de la Playa de Sant Antoni (Arenal) y la zona de El Dorado (Cabo Blanco). Zonas con restricciones temporales y de aparejo.",
@@ -401,7 +401,7 @@
       },
       "image": [
         "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-1.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-1.webp"
       ],
       "keywords": "Reserva Marina, Veda absoluta, Pesca restringida, Noreste, Alta protección",
       "description": "Ubicada en el noreste. Cuenta con áreas de veda absoluta y zonas donde la pesca recreativa está restringida a días concretos (generalmente martes, jueves, sábados y domingos).",
@@ -448,7 +448,7 @@
         "longitude": 2.924
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/salines-1.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/salines-1.webp",
         "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-2.jpg"
       ],
       "keywords": "Reserva Marina, Cap Blanc, Cap de Ses Salines, Sur, Pesca regulada",
@@ -497,7 +497,7 @@
       },
       "image": [
         "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-1.jpg",
-        "https://www.pescamallorca.online/assets/img/spots/cala-figuera-2.webp"
+        "https://www.pescamallorca.online/assets/img/spots/todos/cala-figuera-2.webp"
       ],
       "keywords": "Reserva Marina, Alta protección, Veda estival, El Toro, Malgrats",
       "description": "Zonas de alta protección. En El Toro y Malgrats la pesca submarina está estrictamente prohibida. La pesca desde embarcación tiene una veda que abarca normalmente los meses de verano (permitida de octubre a abril con restricciones).",
@@ -544,7 +544,7 @@
         "longitude": 3.232
       },
       "image": [
-        "https://www.pescamallorca.online/assets/img/spots/salines-2.webp",
+        "https://www.pescamallorca.online/assets/img/spots/todos/salines-2.webp",
         "https://www.pescamallorca.online/assets/img/hero-carousel/hero-carousel-3.jpg"
       ],
       "keywords": "Cala Gran, Cala Ferrera, Fondo mixto, Espáridos, Sureste",

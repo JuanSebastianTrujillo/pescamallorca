@@ -6,15 +6,15 @@ const DATA_DIR = path.join(__dirname, 'assets', 'data');
 
 // Los archivos que vamos a modificar
 const files = [
-    'especies_ca.json', 
-    'especies_de.json', 
-    'especies_en.json', 
-    'especies_es.json'
+    'zonas_ca.json', 
+    'zonas_de.json', 
+    'zonas_en.json', 
+    'zonas_es.json'
 ];
 
 // Lo que queremos buscar y por qué lo queremos cambiar
-const RUTA_VIEJA = 'assets/img/peces/webp/';
-const RUTA_NUEVA = 'assets/img/peces/todos/';
+const RUTA_VIEJA = 'assets/img/spots/';
+const RUTA_NUEVA = 'assets/img/spots/todos/';
 
 console.log("Iniciando actualización de rutas en los JSONs...");
 
