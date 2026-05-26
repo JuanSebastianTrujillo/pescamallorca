@@ -511,7 +511,15 @@ async function loadMonthSpecies() {
             `;
             carouselInner.appendChild(slide);
         });
-
+        
+        const slides = Array.from(carouselInner.querySelectorAll('.carousel-item'));
+        let activeIndex = slides.findIndex(s => s.classList.contains('active'));
+        
+        // Si hemos borrado las diapositivas estáticas y ninguna es 'active', forzamos a que la primera lo sea
+        if (activeIndex === -1 && slides.length > 0) {
+            slides[0].classList.add('active');
+            activeIndex = 0;
+        }
         // 4. Listeners accesibles para botones
         carouselInner.querySelectorAll('.dynamic-slide [data-open-species-name]').forEach(btn => {
             const name = btn.getAttribute('data-open-species-name');
