@@ -1,111 +1,964 @@
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Beach",
-      "@id": "playa_001",
-      "name": "Es Trenc",
-      "description": "Playa virgen de arena blanca y aguas cristalinas en el sur de Mallorca.",
-      "image": "",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Campos",
-        "addressRegion": "Islas Baleares",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.3425,
-        "longitude": 2.9861
-      },
-      "publicAccess": true,
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Parking",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Socorrista",
-          "value": true
-        }
-      ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Tipo de playa",
-          "value": "Arena"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Dificultad de acceso",
-          "value": "Baja"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Nivel de ocupación habitual",
-          "value": "Alta"
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": 4.6,
-        "reviewCount": 128
-      }
-    },
-    {
-      "@type": "Beach",
-      "@id": "playa_002",
-      "name": "Cala Agulla",
-      "description": "Cala de arena fina y aguas turquesa rodeada de pinares en el noreste de Mallorca.",
-      "image": "",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Capdepera",
-        "addressRegion": "Islas Baleares",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.7164,
-        "longitude": 3.4556
-      },
-      "publicAccess": true,
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Parking",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Socorrista",
-          "value": true
-        }
-      ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Tipo de playa",
-          "value": "Arena"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Dificultad de acceso",
-          "value": "Media"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Nivel de ocupacion habitual",
-          "value": "Media"
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": 4.5,
-        "reviewCount": 96
-      }
-    }
-  ]
-}
+[
+  {
+    "id": "cala-varques",
+    "name": "Cala Varques",
+    "region": "Manacor",
+    "zone": "Costa este",
+    "rating": 4.9,
+    "reviews": 128,
+    "access": "Media",
+    "type": "Arena",
+    "features": [
+      "parking"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "17:30 - 19:45",
+    "lat": 39.5218,
+    "lng": 3.3842,
+    "description": "Cala Varques es una de las joyas más vírgenes de Mallorca. Escondida en la costa este, ofrece arena blanca fina y agua tan clara que parece irreal. Rodeada de pinares densos y formaciones rocosas, es un paraíso para quien busca tranquilidad lejos de zonas masificadas.",
+    "tips": [
+      "Lleva equipo de snorkel",
+      "Usa calzado firme para el sendero",
+      "Llévate contigo toda la basura"
+    ],
+    "accessibility": "No recomendada para personas con movilidad reducida.",
+    "accessDifficulty": "Media",
+    "parking": "Aparca en el Camí de Cala Varques y camina 1.5 km",
+    "img": "./media/img/hero/cala-varques.jpg",
+    "heroImg": "./media/img/hero/cala-varques-2.jpg",
+    "isFavorite": true
+  },
+  {
+    "id": "cala-mondrago",
+    "name": "Cala Mondragó",
+    "region": "Santanyí",
+    "zone": "Sureste",
+    "rating": 4.7,
+    "reviews": 312,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Muy bajo (0.1m)",
+    "sunsetWindow": "17:15 - 19:30",
+    "lat": 39.3402,
+    "lng": 3.2154,
+    "description": "Zona de parque natural protegido con dos playas gemelas y aguas turquesas poco profundas, ideal para familias con niños pequeños. Declarada Parque Natural en 1992.",
+    "tips": [
+      "Llega temprano en verano",
+      "Ideal para snorkel familiar",
+      "Usa protección solar biodegradable"
+    ],
+    "accessibility": "Accesible para personas con movilidad reducida con asistencia.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking público a 500 metros con servicio de shuttle en verano",
+    "img": "./media/img/hero/cala-mondrago.jpg",
+    "heroImg": "./media/img/hero/cala-mondrago-2.jpg",
+    "isFavorite": true
+  },
+  {
+    "id": "calo-des-moro",
+    "name": "Caló des Moro",
+    "region": "Santanyí",
+    "zone": "Costa sur",
+    "rating": 5,
+    "reviews": 241,
+    "access": "Dificil",
+    "type": "Rocosa",
+    "features": [
+      "parking"
+    ],
+    "waves": "Medio (0.5m)",
+    "sunsetWindow": "17:00 - 19:15",
+    "lat": 39.3196,
+    "lng": 3.2046,
+    "description": "Impresionante bahía turquesa rodeada de acantilados verticales con vegetación abundante y agua azul profunda. Considerada por muchos la cala más bonita de Mallorca.",
+    "tips": [
+      "Ve muy temprano (antes de las 8h)",
+      "Lleva agua en abundancia",
+      "El camino es estrecho y empinado"
+    ],
+    "accessibility": "No accesible para personas con movilidad reducida.",
+    "accessDifficulty": "Dificil",
+    "parking": "Parking a 2 km. Camino a pie de 30 minutos por sendero de montaña",
+    "img": "./media/img/hero/calo-des-moro.jpg",
+    "heroImg": "./media/img/hero/calo-des-moro-2.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-deia",
+    "name": "Cala Deià",
+    "region": "Deià",
+    "zone": "Costa oeste",
+    "rating": 4.8,
+    "reviews": 184,
+    "access": "Media",
+    "type": "Rocosa",
+    "features": [
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Medio (0.6m)",
+    "sunsetWindow": "18:00 - 20:00",
+    "lat": 39.7484,
+    "lng": 2.6487,
+    "description": "Playa rocosa con agua azul profunda y casas de pescadores tradicionales encajadas en la ladera de la Sierra de Tramuntana. Un rincón con mucha historia y carácter.",
+    "tips": [
+      "Reserva en el restaurante con antelación",
+      "Las rocas son resbaladizas",
+      "Ideal al atardecer"
+    ],
+    "accessibility": "Acceso por escaleras, no recomendada para movilidad reducida.",
+    "accessDifficulty": "Media",
+    "parking": "Parking en el pueblo de Deià. Bajada a pie 15 minutos",
+    "img": "./media/img/hero/cala-deia.jpg",
+    "heroImg": "./media/img/hero/cala-deia-2.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": "platja-formentor",
+    "name": "Platja de Formentor",
+    "region": "Pollença",
+    "zone": "Costa norte",
+    "rating": 4.9,
+    "reviews": 506,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "parking",
+      "restaurante",
+      "accesible"
+    ],
+    "waves": "Muy bajo (0.2m)",
+    "sunsetWindow": "18:15 - 20:15",
+    "lat": 39.9381,
+    "lng": 3.1894,
+    "description": "Larga playa de arena rodeada de pinos centenarios y agua calmada cristalina en una bahía serena. Una de las playas más fotografiadas y reconocidas de toda Mallorca.",
+    "tips": [
+      "En verano acceso solo en autobús desde Port de Pollença",
+      "Reserva hamaca con antelación",
+      "Las aguas son muy tranquilas, ideal para niños"
+    ],
+    "accessibility": "Totalmente accesible con silla de ruedas y servicios adaptados.",
+    "accessDifficulty": "Facil",
+    "parking": "En verano acceso restringido. Bus desde Port de Pollença (recomendado)",
+    "img": "./media/img/hero/platja-formentor.jpg",
+    "heroImg": "./media/img/hero/platja-formentor-2.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": "es-trenc",
+    "name": "Es Trenc",
+    "region": "Campos",
+    "zone": "Costa sur",
+    "rating": 4.6,
+    "reviews": 423,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "16:45 - 19:00",
+    "lat": 39.3373,
+    "lng": 2.9786,
+    "description": "La última gran playa virgen de Mallorca, famosa por sus aguas turquesas de estilo caribeño y sus dunas protegidas. Más de 3 km de arena fina sin urbanizar.",
+    "tips": [
+      "Hay chiringuitos de madera ecológicos",
+      "Ideal para ver la puesta de sol",
+      "Llega pronto en julio y agosto"
+    ],
+    "accessibility": "Parcialmente accesible. Hay una zona adaptada con pasarelas de madera.",
+    "accessDifficulty": "Facil",
+    "parking": "Varios parkings de pago en las entradas. Llega pronto en julio y agosto",
+    "img": "./media/img/hero/es-trenc.jpg",
+    "heroImg": "./media/img/hero/es-trenc-2.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": "sa-calobra",
+    "name": "Sa Calobra",
+    "region": "Escorca",
+    "zone": "Costa noroeste",
+    "rating": 4.7,
+    "reviews": 389,
+    "access": "Dificil",
+    "type": "Rocosa",
+    "features": [
+      "restaurante"
+    ],
+    "waves": "Alto (1.2m)",
+    "sunsetWindow": "18:30 - 20:30",
+    "lat": 39.8512,
+    "lng": 2.7954,
+    "description": "Una de las calas más espectaculares de Mallorca, accesible por una legendaria carretera serpenteante o en barco desde Port de Sóller. El Torrente de Pareis desemboca aquí creando una playa de cantos rodados única.",
+    "tips": [
+      "La carretera de acceso es de pago y muy estrecha",
+      "Ve en barco desde Sóller si puedes",
+      "Las aguas son profundas y con corrientes"
+    ],
+    "accessibility": "No accesible para movilidad reducida. Terreno muy irregular.",
+    "accessDifficulty": "Dificil",
+    "parking": "Parking de pago al final de la carretera. Alta demanda en verano",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-agulla",
+    "name": "Cala Agulla",
+    "region": "Capdepera",
+    "zone": "Costa este",
+    "rating": 4.5,
+    "reviews": 298,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "parking",
+      "restaurante",
+      "accesible"
+    ],
+    "waves": "Bajo (0.4m)",
+    "sunsetWindow": "17:20 - 19:35",
+    "lat": 39.7108,
+    "lng": 3.4642,
+    "description": "Amplia playa de arena dorada con aguas de color turquesa y poca profundidad, rodeada de pinos y dunas naturales protegidas. Una de las playas más populares del noreste de la isla.",
+    "tips": [
+      "Hay servicio de socorristas en verano",
+      "Ideal para deportes acuáticos",
+      "El parking se llena muy rápido en agosto"
+    ],
+    "accessibility": "Accesible. Servicio de silla de ruedas anfibia disponible en verano.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito a 500m. En verano puede haber esperas",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-millor",
+    "name": "Cala Millor",
+    "region": "Sant Llorenç",
+    "zone": "Costa este",
+    "rating": 4.2,
+    "reviews": 634,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "17:10 - 19:25",
+    "lat": 39.5881,
+    "lng": 3.3864,
+    "description": "Extensa playa de arena fina de más de 2 km de largo con todas las comodidades. Una de las playas más populares de Mallorca, con una amplia oferta hotelera y de restauración en el paseo marítimo.",
+    "tips": [
+      "Bandera azul todos los años",
+      "Paseo marítimo ideal para caminar al amanecer",
+      "Muchos establecimientos de alquiler de equipos náuticos"
+    ],
+    "accessibility": "Totalmente accesible con servicios adaptados completos.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking público en el paseo. Zona azul en verano",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-bona",
+    "name": "Cala Bona",
+    "region": "Sant Llorenç",
+    "zone": "Costa este",
+    "rating": 4.3,
+    "reviews": 178,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "restaurante",
+      "accesible"
+    ],
+    "waves": "Muy bajo (0.2m)",
+    "sunsetWindow": "17:10 - 19:25",
+    "lat": 39.602,
+    "lng": 3.3958,
+    "description": "Pequeña cala con encantador puerto de pescadores que le da un aire especial. Aguas tranquilas y arena clara rodeadas de un animado paseo con restaurantes de marisco.",
+    "tips": [
+      "Prueba el marisco fresco en el puerto",
+      "La cala es pequeña, llega temprano",
+      "Ideal para familias con niños pequeños"
+    ],
+    "accessibility": "Accesible, paseo pavimentado junto a la playa.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito junto al puerto",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-ratjada",
+    "name": "Cala Ratjada",
+    "region": "Capdepera",
+    "zone": "Costa este",
+    "rating": 4.4,
+    "reviews": 256,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "parking",
+      "restaurante",
+      "accesible"
+    ],
+    "waves": "Bajo (0.4m)",
+    "sunsetWindow": "17:15 - 19:30",
+    "lat": 39.7233,
+    "lng": 3.4648,
+    "description": "Animado pueblo costero en el extremo noreste de Mallorca con varias playas y calas cercanas. El puerto de pescadores combina a la perfección con la vida nocturna y las playas de arena.",
+    "tips": [
+      "Visita el faro Cap des Pinar",
+      "Múltiples playas a poca distancia",
+      "Ferries a Menorca desde el puerto"
+    ],
+    "accessibility": "Accesible. Paseo marítimo pavimentado.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking público disponible. Puede saturarse en agosto",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-pi",
+    "name": "Cala Pi",
+    "region": "Llucmajor",
+    "zone": "Costa sur",
+    "rating": 4.8,
+    "reviews": 203,
+    "access": "Media",
+    "type": "Arena",
+    "features": [
+      "parking"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "16:50 - 19:05",
+    "lat": 39.3642,
+    "lng": 2.8895,
+    "description": "Estrecha y profunda cala con aguas de color esmeralda rodeada de altos acantilados de color ocre y un bosque de pinos. La torre de defensa medieval que la vigila le da un aspecto único e histórico.",
+    "tips": [
+      "Acceso por sendero con escalones",
+      "Las aguas son cristalinas y profundas",
+      "Visita la torre de vigilancia medieval"
+    ],
+    "accessibility": "Acceso por escaleras y sendero, no apta para movilidad reducida.",
+    "accessDifficulty": "Media",
+    "parking": "Parking gratuito a 300m del inicio del camino",
+    "img": "./media/img/hero/cala-pi.jpg",
+    "heroImg": "./media/img/hero/cala-pi-2.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": "es-caragol",
+    "name": "Es Caragol",
+    "region": "Santanyí",
+    "zone": "Costa sur",
+    "rating": 4.9,
+    "reviews": 142,
+    "access": "Dificil",
+    "type": "Arena",
+    "features": [],
+    "waves": "Bajo (0.4m)",
+    "sunsetWindow": "16:45 - 19:00",
+    "lat": 39.3078,
+    "lng": 3.1388,
+    "description": "Una de las playas más vírgenes y difíciles de acceder de Mallorca. Sin servicios y sin carretera, solo se puede llegar a pie o en barca. Recompensa con una de las arenas más blancas y aguas más limpias de la isla.",
+    "tips": [
+      "Solo accesible a pie (45 min) o en barca",
+      "Lleva comida, agua y protección solar",
+      "Nudismo habitual pero no obligatorio"
+    ],
+    "accessibility": "Completamente inaccesible para movilidad reducida.",
+    "accessDifficulty": "Dificil",
+    "parking": "Parking en la finca de Son Morlà (de pago en verano). 45 min a pie",
+    "img": "./media/img/hero/es-caragol.jpg",
+    "heroImg": "./media/img/hero/es-caragol-2.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-figuera-santanyi",
+    "name": "Cala Figuera",
+    "region": "Santanyí",
+    "zone": "Sureste",
+    "rating": 4.7,
+    "reviews": 319,
+    "access": "Facil",
+    "type": "Rocosa",
+    "features": [
+      "restaurante",
+      "parking"
+    ],
+    "waves": "Muy bajo (0.1m)",
+    "sunsetWindow": "17:00 - 19:15",
+    "lat": 39.3278,
+    "lng": 3.1668,
+    "description": "Uno de los puertos de pescadores más pintorescos de Mallorca. El fiordo natural de aguas verde esmeralda con casetas de pescadores colgadas sobre el agua es una estampa única y perfecta para fotografiar.",
+    "tips": [
+      "Ideal para fotografía de madrugada o atardecer",
+      "No es una playa de baño, sino un puerto",
+      "Los restaurantes de marisco son excelentes"
+    ],
+    "accessibility": "Paseo accesible junto al puerto. La cala de baño tiene escaleras.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito en la entrada del pueblo",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-llombards",
+    "name": "Cala Llombards",
+    "region": "Santanyí",
+    "zone": "Costa sur",
+    "rating": 4.6,
+    "reviews": 187,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Bajo (0.2m)",
+    "sunsetWindow": "17:00 - 19:15",
+    "lat": 39.3348,
+    "lng": 3.1836,
+    "description": "Pequeña cala de arena entre acantilados con aguas turquesas y muy tranquilas. Rodeada de pinos y con un chiringuito de madera, es una de las más fotogénicas del sureste mallorquín.",
+    "tips": [
+      "Perfecta para kayak y paddle surf",
+      "Las aguas son muy poco profundas cerca de la orilla",
+      "Ideal para niños"
+    ],
+    "accessibility": "Acceso por escaleras de madera. Parcialmente accesible.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito a 200m",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-santanyi",
+    "name": "Cala Santanyí",
+    "region": "Santanyí",
+    "zone": "Sureste",
+    "rating": 4.5,
+    "reviews": 234,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "17:05 - 19:20",
+    "lat": 39.3468,
+    "lng": 3.1952,
+    "description": "Cala bien equipada con todas las comodidades en un entorno natural privilegiado. Arena clara y aguas turquesas protegidas por el viento, con buen ambiente familiar.",
+    "tips": [
+      "Tiene hamacas y sombrillas de alquiler",
+      "Buenas instalaciones sanitarias",
+      "Mercado semanal en el pueblo los miércoles"
+    ],
+    "accessibility": "Accesible con pasarelas de madera hasta la orilla.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking de pago en temporada alta",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-gran-cala-dor",
+    "name": "Cala Gran",
+    "region": "Felanitx",
+    "zone": "Sureste",
+    "rating": 4.4,
+    "reviews": 267,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Muy bajo (0.2m)",
+    "sunsetWindow": "17:05 - 19:20",
+    "lat": 39.3737,
+    "lng": 3.2287,
+    "description": "Playa principal de Cala d'Or, con aguas poco profundas y arena fina dentro de una bahía bien protegida. Rodeada de hoteles y con muy buenas instalaciones, es perfecta para familias.",
+    "tips": [
+      "Aguas muy tranquilas y poco profundas",
+      "Múltiples restaurantes en el paseo",
+      "Barcos de alquiler en el puerto cercano"
+    ],
+    "accessibility": "Totalmente accesible con servicios completos.",
+    "accessDifficulty": "Facil",
+    "parking": "Múltiples parkings de pago en la zona",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "portocolom",
+    "name": "Portocolom",
+    "region": "Felanitx",
+    "zone": "Costa este",
+    "rating": 4.5,
+    "reviews": 198,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "restaurante",
+      "parking",
+      "accesible"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "17:10 - 19:25",
+    "lat": 39.4184,
+    "lng": 3.2628,
+    "description": "Puerto natural de gran belleza considerado el más grande de Mallorca. Pueblo de pescadores auténtico con casas de colores reflejadas en el agua, playas tranquilas y excelente gastronomía local.",
+    "tips": [
+      "Visita las cuevas del Drac cerca (Manacor)",
+      "Mercado local los domingos",
+      "Muy bien conservado, poco turístico"
+    ],
+    "accessibility": "Paseo marítimo accesible. Playas con algunas barreras.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito en la zona del puerto",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-mesquida",
+    "name": "Cala Mesquida",
+    "region": "Capdepera",
+    "zone": "Costa este",
+    "rating": 4.6,
+    "reviews": 221,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Medio (0.6m)",
+    "sunsetWindow": "17:15 - 19:30",
+    "lat": 39.7348,
+    "lng": 3.4578,
+    "description": "Gran playa con sistema de dunas protegidas que forman un paisaje casi desértico y surreal. Las aguas pueden tener oleaje moderado, lo que la hace ideal para los amantes del surf. Muy poco urbanizada.",
+    "tips": [
+      "Buena para surf y bodyboard",
+      "Las dunas son zona protegida, no te salgas de los caminos",
+      "Vientos del norte frecuentes en invierno"
+    ],
+    "accessibility": "Parcialmente accesible por la arena.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito bien señalizado",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "playa-alcudia",
+    "name": "Playa de Alcúdia",
+    "region": "Alcúdia",
+    "zone": "Costa norte",
+    "rating": 4.3,
+    "reviews": 712,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Bajo (0.4m)",
+    "sunsetWindow": "18:00 - 20:10",
+    "lat": 39.8517,
+    "lng": 3.1278,
+    "description": "Con más de 10 km de longitud, es la playa más extensa de Mallorca. Arena fina y dorada, aguas tranquilas y una enorme oferta turística a lo largo del paseo marítimo. Ideal para largas caminatas al amanecer.",
+    "tips": [
+      "La zona norte es más tranquila y natural",
+      "Alquiler de bicicletas para recorrerla",
+      "Los atardeceres sobre la Bahía de Alcúdia son espectaculares"
+    ],
+    "accessibility": "Totalmente accesible con servicios completos en toda la playa.",
+    "accessDifficulty": "Facil",
+    "parking": "Amplio parking gratuito en varios puntos",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "playa-muro",
+    "name": "Playa de Muro",
+    "region": "Muro",
+    "zone": "Costa norte",
+    "rating": 4.4,
+    "reviews": 488,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "18:00 - 20:10",
+    "lat": 39.8342,
+    "lng": 3.0817,
+    "description": "Playa natural de 6 km incluida en el Parque Natural de la Albufera de Mallorca. Arena blanca fina, aguas poco profundas y entorno de alto valor ecológico con dunas, pinos y la laguna de Sa Albufera.",
+    "tips": [
+      "Visita el Parque Natural de Sa Albufera (aves)",
+      "Una de las mejores playas para niños por su poca profundidad",
+      "Muy limpia, frecuentemente Bandera Azul"
+    ],
+    "accessibility": "Accesible con pasarelas de madera sobre las dunas.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito en varios accesos",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-sant-vicenc",
+    "name": "Cala Sant Vicenç",
+    "region": "Pollença",
+    "zone": "Costa norte",
+    "rating": 4.7,
+    "reviews": 263,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "parking",
+      "restaurante",
+      "accesible"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "18:10 - 20:20",
+    "lat": 39.9108,
+    "lng": 3.0748,
+    "description": "Conjunto de cuatro pequeñas calas de arena blanca y aguas azul intenso enclavadas entre colinas de pinos en la sierra del norte. Menos masificada que Formentor y con un encanto extraordinario.",
+    "tips": [
+      "Son 4 calas diferentes en pocos metros",
+      "Aguas muy limpias y cristalinas",
+      "El pueblo de Pollença está a pocos km y merece la visita"
+    ],
+    "accessibility": "Las calas principales son accesibles. Cala Barques no.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito en la zona",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-tuent",
+    "name": "Cala Tuent",
+    "region": "Escorca",
+    "zone": "Costa noroeste",
+    "rating": 4.8,
+    "reviews": 167,
+    "access": "Dificil",
+    "type": "Rocosa",
+    "features": [
+      "restaurante"
+    ],
+    "waves": "Alto (1.0m)",
+    "sunsetWindow": "18:30 - 20:30",
+    "lat": 39.8618,
+    "lng": 2.7712,
+    "description": "Cala de cantos rodados oculta en la Sierra de Tramuntana, vecina de Sa Calobra pero mucho más tranquila y difícil de acceder. Rodeada de montañas impresionantes, el contraste entre la sierra y el mar es absolutamente único.",
+    "tips": [
+      "Solo accesible por carretera estrecha de montaña",
+      "Hay un restaurante rustico excelente",
+      "Sin servicios de playa, lleva todo lo necesario"
+    ],
+    "accessibility": "No accesible para movilidad reducida.",
+    "accessDifficulty": "Dificil",
+    "parking": "Parking pequeño junto a la cala",
+    "img": "./media/img/hero/cala-tuent.jpg",
+    "heroImg": "./media/img/hero/cala-tuent-2.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": "port-soller",
+    "name": "Platja de Port de Sóller",
+    "region": "Sóller",
+    "zone": "Costa noroeste",
+    "rating": 4.4,
+    "reviews": 387,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "18:20 - 20:25",
+    "lat": 39.794,
+    "lng": 2.696,
+    "description": "Playa en una bahía circular protegida, el único puerto natural de la Sierra de Tramuntana. Se puede llegar en tranvía histórico desde Sóller, lo que añade un encanto especial al trayecto.",
+    "tips": [
+      "Llega en el tranvía histórico desde Sóller",
+      "La bahía es perfecta para kayak",
+      "Muchos restaurantes con vista al mar"
+    ],
+    "accessibility": "Accesible. Paseo marítimo completamente pavimentado.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking público de pago. Mejor llegar en tranvía",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-goloritze",
+    "name": "Cala Banyalbufar",
+    "region": "Banyalbufar",
+    "zone": "Costa oeste",
+    "rating": 4.6,
+    "reviews": 134,
+    "access": "Dificil",
+    "type": "Rocosa",
+    "features": [],
+    "waves": "Medio (0.7m)",
+    "sunsetWindow": "18:25 - 20:28",
+    "lat": 39.696,
+    "lng": 2.518,
+    "description": "Pequeña cala rocosa al pie del pueblo de Banyalbufar, rodeada de las famosas terrazas de marjades (bancales) de cultivo en la sierra. Un lugar de gran belleza paisajística e histórica.",
+    "tips": [
+      "El pueblo de Banyalbufar vale la visita",
+      "Las terrazas de cultivo son Patrimonio de la Humanidad",
+      "Agua fría y oleaje variable"
+    ],
+    "accessibility": "Acceso por camino empinado, no apto para movilidad reducida.",
+    "accessDifficulty": "Dificil",
+    "parking": "Parking en el pueblo de Banyalbufar",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "magaluf",
+    "name": "Playa de Magaluf",
+    "region": "Calvià",
+    "zone": "Costa suroeste",
+    "rating": 3.9,
+    "reviews": 891,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "17:45 - 19:55",
+    "lat": 39.5057,
+    "lng": 2.5399,
+    "description": "Una de las playas más famosas y concurridas del Mediterráneo. Arena blanca y aguas azules en una bahía protegida, con una amplia oferta de ocio, restauración y vida nocturna en el paseo marítimo.",
+    "tips": [
+      "Muy concurrida en julio y agosto",
+      "Numerosas actividades acuáticas",
+      "El parque acuático cercano es muy popular para familias"
+    ],
+    "accessibility": "Totalmente accesible con todos los servicios.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking de pago en la zona turística",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "playa-palma",
+    "name": "Playa de Palma",
+    "region": "Palma",
+    "zone": "Bahía de Palma",
+    "rating": 4.1,
+    "reviews": 1204,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "parking",
+      "restaurante"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "17:50 - 20:00",
+    "lat": 39.5217,
+    "lng": 2.7108,
+    "description": "Extensa playa urbana de 5 km que conecta Palma con Can Pastilla. La playa más accesible de la isla, con todos los servicios, paseo marítimo animado y fácil acceso desde el centro de Palma en transporte público.",
+    "tips": [
+      "Se puede llegar en bus EMT desde el centro",
+      "Múltiples chiringuitos y restaurantes",
+      "Turística pero bien mantenida y con bandera azul"
+    ],
+    "accessibility": "Totalmente accesible con servicios completos y silla anfibia.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking de pago en varios puntos del paseo",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-figuera-calvia",
+    "name": "Cala Figuera (Calvià)",
+    "region": "Calvià",
+    "zone": "Costa suroeste",
+    "rating": 4.5,
+    "reviews": 176,
+    "access": "Media",
+    "type": "Rocosa",
+    "features": [
+      "parking"
+    ],
+    "waves": "Medio (0.5m)",
+    "sunsetWindow": "17:50 - 20:00",
+    "lat": 39.4628,
+    "lng": 2.506,
+    "description": "Cala rocosa al sur del Cabo de Cala Figuera con aguas de color azul profundo y gran visibilidad submarina. El entorno está muy poco urbanizado y conserva toda su belleza natural.",
+    "tips": [
+      "Excelente visibilidad para bucear",
+      "Muy popular entre los locales",
+      "Cuidado con el oleaje en días de tramontana"
+    ],
+    "accessibility": "Acceso por camino de tierra y escalones, no accesible.",
+    "accessDifficulty": "Media",
+    "parking": "Parking de tierra cerca del faro de Cala Figuera",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-portals-vells",
+    "name": "Cala Portals Vells",
+    "region": "Calvià",
+    "zone": "Costa suroeste",
+    "rating": 4.6,
+    "reviews": 213,
+    "access": "Media",
+    "type": "Arena",
+    "features": [
+      "parking"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "17:50 - 20:00",
+    "lat": 39.4672,
+    "lng": 2.5122,
+    "description": "Bella cala de arena entre pinos con la particularidad de contar con cuevas excavadas en la roca caliza por marineros genoveses en el siglo XVII. El conjunto de cuevas y playa es absolutamente único.",
+    "tips": [
+      "Visita las cuevas históricas talladas en la roca",
+      "Buena para snorkel entre las rocas",
+      "Hay varias calitas en la zona"
+    ],
+    "accessibility": "Acceso por pista forestal, parcialmente accesible.",
+    "accessDifficulty": "Media",
+    "parking": "Parking gratuito al inicio de la pista",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "illetes",
+    "name": "Platja d'Illetes",
+    "region": "Calvià",
+    "zone": "Costa suroeste",
+    "rating": 4.8,
+    "reviews": 445,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "restaurante",
+      "parking"
+    ],
+    "waves": "Muy bajo (0.1m)",
+    "sunsetWindow": "17:50 - 20:00",
+    "lat": 39.5268,
+    "lng": 2.5683,
+    "description": "Considerada sistemáticamente entre las mejores playas del mundo por Tripadvisor. Arena blanca finísima y aguas color turquesa increíblemente cálidas en una bahía protegida frente a los islotes de la Caleta. Un auténtico paraíso.",
+    "tips": [
+      "Llega muy temprano o en barco (taxi acuático desde Portals)",
+      "Los restaurantes son de lujo",
+      "Perfecta para snorkel en los islotes"
+    ],
+    "accessibility": "Accesible con servicios completos.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking de pago. Mejor usar taxi acuático desde Portals Nous",
+    "img": "./media/img/hero/illetes.jpg",
+    "heroImg": "./media/img/hero/illetes-2.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": "cala-llamp",
+    "name": "Cala Llamp",
+    "region": "Andratx",
+    "zone": "Costa suroeste",
+    "rating": 4.4,
+    "reviews": 148,
+    "access": "Media",
+    "type": "Rocosa",
+    "features": [
+      "restaurante",
+      "parking"
+    ],
+    "waves": "Medio (0.5m)",
+    "sunsetWindow": "17:55 - 20:05",
+    "lat": 39.5372,
+    "lng": 2.4548,
+    "description": "Pequeña cala rocosa en una zona residencial exclusiva de Andratx. Aguas muy limpias de color azul intenso y buena visibilidad para el buceo. Tranquila y poco masificada gracias a su acceso limitado.",
+    "tips": [
+      "Zona exclusiva, muy tranquila",
+      "Buen punto de buceo y snorkel",
+      "El restaurante Es Mollet tiene muy buenas vistas"
+    ],
+    "accessibility": "Escaleras de acceso, no apta para movilidad reducida.",
+    "accessDifficulty": "Media",
+    "parking": "Parking de la urbanización, limitado",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  },
+  {
+    "id": "camp-de-mar",
+    "name": "Camp de Mar",
+    "region": "Andratx",
+    "zone": "Costa suroeste",
+    "rating": 4.3,
+    "reviews": 189,
+    "access": "Facil",
+    "type": "Arena",
+    "features": [
+      "accesible",
+      "restaurante",
+      "parking"
+    ],
+    "waves": "Bajo (0.3m)",
+    "sunsetWindow": "17:55 - 20:05",
+    "lat": 39.5457,
+    "lng": 2.4762,
+    "description": "Pintoresca playa con un islote conectado por un pontón de madera donde hay un restaurante. Las aguas son tranquilas y de color turquesa, y el entorno de pinos y montañas le da un aire muy especial.",
+    "tips": [
+      "Visita el restaurante del islote (reserva recomendada)",
+      "Aguas tranquilas, perfecta para kayak",
+      "Ruta de senderismo al cap de sa Mola"
+    ],
+    "accessibility": "Playa accesible. El pontón del islote tiene escalones.",
+    "accessDifficulty": "Facil",
+    "parking": "Parking gratuito en la entrada del pueblo",
+    "img": "",
+    "heroImg": "",
+    "isFavorite": false
+  }
+]

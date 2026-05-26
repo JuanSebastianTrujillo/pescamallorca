@@ -1135,38 +1135,29 @@ async function loadBeachesData() {
     const beachesContainer = document.getElementById('beaches-container');
     if (!beachesContainer) return;
 
-    // ── Proxy CORS en cascada ─────────────────────────────────────────────────
-    // El sitio es 100% estático (sin PHP ni backend propio), así que la única
-    // forma de saltar la política CORS del navegador es usar un proxy intermedio.
-    // Probamos varios en orden; el primero que responda correctamente gana.
-    // En producción real lo ideal sería que mallorcalas.online añadiera la
-    // cabecera "Access-Control-Allow-Origin: *" en su servidor (1 línea de config).
     const EXTERNAL_URL = 'https://www.mallorcalas.online/data/playas.json';
+    const LOCAL_URL    = 'assets/data/playas.json';
 
-    const PROXIES = [
-        'https://corsproxy.io/?' + EXTERNAL_URL,
-        'https://api.allorigins.win/raw?url=' + encodeURIComponent(EXTERNAL_URL),
-        'https://thingproxy.freeboard.io/fetch/' + EXTERNAL_URL,
-    ];
-
-    async function fetchWithFallback(urls) {
-        for (const url of urls) {
-            try {
-                const res = await fetch(url);
-                if (res.ok) return res;
-                console.warn(`[Playas] Proxy respondió ${res.status}: ${url}`);
-            } catch (err) {
-                console.warn(`[Playas] Proxy falló (${err.message}): ${url}`);
-            }
-        }
-        throw new Error('Todos los proxies CORS fallaron.');
+    // Estrategia: intentar primero la URL externa directa.
+    // En cuanto los compañeros activen CORS en su servidor, esto funcionará
+    // automáticamente y los datos estarán siempre actualizados.
+    // Mientras tanto, el navegador lanza un error de CORS que capturamos
+    // y caemos al fichero local descargado en data/playas.json.
+    let data;
+    try {
+        const res = await fetch(EXTERNAL_URL);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        data = await res.json();
+        console.log('[Playas] Datos cargados desde mallorcalas.online ✓');
+    } catch {
+        console.info('[Playas] CORS bloqueado o sin conexión → usando copia local.');
+        const res = await fetch(LOCAL_URL);
+        if (!res.ok) throw new Error(`No se encontró data/playas.json (HTTP ${res.status})`);
+        data = await res.json();
     }
 
     try {
-        const response = await fetchWithFallback(PROXIES);
-        const data = await response.json();
-
-        // El JSON externo es un array plano, no tiene '@graph'
+        // El JSON es un array plano, no tiene '@graph'
         let allBeaches = Array.isArray(data) ? data : [];
         currentBeachesList = allBeaches;
         window.currentBeachesList = allBeaches;
@@ -1218,14 +1209,13 @@ async function loadBeachesData() {
         });
 
     } catch (e) {
-        console.error('[Playas] Todos los proxies fallaron:', e);
+        console.error('[Playas] Error al cargar datos:', e);
         beachesContainer.innerHTML = `
             <div class="alert alert-warning w-100 p-4 text-center">
                 <i class="bi bi-cloud-slash fs-2 text-warning d-block mb-2"></i>
                 <strong>No se pudieron cargar las playas</strong>
                 <p class="text-muted small mb-0 mt-2">
-                    Los servicios intermediarios están temporalmente no disponibles.<br>
-                    Inténtalo de nuevo en unos minutos.
+                    Comprueba tu conexión e inténtalo de nuevo.
                 </p>
             </div>`;
     }
