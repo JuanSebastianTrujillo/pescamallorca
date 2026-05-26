@@ -59,50 +59,33 @@ function getImageBasePath(imagePath) {
 }
 
 // Inicializar la estructura general renderizando todas las secciones de golpe
-// Renderizado progresivo: Primero lo que se ve (Critical), luego el resto (Deferred)
+// Renderizado completo en un solo paso: evita el CLS del footer que se desplazaba
+// cuando las secciones deferred se inyectaban después de la carga inicial.
 const renderApp = () => {
-    // 1. Fase Crítica: Header y Hero (lo que el usuario ve al cargar)
     app.innerHTML = `
         ${Header()}
         <main class="main" id="main-content">
             ${HeroSection()}
-            <div id="deferred-sections"></div>
+            ${SpeciesSection()}
+            ${PecedexSection()}
+            ${SpotsSection()}
+            ${RampsSection()}
+            ${BeachesSection()}
+            ${MapSection()}
+            ${WeatherSection()}
+            ${QuizSection()}
+            ${RulesSection()}
+            ${AuthorsSection()}
+            ${ContactSection()}
         </main>
         ${Footer()}
         ${VoiceHelpModal()}
         ${LoginModal()}
     `;
 
-    // 2. Fase Diferida: Inyectamos el resto cuando el navegador esté en idle
-    const deferRender = (callback) => {
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(callback, { timeout: 1000 });
-        } else {
-            setTimeout(callback, 50);
-        }
-    };
-
-    deferRender(() => {
-        const deferred = document.getElementById('deferred-sections');
-        if (deferred) {
-            deferred.innerHTML = `
-                ${SpeciesSection()}
-                ${PecedexSection()}
-                ${SpotsSection()}
-                ${RampsSection()}
-                ${BeachesSection()}
-                ${MapSection()}
-                ${WeatherSection()}
-                ${QuizSection()}
-                ${RulesSection()}
-                ${AuthorsSection()}
-                ${ContactSection()}
-            `;
-            // Una vez inyectado todo, inicializamos los datos de esas secciones
-            initAfterDeferred();
-            window.updateI18nTexts?.();
-        }
-    });
+    // Inicializar secciones (data fetching async, no bloquea el hilo principal)
+    initAfterDeferred();
+    window.updateI18nTexts?.();
 };
 
 // Función para inicializar todo lo que depende del DOM inyectado después
@@ -687,29 +670,28 @@ function renderSpotsCards(spotsArray) {
             <div class="card h-100 shadow-sm border-0 w-100 spot-card" role="button" tabindex="0" aria-label="Ver detalles de ${spot.name}" data-open-spot="${originalIndex}" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
               <div class="position-relative">
                 <picture>
-                  <source 
-                    type="image/avif" 
-                    srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w" 
-                    sizes="(max-width: 768px) 100vw, 33vw">
+                  <source
+                    type="image/avif"
+                    srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w"
+                    sizes="(max-width: 576px) 95vw, (max-width: 768px) 48vw, (max-width: 992px) 30vw, 28vw">
 
-                  <source 
-                    type="image/webp" 
-                    srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w" 
-                    sizes="(max-width: 768px) 100vw, 33vw">
-                  
-                  <source 
-                    type="image/jpeg" 
-                    srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w" 
-                    sizes="(max-width: 768px) 100vw, 33vw">
-                  
-                  <img 
-                    src="${rutaLimpia}-800.jpg" 
-                    class="card-img-top object-fit-cover" 
+                  <source
+                    type="image/webp"
+                    srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w"
+                    sizes="(max-width: 576px) 95vw, (max-width: 768px) 48vw, (max-width: 992px) 30vw, 28vw">
+
+                  <source
+                    type="image/jpeg"
+                    srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w"
+                    sizes="(max-width: 576px) 95vw, (max-width: 768px) 48vw, (max-width: 992px) 30vw, 28vw">
+
+                  <img
+                    src="${rutaLimpia}-800.jpg"
+                    class="card-img-top object-fit-cover"
                     alt="${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}"
                     style="height:220px"
                     loading="lazy"
-                    decoding="async"
-                    >
+                    decoding="async">
                 </picture>
               </div>
               <div class="card-body d-flex flex-column">
@@ -1705,26 +1687,26 @@ function renderSpeciesSwiper(speciesArray) {
           <div class="swiper-slide py-3">
              <div class="card h-100 shadow border-0 cursor-pointer species-card" role="button" tabindex="0" aria-label="Ver detalles de ${species.name}" data-open-species-index="${index}" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                <picture>
-                 <source 
-                    type="image/avif" 
-                    srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w" 
-                    sizes="(max-width: 768px) 100vw, 33vw">
-                    
-                 <source 
-                   type="image/webp" 
-                   srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w" 
-                   sizes="(max-width: 768px) 100vw, 33vw">
-                 
-                 <source 
-                   type="image/jpeg" 
-                   srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w" 
-                   sizes="(max-width: 768px) 100vw, 33vw">
-                 
-                 <img 
-                   src="${rutaLimpia}-800.jpg" 
-                   class="card-img-top object-fit-cover" 
-                   alt="${species.name}" 
-                   style="height:250px" 
+                 <source
+                    type="image/avif"
+                    srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w"
+                    sizes="(max-width: 576px) 95vw, (max-width: 768px) 48vw, (max-width: 992px) 30vw, 28vw">
+
+                 <source
+                   type="image/webp"
+                   srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w"
+                   sizes="(max-width: 576px) 95vw, (max-width: 768px) 48vw, (max-width: 992px) 30vw, 28vw">
+
+                 <source
+                   type="image/jpeg"
+                   srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w"
+                   sizes="(max-width: 576px) 95vw, (max-width: 768px) 48vw, (max-width: 992px) 30vw, 28vw">
+
+                 <img
+                   src="${rutaLimpia}-800.jpg"
+                   class="card-img-top object-fit-cover"
+                   alt="${species.name}"
+                   style="height:250px"
                    loading="lazy">
                </picture>              
                <div class="card-body text-center bg-white rounded-bottom">

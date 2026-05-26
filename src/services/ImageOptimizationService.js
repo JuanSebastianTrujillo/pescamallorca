@@ -18,7 +18,12 @@ export class ImageOptimizationService {
 
   static optimizeImage(img, supportsWebP = this.supportsWebP()) {
     if (!img.dataset.lazyLoaded) {
-      img.setAttribute('loading', 'lazy');
+      // No sobreescribir imágenes LCP/prioritarias (loading="eager" o fetchpriority="high")
+      const currentLoading = img.getAttribute('loading');
+      const fetchPriority = img.getAttribute('fetchpriority');
+      if (currentLoading !== 'eager' && fetchPriority !== 'high') {
+        img.setAttribute('loading', 'lazy');
+      }
       img.dataset.lazyLoaded = 'true';
     }
 
