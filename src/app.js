@@ -511,7 +511,7 @@ async function loadMonthSpecies() {
             `;
             carouselInner.appendChild(slide);
         });
-        
+
         const slides = Array.from(carouselInner.querySelectorAll('.carousel-item'));
         let activeIndex = slides.findIndex(s => s.classList.contains('active'));
         
@@ -527,8 +527,10 @@ async function loadMonthSpecies() {
             btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSpeciesModalByName(name); } });
         });
 
-        // 5. Regenerar indicadores para todas las diapositivas
-        const totalSlides = carouselInner.querySelectorAll('.carousel-item').length;
+
+
+        indicatorsContainer.innerHTML = ''; // Lo limpiamos justo antes de crear para evitar desajustes
+        const totalSlides = slides.length;
 
         for (let i = 0; i < totalSlides; i++) {
             const btn = document.createElement('button');
@@ -536,7 +538,7 @@ async function loadMonthSpecies() {
             btn.setAttribute('data-bs-target', '#hero-carousel');
             btn.setAttribute('data-bs-slide-to', i.toString());
             btn.setAttribute('aria-label', `Ver diapositiva ${i + 1}`);
-            if (i === 0) {
+            if (i === activeIndex) {
                 btn.classList.add('active');
                 btn.setAttribute('aria-current', 'true');
             }
