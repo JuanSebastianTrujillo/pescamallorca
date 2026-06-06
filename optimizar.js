@@ -41,7 +41,7 @@ async function processImages() {
 
                 // Generar AVIF (Máxima compresión)
                 const avifPath = path.join(TARGET_DIR, `${baseName}-${width}.avif`);
-                await image.avif({ quality: 65 }).toFile(avifPath);
+                await image.avif({ quality: 50, effort: 7}).toFile(avifPath);
                 
                 // Generar WebP (Equilibrio)
                 const webpPath = path.join(TARGET_DIR, `${baseName}-${width}.webp`);
