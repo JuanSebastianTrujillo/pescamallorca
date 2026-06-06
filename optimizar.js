@@ -3,10 +3,10 @@ const path = require('path');
 const sharp = require('sharp');
 
 // 1. Dónde pones las fotos originales (pesadas, en alta calidad)
-const SOURCE_DIR = path.join(__dirname, 'assets', 'img', 'spots', 'originales');
+const SOURCE_DIR = path.join(__dirname, 'assets', 'img', 'peces', 'originales');
 
 // 2. Dónde se guardarán todas las fotos listas para la web
-const TARGET_DIR = path.join(__dirname, 'assets', 'img', 'spots', 'todos');
+const TARGET_DIR = path.join(__dirname, 'assets', 'img', 'peces', 'todos');
 
 // 3. Los anchos que necesita tu etiqueta <picture>
 const WIDTHS = [800, 400];
