@@ -36,9 +36,12 @@
     Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
 
-  # Cache 1 semana para datos JSON
+  # Cache 1 semana para datos JSON + CORS para que otros dominios puedan leerlos
   <FilesMatch "\.json$">
     Header set Cache-Control "max-age=604800, public"
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
   </FilesMatch>
 
   # Seguridad basica

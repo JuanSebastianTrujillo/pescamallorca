@@ -1139,8 +1139,24 @@ async function loadBeachesData() {
     }
 
     try {
-        // El JSON es un array plano, no tiene '@graph'
-        let allBeaches = Array.isArray(data) ? data : [];
+        // Extraer el array de playas sea cual sea la forma del JSON recibido
+        let allBeaches;
+        if (Array.isArray(data)) {
+            allBeaches = data;
+        } else if (Array.isArray(data['@graph'])) {
+            allBeaches = data['@graph'];
+        } else if (Array.isArray(data.playas)) {
+            allBeaches = data.playas;
+        } else if (Array.isArray(data.beaches)) {
+            allBeaches = data.beaches;
+        } else if (Array.isArray(data.data)) {
+            allBeaches = data.data;
+        } else {
+            console.warn('[Playas] Formato JSON inesperado:', typeof data, Object.keys(data || {}));
+            allBeaches = [];
+        }
+        allBeaches = allBeaches.map(normalizeBeachFromJsonLd);
+        console.log(`[Playas] ${allBeaches.length} playas cargadas.`);
         currentBeachesList = allBeaches;
         window.currentBeachesList = allBeaches;
         renderBeachesSwiper(allBeaches);
@@ -1203,13 +1219,51 @@ async function loadBeachesData() {
     }
 }
 
-// Convierte rutas relativas del JSON de mallorcalas.online en URLs absolutas
-// Ej: "./media/img/hero/cala-varques.jpg" → "https://www.mallorcalas.online/media/img/hero/cala-varques.jpg"
+// Convierte la imagen de una playa a URL absoluta.
 function resolveBeachImg(path) {
     if (!path) return null;
-    if (path.startsWith('http')) return path;               // ya es absoluta
-    const clean = path.replace(/^\.\//, '');                // quita el './' inicial
+    if (Array.isArray(path)) path = path[0];
+    if (path && typeof path === 'object') {
+        path = path.url || path.contentUrl || path['@id'] || null;
+    }
+    if (!path || typeof path !== 'string') return null;
+    if (path.startsWith('http')) return path;
+    const clean = path.replace(/^\.\//, '');
     return 'https://www.mallorcalas.online/' + clean;
+}
+
+// Convierte un objeto Beach en formato JSON-LD (schema.org) al formato plano que usa la UI.
+// Si el objeto ya tiene campos planos (formato local), lo devuelve sin cambios.
+function normalizeBeachFromJsonLd(beach) {
+    if (beach.lat !== undefined || beach.access !== undefined) return beach;
+
+    const prop = (name) => {
+        const p = (beach.additionalProperty || []).find(ap => ap.name === name);
+        return p ? p.value : undefined;
+    };
+
+    const sustratoMap = {
+        arena_fina: 'Arena', arena: 'Arena',
+        rocosa: 'Rocosa', piedras: 'Rocosa',
+        mixta: 'Mixta',
+    };
+
+    return {
+        name:             beach.name,
+        description:      beach.description,
+        region:           beach.address?.addressLocality,
+        zone:             prop('zone'),
+        lat:              beach.geo?.latitude,
+        lng:              beach.geo?.longitude,
+        img:              Array.isArray(beach.image) ? beach.image[0] : beach.image,
+        heroImg:          Array.isArray(beach.image) ? beach.image[1] : undefined,
+        rating:           beach.aggregateRating?.ratingValue,
+        reviews:          beach.aggregateRating?.reviewCount,
+        access:           prop('access'),
+        accessDifficulty: prop('access'),
+        features:         prop('features') || [],
+        type:             sustratoMap[(prop('sustrato') || '').toLowerCase()] || null,
+    };
 }
 
 function renderBeachesSwiper(beachesArray) {
