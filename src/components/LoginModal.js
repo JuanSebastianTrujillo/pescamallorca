@@ -1,5 +1,3 @@
-import { AuthService } from "../services/AuthService.js";
-
 export const LoginModal = () => {
     return `
     <div class="modal fade" id="loginModal" role="dialog" aria-modal="true" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">

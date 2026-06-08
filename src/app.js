@@ -17,7 +17,7 @@ import { AuthService } from "./services/AuthService.js";
 import { LoginModal, initLoginModal } from "./components/LoginModal.js";
 import { initTheme } from "../assets/js/main.js";
 import { initI18n } from "./services/i18n.js";
-import { initAccessibility, updateJsonLd, trapFocusInModal } from "./services/AccessibilityService.js";
+import { initAccessibility, trapFocusInModal } from "./services/AccessibilityService.js";
 import { voiceController, processCommand, speak, stopSpeaking, hasSTT, playAudio, stopAudio } from "./services/VoiceService.js";
 import { SemanticService } from "./services/SemanticService.js";
 import { ImageOptimizationService } from "./services/ImageOptimizationService.js";
@@ -206,20 +206,20 @@ async function initAfterDeferred() {
                 const idx = Number(el.dataset.openSpot);
                 const hide = el.dataset.hideTarget;
                 if (hide) bootstrap.Modal.getInstance(document.getElementById(hide))?.hide();
-                setTimeout(() => openSpotModal(idx), hide ? 400 : 0);
+                setTimeout(() => window.openSpotModal(idx), hide ? 400 : 0);
                 return;
             }
             if (el.dataset.stopVoice !== undefined) { window.stopVoiceRecognition(); return; }
-            if (el.dataset.pecedexReset !== undefined) { showResetPecedexModal(); return; }
-            if (el.dataset.pecedexConfirm !== undefined) { confirmResetPecedex(); return; }
+            if (el.dataset.pecedexReset !== undefined) { window.showResetPecedexModal(); return; }
+            if (el.dataset.pecedexConfirm !== undefined) { window.confirmResetPecedex(); return; }
             if (el.dataset.speakModal !== undefined) { window.speakModalDescription(el.dataset.speakModal, el); return; }
-            if (el.dataset.openBeach !== undefined) { openBeachModal(Number(el.dataset.openBeach)); return; }
-            if (el.dataset.openSpeciesIndex !== undefined) { openSpeciesModal(Number(el.dataset.openSpeciesIndex)); return; }
-            if (el.dataset.openSpeciesName) { openSpeciesModalByName(el.dataset.openSpeciesName); return; }
-            if (el.dataset.openSpeciesGlobal !== undefined) { openSpeciesModalGlobal(Number(el.dataset.openSpeciesGlobal)); return; }
-            if (el.dataset.openRamp !== undefined) { openRampModal(Number(el.dataset.openRamp)); return; }
+            if (el.dataset.openBeach !== undefined) { window.openBeachModal(Number(el.dataset.openBeach)); return; }
+            if (el.dataset.openSpeciesIndex !== undefined) { window.openSpeciesModal(Number(el.dataset.openSpeciesIndex)); return; }
+            if (el.dataset.openSpeciesName) { window.openSpeciesModalByName(el.dataset.openSpeciesName); return; }
+            if (el.dataset.openSpeciesGlobal !== undefined) { window.openSpeciesModalGlobal(Number(el.dataset.openSpeciesGlobal)); return; }
+            if (el.dataset.openRamp !== undefined) { window.openRampModal(Number(el.dataset.openRamp)); return; }
             if (el.dataset.toggleFishAudio !== undefined) { window.toggleFishAudio(el, el.dataset.audioPath); return; }
-            if (el.dataset.toggleCatch !== undefined) { toggleCatchSpecies(ev, el.dataset.toggleCatch); return; }
+            if (el.dataset.toggleCatch !== undefined) { window.toggleCatchSpecies(ev, el.dataset.toggleCatch); return; }
             if (el.dataset.authLogout !== undefined) { AuthService.logout(); return; }
             if (el.dataset.closeMobile !== undefined) { window.closeMobileMenu(); return; }
             if (el.dataset.mockLogin !== undefined) { window.mockLogin(); bootstrap.Modal.getInstance(document.getElementById('loginModal'))?.hide(); return; }
@@ -331,22 +331,18 @@ window.speakModalDescription = (type, btn) => {
     }
 
     let text = "";
-    let btnLabel = "";
     if (type === 'species') {
         const name = document.getElementById('speciesModalLabel').innerText;
         const desc = document.getElementById('speciesModalDescription').innerText;
         text = `${name}. ${desc}`;
-        btnLabel = "Leer ficha";
     } else if (type === 'spot') {
         const name = document.getElementById('spotModalLabel').innerText;
         const desc = document.getElementById('spotModalDescription').innerText;
         text = `${name}. ${desc}`;
-        btnLabel = "Leer";
     } else if (type === 'beach') {
         const name = document.getElementById('beachModalLabel').innerText;
         const desc = document.getElementById('beachModalDescription').innerText;
         text = `${name}. ${desc}`;
-        btnLabel = "Leer";
     }
 
     if (btn) {
@@ -506,8 +502,8 @@ async function loadMonthSpecies() {
         // 4. Listeners accesibles para botones
         carouselInner.querySelectorAll('.dynamic-slide [data-open-species-name]').forEach(btn => {
             const name = btn.getAttribute('data-open-species-name');
-            btn.addEventListener('click', () => openSpeciesModalByName(name));
-            btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSpeciesModalByName(name); } });
+            btn.addEventListener('click', () => window.openSpeciesModalByName(name));
+            btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.openSpeciesModalByName(name); } });
         });
 
 
@@ -560,7 +556,7 @@ async function loadSpotsData() {
         // Guardamos los spots filtrados en la variable global
         currentSpotsList = spots;
         window.currentSpotsList = spots;
-        globalZonesData = spots;
+        window.globalZonesData = spots;
 
         // Pintamos todas las zonas por primera vez
         renderSpotsCards(currentSpotsList);
@@ -591,10 +587,8 @@ async function loadRampsData() {
             const kw = item.keywords || "";
             const isHormigon = kw.toLowerCase().includes('hormigón') || kw.toLowerCase().includes('hormigon');
             const isArena = kw.toLowerCase().includes('arena');
-            const isRoca = kw.toLowerCase().includes('roca');
             const type = isHormigon ? 'hormigon' : isArena ? 'arena' : 'roca';
 
-            const isFree = kw.toLowerCase().includes('gratuita') || kw.toLowerCase().includes('free') || kw.toLowerCase().includes('gratuïta') || kw.toLowerCase().includes('kostenlos');
             const isPaid = kw.toLowerCase().includes('pago') || kw.toLowerCase().includes('paid') || kw.toLowerCase().includes('pagament') || kw.toLowerCase().includes('kostenpflichtig');
             const isExclusive = kw.toLowerCase().includes('exclusiva') || kw.toLowerCase().includes('socios');
             const priceTag = isExclusive ? 'Exclusiva Socios' : isPaid ? 'De pago' : 'Gratuita';
@@ -716,9 +710,9 @@ function renderSpotsCards(spotsArray) {
     const spotTriggers = spotsContainer.querySelectorAll('[data-open-spot]');
     spotTriggers.forEach(el => {
         const idx = Number(el.getAttribute('data-open-spot'));
-        el.addEventListener('click', () => openSpotModal(idx));
+        el.addEventListener('click', () => window.openSpotModal(idx));
         el.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSpotModal(idx); }
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.openSpotModal(idx); }
         });
     });
 
@@ -881,7 +875,7 @@ window.openSpotModal = (index) => {
             el.addEventListener('click', () => {
                 const modalEl = document.getElementById('spotModal');
                 bootstrap.Modal.getInstance(modalEl)?.hide();
-                setTimeout(() => openSpeciesModalByName(name), 400);
+                setTimeout(() => window.openSpeciesModalByName(name), 400);
             });
             el.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
@@ -904,7 +898,7 @@ window.openSpotModal = (index) => {
         modal = new bootstrap.Modal(modalEl);
     }
     // Trap focus inside modal and preserve opener
-    try { trapFocusInModal(modalEl, document.activeElement); } catch (e) { /* noop */ }
+    try { trapFocusInModal(modalEl, document.activeElement); } catch { /* noop */ }
     modal.show();
 };
 
@@ -917,7 +911,7 @@ window.openSpotModalByName = (name) => {
     });
     if (!spot) return;
     const index = currentSpotsList.indexOf(spot);
-    window.openSpotModal(index);
+    window.window.openSpotModal(index);
 };
 
 window.openRampModalByName = (name) => {
@@ -928,7 +922,7 @@ window.openRampModalByName = (name) => {
         return rName.includes(cleanQuery) || cleanQuery.includes(rName);
     });
     if (!ramp) return;
-    window.openRampModal(ramp.id);
+    window.window.openRampModal(ramp.id);
 };
 
 window.openBeachModalByName = (name) => {
@@ -940,7 +934,7 @@ window.openBeachModalByName = (name) => {
     });
     if (!beach) return;
     const index = window.currentBeachesList.indexOf(beach);
-    window.openBeachModal(index);
+    window.window.openBeachModal(index);
 };
 
 window.renderSpotComments = async (spotName) => {
@@ -1382,8 +1376,8 @@ function renderBeachesSwiper(beachesArray) {
     const beachTriggers = container.querySelectorAll('[data-open-beach]');
     beachTriggers.forEach(el => {
         const idx = Number(el.getAttribute('data-open-beach'));
-        el.addEventListener('click', () => openBeachModal(idx));
-        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBeachModal(idx); } });
+        el.addEventListener('click', () => window.openBeachModal(idx));
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.openBeachModal(idx); } });
     });
 
     if (typeof Swiper !== 'undefined') {
@@ -1569,7 +1563,7 @@ window.openBeachModal = (index) => {
             geo: (beach.lat && beach.lng) ? { latitude: beach.lat, longitude: beach.lng } : undefined,
         };
         SemanticService.updateBeachJsonLd(beachForJsonLd);
-    } catch (e) { /* noop */ }
+    } catch { /* noop */ }
 
     const modalEl = document.getElementById('beachModal');
     let modal = bootstrap.Modal.getInstance(modalEl);
@@ -1577,7 +1571,7 @@ window.openBeachModal = (index) => {
         modal = new bootstrap.Modal(modalEl);
     }
     // Trap focus inside modal and preserve opener
-    try { trapFocusInModal(modalEl, document.activeElement); } catch (e) { /* noop */ }
+    try { trapFocusInModal(modalEl, document.activeElement); } catch { /* noop */ }
     modal.show();
 };
 
@@ -1604,11 +1598,11 @@ async function loadSpeciesData() {
         globalSpeciesList = allSpecies;
         window.globalSpeciesList = allSpecies;
         renderSpeciesSwiper(allSpecies);
-        initPecedex(allSpecies);
+        window.initPecedex(allSpecies);
 
         // Inicializar el quiz con los datos cargados
         try {
-            initQuiz(allSpecies, globalZonesData);
+            initQuiz(allSpecies, window.globalZonesData);
         } catch (quizErr) {
             console.warn('QuizSection init error:', quizErr);
         }
@@ -1777,8 +1771,8 @@ function renderSpeciesSwiper(speciesArray) {
     const speciesTriggers = container.querySelectorAll('[data-open-species-index]');
     speciesTriggers.forEach(el => {
         const idx = Number(el.getAttribute('data-open-species-index'));
-        el.addEventListener('click', () => openSpeciesModal(idx));
-        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSpeciesModal(idx); } });
+        el.addEventListener('click', () => window.openSpeciesModal(idx));
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.openSpeciesModal(idx); } });
     });
 
     if (speciesSwiperInstance) {
@@ -1843,7 +1837,7 @@ function fillAndShowSpeciesModal(species) {
                     media.src = 'about:blank';
                     media.style.display = 'none';
                 }
-            } catch (err) { }
+            } catch { }
         });
         const placeholder = oldVideoContainer.querySelector('#videoPlaceholder');
         if (placeholder) placeholder.innerHTML = '';
@@ -2189,7 +2183,7 @@ function fillAndShowSpeciesModal(species) {
     SemanticService.updateSpeciesJsonLd(species);
 
     // Trap focus inside modal and preserve opener
-    try { trapFocusInModal(modalEl, document.activeElement); } catch (e) { /* noop */ }
+    try { trapFocusInModal(modalEl, document.activeElement); } catch { /* noop */ }
     modal.show();
 }
 
@@ -2223,7 +2217,7 @@ async function syncPecedexWithServer(merge = false) {
                 localStorage.setItem('caughtSpecies', JSON.stringify(caughtSpecies));
 
                 if (globalSpeciesList && globalSpeciesList.length > 0) {
-                    initPecedex(globalSpeciesList);
+                    window.initPecedex(globalSpeciesList);
                 }
             }
         }
@@ -2241,7 +2235,7 @@ window.addEventListener('auth-change', (e) => {
         caughtSpecies = [];
         localStorage.removeItem('caughtSpecies');
         if (window.globalSpeciesList && window.globalSpeciesList.length > 0) {
-            window.initPecedex(window.globalSpeciesList);
+            window.window.initPecedex(window.globalSpeciesList);
         }
     }
 });
@@ -2326,7 +2320,7 @@ window.toggleCatchSpecies = (event, name) => {
     syncPecedexWithServer();
 
     if (globalSpeciesList && globalSpeciesList.length > 0) {
-        initPecedex(globalSpeciesList);
+        window.initPecedex(globalSpeciesList);
     }
 
     const actionContainer = document.getElementById('speciesModalCatchAction');
@@ -2353,7 +2347,7 @@ window.confirmResetPecedex = () => {
     localStorage.removeItem('caughtSpecies');
     syncPecedexWithServer();
     if (globalSpeciesList && globalSpeciesList.length > 0) {
-        initPecedex(globalSpeciesList);
+        window.initPecedex(globalSpeciesList);
     }
     const modal = bootstrap.Modal.getInstance(document.getElementById('resetPecedexModal'));
     modal.hide();

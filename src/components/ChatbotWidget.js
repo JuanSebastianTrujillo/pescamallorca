@@ -117,7 +117,7 @@
       const res = await fetch(apiEndpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
       if(!res.ok){
         let bodyText = '';
-        try { bodyText = await res.text(); } catch(e) { bodyText = ''; }
+        try { bodyText = await res.text(); } catch { bodyText = ''; }
         let errText = 'Network error';
         try {
           const parsed = JSON.parse(bodyText);
@@ -126,13 +126,13 @@
             try {
               const diag = JSON.parse(parsed.diagnostic.body);
               errText = diag.error && diag.error.message ? diag.error.message : parsed.diagnostic.body;
-            } catch(e) {
+            } catch {
               errText = parsed.diagnostic.body;
             }
           } else {
             errText = JSON.stringify(parsed);
           }
-        } catch(e) {
+        } catch {
           if (bodyText) errText = bodyText;
         }
         throw new Error(errText);
@@ -141,7 +141,7 @@
       if (data.error) {
         let errText = data.error;
         if (data.details) {
-          try { errText += ' - ' + (typeof data.details === 'string' ? data.details : JSON.stringify(data.details)); } catch(e) { errText += ' - (details)'; }
+          try { errText += ' - ' + (typeof data.details === 'string' ? data.details : JSON.stringify(data.details)); } catch { errText += ' - (details)'; }
         }
         throw new Error(errText);
       }

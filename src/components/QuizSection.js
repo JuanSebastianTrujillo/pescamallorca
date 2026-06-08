@@ -193,7 +193,7 @@ export const initQuiz = (speciesData, zonesData) => {
         if (quizEngine.getState() !== 'PLAYING') return;
 
         const buttons = document.querySelectorAll('.quiz-option-btn');
-        buttons.forEach((btn, i) => {
+        buttons.forEach((btn) => {
             btn.classList.remove('btn-primary', 'text-white');
             btn.classList.add('btn-outline-primary');
             btn.setAttribute('aria-pressed', 'false');

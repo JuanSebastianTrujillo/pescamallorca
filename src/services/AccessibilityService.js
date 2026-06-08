@@ -204,7 +204,7 @@ export function trapFocusInModal(modal, triggerElement) {
     modal.addEventListener('keydown', handleKeyDown);
 
     // Limpiar event listeners cuando se cierre el modal
-    const modalInstance = bootstrap.Modal.getInstance(modal) || new bootstrap.Modal(modal);
+    bootstrap.Modal.getInstance(modal) || new bootstrap.Modal(modal);
     modal.addEventListener('hidden.bs.modal', () => {
         modal.removeEventListener('keydown', handleKeyDown);
         // Devolver foco al elemento que abrió el modal
@@ -515,7 +515,7 @@ export function initAccessibility() {
 function upgradeAriaButtons(root = document) {
     const clickableRoles = root.querySelectorAll('[role="button"]');
     clickableRoles.forEach(el => {
-        try { makeFocusable(el); } catch (e) { /* no-op */ }
+        try { makeFocusable(el); } catch { /* no-op */ }
     });
 }
 

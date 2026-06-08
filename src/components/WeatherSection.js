@@ -48,7 +48,7 @@ export const initWeather = () => {
     const renderWeather = async (zoneId) => {
         const card = document.getElementById("weather-card");
         const zoneInfo = weatherZones[zoneId];
-        const t = window._i18n ? window._i18n.t.bind(window._i18n) : (key, opts) => key;
+        const t = window._i18n ? window._i18n.t.bind(window._i18n) : (key) => key;
         
         // Render Skeleton Loading state
         card.innerHTML = `

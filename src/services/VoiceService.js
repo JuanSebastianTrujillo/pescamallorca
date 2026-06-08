@@ -15,7 +15,6 @@ export const hasSTT = !!SpeechRecognition;
 
 // ─── Síntesis de Voz (TTS) ──────────────────────────────────
 
-let currentUtterance = null;
 
 /**
  * Sintetiza texto a voz.
@@ -41,7 +40,6 @@ export function speak(text, lang = "es-ES") {
     utterance.rate = 1.0;
     utterance.pitch = 1.0;
 
-    currentUtterance = utterance;
     speechSynthesis.speak(utterance);
 }
 
@@ -196,7 +194,7 @@ class VoiceController {
             if (this._active) {
                 try {
                     this.recognition.start();
-                } catch (err) {
+                } catch {
                     this._active = false;
                     if (this.onStatusChange) this.onStatusChange('idle');
                 }

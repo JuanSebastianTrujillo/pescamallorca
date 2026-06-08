@@ -135,7 +135,7 @@ function generateNormativaQuestions(speciesData) {
 
     const generators = [
         // Tipo 1: ¿Cuál es la talla mínima legal de X?
-        (target, distractors) => {
+        (target, _distractors) => {
             const talla = getProp(target, 'Talla mínima legal');
             if (!talla) return null;
             const unit = target.additionalProperty.find(p => p.name === 'Talla mínima legal')?.unitText || 'cm';
@@ -178,7 +178,7 @@ function generateNormativaQuestions(speciesData) {
             };
         },
         // Tipo 3: ¿Qué dificultad tiene pescar X?
-        (target, distractors) => {
+        (target, _distractors) => {
             const dif = getProp(target, 'Dificultad');
             if (!dif) return null;
             const allDifs = ['Baja', 'Media', 'Alta', 'Muy alta'];

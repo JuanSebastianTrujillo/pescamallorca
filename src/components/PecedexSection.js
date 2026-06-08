@@ -1,5 +1,3 @@
-import { trapFocusInModal } from "../services/AccessibilityService.js";
-
 export const PecedexSection = () => {
   return `
       <!-- Pecedex Section -->

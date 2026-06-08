@@ -8,15 +8,20 @@
     "images:optimize": "node optimizar.js",
     "images": "npm run images:resize && npm run images:optimize",
     "build:all": "npm run images && npm run build",
-    "lighthouse": "lighthouse https://www.pescamallorca.online --output=json --output-path=./lighthouse-report-final.json"
+    "lighthouse": "lighthouse https://www.pescamallorca.online --output=json --output-path=./lighthouse-report-final.json",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
   },
   "dependencies": {
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "cssnano": "^8.0.1",
     "esbuild": "^0.28.0",
+    "eslint": "^9.39.4",
+    "globals": "^17.6.0",
     "postcss": "^8.4.35",
     "postcss-cli": "^10.1.0",
     "terser": "^5.48.0"
