@@ -11,6 +11,7 @@ export async function initI18n() {
 
     i18n.use(HttpBackend).use(LanguageDetector).init({
         fallbackLng: 'es',
+        load: 'languageOnly',
         debug: false,
         backend: {
             loadPath: 'assets/locales/{{lng}}.json?v=' + new Date().getTime()
