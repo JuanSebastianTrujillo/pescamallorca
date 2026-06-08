@@ -661,7 +661,7 @@ function renderSpotsCards(spotsArray) {
         const rutaLimpia = imgSrc.substring(0, imgSrc.lastIndexOf('.'));
         htmlCards += `
           <div class="swiper-slide d-flex" style="height:auto;">
-            <div class="card h-100 shadow-sm border-0 w-100 spot-card" role="button" tabindex="0" aria-label="Ver detalles de ${spot.name}" data-open-spot="${originalIndex}" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div class="card h-100 shadow-sm border-0 w-100 spot-card" data-open-spot="${originalIndex}" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
               <div class="position-relative">
                 <picture>
                   <source
@@ -1317,7 +1317,7 @@ function renderBeachesSwiper(beachesArray) {
 
         htmlCards += `
           <div class="swiper-slide py-3">
-             <div class="card h-100 shadow border-0 beach-card" role="button" tabindex="0" aria-label="Ver detalles de ${beach.name}" data-open-beach="${index}" style="transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+             <div class="card h-100 shadow border-0 beach-card" data-open-beach="${index}" style="transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
 
                <div class="position-relative overflow-hidden" style="height:220px;">
                  <img
@@ -1733,7 +1733,7 @@ function renderSpeciesSwiper(speciesArray) {
         const rutaLimpia = getImageBasePath(species.image || '');
         htmlCards += `
           <div class="swiper-slide py-3">
-             <div class="card h-100 shadow border-0 cursor-pointer species-card" role="button" tabindex="0" aria-label="Ver detalles de ${species.name}" data-open-species-index="${index}" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+             <div class="card h-100 shadow border-0 cursor-pointer species-card" data-open-species-index="${index}" style="transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                <picture>
                  <source
                     type="image/avif"
