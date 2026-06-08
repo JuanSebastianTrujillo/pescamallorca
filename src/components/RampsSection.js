@@ -154,7 +154,7 @@ export const initRamps = () => {
             
             html += `
             <div class="swiper-slide d-flex" style="height:auto;">
-                <div class="card shadow-sm border-0 w-100 ramp-card" role="button" tabindex="0" aria-label="Ver detalles t&eacute;cnicos de ${rampa.name}" style="transition: transform 0.2s; cursor:pointer;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'" data-open-ramp="${rampa.id}">
+                <div class="card shadow-sm border-0 w-100 ramp-card" style="transition: transform 0.2s; cursor:pointer;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'" data-open-ramp="${rampa.id}">
                     <div class="position-relative">
                         <picture>
                           <source type="image/avif" srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w" sizes="(max-width: 576px) 95vw, (max-width: 768px) 48vw, (max-width: 992px) 30vw, 28vw">
