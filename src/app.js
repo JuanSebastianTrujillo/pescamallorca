@@ -814,12 +814,17 @@ window.openSpotModal = (index) => {
         const rutaLimpia = img.substring(0, img.lastIndexOf('.'));
         galleryHtml += `
             <div class="${images.length > 1 ? 'col-6' : 'col-12'} mb-2">
-                <img 
-                    src="${rutaLimpia}-800.webp" 
-                    class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
-                    style="height: 200px;" 
-                    alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}" 
-                    loading="lazy">
+                <picture>
+                    <source type="image/avif" srcset="${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w" sizes="(max-width: 576px) 100vw, 50vw">
+                    <source type="image/webp" srcset="${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w" sizes="(max-width: 576px) 100vw, 50vw">
+                    <source type="image/jpeg" srcset="${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w" sizes="(max-width: 576px) 100vw, 50vw">
+                    <img
+                        src="${rutaLimpia}-800.jpg"
+                        class="img-fluid rounded shadow-sm w-100 object-fit-cover"
+                        style="height: 200px;"
+                        alt="Fotografía detallada de la zona de pesca ${spot.name}, ubicada en ${spot.address?.addressLocality || 'Mallorca'}"
+                        loading="lazy">
+                </picture>
             </div>
         `;
     });
@@ -916,17 +921,6 @@ window.openSpotModalByName = (name) => {
 };
 
 window.openRampModalByName = (name) => {
-    if (!name || !window.currentRampsData) return;
-    const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-    const ramp = window.currentRampsData.find(r => {
-        const rName = r.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        return rName.includes(cleanQuery) || cleanQuery.includes(rName);
-    });
-    if (!ramp) return;
-    window.openRampModal(ramp.id);
-};
-
-window.openBeachModalByName = (name) => {
     if (!name || !window.currentRampsData) return;
     const cleanQuery = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
     const ramp = window.currentRampsData.find(r => {
@@ -1424,8 +1418,14 @@ window.openBeachModal = (index) => {
         `<i class="bi bi-geo-alt-fill me-2 text-danger"></i><span>${locality}${beach.zone ? ` · ${beach.zone}` : ''}</span>`;
     document.getElementById('beachModalDescription').innerText = beach.description || '';
 
+    // Usar <picture> para compatibilidad máxima en el modal de playa
     const imgEl = document.getElementById('beachModalImage');
-    imgEl.src = heroImg;
+    if (imgEl) {
+        imgEl.src = heroImg;
+        // Si la imagen viene de mallorcalas.online es una URL completa sin variantes de tamaño,
+        // así que solo actualizamos el src del <img> directamente.
+        // El onerror ya está en el template del modal.
+    }
 
     const propsContainer = document.getElementById('beachModalProperties');
     let propsHtml = '';
@@ -1857,6 +1857,22 @@ function fillAndShowSpeciesModal(species) {
     document.getElementById('speciesModalScientific').innerText = species.alternateName || '';
     document.getElementById('speciesModalDescription').innerText = species.description || '';
 
+    // Reconstruir el contenedor de imagen como <picture> si no lo es ya
+    const imgElRaw = document.getElementById('speciesModalImage');
+    if (!imgElRaw) return;
+    const imgContainer = imgElRaw.parentElement;
+    if (imgContainer && imgContainer.tagName !== 'PICTURE') {
+        const pic = document.createElement('picture');
+        pic.innerHTML = `
+            <source id="speciesModalImgAvif" type="image/avif" srcset="" sizes="(max-width: 768px) 100vw, 50vw">
+            <source id="speciesModalImgWebp" type="image/webp" srcset="" sizes="(max-width: 768px) 100vw, 50vw">
+            <source id="speciesModalImgJpeg" type="image/jpeg" srcset="" sizes="(max-width: 768px) 100vw, 50vw">
+        `;
+        imgElRaw.removeAttribute('id');
+        pic.appendChild(imgElRaw.cloneNode(true));
+        pic.querySelector('img').id = 'speciesModalImage';
+        imgContainer.replaceChild(pic, imgElRaw);
+    }
     const imgEl = document.getElementById('speciesModalImage');
     if (!imgEl) return;
     imgEl.style.transition = 'opacity 0.35s ease-in-out';
@@ -1912,8 +1928,18 @@ function fillAndShowSpeciesModal(species) {
         setTimeout(() => {
             const rutaCompleta = selected.includes('/') ? selected : `assets/img/peces/webp/${selected}`;
             const rutaLimpia = getImageBasePath(rutaCompleta);
-            imgEl.src = `${rutaLimpia}-800.webp`;
 
+            // Actualizar el elemento <picture> padre si existe, o usar <img> directamente
+            const pictureEl = imgEl.parentElement?.tagName === 'PICTURE' ? imgEl.parentElement : null;
+            if (pictureEl) {
+                const sources = pictureEl.querySelectorAll('source');
+                sources.forEach(src => {
+                    if (src.type === 'image/avif') src.srcset = `${rutaLimpia}-400.avif 400w, ${rutaLimpia}-800.avif 800w`;
+                    else if (src.type === 'image/webp') src.srcset = `${rutaLimpia}-400.webp 400w, ${rutaLimpia}-800.webp 800w`;
+                    else if (src.type === 'image/jpeg') src.srcset = `${rutaLimpia}-400.jpg 400w, ${rutaLimpia}-800.jpg 800w`;
+                });
+            }
+            imgEl.src = `${rutaLimpia}-800.jpg`;
             imgEl.alt = `Fotografía detallada de ${species.name}, una especie marina de las aguas de Mallorca`;
             imgEl.style.opacity = '1';
         }, 150);
@@ -2031,11 +2057,16 @@ function fillAndShowSpeciesModal(species) {
             } else {
                 const normalizedVideoPath = videoSource.includes('/') ? videoSource : `assets/video/${videoSource}`;
                 const baseVideoPath = normalizedVideoPath.replace(/\.(mp4|webm|ogv|ogg)$/i, '');
+                // Los vídeos de peces específicos solo existen en .mp4.
+                // El vídeo genérico 'pesca' tiene también .webm y .ogv.
+                const isGenericVideo = baseVideoPath.endsWith('pesca') || baseVideoPath.endsWith('pesca.mp4'.replace('.mp4',''));
+                const webmSource = isGenericVideo ? `<source src="${baseVideoPath}.webm" type="video/webm">` : '';
+                const ogvSource  = isGenericVideo ? `<source src="${baseVideoPath}.ogv" type="video/ogg">` : '';
                 videoCode = `
                     <video controls preload="none" playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback poster="${rutaLimpiaThumb}-800.jpg" style="width:100%; height:100%; object-fit: contain; background:#000; display:block;">
                         <source src="${baseVideoPath}.mp4" type="video/mp4">
-                        <source src="${baseVideoPath}.webm" type="video/webm">
-                        <source src="${baseVideoPath}.ogv" type="video/ogg">
+                        ${webmSource}
+                        ${ogvSource}
                         Tu navegador no soporta el vídeo HTML5.
                     </video>
                 `;
@@ -2253,15 +2284,22 @@ window.initPecedex = (speciesArray) => {
     speciesArray.forEach((species, index) => {
         const isCaught = caughtSpecies.includes(species.name);
         const imgStyle = isCaught ? 'filter: brightness(1) drop-shadow(0 4px 6px rgba(0,0,0,0.1));' : 'filter: brightness(0.1) grayscale(1); opacity: 0.6;';
-        const action = isCaught ? `openSpeciesModalGlobal(${index})` : ``;
         const pointerStyle = isCaught ? `cursor: pointer; transition: transform 0.2s;` : `cursor: default; opacity: 0.8;`;
         const hoverAnim = isCaught ? `onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"` : '';
+
+        // Usar la ruta limpia para obtener AVIF/WebP/JPEG con fallback correcto
+        const rutaLimpiaPecedex = getImageBasePath(species.image || '');
+        const imgSrcPecedex = rutaLimpiaPecedex ? `${rutaLimpiaPecedex}-400.jpg` : species.image;
 
         html += `
                     <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                          <div class="card h-100 border-0 bg-transparent text-center" role="button" tabindex="0" aria-label="${isCaught ? `Ver detalles de ${species.name}` : 'Especie no capturada'}" style="${pointerStyle}" ${hoverAnim} ${isCaught ? `data-open-species-global="${index}"` : ''} title="${isCaught ? 'Ver ficha técnica de la especie' : 'Captura esta especie para desbloquearla'}">
                <div class="position-relative mx-auto rounded-circle d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background-color: ${isCaught ? '#eef2ff' : '#f8f9fa'}; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);">
-                 <img src="${species.image}" alt="${isCaught ? `Fotografía de ${species.name}` : 'Especie no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" loading="lazy" decoding="async">
+                 <picture>
+                   <source type="image/avif" srcset="${rutaLimpiaPecedex}-400.avif">
+                   <source type="image/webp" srcset="${rutaLimpiaPecedex}-400.webp">
+                   <img src="${imgSrcPecedex}" alt="${isCaught ? `Fotografía de ${species.name}` : 'Especie no capturada'}" class="img-fluid rounded-circle object-fit-cover" style="width: 65px; height: 65px; ${imgStyle}" loading="lazy" decoding="async">
+                 </picture>
                  ${isCaught ? '<i class="bi bi-check-circle-fill text-success position-absolute" style="bottom: 0px; right: 0px; font-size: 1.2rem; background: white; border-radius: 50%;"></i>' : ''}
                </div>
                <div class="card-body p-2">
