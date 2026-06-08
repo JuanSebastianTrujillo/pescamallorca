@@ -107,9 +107,9 @@ export const initWeather = () => {
              <div class="col text-center">
                  <div class="p-3 bg-primary text-white rounded shadow-sm h-100">
                      <i class="bi bi-water fs-2 d-block mb-2"></i>
-                     <span class="d-block text-white-50 small text-uppercase mb-1 fw-bold">${t('weather_sea_state')}</span>
+                     <span class="d-block text-white small text-uppercase mb-1 fw-bold">${t('weather_sea_state')}</span>
                      <span class="fs-6 d-block">${data.seaState}</span>
-                     <small class="text-white-50">${data.waves}</small>
+                     <small class="text-white">${data.waves}</small>
                  </div>
              </div>
 

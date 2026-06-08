@@ -163,7 +163,7 @@ export const initRamps = () => {
 
                           <img src="${rutaLimpia}-800.jpg" class="card-img-top object-fit-cover" alt="Rampa de botadura ${rampa.name}" style="height:220px;" loading="lazy" decoding="async" onerror="this.src='assets/img/hero-carousel/hero-carousel-1-640.jpg'">
                         </picture>
-                        <span class="badge bg-${rampa.priceColor} position-absolute top-0 end-0 m-3 fs-6 shadow-sm">${rampa.priceTag}</span>
+                        <span class="badge bg-<span class="badge bg-${rampa.priceColor} text-white position-absolute top-0 end-0 m-3 fs-6 shadow-sm" ${rampa.priceColor === 'warning' ? 'style="background-color: #6B4600 !important;"' : ''}>${rampa.priceTag}</span>
                     </div>
                     <div class="card-body d-flex flex-column">
                         <h3 class="card-title fw-bold text-primary mb-1 fs-5">${rampa.name}</h3>

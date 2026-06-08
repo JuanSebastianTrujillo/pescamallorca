@@ -1312,7 +1312,7 @@ function renderBeachesSwiper(beachesArray) {
         const locality = beach.region || beach.zone || 'Mallorca';
         const access = beach.accessDifficulty || beach.access || '';
         const typeLabel = beach.type === 'Rocosa' ? 'Rocosa' : (beach.type || 'Arena');
-        const typeColor = beach.type === 'Rocosa' ? 'secondary' : 'info';
+        const typeColor = beach.type === 'Rocosa' ? 'secondary' : 'primary';
         const ratingVal = beach.rating ? Number(beach.rating).toFixed(1) : null;
 
         htmlCards += `
